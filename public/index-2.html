@@ -5,10 +5,10 @@
 	<meta charset="UTF-8">
 	<meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
 	<meta name="description" content="Vijayalakshmi Group Of Companies website.">
-    <meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
-    <meta property="og:url" content="https://creativegigstf.com">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Vijayalakshmi Group Of Companies">
+	<meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
+	<meta property="og:url" content="https://creativegigstf.com">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Vijayalakshmi Group Of Companies">
 	<meta name='og:image' content='images/assets/ogg.png'>
 	<!-- For IE -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,158 +33,157 @@
 	<link rel="stylesheet" type="text/css" href="css/custom.css" media="all">
 	<style>
 		@media (min-width: 992px) {
+
 			.adani-nav-fx {
-				padding-top: 20px;
-				padding-bottom: 0;
+				padding: 0;
+				margin: 0;
 				background: transparent;
-				border-bottom: none;
-				box-shadow: none;
+				border: none !important;
+				box-shadow: none !important;
+				width: 100%;
 			}
 
 			.adani-nav-fx .inner-content {
-				padding: 0 28px;
+				padding: 0;
+				/* removed side spacing */
+				margin: 0;
 				animation: adaniNavReveal 0.75s cubic-bezier(0.22, 1, 0.36, 1);
 			}
 
 			.adani-nav-fx .top-header {
 				position: relative;
-				padding: 18px 0;
-				border-radius: 999px;
+				padding: 18px 20px;
+				/* keep slight inner spacing */
+				border-radius: 0;
+				/* 🔥 removes left & right curved borders */
+				margin: 0;
+				width: 100%;
 				transition: padding 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 			}
+		}
 
-			.adani-nav-fx .top-header::before {
-				content: "";
-				position: absolute;
-				inset: 0;
-				border-radius: inherit;
-				background: linear-gradient(135deg, rgba(8, 32, 27, 0.28), rgba(8, 32, 27, 0.08));
-				border: 1px solid rgba(255, 255, 255, 0.2);
-				backdrop-filter: blur(16px);
-				-webkit-backdrop-filter: blur(16px);
-				box-shadow: 0 20px 55px rgba(0, 0, 0, 0.12);
-				transition: background 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
-			}
 
-			.adani-nav-fx .top-header > .d-flex {
-				position: relative;
-				z-index: 1;
-			}
+		.adani-nav-fx .top-header::before {
+			content: "";
+			position: absolute;
+			align-items: center;
+			inset: 0;
+			border-radius: inherit;
+			background: linear-gradient(135deg, rgba(8, 32, 27, 0.28), rgba(8, 32, 27, 0.08));
+			border: none;
+			backdrop-filter: blur(16px);
+			-webkit-backdrop-filter: blur(16px);
+			box-shadow: none;
+			transition: background 0.45s ease, border-color 0.45s ease;
+		}
 
-			.adani-nav-fx .logo img {
-				transition: transform 0.45s ease;
-			}
+		.adani-nav-fx .top-header>.d-flex {
+			position: relative;
+			z-index: 1;
+		}
 
-			.adani-nav-fx .navbar-nav {
-				position: relative;
-				gap: 6px;
-				padding: 8px;
-				border-radius: 999px;
-			}
+		.adani-nav-fx .logo img {
+			transition: transform 0.45s ease;
+		}
 
-			.adani-nav-fx .nav-item {
-				position: relative;
-				z-index: 1;
-			}
+		.adani-nav-fx .navbar-nav {
+			position: relative;
+			gap: 20px;
+			padding: 0;
+			border-radius: 999px;
+		}
 
-			.adani-nav-fx .nav-item .nav-link {
-				margin: 0;
-				padding: 14px 20px;
-				border-radius: 999px;
-				transition: color 0.35s ease, transform 0.35s ease;
-			}
+		.adani-nav-fx .nav-item {
+			position: relative;
+			z-index: 1;
+		}
 
-			.adani-nav-fx .nav-item .nav-link::after {
-				content: "";
-				position: absolute;
-				left: 20px;
-				right: 20px;
-				bottom: 9px;
-				height: 2px;
-				border-radius: 999px;
-				background: currentColor;
-				opacity: 0;
-				transform: scaleX(0.35);
-				transform-origin: center;
-				transition: transform 0.35s ease, opacity 0.35s ease;
-			}
+		.adani-nav-fx .nav-item .nav-link {
+			margin: 0;
+			padding: 6px 16px;
+			border-radius: 999px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			font-size: 14px;
+			transition: color 0.35s ease, transform 0.35s ease;
+		}
 
-			.adani-nav-fx .nav-item:hover > .nav-link,
-			.adani-nav-fx .nav-item.nav-current > .nav-link {
-				color: #ffffff;
-				transform: translateY(-1px);
-			}
+		.adani-nav-fx .nav-item .nav-link::after {
+			display: none !important;
+		}
 
-			.adani-nav-fx .nav-item:hover > .nav-link::after,
-			.adani-nav-fx .nav-item.nav-current > .nav-link::after {
-				opacity: 0.65;
-				transform: scaleX(1);
-			}
+		.adani-nav-fx .nav-item:hover>.nav-link,
+		.adani-nav-fx .nav-item.nav-current>.nav-link {
+			color: #ffffff;
+			transform: translateY(-0.5px);
+		}
 
-			.adani-nav-fx .nav-hover-indicator {
-				position: absolute;
-				top: 8px;
-				left: 8px;
-				height: calc(100% - 16px);
-				width: 0;
-				border-radius: 999px;
-				pointer-events: none;
-				opacity: 0;
-				transform: translate3d(0, 0, 0) scale(0.92);
-				background: linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.08));
-				box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 14px 32px rgba(0, 0, 0, 0.16);
-				transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), width 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
-			}
+		.adani-nav-fx .nav-hover-indicator {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 0;
+			border-radius: 999px;
+			pointer-events: none;
+			opacity: 0;
+			transform: translate3d(0, 0, 0) scale(0.92);
+			background: linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.08));
+			box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 14px 32px rgba(0, 0, 0, 0.16);
+			transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), width 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+		}
 
-			.adani-nav-fx .navbar .dropdown-menu {
-				margin-top: 14px;
-				padding: 14px 8px;
-				border-radius: 24px;
-				border: 1px solid rgba(12, 58, 48, 0.08);
-				box-shadow: 0 30px 60px rgba(0, 0, 0, 0.16);
-				transform: translateY(18px) scale(0.96);
-				clip-path: inset(0 0 100% 0 round 24px);
-				transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, visibility 0.3s ease, clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-			}
+		.adani-nav-fx .navbar .dropdown-menu {
+			margin-top: 14px;
+			padding: 14px 8px;
+			border-radius: 24px;
+			border: 1px solid rgba(12, 58, 48, 0.08);
+			box-shadow: 0 30px 60px rgba(0, 0, 0, 0.16);
+			transform: translateY(18px) scale(0.96);
+			clip-path: inset(0 0 100% 0 round 24px);
+			transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, visibility 0.3s ease, clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+		}
 
-			.adani-nav-fx .navbar .dropdown:hover > .dropdown-menu {
-				transform: translateY(0) scale(1);
-				clip-path: inset(0 0 0 0 round 24px);
-			}
+		.adani-nav-fx .navbar .dropdown:hover>.dropdown-menu {
+			transform: translateY(0) scale(1);
+			clip-path: inset(0 0 0 0 round 24px);
+		}
 
-			.adani-nav-fx.fixed {
-				padding-top: 12px;
-				background: transparent;
-				box-shadow: none;
-			}
+		.adani-nav-fx.fixed {
+			padding-top: 12px;
+			background: transparent;
+			box-shadow: none;
+		}
 
-			.adani-nav-fx.fixed .top-header {
-				padding: 12px 0;
-			}
+		.adani-nav-fx.fixed .top-header {
+			padding: 12px 0;
+		}
 
-			.adani-nav-fx.fixed .top-header::before {
-				background: linear-gradient(135deg, rgba(12, 58, 48, 0.96), rgba(23, 86, 70, 0.94));
-				border-color: rgba(207, 255, 69, 0.12);
-				box-shadow: 0 25px 50px rgba(0, 0, 0, 0.24);
-			}
+		.adani-nav-fx.fixed .top-header::before {
+			background: linear-gradient(135deg, rgba(8, 32, 27, 0.98), rgba(12, 44, 36, 0.96));
+			border: none !important;
+			box-shadow: none !important;
+		}
 
-			.adani-nav-fx.fixed .logo img {
-				transform: scale(0.94);
-			}
+		.adani-nav-fx.fixed .logo img {
+			transform: scale(0.94);
+		}
 
-			.adani-nav-fx.fixed .nav-item .nav-link {
-				color: rgba(255, 255, 255, 0.84);
-			}
+		.adani-nav-fx.fixed .nav-item .nav-link {
+			color: rgba(255, 255, 255, 0.84);
+		}
 
-			.adani-nav-fx.fixed .nav-item:hover > .nav-link,
-			.adani-nav-fx.fixed .nav-item.nav-current > .nav-link {
-				color: #dfff7c;
-			}
+		.adani-nav-fx.fixed .nav-item:hover>.nav-link,
+		.adani-nav-fx.fixed .nav-item.nav-current>.nav-link {
+			color: #dfff7c;
+		}
 
-			.adani-nav-fx.fixed .nav-hover-indicator {
-				background: linear-gradient(135deg, rgba(207, 255, 69, 0.22), rgba(255, 255, 255, 0.12));
-				box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 14px 28px rgba(0, 0, 0, 0.28);
-			}
+		.adani-nav-fx.fixed .nav-hover-indicator {
+			background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
+			box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 10px 24px rgba(0, 0, 0, 0.2);
+		}
 		}
 
 		@media (max-width: 991px) {
@@ -269,11 +268,14 @@
 			==================================================== -->
 		<div id="preloader">
 			<div id="ctn-preloader" class="ctn-preloader">
-				<div class="icon"><video class="m-auto d-block site-loader-video" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-label="Loading animation"><source src="images/fav-icon/reload.ani.mp4" type="video/mp4"></video></div>
+				<div class="icon"><video class="m-auto d-block site-loader-video" autoplay muted loop playsinline
+						webkit-playsinline preload="auto" disablepictureinpicture aria-label="Loading animation">
+						<source src="images/fav-icon/reload.ani.mp4" type="video/mp4">
+					</video></div>
 			</div>
 		</div>
 
-		
+
 		<!-- 
 		=============================================
 				Theme Main Menu
@@ -283,24 +285,20 @@
 			<div class="inner-content position-relative">
 				<div class="top-header">
 					<div class="d-flex align-items-center justify-content-between">
-						<div class="logo order-lg-0">
+						<div class="logo" style="flex: 1; display: flex; justify-content: flex-start;">
 							<a href="index-2.html" class="d-flex align-items-center">
 								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
 									<span class="site-brand-lockup__mark-wrap"><img src="images/logo/vijayalakshmi-mark.png" alt="" class="site-brand-lockup__mark"></span>
 									<span class="site-brand-lockup__text">
-										<span class="site-brand-lockup__title">Vijayalakshmi Group</span>
+										<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;&nbsp;Group</span>
 										<span class="site-brand-lockup__subtitle">OF COMPANIES</span>
 									</span>
 								</span>
 							</a>
 						</div>
 						<!-- logo -->
-						<div class="right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
-							<ul class="d-flex align-items-center style-none">
-								<li class="d-none d-md-block"><a href="contact.html" class="btn-one tran3s">Get in Touch</a></li>
-							</ul>
-						</div> <!--/.right-widget-->
-						<nav class="navbar navbar-expand-lg p0 order-lg-2">
+
+						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
 							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
 								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
 								aria-label="Toggle navigation">
@@ -308,27 +306,42 @@
 							</button>
 							<div class="collapse navbar-collapse" id="navbarNav">
 								<ul class="navbar-nav align-items-lg-center">
-									<li class="d-block d-lg-none"><div class="logo"><a href="index-2.html" class="d-block"><span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies"><span class="site-brand-lockup__mark-wrap"><img src="images/logo/vijayalakshmi-mark.png" alt="" class="site-brand-lockup__mark"></span><span class="site-brand-lockup__text"><span class="site-brand-lockup__title">Vijayalakshmi Group</span><span class="site-brand-lockup__subtitle">OF COMPANIES</span></span></span></a></div></li>
+									<li class="d-block d-lg-none">
+										<div class="logo">
+											<a href="index-2.html" class="d-block">
+												<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
+													<span class="site-brand-lockup__mark-wrap"><img src="images/logo/vijayalakshmi-mark.png" alt="" class="site-brand-lockup__mark"></span>
+													<span class="site-brand-lockup__text">
+														<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;&nbsp;Group</span>
+														<span class="site-brand-lockup__subtitle">OF COMPANIES</span>
+													</span>
+												</span>
+											</a>
+										</div>
+									</li>
 									<li class="nav-item dropdown nav-current">
-										<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-											data-bs-auto-close="outside" aria-expanded="false">Home
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Home
 										</a>
 										<ul class="dropdown-menu">
-                                            <li><a href="index.html" class="dropdown-item"><span>Finance</span></a></li>
-                                            <li><a href="index-2.html" class="dropdown-item"><span>Business Consultancy</span></a></li>
-                                            <li><a href="index-3.html" class="dropdown-item"><span>Banking</span></a></li>
-                                            <li><a href="index-4.html" class="dropdown-item"><span>Payment Solution</span></a></li>
-                                            <li><a href="index-5.html" class="dropdown-item"><span>Digital Agency</span></a></li>
-                                            <li><a href="index-6.html" class="dropdown-item"><span>Marketing</span></a></li>
+											<li><a href="index.html" class="dropdown-item"><span>Finance</span></a></li>
+											<li><a href="index-2.html" class="dropdown-item"><span>Business Consultancy</span></a></li>
+											<li><a href="index-3.html" class="dropdown-item"><span>Banking</span></a></li>
+											<li><a href="index-4.html" class="dropdown-item"><span>Payment Solution</span></a></li>
+											<li><a href="index-5.html" class="dropdown-item"><span>Digital Agency</span></a></li>
+											<li><a href="index-6.html" class="dropdown-item"><span>Marketing</span></a></li>
 											<li><a href="index-7.html" class="dropdown-item"><span>Insurance</span></a></li>
 											<li><a href="index-8.html" class="dropdown-item"><span>Insurance Two</span></a></li>
-                                        </ul>
+										</ul>
 									</li>
 									<li class="nav-item dropdown mega-dropdown-sm">
-							        	<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Pages
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Pages
 										</a>
-						                <ul class="dropdown-menu">
-							                <li class="row gx-1">
+										<ul class="dropdown-menu">
+											<li class="row gx-1">
 												<div class="col-lg-4">
 													<div class="menu-column">
 														<ul class="style-none mega-dropdown-list">
@@ -365,11 +378,12 @@
 													</div> <!--/.menu-column -->
 												</div>
 											</li>
-						                </ul>
-						            </li>
+										</ul>
+									</li>
 									<li class="nav-item dropdown">
-										<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-											data-bs-auto-close="outside" aria-expanded="false">Shop
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Shop
 										</a>
 										<ul class="dropdown-menu">
 											<li><a href="shop-grid.html" class="dropdown-item"><span>Shop</span></a></li>
@@ -379,8 +393,9 @@
 										</ul>
 									</li>
 									<li class="nav-item dropdown">
-										<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-											data-bs-auto-close="outside" aria-expanded="false">Blog
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Blog
 										</a>
 										<ul class="dropdown-menu">
 											<li><a href="blog-v1.html" class="dropdown-item"><span>Blog List</span></a></li>
@@ -395,10 +410,16 @@
 								</ul>
 							</div>
 						</nav>
+
+						<div class="right-widget d-none d-lg-flex" style="flex: 0 0 auto;">
+							<ul class="d-flex align-items-center style-none">
+								<li><a href="contact.html" class="btn-one tran3s">Get in Touch</a></li>
+							</ul>
+						</div> <!--/.right-widget-->
 					</div>
 				</div> <!--/.top-header-->
 			</div> <!-- /.inner-content -->
-		</header> 
+		</header>
 		<!-- /.theme-main-menu -->
 
 
@@ -410,24 +431,36 @@
 		-->
 		<div class="hero-banner-one pt-225 xl-pt-200 lg-pt-150 pb-150 lg-pb-100 position-relative">
 			<div class="hero-slider-one m0">
-				<div class="item m0"><div class="hero-img" style="background-image: url(images/media/img_01.jpg);"></div></div>
-				<div class="item m0"><div class="hero-img" style="background-image: url(images/media/img_02.jpg);"></div></div>
-				<div class="item m0"><div class="hero-img" style="background-image: url(images/media/img_03.jpg);"></div></div>
+				<div class="item m0">
+					<div class="hero-img" style="background-image: url(images/media/img_01.jpg);"></div>
+				</div>
+				<div class="item m0">
+					<div class="hero-img" style="background-image: url(images/media/img_02.jpg);"></div>
+				</div>
+				<div class="item m0">
+					<div class="hero-img" style="background-image: url(images/media/img_03.jpg);"></div>
+				</div>
 			</div>
 			<!-- /.hero-slider-one -->
 			<div class="container position-relative">
 				<div class="row">
 					<div class="col-xl-6 col-lg-7 ms-auto">
-						<h1 class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">Smart Business Solutions Partner </h1>
-						<p class="text-xl text-white pt-35 pb-25 wow fadeInUp" data-wow-delay="0.1s">Empowering businesses with innovative strategies, integrated services, and actionable solutions across technology, education, wellness, and global trade.</p>
+						<h1 class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">Smart
+							Business Solutions Partner </h1>
+						<p class="text-xl text-white pt-35 pb-25 wow fadeInUp" data-wow-delay="0.1s">Empowering
+							businesses with innovative strategies, integrated services, and actionable solutions across
+							technology, education, wellness, and global trade.</p>
 						<a href="contact.html" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 							<span>Let’s Talk</span>
-							<img src="images/lazy.svg" data-src="images/icon/icon_02.svg" alt="" class="lazy-img icon ms-2">
+							<img src="images/lazy.svg" data-src="images/icon/icon_02.svg" alt=""
+								class="lazy-img icon ms-2">
 						</a>
 					</div>
 				</div>
 			</div>
-			<a href="contact.html" class="more-btn rounded-circle d-flex align-items-center justify-content-center tran3s wow fadeInLeft" target="_blank"><i class="bi bi-arrow-up-right"></i></a>
+			<a href="contact.html"
+				class="more-btn rounded-circle d-flex align-items-center justify-content-center tran3s wow fadeInLeft"
+				target="_blank"><i class="bi bi-arrow-up-right"></i></a>
 		</div>
 		<!-- /.hero-banner-one -->
 
@@ -448,7 +481,8 @@
 							<h3 class="fw-bold">Trusted by Growing Businesses</h3>
 							<p class="text-md m0">Delivering reliable solutions across multiple industries</p>
 						</div>
-						<img src="images/lazy.svg" data-src="images/assets/screen_01.png" alt="" class="lazy-img screen me-xxl-5">
+						<img src="images/lazy.svg" data-src="images/assets/screen_01.png" alt=""
+							class="lazy-img screen me-xxl-5">
 					</div>
 				</div>
 			</div>
@@ -467,30 +501,45 @@
 					<div class="row">
 						<div class="col-lg-4 wow fadeInUp">
 							<div class="card-style-one d-flex w-100 mb-35">
-								<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><img src="images/lazy.svg" data-src="images/icon/icon_03.svg" alt="" class="lazy-img"></div>
+								<div
+									class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+									<img src="images/lazy.svg" data-src="images/icon/icon_03.svg" alt=""
+										class="lazy-img">
+								</div>
 								<div class="text ps-4">
 									<h4 class="fw-bold">Cost-Effective Solutions</h4>
-									<p class="pe-xl-4">Providing high-quality services with efficient and budget-friendly approaches for every business.</p>
+									<p class="pe-xl-4">Providing high-quality services with efficient and
+										budget-friendly approaches for every business.</p>
 								</div>
 							</div>
 							<!-- /.card-style-one -->
 						</div>
 						<div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
 							<div class="card-style-one d-flex w-100 mb-35">
-								<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><img src="images/lazy.svg" data-src="images/icon/icon_04.svg" alt="" class="lazy-img"></div>
+								<div
+									class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+									<img src="images/lazy.svg" data-src="images/icon/icon_04.svg" alt=""
+										class="lazy-img">
+								</div>
 								<div class="text ps-4">
 									<h4 class="fw-bold">Industry Expertise</h4>
-									<p class="pe-xl-4">Our experienced professionals deliver strategic guidance across IT, education, wellness, and trading sectors.</p>
+									<p class="pe-xl-4">Our experienced professionals deliver strategic guidance across
+										IT, education, wellness, and trading sectors.</p>
 								</div>
 							</div>
 							<!-- /.card-style-one -->
 						</div>
 						<div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
 							<div class="card-style-one d-flex w-100 mb-35">
-								<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><img src="images/lazy.svg" data-src="images/icon/icon_05.svg" alt="" class="lazy-img"></div>
+								<div
+									class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+									<img src="images/lazy.svg" data-src="images/icon/icon_05.svg" alt=""
+										class="lazy-img">
+								</div>
 								<div class="text ps-4">
 									<h4 class="fw-bold">Reliable Support</h4>
-									<p class="pe-xl-4">Committed to offering continuous assistance and dependable service to ensure your business success.</p>
+									<p class="pe-xl-4">Committed to offering continuous assistance and dependable
+										service to ensure your business success.</p>
 								</div>
 							</div>
 							<!-- /.card-style-one -->
@@ -502,57 +551,104 @@
 
 			<div class="container">
 				<div class="position-relative">
-					<div class="row">
+					<div class="row align-items-center">
 						<div class="col-md-6">
 							<div class="title-one text-center text-md-start mb-30 sm-mb-10">
-								<h2>Provide quality Services.</h2>
+								<h2>Delivering Quality Services Across Industries</h2>
 							</div>
 							<!-- /.title-one -->
 						</div>
+						<div class="col-md-6">
+							<p class="text-lg text-center text-md-end mb-30">We offer a wide range of integrated
+								services designed to support business growth, innovation, and long-term success across
+								multiple sectors.</p>
+						</div>
 					</div>
-					<div class="row justify-content-center">
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
-							<div class="card-style-two vstack tran3s w-100 mt-30">
-								<img src="images/lazy.svg" data-src="images/icon/icon_06.svg" alt="" class="lazy-img icon me-auto">
-								<h4 class="fw-bold mt-30 mb-25">Expense Report</h4>
-								<p class="mb-20">Maximize convenience by paying for ads, subscriptions, and inventory with Mastercard®.</p>
-								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
+					<div class="row justify-content-center row-cols-1 row-cols-md-3 row-cols-lg-5">
+						<div class="col d-flex wow fadeInUp">
+							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
+								style="padding: 25px;">
+								<img src="images/lazy.svg" data-src="images/icon/icon_06.svg" alt=""
+									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+								<h4 class="fw-bold mb-15" style="font-size: 18px;">IT Solutions</h4>
+								<p style="font-size: 14px; line-height: 1.6em;">Providing innovative software
+									development, web solutions, and digital transformation services.</p>
+								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt=""
+										class="lazy-img"></a>
 							</div>
 							<!-- /.card-style-two -->
 						</div>
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
-							<div class="card-style-two vstack tran3s w-100 mt-30">
-								<img src="images/lazy.svg" data-src="images/icon/icon_07.svg" alt="" class="lazy-img icon me-auto">
-								<h4 class="fw-bold mt-30 mb-25">Tax Preparation</h4>
-								<p class="mb-20">Use receiving accounts in a growing number of currencies and get paid like a local.</p>
-								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
+						<div class="col d-flex wow fadeInUp" data-wow-delay="0.1s">
+							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
+								style="padding: 25px;">
+								<img src="images/lazy.svg" data-src="images/icon/icon_07.svg" alt=""
+									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+								<h4 class="fw-bold mb-15" style="font-size: 18px;">Education & Training</h4>
+								<p style="font-size: 14px; line-height: 1.6em;">Offering quality education and skill
+									development programs to empower students.</p>
+								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt=""
+										class="lazy-img"></a>
 							</div>
 							<!-- /.card-style-two -->
 						</div>
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
-							<div class="card-style-two vstack tran3s w-100 mt-30">
-								<img src="images/lazy.svg" data-src="images/icon/icon_08.svg" alt="" class="lazy-img icon me-auto">
-								<h4 class="fw-bold mt-30 mb-25">Book keeping</h4>
-								<p class="mb-20">Use receiving accounts in a growing number of currencies and get paid like a local.</p>
-								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
+						<div class="col d-flex wow fadeInUp" data-wow-delay="0.2s">
+							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
+								style="padding: 25px;">
+								<img src="images/lazy.svg" data-src="images/icon/icon_08.svg" alt=""
+									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+								<h4 class="fw-bold mb-15" style="font-size: 18px;">Healthcare & Wellness</h4>
+								<p style="font-size: 14px; line-height: 1.6em;">Delivering holistic wellness solutions
+									through Ayurveda, yoga, and natural therapies.</p>
+								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt=""
+										class="lazy-img"></a>
+							</div>
+							<!-- /.card-style-two -->
+						</div>
+						<div class="col d-flex wow fadeInUp" data-wow-delay="0.3s">
+							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
+								style="padding: 25px;">
+								<img src="images/lazy.svg" data-src="images/icon/icon_18.svg" alt=""
+									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+								<h4 class="fw-bold mb-15" style="font-size: 18px;">Export & Trading</h4>
+								<p style="font-size: 14px; line-height: 1.6em;">Supplying high-quality agricultural
+									products like pepper and coconut to global markets.</p>
+								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt=""
+										class="lazy-img"></a>
+							</div>
+							<!-- /.card-style-two -->
+						</div>
+						<div class="col d-flex wow fadeInUp" data-wow-delay="0.4s">
+							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
+								style="padding: 25px;">
+								<img src="images/lazy.svg" data-src="images/icon/icon_20.svg" alt=""
+									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+								<h4 class="fw-bold mb-15" style="font-size: 18px;">Business Consulting</h4>
+								<p style="font-size: 14px; line-height: 1.6em;">Helping businesses grow with strategic
+									planning, expert guidance, and actionable solutions.</p>
+								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt=""
+										class="lazy-img"></a>
 							</div>
 							<!-- /.card-style-two -->
 						</div>
 					</div>
 
 					<div class="section-subheading sm-mt-40">
-						<p class="text-lg">Inciddnt ut labore et dolor magna aliu. enim ad mim venam, quis nostru </p>
 						<a href="service-v1.html" class="btn-three icon-link">
 							<span>See All Services</span>
-							<img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img icon ms-1">
+							<img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt=""
+								class="lazy-img icon ms-1">
 						</a>
 					</div>
-					<!-- /.section-subheading -->
 				</div>
 			</div>
 		</div>
 		<!-- /.block-feature-one -->
-		
+
 
 
 		<!--
@@ -566,24 +662,27 @@
 					<div class="col-xl-5 col-lg-6 wow fadeInLeft">
 						<div class="title-one">
 							<div class="upper-title">About us</div>
-							<h2>15k+ Client using Our Services.</h2>
+							<h2>Trusted by 15,000+ Clients Worldwide</h2>
 						</div>
 						<!-- /.title-one -->
-						<p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-20">Your success is our mission. As business advisors, we offer expert guidance, unlocking your potential for growth and profitability</p>
+						<p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-20">Delivering integrated solutions across IT,
+							education, wellness, and trading—empowering businesses to grow with confidence.</p>
 						<div class="d-inline-flex flex-wrap align-items-center">
 							<a href="about-us-v1.html" class="btn-four mt-15 me-4">More About us</a>
 							<a href="contact.html" class="btn-three icon-link mt-15">
 								<span>Request a Callback</span>
-								<img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img icon ms-1">
+								<img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt=""
+									class="lazy-img icon ms-1">
 							</a>
 						</div>
 					</div>
 					<div class="col-xl-7 col-lg-6 wow fadeInRight">
-						<div class="media-list-item ms-auto pe-xxl-5 pe-4 ps-xxl-5 ps-4 pb-35 md-mt-60 d-flex align-items-end">
+						<div
+							class="media-list-item ms-auto pe-xxl-5 pe-4 ps-xxl-5 ps-4 pb-35 md-mt-60 d-flex align-items-end">
 							<ul class="style-none">
-								<li>Mobile app easy management & access</li>
-								<li>Ton’s of features for handle the card easily</li>
-								<li>Strong security system.</li>
+								<li>Multi-industry expertise</li>
+								<li>Customer-focused approach</li>
+								<li>Proven track record</li>
 							</ul>
 						</div>
 					</div>
@@ -604,7 +703,8 @@
 					<div class="row align-items-center">
 						<div class="col-md-4">
 							<div class="card-style-three pt-45 md-pt-30 pb-35 sm-pb-30">
-								<img src="images/lazy.svg" data-src="images/icon/icon_10.svg" alt="" class="lazy-img icon">
+								<img src="images/lazy.svg" data-src="images/icon/icon_10.svg" alt=""
+									class="lazy-img icon">
 								<h4 class="fw-bold mt-40 sm-mt-20 mb-20">Our Mission</h4>
 								<p>Optimize expense tracking across platforms, & product lines using multiple cards.</p>
 							</div>
@@ -613,9 +713,11 @@
 						<div class="col-md-5">
 							<div class="border-line h-100 ps-lg-5 pe-lg-5 ps-md-3 pe-md-3">
 								<div class="card-style-three pt-45 md-pt-30 pb-35 sm-pb-30">
-									<img src="images/lazy.svg" data-src="images/icon/icon_11.svg" alt="" class="lazy-img icon">
+									<img src="images/lazy.svg" data-src="images/icon/icon_11.svg" alt=""
+										class="lazy-img icon">
 									<h4 class="fw-bold mt-40 sm-mt-20 mb-20">Our company vision.</h4>
-									<p>Optimize expense tracking across platforms, & product lines using multiple cards.</p>
+									<p>Optimize expense tracking across platforms, & product lines using multiple cards.
+									</p>
 								</div>
 								<!-- /.card-style-three -->
 							</div>
@@ -631,7 +733,7 @@
 			</div>
 		</div>
 		<!-- /.block-feature-two -->
-		
+
 
 
 		<!--
@@ -653,14 +755,19 @@
 
 					<div class="row gx-xxl-5">
 						<div class="col-lg-8">
-							<div class="block-one pt-45 lg-pt-30 pb-20 ps-3 ps-xl-5 pe-xl-5 pe-3 position-relative border-30 wow fadeInUp">
+							<div
+								class="block-one pt-45 lg-pt-30 pb-20 ps-3 ps-xl-5 pe-xl-5 pe-3 position-relative border-30 wow fadeInUp">
 								<div class="row">
 									<div class="col-lg-5">
-										<div class="tag d-inline-block border-30 fw-500 text-uppercase mb-15">Consulting</div>
-										<div class="date text-dark"><span class="fw-500">Featured -</span> 18 Jul 2023</div>
+										<div class="tag d-inline-block border-30 fw-500 text-uppercase mb-15">Consulting
+										</div>
+										<div class="date text-dark"><span class="fw-500">Featured -</span> 18 Jul 2023
+										</div>
 									</div>
 									<div class="col-lg-7">
-										<h3 class="block-title d-inline-block position-relative"><a href="project-details-v1.html">Manage your online banking and get rewarded</a></h3>
+										<h3 class="block-title d-inline-block position-relative"><a
+												href="project-details-v1.html">Manage your online banking and get
+												rewarded</a></h3>
 									</div>
 								</div>
 							</div>
@@ -670,10 +777,14 @@
 								<div class="img-wrapper"></div>
 								<div class="text-wrapper bg-white">
 									<div class="date">18 Jul 2023</div>
-									<h3 class="block-title d-inline-block position-relative mt-5 mb-40 lg-mb-30"><a href="project-details-v1.html">Gold card user will get priority pass for <br class="d-none d-lg-block"> Airport.</a></h3>
+									<h3 class="block-title d-inline-block position-relative mt-5 mb-40 lg-mb-30"><a
+											href="project-details-v1.html">Gold card user will get priority pass for <br
+												class="d-none d-lg-block"> Airport.</a></h3>
 									<div class="d-flex align-items-center justify-content-between">
 										<div class="tag text-uppercase fw-500">Payments</div>
-										<a href="project-details-v1.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+										<a href="project-details-v1.html"
+											class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+												class="bi bi-arrow-up-right"></i></a>
 									</div>
 								</div>
 								<!-- /.text-wrapper -->
@@ -682,20 +793,32 @@
 						</div>
 
 						<div class="col-lg-4">
-							<div class="block-three border-30 ps-lg-4 ps-3 pe-lg-4 pe-3 pt-40 lg-pt-30 pb-30 md-mt-30 wow fadeInUp" data-wow-delay="0.2s">
+							<div class="block-three border-30 ps-lg-4 ps-3 pe-lg-4 pe-3 pt-40 lg-pt-30 pb-30 md-mt-30 wow fadeInUp"
+								data-wow-delay="0.2s">
 								<div class="date">3 Aug 2023</div>
-								<h3 class="block-title d-inline-block position-relative mt-20 mb-80 lg-mb-50"><a href="project-details-v1.html">Gold card user will get priority pass for Airport.</a></h3>
+								<h3 class="block-title d-inline-block position-relative mt-20 mb-80 lg-mb-50"><a
+										href="project-details-v1.html">Gold card user will get priority pass for
+										Airport.</a></h3>
 								<div class="d-flex align-items-center justify-content-between">
 									<div class="tag text-uppercase fw-500">DESIGN</div>
-									<a href="project-details-v1.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+									<a href="project-details-v1.html"
+										class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+											class="bi bi-arrow-up-right"></i></a>
 								</div>
 							</div>
 							<!-- /.block-three -->
-							<div class="block-four border-30 ps-lg-4 ps-3 pe-lg-4 pe-3 pt-15 pb-30 mt-45 lg-mt-30 wow fadeInUp" data-wow-delay="0.2s">
-								<h3 class="block-title d-inline-block position-relative mt-20 mb-250 lg-mb-150 sm-mb-100"><a href="project-details-v1.html">Our Travel Card Makes <br class="d-none d-xl-block">you Happy.</a></h3>
+							<div class="block-four border-30 ps-lg-4 ps-3 pe-lg-4 pe-3 pt-15 pb-30 mt-45 lg-mt-30 wow fadeInUp"
+								data-wow-delay="0.2s">
+								<h3
+									class="block-title d-inline-block position-relative mt-20 mb-250 lg-mb-150 sm-mb-100">
+									<a href="project-details-v1.html">Our Travel Card Makes <br
+											class="d-none d-xl-block">you Happy.</a>
+								</h3>
 								<div class="d-flex align-items-center justify-content-between">
 									<div class="tag text-uppercase fw-500">DESIGN</div>
-									<a href="project-details-v1.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+									<a href="project-details-v1.html"
+										class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+											class="bi bi-arrow-up-right"></i></a>
 								</div>
 							</div>
 							<!-- /.block-four -->
@@ -705,7 +828,8 @@
 					<div class="section-btn sm-mt-40">
 						<a href="project-v1.html" class="btn-five icon-link">
 							<span class="text">See all stories</span>
-							<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-right"></i></div>
+							<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><i
+									class="bi bi-arrow-up-right"></i></div>
 						</a>
 					</div>
 				</div>
@@ -732,7 +856,9 @@
 							<div class="feedback-block-one">
 								<div class="row align-items-end">
 									<div class="col-md-7 ms-auto order-md-last">
-										<blockquote>"Efficient problem-solving, insightful market analysis, and actionable plans made the consulting experience invaluable to our business's success."</blockquote>
+										<blockquote>"Efficient problem-solving, insightful market analysis, and
+											actionable plans made the consulting experience invaluable to our business's
+											success."</blockquote>
 										<div class="d-flex align-items-center">
 											<img src="images/media/img_08.jpg" alt="" class="avatar rounded-circle">
 											<div class="ps-4">
@@ -744,7 +870,7 @@
 									<div class="col-md-4 order-md-first">
 										<div class="d-flex align-items-center justify-content-between sm-mt-40">
 											<div class="line"></div>
-											<div class="count fw-500"><span class="text-dark">01</span>  /  03</div>
+											<div class="count fw-500"><span class="text-dark">01</span> / 03</div>
 										</div>
 									</div>
 								</div>
@@ -754,7 +880,9 @@
 							<div class="feedback-block-one">
 								<div class="row align-items-end">
 									<div class="col-md-7 ms-auto order-md-last">
-										<blockquote>"Lorem ipsum, dolor sit amet consectetur elit. Asperiores unde inventore tenetur. Accusantium tenetur id cupiditate quibusdam."</blockquote>
+										<blockquote>"Lorem ipsum, dolor sit amet consectetur elit. Asperiores unde
+											inventore tenetur. Accusantium tenetur id cupiditate quibusdam."
+										</blockquote>
 										<div class="d-flex align-items-center">
 											<img src="images/media/img_08.jpg" alt="" class="avatar rounded-circle">
 											<div class="ps-4">
@@ -766,7 +894,7 @@
 									<div class="col-md-4 order-md-first">
 										<div class="d-flex align-items-center justify-content-between sm-mt-40">
 											<div class="line"></div>
-											<div class="count fw-500"><span class="text-dark">02</span>  /  03</div>
+											<div class="count fw-500"><span class="text-dark">02</span> / 03</div>
 										</div>
 									</div>
 								</div>
@@ -776,7 +904,9 @@
 							<div class="feedback-block-one">
 								<div class="row align-items-end">
 									<div class="col-md-7 ms-auto order-md-last">
-										<blockquote>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga sed nobis eveniet nisi provident aut excepturi reiciendis officiis quo."</blockquote>
+										<blockquote>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga sed
+											nobis eveniet nisi provident aut excepturi reiciendis officiis quo."
+										</blockquote>
 										<div class="d-flex align-items-center">
 											<img src="images/media/img_08.jpg" alt="" class="avatar rounded-circle">
 											<div class="ps-4">
@@ -788,7 +918,7 @@
 									<div class="col-md-4 order-md-first">
 										<div class="d-flex align-items-center justify-content-between sm-mt-40">
 											<div class="line"></div>
-											<div class="count fw-500"><span class="text-dark">03</span>  /  03</div>
+											<div class="count fw-500"><span class="text-dark">03</span> / 03</div>
 										</div>
 									</div>
 								</div>
@@ -796,7 +926,8 @@
 						</div>
 					</div>
 
-					<div class="icon d-flex align-items-center justify-content-center rounded-circle"><img src="images/lazy.svg" data-src="images/icon/icon_12.svg" alt="" class="lazy-img"></div>
+					<div class="icon d-flex align-items-center justify-content-center rounded-circle"><img
+							src="images/lazy.svg" data-src="images/icon/icon_12.svg" alt="" class="lazy-img"></div>
 				</div>
 			</div>
 		</div>
@@ -820,9 +951,13 @@
 					<div class="row">
 						<div class="col-lg-3 col-sm-6 wow fadeInUp">
 							<div class="card-style-four mt-35">
-								<div class="media d-flex align-items-center justify-content-center position-relative overflow-hidden">
-									<img src="images/lazy.svg" data-src="images/media/img_09.jpg" alt="" class="lazy-img w-100">
-									<a href="team-details.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+								<div
+									class="media d-flex align-items-center justify-content-center position-relative overflow-hidden">
+									<img src="images/lazy.svg" data-src="images/media/img_09.jpg" alt=""
+										class="lazy-img w-100">
+									<a href="team-details.html"
+										class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+											class="bi bi-arrow-up-right"></i></a>
 								</div>
 								<h4 class="fw-500 pt-20 m0">Rashed kabir</h4>
 								<div class="fs-6">Manager</div>
@@ -831,9 +966,13 @@
 						</div>
 						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
 							<div class="card-style-four mt-35">
-								<div class="media d-flex align-items-center justify-content-center position-relative overflow-hidden">
-									<img src="images/lazy.svg" data-src="images/media/img_10.jpg" alt="" class="lazy-img w-100">
-									<a href="team-details.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+								<div
+									class="media d-flex align-items-center justify-content-center position-relative overflow-hidden">
+									<img src="images/lazy.svg" data-src="images/media/img_10.jpg" alt=""
+										class="lazy-img w-100">
+									<a href="team-details.html"
+										class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+											class="bi bi-arrow-up-right"></i></a>
 								</div>
 								<h4 class="fw-500 pt-20 m0">Angelina Jolie</h4>
 								<div class="fs-6">Marketing Expert</div>
@@ -842,9 +981,13 @@
 						</div>
 						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
 							<div class="card-style-four mt-35">
-								<div class="media d-flex align-items-center justify-content-center position-relative overflow-hidden">
-									<img src="images/lazy.svg" data-src="images/media/img_11.jpg" alt="" class="lazy-img w-100">
-									<a href="team-details.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+								<div
+									class="media d-flex align-items-center justify-content-center position-relative overflow-hidden">
+									<img src="images/lazy.svg" data-src="images/media/img_11.jpg" alt=""
+										class="lazy-img w-100">
+									<a href="team-details.html"
+										class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+											class="bi bi-arrow-up-right"></i></a>
 								</div>
 								<h4 class="fw-500 pt-20 m0">Zubayer Hasan</h4>
 								<div class="fs-6">Analysis</div>
@@ -853,9 +996,13 @@
 						</div>
 						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
 							<div class="card-style-four mt-35">
-								<div class="media d-flex align-items-center justify-content-center position-relative overflow-hidden">
-									<img src="images/lazy.svg" data-src="images/media/img_12.jpg" alt="" class="lazy-img w-100">
-									<a href="team-details.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+								<div
+									class="media d-flex align-items-center justify-content-center position-relative overflow-hidden">
+									<img src="images/lazy.svg" data-src="images/media/img_12.jpg" alt=""
+										class="lazy-img w-100">
+									<a href="team-details.html"
+										class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+											class="bi bi-arrow-up-right"></i></a>
 								</div>
 								<h4 class="fw-500 pt-20 m0">Maria Escolova</h4>
 								<div class="fs-6">Senior Officer</div>
@@ -867,14 +1014,15 @@
 					<div class="section-btn sm-mt-40">
 						<a href="team-v1.html" class="btn-five icon-link">
 							<span class="text">See all Experts</span>
-							<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-right"></i></div>
+							<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><i
+									class="bi bi-arrow-up-right"></i></div>
 						</a>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- /.team-section-one -->
-		
+
 
 		<!--
 		=====================================================
@@ -897,61 +1045,79 @@
 						<div class="accordion accordion-style-one mt-15 md-mt-50" id="accordionOne">
 							<div class="accordion-item">
 								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 										How does the free trial work?
 									</button>
-							  	</h2>
-							  	<div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
+								</h2>
+								<div id="collapseOne" class="accordion-collapse collapse"
+									data-bs-parent="#accordionOne">
 									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
+										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
 									</div>
-							  	</div>
+								</div>
 							</div>
 							<div class="accordion-item">
 								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 										How do you find different criteria in your process?
 									</button>
 								</h2>
-								<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
+								<div id="collapseTwo" class="accordion-collapse collapse"
+									data-bs-parent="#accordionOne">
 									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
+										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
 									</div>
 								</div>
 							</div>
 							<div class="accordion-item">
 								<h2 class="accordion-header">
-									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseThree" aria-expanded="true"
+										aria-controls="collapseThree">
 										What do you look for in a founding team?
 									</button>
 								</h2>
-								<div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionOne">
+								<div id="collapseThree" class="accordion-collapse collapse show"
+									data-bs-parent="#accordionOne">
 									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
+										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
 									</div>
 								</div>
 							</div>
 							<div class="accordion-item">
 								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseFour" aria-expanded="false"
+										aria-controls="collapseFour">
 										Do you recommend Pay as you go or Pre pay?
 									</button>
 								</h2>
-								<div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
+								<div id="collapseFour" class="accordion-collapse collapse"
+									data-bs-parent="#accordionOne">
 									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
+										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
 									</div>
 								</div>
 							</div>
 							<div class="accordion-item">
 								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseFive" aria-expanded="false"
+										aria-controls="collapseFive">
 										What do I get for $0 with my plan?
 									</button>
 								</h2>
-								<div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
+								<div id="collapseFive" class="accordion-collapse collapse"
+									data-bs-parent="#accordionOne">
 									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
+										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
 									</div>
 								</div>
 							</div>
@@ -981,11 +1147,18 @@
 						<div class="col-md-6">
 							<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp">
 								<div class="post-data">
-									<div class="post-info"><span class="fw-500 text-dark">Rashed Ka -</span> 18 Jul 2023</div>
-									<a href="blog-details.html" class="mt-15"><h4 class="tran3s blog-title">Wise Spending Habits, 13 Tips for Maximizing Your Money.</h4></a>
+									<div class="post-info"><span class="fw-500 text-dark">Rashed Ka -</span> 18 Jul 2023
+									</div>
+									<a href="blog-details.html" class="mt-15">
+										<h4 class="tran3s blog-title">Wise Spending Habits, 13 Tips for Maximizing Your
+											Money.</h4>
+									</a>
 								</div>
-								<figure class="post-img position-relative d-flex justify-content-end align-items-end m0" style="background-image: url(images/blog/blog_img_01.jpg);">
-									<a href="blog-details.html" class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+								<figure class="post-img position-relative d-flex justify-content-end align-items-end m0"
+									style="background-image: url(images/blog/blog_img_01.jpg);">
+									<a href="blog-details.html"
+										class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+											class="bi bi-arrow-up-right"></i></a>
 								</figure>
 							</article>
 							<!-- /.blog-meta-one -->
@@ -993,11 +1166,18 @@
 						<div class="col-md-6">
 							<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="0.1s">
 								<div class="post-data">
-									<div class="post-info"><span class="fw-500 text-dark">Mark Joe -</span> 09 Feb 2023</div>
-									<a href="blog-details.html" class="mt-15"><h4 class="tran3s blog-title">Lessons from Visionary Leaders for Success in Business.</h4></a>
+									<div class="post-info"><span class="fw-500 text-dark">Mark Joe -</span> 09 Feb 2023
+									</div>
+									<a href="blog-details.html" class="mt-15">
+										<h4 class="tran3s blog-title">Lessons from Visionary Leaders for Success in
+											Business.</h4>
+									</a>
 								</div>
-								<figure class="post-img position-relative d-flex justify-content-end align-items-end m0" style="background-image: url(images/blog/blog_img_02.jpg);">
-									<a href="blog-details.html" class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+								<figure class="post-img position-relative d-flex justify-content-end align-items-end m0"
+									style="background-image: url(images/blog/blog_img_02.jpg);">
+									<a href="blog-details.html"
+										class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+											class="bi bi-arrow-up-right"></i></a>
 								</figure>
 							</article>
 							<!-- /.blog-meta-one -->
@@ -1007,7 +1187,8 @@
 					<div class="section-btn sm-mt-40">
 						<a href="blog-v2.html" class="btn-five icon-link">
 							<span class="text">See all blogs</span>
-							<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-right"></i></div>
+							<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><i
+									class="bi bi-arrow-up-right"></i></div>
 						</a>
 					</div>
 				</div>
@@ -1030,7 +1211,8 @@
 								<h2>Want to chat? Feel free to contact our team.</h2>
 							</div>
 							<!-- /.title-one -->
-							<p class="text-lg mt-40 lg-mt-30 mb-30">Contact our friendly team for quick and helpful answers.</p>
+							<p class="text-lg mt-40 lg-mt-30 mb-30">Contact our friendly team for quick and helpful
+								answers.</p>
 							<div class="d-inline-flex flex-wrap justify-content-center">
 								<a href="contact.html" class="btn-four mt-10 me-2">Get a Quote</a>
 								<a href="contact.html" class="btn-six mt-10 ms-2">Contact</a>
@@ -1057,11 +1239,13 @@
 						<div class="col-xl-4 col-md-3 footer-intro mb-30">
 							<div class="logo mb-15">
 								<a href="index-2.html" class="d-inline-block d-lg-none">
-									<img src="images/logo/vijayalakshmi-logo.svg" alt="Vijayalakshmi Group Of Companies" class="site-brand-logo">
+									<img src="images/logo/vijayalakshmi-logo.svg" alt="Vijayalakshmi Group Of Companies"
+										class="site-brand-logo">
 								</a>
-							</div> 
+							</div>
 							<!-- logo -->
-							<p class="text-white lh-sm mb-35">Top-rated <span class="opacity-50">business <br> consultancy for your success</span></p>
+							<p class="text-white lh-sm mb-35">Top-rated <span class="opacity-50">business <br>
+									consultancy for your success</span></p>
 							<ul class="style-none d-flex align-items-center social-icon">
 								<li><a href="#"><i class="bi bi-facebook"></i></a></li>
 								<li><a href="#"><i class="bi bi-dribbble"></i></a></li>
@@ -1112,15 +1296,18 @@
 						</div>
 						<div class="col-lg-7 order-lg-first mb-15">
 							<a href="index-2.html" class="d-none d-lg-inline-block mb-25">
-								<img src="images/logo/vijayalakshmi-logo.svg" alt="Vijayalakshmi Group Of Companies" class="site-brand-logo">
+								<img src="images/logo/vijayalakshmi-logo.svg" alt="Vijayalakshmi Group Of Companies"
+									class="site-brand-logo">
 							</a>
 							<div class="d-xl-flex align-items-center">
-								<ul class="style-none bottom-nav d-flex flex-wrap justify-content-center justify-content-lg-start order-lg-last">
+								<ul
+									class="style-none bottom-nav d-flex flex-wrap justify-content-center justify-content-lg-start order-lg-last">
 									<li><a href="">Privacy & Terms</a></li>
 									<li><a href="">Cookies</a></li>
 									<li><a href="">Contact Us</a></li>
 								</ul>
-								<div class="copyright me-xl-4 lg-mt-10 order-lg-first">Copyright @2023 Vijayalakshmi Group Of Companies.</div>
+								<div class="copyright me-xl-4 lg-mt-10 order-lg-first">Copyright @2023 Vijayalakshmi
+									Group Of Companies.</div>
 							</div>
 						</div>
 					</div>
@@ -1131,18 +1318,20 @@
 
 
 		<!-- Modal -->
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
-                <div class="container">
-                    <div class="user-data-form modal-content">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-fullscreen modal-dialog-centered">
+				<div class="container">
+					<div class="user-data-form modal-content">
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						<div class="form-wrapper m-auto">
 							<ul class="nav nav-tabs border-0 w-100" role="tablist">
 								<li class="nav-item" role="presentation">
-									<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fc1" role="tab">Login</button>
+									<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fc1"
+										role="tab">Login</button>
 								</li>
 								<li class="nav-item" role="presentation">
-									<button class="nav-link" data-bs-toggle="tab" data-bs-target="#fc2" role="tab">Signup</button>
+									<button class="nav-link" data-bs-toggle="tab" data-bs-target="#fc2"
+										role="tab">Signup</button>
 								</li>
 							</ul>
 							<div class="tab-content mt-30">
@@ -1162,12 +1351,15 @@
 											<div class="col-12">
 												<div class="input-group-meta position-relative mb-20">
 													<label>Password*</label>
-													<input type="password" placeholder="Enter Password" class="pass_log_id">
-													<span class="placeholder_icon"><span class="passVicon"><img src="images/icon/icon_13.svg" alt=""></span></span>
+													<input type="password" placeholder="Enter Password"
+														class="pass_log_id">
+													<span class="placeholder_icon"><span class="passVicon"><img
+																src="images/icon/icon_13.svg" alt=""></span></span>
 												</div>
 											</div>
 											<div class="col-12">
-												<div class="agreement-checkbox d-flex justify-content-between align-items-center">
+												<div
+													class="agreement-checkbox d-flex justify-content-between align-items-center">
 													<div>
 														<input type="checkbox" id="remember">
 														<label for="remember">Keep me logged in</label>
@@ -1204,15 +1396,20 @@
 											<div class="col-12">
 												<div class="input-group-meta position-relative mb-20">
 													<label>Password*</label>
-													<input type="password" placeholder="Enter Password" class="pass_log_id">
-													<span class="placeholder_icon"><span class="passVicon"><img src="images/icon/icon_13.svg" alt=""></span></span>
+													<input type="password" placeholder="Enter Password"
+														class="pass_log_id">
+													<span class="placeholder_icon"><span class="passVicon"><img
+																src="images/icon/icon_13.svg" alt=""></span></span>
 												</div>
 											</div>
 											<div class="col-12">
-												<div class="agreement-checkbox d-flex justify-content-between align-items-center">
+												<div
+													class="agreement-checkbox d-flex justify-content-between align-items-center">
 													<div>
 														<input type="checkbox" id="remember2">
-														<label for="remember2">By hitting the "Register" button, you agree to the <a href="#">Terms conditions</a> & <a href="#">Privacy Policy</a></label>
+														<label for="remember2">By hitting the "Register" button, you
+															agree to the <a href="#">Terms conditions</a> & <a
+																href="#">Privacy Policy</a></label>
 													</div>
 												</div> <!-- /.agreement-checkbox -->
 											</div>
@@ -1224,7 +1421,7 @@
 								</div>
 								<!-- /.tab-pane -->
 							</div>
-							
+
 							<div class="d-flex align-items-center mt-30 mb-10">
 								<div class="line"></div>
 								<span class="pe-3 ps-3 fs-6">OR</span>
@@ -1232,13 +1429,15 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-6">
-									<a href="#" class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+									<a href="#"
+										class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
 										<img src="images/icon/google.png" alt="">
 										<span class="ps-3">Signup with Google</span>
 									</a>
 								</div>
 								<div class="col-sm-6">
-									<a href="#" class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+									<a href="#"
+										class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
 										<img src="images/icon/facebook.png" alt="">
 										<span class="ps-3">Signup with Facebook</span>
 									</a>
@@ -1246,11 +1445,11 @@
 							</div>
 						</div>
 						<!-- /.form-wrapper -->
-                    </div>
-                    <!-- /.user-data-form -->
-                </div>
-            </div>
-        </div>
+					</div>
+					<!-- /.user-data-form -->
+				</div>
+			</div>
+		</div>
 
 
 		<button class="scroll-top">
@@ -1278,7 +1477,7 @@
 		<!-- js Counter -->
 		<script src="vendor/jquery.counterup.min.js"></script>
 		<script src="vendor/jquery.waypoints.min.js"></script>
-		
+
 		<!-- validator js -->
 		<script src="vendor/validator.js"></script>
 
