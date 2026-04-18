@@ -1,14 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
-	<meta name="description" content="Vijayalakshmi Group Of Companies website.">
+	<meta name="keywords" content="Vijayalakshmi Group, Awards, Recognition, Achievements, Excellence">
+	<meta name="description" content="Celebrating the milestones and industry recognition of Vijayalakshmi Group Of Companies.">
     <meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
     <meta property="og:url" content="https://creativegigstf.com">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Vijayalakshmi Group Of Companies">
+    <meta property="og:title" content="Awards & Recognition - Vijayalakshmi Group Of Companies">
 	<meta name='og:image' content='images/assets/ogg.png'>
 	<!-- For IE -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +21,7 @@
 	<meta name="msapplication-navbutton-color" content="#1A4137">
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
-	<title>Vijayalakshmi Group Of Companies</title>
+	<title>Awards & Recognition | Vijayalakshmi Group Of Companies</title>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
 	<!-- Bootstrap CSS -->
@@ -86,7 +86,7 @@
 			right: 0;
 			border-radius: inherit;
 			background: linear-gradient(135deg,
-					rgba(8, 32, 27, 0.88) 0%,
+					var(--vjs-nav-cover-color, #08201b) 0%,
 					rgba(8, 32, 27, 0.82) 50%,
 					rgba(8, 32, 27, 0.88) 100%);
 			backdrop-filter: blur(10px);
@@ -128,18 +128,27 @@
 		}
 
 		.adani-nav-fx .nav-item .nav-link {
-			padding: 6px 16px;
+			padding: 10px 22px;
 			border-radius: 999px;
-			font-size: 14px;
+			font-size: 15px;
+			font-weight: 500;
 			color: rgba(255, 255, 255, 0.85);
 			transition: all 0.35s ease;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		/* Underline Removal */
+		.adani-nav-fx .nav-item .nav-link::after {
+			display: none !important;
 		}
 
 		/* HOVER */
 		.adani-nav-fx .nav-item:hover>.nav-link,
 		.adani-nav-fx .nav-item.nav-current>.nav-link {
 			color: #dfff7c;
-			transform: translateY(-0.5px);
+			transform: translateY(-1px);
 		}
 
 		/* HOVER INDICATOR */
@@ -274,7 +283,7 @@
 						</div>
 						<!-- logo -->
 
-						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
+						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 110px;">
 							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
 								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
 								aria-label="Toggle navigation">
@@ -302,7 +311,18 @@
 									<li class="nav-item dropdown nav-current">
 										<a class="nav-link dropdown-toggle" href="#" role="button"
 											data-bs-toggle="dropdown" data-bs-auto-close="outside"
-											aria-expanded="false">Home
+											aria-expanded="false">About Us
+										</a>
+										<ul class="dropdown-menu">
+											<li><a href="about-us-v2.html" class="dropdown-item"><span>Our Group</span></a></li>
+											<li><a href="about-us-v1.html" class="dropdown-item"><span>Our Mission and Vision</span></a></li>
+											<li><a href="service-v1.html" class="dropdown-item"><span>Leadership and Awards</span></a></li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Services
 										</a>
 										<ul class="dropdown-menu">
 											<li><a href="index.html" class="dropdown-item"><span>Finance</span></a></li>
@@ -313,51 +333,6 @@
 											<li><a href="index-6.html" class="dropdown-item"><span>Marketing</span></a></li>
 											<li><a href="index-7.html" class="dropdown-item"><span>Insurance</span></a></li>
 											<li><a href="index-8.html" class="dropdown-item"><span>Insurance Two</span></a></li>
-										</ul>
-									</li>
-									<li class="nav-item dropdown mega-dropdown-sm">
-										<a class="nav-link dropdown-toggle" href="#" role="button"
-											data-bs-toggle="dropdown" data-bs-auto-close="outside"
-											aria-expanded="false">Pages
-										</a>
-										<ul class="dropdown-menu">
-											<li class="row gx-1">
-												<div class="col-lg-4">
-													<div class="menu-column">
-														<ul class="style-none mega-dropdown-list">
-															<li><a href="service-v1.html" class="dropdown-item"><span>Service v-1</span></a></li>
-															<li><a href="service-v2.html" class="dropdown-item"><span>Service v-2</span></a></li>
-															<li><a href="service-details.html" class="dropdown-item"><span>Service Details</span></a></li>
-															<li><a href="team-v1.html" class="dropdown-item"><span>Team V-1</span></a></li>
-															<li><a href="team-v2.html" class="dropdown-item"><span>Team V-2</span></a></li>
-															<li><a href="team-details.html" class="dropdown-item"><span>Team Details</span></a></li>
-														</ul>
-													</div> <!--/.menu-column -->
-												</div>
-												<div class="col-lg-4">
-													<div class="menu-column">
-														<ul class="style-none mega-dropdown-list">
-															<li><a href="about-us-v1.html" class="dropdown-item"><span>About Us V-1</span></a></li>
-															<li><a href="about-us-v2.html" class="dropdown-item"><span>About Us V-2</span></a></li>
-															<li><a href="testimonial.html" class="dropdown-item"><span>Testimonial</span></a></li>
-															<li><a href="pricing.html" class="dropdown-item"><span>Pricing</span></a></li>
-															<li><a href="faq.html" class="dropdown-item"><span>FAQ's</span></a></li>
-															<li><a href="404.html" class="dropdown-item"><span>404 Error</span></a></li>
-														</ul>
-													</div> <!--/.menu-column -->
-												</div>
-												<div class="col-lg-4">
-													<div class="menu-column">
-														<ul class="style-none mega-dropdown-list">
-															<li><a href="project-v1.html" class="dropdown-item"><span>Project V-1</span></a></li>
-															<li><a href="project-v2.html" class="dropdown-item"><span>Project V-2</span></a></li>
-															<li><a href="project-v3.html" class="dropdown-item"><span>Project V-3</span></a></li>
-															<li><a href="project-details-v1.html" class="dropdown-item"><span>Project Details V-1</span></a></li>
-															<li><a href="project-details-v2.html" class="dropdown-item"><span>Project Details V-2</span></a></li>
-														</ul>
-													</div> <!--/.menu-column -->
-												</div>
-											</li>
 										</ul>
 									</li>
 									<li class="nav-item dropdown">
@@ -386,515 +361,90 @@
 									<li class="nav-item">
 										<a class="nav-link" href="contact.html" role="button">Contact Us</a>
 									</li>
-									<li class="d-md-none ps-2 pe-2"><a href="contact.html"
-											class="btn-one w-100 mt-15 tran3s">Get in Touch</a></li>
+									<li class="nav-item dropdown d-md-none mt-10">
+										<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+											data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+											<i class="bi bi-universal-access pe-2"></i> Accessibility
+										</a>
+										<div class="dropdown-menu vjs-accessibility-panel border-0">
+											<div class="p-3">
+												<h6 class="mb-2">Adjust Settings</h6>
+												<div class="d-flex gap-2 mb-3">
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetMode('light')">Light</button>
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetMode('dark')">Dark</button>
+												</div>
+												<div class="d-flex gap-2">
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetFontSize('small')">-A</button>
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetFontSize('large')">+A</button>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="nav-item dropdown d-md-none">
+										<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+											data-bs-toggle="dropdown" aria-expanded="false">
+											<span class="vjs-lang-label">ENG</span>
+										</a>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a></li>
+											<li><a class="dropdown-item" href="javascript:translateTo('en')">English</a></li>
+											<li><a class="dropdown-item" href="javascript:translateTo('hi')">Hindi</a></li>
+										</ul>
+									</li>
+									
 								</ul>
 							</div>
 						</nav>
 
-						<div class="right-widget d-none d-lg-flex" style="flex: 0 0 auto;">
-							<ul class="d-flex align-items-center style-none">
-								<li><a href="contact.html" class="btn-one tran3s">Get in Touch</a></li>
-							</ul>
-						</div> <!--/.right-widget-->
+						<div class="right-widget d-none d-lg-flex align-items-center">
+							<!-- Accessibility Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+									<i class="bi bi-universal-access fs-5 text-white"></i>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+								</button>
+								<div class="dropdown-menu dropdown-menu-end vjs-accessibility-panel">
+									<h5>Accessibility Adjustments</h5>
+									<p>Choose the right accessibility profile for you</p>
+									<div class="vjs-divider"></div>
+									<div class="vjs-adjust-grid">
+										<button class="vjs-adjust-btn" onclick="vjsSetMode('light')">Light Mode</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetMode('dark')">Dark Mode</button>
+									</div>
+									<div class="vjs-divider"></div>
+									<div class="vjs-font-grid">
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('small')">-A</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('normal')">A</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('large')">+A</button>
+									</div>
+									<div class="vjs-divider"></div>
+									<div class="text-center">
+										<button class="vjs-reset-btn" onclick="vjsResetSettings()">Reset Settings</button>
+									</div>
+								</div>
+							</div>
+							<!-- Language Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end">
+									<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a></li>
+									<li><a class="dropdown-item" href="javascript:translateTo('en')">English</a></li>
+									<li><a class="dropdown-item" href="javascript:translateTo('hi')">Hindi</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div> <!--/.top-header-->
 			</div> <!-- /.inner-content -->
 		</header>
-		<!-- /.theme-main-menu -->
-
-
-
-		<!-- 
-		=============================================
-			Inner Banner
-		============================================== 
-		-->
-		<div class="inner-banner-one pt-225 lg-pt-200 md-pt-150 pb-100 md-pb-70 position-relative" style="background-image: url(images/media/img_32.jpg);">
-			<div class="container position-relative">
-				<div class="row align-items-center">
-					<div class="col-lg-6">
-						<h1 class="hero-heading d-inline-block position-relative me-xxl-4 me-lg-5">Our offerings & Services <img src="images/shape/shape_26.svg" alt=""></h1>
-					</div>
-                    <div class="col-xl-4 col-lg-5 ms-auto">
-                        <p class="text-white text-lg mb-70 lg-mb-40">Offering solutions & services to address a spectrum of financial issues</p>
-                        <ul class="style-none d-inline-flex pager">
-                            <li><a href="#">Home</a></li>
-                            <li>/</li>
-                            <li>Services</li>
-                        </ul>
-                    </div>
-				</div>
-			</div>
-		</div>
-		<!-- /.inner-banner-one -->
-
-		
-
-		<!--
-		=====================================================
-			Text Feature One
-		=====================================================
-		-->
-		<div class="text-feature-one mt-150 lg-mt-80">
-			<div class="container">
-				<div class="row">
-                    <div class="col-lg-5 wow fadeInLeft">
-                        <div class="title-one">
-                            <h2>15k+ clients base & growing.</h2>
-                        </div>
-                        <!-- /.title-one -->
-                        <p class="text-lg mt-45 lg-mt-30 mb-60 lg-mb-30">Your success is our mission. As business advisors, we offer expert guidance, unlocking your potential for growth and profitability</p>
-                        <a href="contact.html" class="btn-three icon-link mt-15 md-mb-60">
-                            <span>Request a Callback</span>
-                            <img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img icon ms-1">
-                        </a>
-                    </div>
-                    <div class="col-lg-6 ms-auto">
-                        <div class="row">
-                            <div class="col-sm-6 d-flex wow fadeInUp">
-                                <div class="card-style-twelve mb-40 lg-mb-20">
-                                    <div class="icon tran3s d-flex align-items-center justify-content-center rounded-circle"><img src="images/lazy.svg" data-src="images/icon/icon_55.svg" alt="" class="lazy-img"></div>
-                                    <h4 class="fw-bold mt-20 mb-15">Expert Advisor</h4>
-                                    <p>Elit esse cillum dolore eu fugiat nulla pariatur</p>
-                                </div>
-                                <!-- /.card-style-twelve -->
-                            </div>
-                            <div class="col-sm-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="card-style-twelve mb-40 lg-mb-20">
-                                    <div class="icon tran3s d-flex align-items-center justify-content-center rounded-circle"><img src="images/lazy.svg" data-src="images/icon/icon_56.svg" alt="" class="lazy-img"></div>
-                                    <h4 class="fw-bold mt-20 mb-15">Effective Support</h4>
-                                    <p>quis nostrud exerct ullamo ea nisi ut aliqui com dolor</p>
-                                </div>
-                                <!-- /.card-style-twelve -->
-                            </div>
-                            <div class="col-sm-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="card-style-twelve mb-40 lg-mb-20">
-                                    <div class="icon tran3s d-flex align-items-center justify-content-center rounded-circle"><img src="images/lazy.svg" data-src="images/icon/icon_57.svg" alt="" class="lazy-img"></div>
-                                    <h4 class="fw-bold mt-20 mb-15">Low Fees</h4>
-                                    <p>cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                                </div>
-                                <!-- /.card-style-twelve -->
-                            </div>
-                            <div class="col-sm-6 d-flex wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="card-style-twelve mb-40 lg-mb-20">
-                                    <div class="icon tran3s d-flex align-items-center justify-content-center rounded-circle"><img src="images/lazy.svg" data-src="images/icon/icon_58.svg" alt="" class="lazy-img"></div>
-                                    <h4 class="fw-bold mt-20 mb-15">Loan Facility</h4>
-                                    <p>quis nostrud exerct ullamo ea nisi ut aliqui com dolor</p>
-                                </div>
-                                <!-- /.card-style-twelve -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-			</div>
-		</div>
-		<!-- /.text-feature-one -->
-
-		
-
-		<!-- 
-		=============================================
-			BLock Feature One
-		============================================== 
-		-->
-		<div class="block-feature-one position-relative light-bg-deep mt-100 lg-mt-60 pt-120 lg-pt-60 pb-130 lg-pb-60">
-			<div class="container">
-				<div class="position-relative">
-					<div class="title-one text-center mb-40 lg-mb-10">
-                        <h2>Our Services</h2>
-                        <p class="text-lg mt-20">Inciddnt ut labore et dolor magna aliu. ad mim venam, quis nostru </p>
-                    </div>
-                    <!-- /.title-one -->
-					<div class="row">
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
-							<div class="card-style-two vstack tran3s w-100 mt-30">
-								<img src="images/lazy.svg" data-src="images/icon/icon_06.svg" alt="" class="lazy-img icon me-auto">
-								<h4 class="fw-bold mt-30 mb-25">Expense Report</h4>
-								<p class="mb-20">Maximize convenience by paying for ads, subscriptions, and inventory with Mastercard®.</p>
-								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-two -->
-						</div>
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
-							<div class="card-style-two vstack tran3s w-100 mt-30">
-								<img src="images/lazy.svg" data-src="images/icon/icon_07.svg" alt="" class="lazy-img icon me-auto">
-								<h4 class="fw-bold mt-30 mb-25">Tax Preparation</h4>
-								<p class="mb-20">Use receiving accounts in a growing number of currencies and get paid like a local.</p>
-								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-two -->
-						</div>
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
-							<div class="card-style-two vstack tran3s w-100 mt-30">
-								<img src="images/lazy.svg" data-src="images/icon/icon_08.svg" alt="" class="lazy-img icon me-auto">
-								<h4 class="fw-bold mt-30 mb-25">Book keeping</h4>
-								<p class="mb-20">Use receiving accounts in a growing number of currencies and get paid like a local.</p>
-								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-two -->
-						</div>
-                        <div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
-							<div class="card-style-two vstack tran3s w-100 mt-30">
-								<img src="images/lazy.svg" data-src="images/icon/icon_59.svg" alt="" class="lazy-img icon me-auto">
-								<h4 class="fw-bold mt-30 mb-25">Banking</h4>
-								<p class="mb-20">Maximize convenience by paying for ads, subscriptions, and inventory with Mastercard®.</p>
-								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-two -->
-						</div>
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
-							<div class="card-style-two vstack tran3s w-100 mt-30">
-								<img src="images/lazy.svg" data-src="images/icon/icon_60.svg" alt="" class="lazy-img icon me-auto">
-								<h4 class="fw-bold mt-30 mb-25">Loan Facility</h4>
-								<p class="mb-20">Use receiving accounts in a growing number of currencies and get paid like a local.</p>
-								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-two -->
-						</div>
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
-							<div class="card-style-two vstack tran3s w-100 mt-30">
-								<img src="images/lazy.svg" data-src="images/icon/icon_61.svg" alt="" class="lazy-img icon me-auto">
-								<h4 class="fw-bold mt-30 mb-25">Consultation</h4>
-								<p class="mb-20">Use receiving accounts in a growing number of currencies and get paid like a local.</p>
-								<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-two -->
-						</div>
-					</div>
-				</div>
-			</div>
-            <img src="images/lazy.svg" data-src="images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_01">
-            <img src="images/lazy.svg" data-src="images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_02">
-		</div>
-		<!-- /.block-feature-one -->
-
-
-
-		<!-- 
-		=============================================
-			Feedback Section One
-		============================================== 
-		-->
-		<div class="feedback-section-one pt-120 pb-120">
-			<div class="container">
-				<div class="position-relative">
-					<div class="title-one sm-mb-40">
-						<h2>Words from <br> clients.</h2>
-					</div>
-					<!-- /.title-one -->
-					<div class="feedback-slider-one">
-						<div class="item">
-							<div class="feedback-block-one">
-								<div class="row align-items-end">
-									<div class="col-md-7 ms-auto order-md-last">
-										<blockquote>"Efficient problem-solving, insightful market analysis, and actionable plans made the consulting experience invaluable to our business's success."</blockquote>
-										<div class="d-flex align-items-center">
-											<img src="images/media/img_08.jpg" alt="" class="avatar rounded-circle">
-											<div class="ps-4">
-												<div class="name fw-bold text-dark">James Bond.</div>
-												<p class="fs-6 m0">CEO & Head of Sky Tech Inc.</p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 order-md-first">
-										<div class="d-flex align-items-center justify-content-between sm-mt-40">
-											<div class="line"></div>
-											<div class="count fw-500"><span class="text-dark">01</span>  /  03</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="feedback-block-one">
-								<div class="row align-items-end">
-									<div class="col-md-7 ms-auto order-md-last">
-										<blockquote>"Lorem ipsum, dolor sit amet consectetur elit. Asperiores unde inventore tenetur. Accusantium tenetur id cupiditate quibusdam."</blockquote>
-										<div class="d-flex align-items-center">
-											<img src="images/media/img_08.jpg" alt="" class="avatar rounded-circle">
-											<div class="ps-4">
-												<div class="name fw-bold text-dark">Rashed Kabir.</div>
-												<p class="fs-6 m0">CEO & Head of Sky Tech Inc.</p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 order-md-first">
-										<div class="d-flex align-items-center justify-content-between sm-mt-40">
-											<div class="line"></div>
-											<div class="count fw-500"><span class="text-dark">02</span>  /  03</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="feedback-block-one">
-								<div class="row align-items-end">
-									<div class="col-md-7 ms-auto order-md-last">
-										<blockquote>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga sed nobis eveniet nisi provident aut excepturi reiciendis officiis quo."</blockquote>
-										<div class="d-flex align-items-center">
-											<img src="images/media/img_08.jpg" alt="" class="avatar rounded-circle">
-											<div class="ps-4">
-												<div class="name fw-bold text-dark">Zubayer Hasan.</div>
-												<p class="fs-6 m0">CEO & Head of Sky Tech Inc.</p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 order-md-first">
-										<div class="d-flex align-items-center justify-content-between sm-mt-40">
-											<div class="line"></div>
-											<div class="count fw-500"><span class="text-dark">03</span>  /  03</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="icon d-flex align-items-center justify-content-center rounded-circle"><img src="images/lazy.svg" data-src="images/icon/icon_12.svg" alt="" class="lazy-img"></div>
-				</div>
-			</div>
-		</div>
-		<!-- /.feedback-section-one -->
-
-
-        <!--
-		=====================================================
-			Partner Logo
-		=====================================================
-		-->
-        <div class="partner-logo-one pt-80 lg-pt-50 pb-80 lg-pb-50">
-            <div class="container">
-                <div class="partner-slider-one">
-                    <div class="item">
-                        <div class="logo d-flex align-items-center justify-content-center"><img src="images/logo/media_03.png" alt=""></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo d-flex align-items-center justify-content-center"><img src="images/logo/media_04.png" alt=""></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo d-flex align-items-center justify-content-center"><img src="images/logo/media_05.png" alt=""></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo d-flex align-items-center justify-content-center"><img src="images/logo/media_01.png" alt=""></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo d-flex align-items-center justify-content-center"><img src="images/logo/media_02.png" alt=""></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo d-flex align-items-center justify-content-center"><img src="images/logo/media_04.png" alt=""></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo d-flex align-items-center justify-content-center"><img src="images/logo/media_05.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.partner-logo-one -->
-
-
-
-		<!--
-		=====================================================
-			Fancy Banner Five
-		=====================================================
-		-->
-		<div class="fancy-banner-five no-bg text-center position-relative mt-30 lg-mt-10">
-			<div class="container">
-				<div class="bg-wrapper pt-95 lg-pt-50 pb-95 lg-pb-50">
-                    <h2 class="text-white fw-bold mb-50 lg-mb-30">Explore Our Business Division here.</h2>
-                    <a class="fancybox rounded-circle video-icon tran5s text-center d-flex align-items-center justify-content-center m-auto" data-fancybox="" href="https://www.youtube.com/embed/aXFSJTjVjw0">
-                        <img src="images/lazy.svg" data-src="images/assets/sticker_02.png" alt="" class="lazy-img">
-                    </a>
-                </div>
-			</div>
-		</div>
-		<!-- /.fancy-banner-five -->
-		
-
-		<!--
-		=====================================================
-			FAQ Section One
-		=====================================================
-		-->
-		<div class="faq-section-one mt-150 lg-mt-80 mb-150 lg-mb-80">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-5 wow fadeInLeft">
-						<div class="title-one mb-40 lg-mb-20">
-							<h2>Questions & Answers</h2>
-						</div>
-						<!-- /.title-one -->
-						<p class="text-lg mb-40 lg-mb-20">Don’t find the answer? We can help</p>
-						<a href="contact.html" class="btn-four">Contact us</a>
-					</div>
-
-					<div class="col-lg-7">
-						<div class="accordion accordion-style-one mt-15 md-mt-50" id="accordionOne">
-							<div class="accordion-item">
-								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-										How does the free trial work?
-									</button>
-							  	</h2>
-							  	<div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
-									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
-									</div>
-							  	</div>
-							</div>
-							<div class="accordion-item">
-								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-										How do you find different criteria in your process?
-									</button>
-								</h2>
-								<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
-									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
-									</div>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<h2 class="accordion-header">
-									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-										What do you look for in a founding team?
-									</button>
-								</h2>
-								<div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionOne">
-									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
-									</div>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-										Do you recommend Pay as you go or Pre pay?
-									</button>
-								</h2>
-								<div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
-									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
-									</div>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-										What do I get for $0 with my plan?
-									</button>
-								</h2>
-								<div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
-									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /.faq-section-one -->
-
-
-		<!--
-		=====================================================
-			Fancy Banner Three
-		=====================================================
-		-->
-		<div class="fancy-banner-three position-relative wow fadeInUp">
-			<div class="container">
-				<div class="row align-content-center">
-					<div class="col-lg-8 col-md-9">
-						<div class="title-one mb-20 lg-mb-10">
-							<h2 class="text-white">Want to Chat? Feel free to Contact our Team.</h2>
-						</div>
-						<!-- /.title-one -->
-						<p class="text-lg m0 text-white opacity-75">If you have anything in mind just contact us with our expert.</p>
-					</div>
-					<div class="col-lg-4 col-md-3">
-						<a href="contact.html" class="quote-btn color-two tran5s rounded-circle d-flex align-items-center justify-content-center ms-auto">
-							<img src="images/lazy.svg" data-src="images/icon/icon_30.svg" alt="" class="lazy-img">
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /.fancy-banner-three -->
-
-
-
-
-		<!--
-		=====================================================
-			Newsletter Banner
-		=====================================================
-		-->
-        <div class="newsletter-banner">
-            <div class="container">
-                <div class="main-wrapper bottom-border">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <h2 class="fw-bold">Our Newsletter.</h2>
-                            <p class="text-lg md-pb-20">Get instant news by subscribe to our daily newsletter</p>
-                        </div>
-                        <div class="col-lg-6">
-                            <form action="#" class="me-auto ms-auto me-lg-0">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <input type="email" placeholder="Enter your email address">
-                                    <button class="rounded-circle tran3s"><i class="bi bi-arrow-right"></i></button>
-                                </div>
-                                <p class="text-center text-lg-end m0 pt-5">Already subscribed? <a href="#" class="text-dark fw-500">Unsubscribe</a></p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.main-wrapper -->
-            </div>
-        </div>
-
-
-		<!--
-		=====================================================
-			Footer Three
-		=====================================================
-		-->
-		<div class="footer-three">
-			<div class="container">
-				<div class="inner-wrapper position-relative">
-					<div class="row justify-content-between">
-						<div class="col-lg-4 footer-intro mb-30">
-							<div class="round-bg color-two rounded-circle text-center d-flex flex-column align-items-center justify-content-center">
-								<div class="logo mb-15">
-									<a href="index-2.html">
-										<img src="images/logo/vijayalakshmi-logo.svg" alt="Vijayalakshmi Group Of Companies" class="site-brand-logo">
-									</a>
-								</div> 
-								<!-- logo -->
-								<p class="lh-sm mb-45 lg-mb-30">2190 Urban Terrace, Mirpur,  <br>Licensed in 50 states.</p>
-								<p class="m0"><a href="#">+757 699-4478</a></p>
-							</div>
-						</div>
-						<div class="col-lg-2 col-sm-4 mb-20">
-							<h5 class="footer-title">Links</h5>
-							<ul class="footer-nav-link style-none">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="pricing.html">Pricing Plan</a></li>
-								<li><a href="about-us-v1.html">About us</a></li>
-								<li><a href="service-v1.html">Our services</a></li>
-								<li><a href="project-v2.html">Portfolio</a></li>
-								<li><a href="service-v2.html">Features</a></li>
-							</ul>
-						</div>
-						<div class="col-lg-2 col-sm-4 mb-20">
-							<h5 class="footer-title">Company</h5>
-							<ul class="footer-nav-link style-none">
 								<li><a href="about-us-v2.html">About us</a></li>
 								<li><a href="blog-v2.html">Blogs</a></li>
-								<li><a href="faq.html">FAQ’s</a></li>
+								<li><a href="faq.html">FAQ�s</a></li>
 								<li><a href="contact.html">Contact</a></li>
 							</ul>
 						</div>
@@ -1096,6 +646,13 @@
 		<!-- Navbar Hover Animation -->
 		<script src="js/navbar-hover.js"></script>
 	</div> <!-- /.main-page-wrapper -->
+	<script src="js/site-utils.js"></script>
+	<div id="google_translate_element" style="display:none;"></div>
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
+
+
+
+

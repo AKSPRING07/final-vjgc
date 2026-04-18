@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -86,7 +86,7 @@
 			right: 0;
 			border-radius: inherit;
 			background: linear-gradient(135deg,
-					rgba(8, 32, 27, 0.88) 0%,
+					var(--vjs-nav-cover-color, #08201b) 0%,
 					rgba(8, 32, 27, 0.82) 50%,
 					rgba(8, 32, 27, 0.88) 100%);
 			backdrop-filter: blur(10px);
@@ -128,18 +128,27 @@
 		}
 
 		.adani-nav-fx .nav-item .nav-link {
-			padding: 6px 16px;
+			padding: 10px 22px;
 			border-radius: 999px;
-			font-size: 14px;
+			font-size: 15px;
+			font-weight: 500;
 			color: rgba(255, 255, 255, 0.85);
 			transition: all 0.35s ease;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		/* Underline Removal */
+		.adani-nav-fx .nav-item .nav-link::after {
+			display: none !important;
 		}
 
 		/* HOVER */
 		.adani-nav-fx .nav-item:hover>.nav-link,
 		.adani-nav-fx .nav-item.nav-current>.nav-link {
 			color: #dfff7c;
-			transform: translateY(-0.5px);
+			transform: translateY(-1px);
 		}
 
 		/* HOVER INDICATOR */
@@ -275,7 +284,7 @@
 						</div>
 						<!-- logo -->
 
-						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
+						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 110px;">
 							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
 								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
 								aria-label="Toggle navigation">
@@ -387,17 +396,83 @@
 									<li class="nav-item">
 										<a class="nav-link" href="contact.html" role="button">Contact Us</a>
 									</li>
-									<li class="d-md-none ps-2 pe-2"><a href="contact.html"
-											class="btn-one w-100 mt-15 tran3s">Get in Touch</a></li>
+									<li class="nav-item dropdown d-md-none mt-10">
+										<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+											data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+											<i class="bi bi-universal-access pe-2"></i> Accessibility
+										</a>
+										<div class="dropdown-menu vjs-accessibility-panel border-0">
+											<div class="p-3">
+												<h6 class="mb-2">Adjust Settings</h6>
+												<div class="d-flex gap-2 mb-3">
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetMode('light')">Light</button>
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetMode('dark')">Dark</button>
+												</div>
+												<div class="d-flex gap-2">
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetFontSize('small')">-A</button>
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetFontSize('large')">+A</button>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="nav-item dropdown d-md-none">
+										<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+											data-bs-toggle="dropdown" aria-expanded="false">
+											<span class="vjs-lang-label">ENG</span>
+										</a>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a></li>
+											<li><a class="dropdown-item" href="javascript:translateTo('en')">English</a></li>
+											<li><a class="dropdown-item" href="javascript:translateTo('hi')">Hindi</a></li>
+										</ul>
+									</li>
+									
 								</ul>
 							</div>
 						</nav>
 
-						<div class="right-widget d-none d-lg-flex" style="flex: 0 0 auto;">
-							<ul class="d-flex align-items-center style-none">
-								<li><a href="contact.html" class="btn-one tran3s">Get in Touch</a></li>
-							</ul>
-						</div> <!--/.right-widget-->
+						<div class="right-widget d-none d-lg-flex align-items-center">
+							<!-- Accessibility Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+									<i class="bi bi-universal-access fs-5 text-white"></i>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+								</button>
+								<div class="dropdown-menu dropdown-menu-end vjs-accessibility-panel">
+									<h5>Accessibility Adjustments</h5>
+									<p>Choose the right accessibility profile for you</p>
+									<div class="vjs-divider"></div>
+									<div class="vjs-adjust-grid">
+										<button class="vjs-adjust-btn" onclick="vjsSetMode('light')">Light Mode</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetMode('dark')">Dark Mode</button>
+									</div>
+									<div class="vjs-divider"></div>
+									<div class="vjs-font-grid">
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('small')">-A</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('normal')">A</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('large')">+A</button>
+									</div>
+									<div class="vjs-divider"></div>
+									<div class="text-center">
+										<button class="vjs-reset-btn" onclick="vjsResetSettings()">Reset Settings</button>
+									</div>
+								</div>
+							</div>
+							<!-- Language Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end">
+									<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a></li>
+									<li><a class="dropdown-item" href="javascript:translateTo('en')">English</a></li>
+									<li><a class="dropdown-item" href="javascript:translateTo('hi')">Hindi</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div> <!--/.top-header-->
 			</div> <!-- /.inner-content -->
@@ -658,7 +733,7 @@
 							</div>
 							<div class="item">
 								<div class="feedback-block-five">
-									<blockquote>"Quick solutions coupled with extraordinary performanceâ€”a recommendation."</blockquote>
+									<blockquote>"Quick solutions coupled with extraordinary performance—a recommendation."</blockquote>
 									<h6 class="name fw-bold">Zubayer Hasan.</h6>
 									<div class="text-md text-dark">CEO & Head of Sky Tech Inc.</div>
 								</div>
@@ -686,7 +761,7 @@
 							<h2>Our Team</h2>
 						</div>
 						<!-- /.title-four -->
-						<p class="text-xl text-dark mb-30 lg-mb-10">Weâ€™ve verity package for our client based on your business</p>
+						<p class="text-xl text-dark mb-30 lg-mb-10">We’ve verity package for our client based on your business</p>
 
 						<div class="row">
 							<div class="col-lg-3 col-sm-6 wow fadeInUp">
@@ -772,7 +847,7 @@
 								<article class="blog-meta-three pt-60 lg-pt-40 pb-70 lg-pb-40 h-100 wow fadeInUp">
 									<div class="post-data h-100 w-100 d-inline-flex flex-column pe-xl-4">
 										<div><a href="blog-details.html" class="tag fw-500 text-uppercase">DESIGN</a></div>
-										<a href="blog-details.html" class="d-block"><h4 class="tran3s blog-title">Designerâ€™s Checklist for Every UX/UI Project.</h4></a>
+										<a href="blog-details.html" class="d-block"><h4 class="tran3s blog-title">Designer’s Checklist for Every UX/UI Project.</h4></a>
 										<div class="post-info mb-45 lg-mb-30"><span class="fw-500 text-dark">Featured -</span> 18 Jul 2023</div>
 										<div class="d-flex justify-content-between align-items-center mt-auto">
 											<img src="images/lazy.svg" data-src="images/logo/media_01.png" alt="" class="lazy-img">
@@ -813,7 +888,7 @@
 						<div class="col-xl-11 m-auto">
 							<h2 class="text-center text-white font-magnita">Work Inquiry? Send us message</h2>
 							<div class="btn-group d-block d-lg-flex justify-content-between align-items-center">
-								<h3>Letâ€™s <span>Discuss & Start.</span></h3>
+								<h3>Let’s <span>Discuss & Start.</span></h3>
 								<a href="contact.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-right"></i></a>
 							</div>
 							<div class="bottom-footer">
@@ -1013,6 +1088,13 @@
 		<!-- Navbar Hover Animation -->
 		<script src="js/navbar-hover.js"></script>
 	</div> <!-- /.main-page-wrapper -->
+	<script src="js/site-utils.js"></script>
+	<div id="google_translate_element" style="display:none;"></div>
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
+
+
+
+

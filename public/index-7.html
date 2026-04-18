@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -86,7 +86,7 @@
 			right: 0;
 			border-radius: inherit;
 			background: linear-gradient(135deg,
-					rgba(8, 32, 27, 0.88) 0%,
+					var(--vjs-nav-cover-color, #08201b) 0%,
 					rgba(8, 32, 27, 0.82) 50%,
 					rgba(8, 32, 27, 0.88) 100%);
 			backdrop-filter: blur(10px);
@@ -128,18 +128,27 @@
 		}
 
 		.adani-nav-fx .nav-item .nav-link {
-			padding: 6px 16px;
+			padding: 10px 22px;
 			border-radius: 999px;
-			font-size: 14px;
+			font-size: 15px;
+			font-weight: 500;
 			color: rgba(255, 255, 255, 0.85);
 			transition: all 0.35s ease;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		/* Underline Removal */
+		.adani-nav-fx .nav-item .nav-link::after {
+			display: none !important;
 		}
 
 		/* HOVER */
 		.adani-nav-fx .nav-item:hover>.nav-link,
 		.adani-nav-fx .nav-item.nav-current>.nav-link {
 			color: #dfff7c;
-			transform: translateY(-0.5px);
+			transform: translateY(-1px);
 		}
 
 		/* HOVER INDICATOR */
@@ -275,7 +284,7 @@
 						</div>
 						<!-- logo -->
 
-						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
+						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 110px;">
 							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
 								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
 								aria-label="Toggle navigation">
@@ -387,17 +396,83 @@
 									<li class="nav-item">
 										<a class="nav-link" href="contact.html" role="button">Contact Us</a>
 									</li>
-									<li class="d-md-none ps-2 pe-2"><a href="contact.html"
-											class="btn-one w-100 mt-15 tran3s">Get in Touch</a></li>
+									<li class="nav-item dropdown d-md-none mt-10">
+										<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+											data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+											<i class="bi bi-universal-access pe-2"></i> Accessibility
+										</a>
+										<div class="dropdown-menu vjs-accessibility-panel border-0">
+											<div class="p-3">
+												<h6 class="mb-2">Adjust Settings</h6>
+												<div class="d-flex gap-2 mb-3">
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetMode('light')">Light</button>
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetMode('dark')">Dark</button>
+												</div>
+												<div class="d-flex gap-2">
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetFontSize('small')">-A</button>
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetFontSize('large')">+A</button>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="nav-item dropdown d-md-none">
+										<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+											data-bs-toggle="dropdown" aria-expanded="false">
+											<span class="vjs-lang-label">ENG</span>
+										</a>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a></li>
+											<li><a class="dropdown-item" href="javascript:translateTo('en')">English</a></li>
+											<li><a class="dropdown-item" href="javascript:translateTo('hi')">Hindi</a></li>
+										</ul>
+									</li>
+									
 								</ul>
 							</div>
 						</nav>
 
-						<div class="right-widget d-none d-lg-flex" style="flex: 0 0 auto;">
-							<ul class="d-flex align-items-center style-none">
-								<li><a href="contact.html" class="btn-one tran3s">Get in Touch</a></li>
-							</ul>
-						</div> <!--/.right-widget-->
+						<div class="right-widget d-none d-lg-flex align-items-center">
+							<!-- Accessibility Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+									<i class="bi bi-universal-access fs-5 text-white"></i>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+								</button>
+								<div class="dropdown-menu dropdown-menu-end vjs-accessibility-panel">
+									<h5>Accessibility Adjustments</h5>
+									<p>Choose the right accessibility profile for you</p>
+									<div class="vjs-divider"></div>
+									<div class="vjs-adjust-grid">
+										<button class="vjs-adjust-btn" onclick="vjsSetMode('light')">Light Mode</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetMode('dark')">Dark Mode</button>
+									</div>
+									<div class="vjs-divider"></div>
+									<div class="vjs-font-grid">
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('small')">-A</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('normal')">A</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('large')">+A</button>
+									</div>
+									<div class="vjs-divider"></div>
+									<div class="text-center">
+										<button class="vjs-reset-btn" onclick="vjsResetSettings()">Reset Settings</button>
+									</div>
+								</div>
+							</div>
+							<!-- Language Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end">
+									<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a></li>
+									<li><a class="dropdown-item" href="javascript:translateTo('en')">English</a></li>
+									<li><a class="dropdown-item" href="javascript:translateTo('hi')">Hindi</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div> <!--/.top-header-->
 			</div> <!-- /.inner-content -->
@@ -421,7 +496,7 @@
                 <div class="container position-relative">
                     <div class="row align-items-end">
                         <div class="col-lg-6">
-                            <h1 class="hero-heading text-white d-inline-block position-relative wow fadeInUp">Insure lifeâ€™s Journey <span><img src="images/lazy.svg" data-src="images/shape/shape_48.svg" alt="" class="lazy-img d-inline-block"></h1>
+                            <h1 class="hero-heading text-white d-inline-block position-relative wow fadeInUp">Insure life’s Journey <span><img src="images/lazy.svg" data-src="images/shape/shape_48.svg" alt="" class="lazy-img d-inline-block"></h1>
                             <p class="text-xl text-white pt-35 lg-pt-20 xs-pt-10 wow fadeInUp" data-wow-delay="0.1s">Unlock your business's growth potential with a marketing agency's expertise.</p>
                         </div>
 						<div class="col-lg-6 ms-auto">
@@ -471,7 +546,7 @@
 									<div class="col-md-6 order-md-last">
 										<div class="pe-xxl-5 pe-xl-4 line-loop position-relative z-1">
 											<div class="main-count fw-500 color-deep mb-20"><span class="counter">83</span>%</div>
-											<p class="m0">Weâ€™ve hit the billion by initiate the insurance in time to our customer in 2024</p>
+											<p class="m0">We’ve hit the billion by initiate the insurance in time to our customer in 2024</p>
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -553,7 +628,7 @@
 									<div class="icon rounded-circle d-flex align-items-center justify-content-center"><img src="images/lazy.svg" data-src="images/icon/icon_98.svg" alt="" class="lazy-img"></div>
 									<div class="text">
 										<h4 class="fw-bold mb-25">Health Insurance</h4>
-										<p class="mb-20 pe-xxl-5 me-xxl-5">Maximize convenience by paying for ads, subscriptions, and inventory with MastercardÂ®.</p>
+										<p class="mb-20 pe-xxl-5 me-xxl-5">Maximize convenience by paying for ads, subscriptions, and inventory with Mastercard®.</p>
 										<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
 									</div>
 								</div>
@@ -564,7 +639,7 @@
 									<div class="icon rounded-circle d-flex align-items-center justify-content-center"><img src="images/lazy.svg" data-src="images/icon/icon_99.svg" alt="" class="lazy-img"></div>
 									<div class="text">
 										<h4 class="fw-bold mb-25">Family Insurance</h4>
-										<p class="mb-20 pe-xxl-5 me-xxl-5">Maximize convenience by paying for ads, subscriptions, and inventory with MastercardÂ®.</p>
+										<p class="mb-20 pe-xxl-5 me-xxl-5">Maximize convenience by paying for ads, subscriptions, and inventory with Mastercard®.</p>
 										<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
 									</div>
 								</div>
@@ -575,7 +650,7 @@
 									<div class="icon rounded-circle d-flex align-items-center justify-content-center"><img src="images/lazy.svg" data-src="images/icon/icon_100.svg" alt="" class="lazy-img"></div>
 									<div class="text">
 										<h4 class="fw-bold mb-25">Travel Insurance</h4>
-										<p class="mb-20 pe-xxl-5 me-xxl-5">Maximize convenience by paying for ads, subscriptions, and inventory with MastercardÂ®.</p>
+										<p class="mb-20 pe-xxl-5 me-xxl-5">Maximize convenience by paying for ads, subscriptions, and inventory with Mastercard®.</p>
 										<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
 									</div>
 								</div>
@@ -586,7 +661,7 @@
 									<div class="icon rounded-circle d-flex align-items-center justify-content-center"><img src="images/lazy.svg" data-src="images/icon/icon_101.svg" alt="" class="lazy-img"></div>
 									<div class="text">
 										<h4 class="fw-bold mb-25">Education Insurance</h4>
-										<p class="mb-20 pe-xxl-5 me-xxl-5">Maximize convenience by paying for ads, subscriptions, and inventory with MastercardÂ®.</p>
+										<p class="mb-20 pe-xxl-5 me-xxl-5">Maximize convenience by paying for ads, subscriptions, and inventory with Mastercard®.</p>
 										<a href="service-details.html" class="arrow-btn tran3s mt-auto stretched-link"><img src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt="" class="lazy-img"></a>
 									</div>
 								</div>
@@ -712,7 +787,7 @@
 						<div class="col-lg-8 m-auto">
 							<div class="title-two text-center mb-30 sm-mb-10">
 								<div class="upper-title-two mb-10">PROCESS</div>
-								<h2 class="text-dark">Itâ€™s very easy to open an Account, See how</h2>
+								<h2 class="text-dark">It’s very easy to open an Account, See how</h2>
 							</div>
 							<!-- /.title-two -->
 						</div>
@@ -721,7 +796,7 @@
 						<div class="col-md-4 d-flex wow fadeInUp">
 							<div class="card-style-twentyOne mt-40">
 								<div class="icon rounded-circle m-auto position-relative d-flex align-items-center justify-content-center"><img src="images/lazy.svg" data-src="images/assets/ils_08.svg" alt="" class="lazy-img"> <span class="numb position-absolute d-flex align-items-center justify-content-center rounded-circle">1</span></div>
-								<p class="text-center text-lg mt-50 pe-xxl-5 ps-xxl-5">Itâ€™s very easy to open an account and start your journey in a second.</p>
+								<p class="text-center text-lg mt-50 pe-xxl-5 ps-xxl-5">It’s very easy to open an account and start your journey in a second.</p>
 							</div>
 							<!-- /.card-style-twenty -->
 						</div>
@@ -848,70 +923,85 @@
 
 
 
-		<!--
+				<!--
 		=====================================================
-			Footer Two
+			Footer Three
 		=====================================================
 		-->
-		<div class="footer-two no-bg">
+		<div class="footer-three">
 			<div class="container">
-				<div class="bg-wrapper position-relative">
-					<div class="container">
-						<div class="row justify-content-between">
-							<div class="col-xl-3 col-lg-4 footer-intro mb-30">
-								<div class="logo mb-35 md-mb-20">
-									<a href="index-2.html">
-										<img src="images/logo/vijayalakshmi-logo.svg" alt="Vijayalakshmi Group Of Companies" class="site-brand-logo">
-									</a>
-								</div> 
-								<!-- logo -->
-								<p class="lh-sm mb-40 md-mb-20">2190 Urban Terrace, Mirpur,  link Licensed in 50 states.</p>
-								<ul class="style-none d-flex align-items-center social-icon">
-									<li><a href="#"><i class="bi bi-facebook"></i></a></li>
-									<li><a href="#"><i class="bi bi-dribbble"></i></a></li>
-									<li><a href="#"><i class="bi bi-instagram"></i></a></li>
-								</ul>
-							</div>
-							<div class="col-lg-2 col-sm-4 mb-20">
-								<h5 class="footer-title">Links</h5>
-								<ul class="footer-nav-link style-none">
-									<li><a href="index.html">Home</a></li>
-									<li><a href="pricing.html">Pricing Plan</a></li>
-									<li><a href="about-us-v1.html">About us</a></li>
-									<li><a href="service-v1.html">Our services</a></li>
-									<li><a href="project-v1.html">Portfolio</a></li>
-									<li><a href="blog-v1.html">Careers</a></li>
-									<li><a href="service-v2.html">Features</a></li>
-								</ul>
-							</div>
-							<div class="col-lg-2 col-sm-4 mb-20">
-								<h5 class="footer-title">Company</h5>
-								<ul class="footer-nav-link style-none">
-									<li><a href="about-us-v2.html">About us</a></li>
-									<li><a href="blog-v2.html">Blogs</a></li>
-									<li><a href="faq.html">FAQâ€™s</a></li>
-									<li><a href="contact.html">Contact</a></li>
-								</ul>
-							</div>
-							<div class="col-xxl-2 col-lg-3 col-sm-4 mb-20">
-								<h5 class="footer-title">Support</h5>
-								<ul class="footer-nav-link style-none">
-									<li><a href="contact.html">Terms of use</a></li>
-									<li><a href="contact.html">Terms & conditions</a></li>
-									<li><a href="contact.html">Privacy</a></li>
-									<li><a href="contact.html">Cookie policy</a></li>
-									<li><a href="contact.html">Self-service</a></li>
-								</ul>
+				<div class="inner-wrapper position-relative">
+					<div class="row justify-content-between">
+						<div class="col-lg-4 footer-intro mb-30">
+							<div class="round-bg rounded-circle text-center d-flex flex-column align-items-center justify-content-center m-auto">
+								<div class="vjs-footer-brand">
+									<img src="images/logo/vijayalakshmi-mark.png" alt="Vijayalakshmi Group" class="vjs-footer-logo-icon">
+									<div class="vjs-footer-brand-name">Vijayalakshmi Group Of Companies</div>
+								</div>
+								<!-- /.vjs-footer-brand -->
+								<p class="lh-sm mb-30">Headquartered in Chennai, India<br>Delivering Excellence Across Diverse Industries.</p>
+								<p class="m0 fw-500"><a href="tel:+91 9943633443" class="text-dark">+91 9943633443</a></p>
 							</div>
 						</div>
-						<div class="copyright text-center">Copyright @2023 Vijayalakshmi Group Of Companies.</div>
+						<div class="col-lg-2 col-sm-4 mb-20">
+							<h5 class="footer-title">Links</h5>
+							<ul class="footer-nav-link style-none">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="pricing.html">Pricing Plan</a></li>
+								<li><a href="about-us-v1.html">About us</a></li>
+								<li><a href="service-v1.html">Our services</a></li>
+								<li><a href="project-v2.html">Portfolio</a></li>
+								<li><a href="service-v2.html">Features</a></li>
+							</ul>
+						</div>
+						<div class="col-lg-2 col-sm-4 mb-20">
+							<h5 class="footer-title">Company</h5>
+							<ul class="footer-nav-link style-none">
+								<li><a href="about-us-v2.html">About us</a></li>
+								<li><a href="blog-v2.html">Blogs</a></li>
+								<li><a href="faq.html">FAQâ€™s</a></li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</div>
+						<div class="col-xxl-2 col-lg-3 col-sm-4 mb-20">
+							<h5 class="footer-title">Support</h5>
+							<ul class="footer-nav-link style-none">
+								<li><a href="contact.html">Terms of use</a></li>
+								<li><a href="contact.html">Terms & conditions</a></li>
+								<li><a href="contact.html">Privacy</a></li>
+								<li><a href="contact.html">Cookie policy</a></li>
+							</ul>
+						</div>
 					</div>
-					<img src="images/lazy.svg" data-src="images/shape/shape_06.svg" alt="" class="lazy-img shapes shape_01">
-					<img src="images/lazy.svg" data-src="images/shape/shape_06.svg" alt="" class="lazy-img shapes shape_02">
-				</div>
-				<!-- /.bg-wrapper -->
+					<img src="images/lazy.svg" data-src="images/shape/shape_38.svg" alt="" class="lazy-img shapes shape_01">
+					<img src="images/lazy.svg" data-src="images/shape/shape_39.svg" alt="" class="lazy-img shapes shape_02">
+				</div> <!-- /.inner-wrapper -->
 			</div>
-		</div> <!-- /.footer-two -->
+			<div class="container">
+				<div class="bottom-footer">
+					<div class="row">
+						<div class="col-xl-4 col-lg-3 order-lg-3 mb-15">
+							<ul class="style-none d-flex align-items-center justify-content-center justify-content-lg-end social-icon">
+								<li><a href="#"><i class="bi bi-facebook"></i></a></li>
+								<li><a href="#"><i class="bi bi-dribbble"></i></a></li>
+								<li><a href="#"><i class="bi bi-instagram"></i></a></li>
+							</ul>
+						</div>
+						<div class="col-xl-4 col-lg-6 order-lg-2 mb-15">
+							<ul class="style-none bottom-nav d-flex justify-content-center order-lg-last">
+								<li><a href="contact.html">Privacy & Terms</a></li>
+								<li><a href="contact.html">Cookies</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+							</ul>
+						</div>
+						<div class="col-xl-4 col-lg-3 order-lg-1 mb-15">
+							<div class="copyright text-center text-lg-start order-lg-first">Copyright @2019 Vijayalakshmi Group Of Companies.</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.bottom-footer -->
+			</div>
+		</div> <!-- /.footer-three -->
 
 
 		<!-- Modal -->
@@ -1071,6 +1161,13 @@
 		<!-- Navbar Hover Animation -->
 		<script src="js/navbar-hover.js"></script>
 	</div> <!-- /.main-page-wrapper -->
+	<script src="js/site-utils.js"></script>
+	<div id="google_translate_element" style="display:none;"></div>
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
+
+
+
+

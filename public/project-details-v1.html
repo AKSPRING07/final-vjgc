@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -86,7 +86,7 @@
 			right: 0;
 			border-radius: inherit;
 			background: linear-gradient(135deg,
-					rgba(8, 32, 27, 0.88) 0%,
+					var(--vjs-nav-cover-color, #08201b) 0%,
 					rgba(8, 32, 27, 0.82) 50%,
 					rgba(8, 32, 27, 0.88) 100%);
 			backdrop-filter: blur(10px);
@@ -128,18 +128,27 @@
 		}
 
 		.adani-nav-fx .nav-item .nav-link {
-			padding: 6px 16px;
+			padding: 10px 22px;
 			border-radius: 999px;
-			font-size: 14px;
+			font-size: 15px;
+			font-weight: 500;
 			color: rgba(255, 255, 255, 0.85);
 			transition: all 0.35s ease;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		/* Underline Removal */
+		.adani-nav-fx .nav-item .nav-link::after {
+			display: none !important;
 		}
 
 		/* HOVER */
 		.adani-nav-fx .nav-item:hover>.nav-link,
 		.adani-nav-fx .nav-item.nav-current>.nav-link {
 			color: #dfff7c;
-			transform: translateY(-0.5px);
+			transform: translateY(-1px);
 		}
 
 		/* HOVER INDICATOR */
@@ -274,7 +283,7 @@
 						</div>
 						<!-- logo -->
 
-						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
+						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 110px;">
 							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
 								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
 								aria-label="Toggle navigation">
@@ -386,17 +395,83 @@
 									<li class="nav-item">
 										<a class="nav-link" href="contact.html" role="button">Contact Us</a>
 									</li>
-									<li class="d-md-none ps-2 pe-2"><a href="contact.html"
-											class="btn-one w-100 mt-15 tran3s">Get in Touch</a></li>
+									<li class="nav-item dropdown d-md-none mt-10">
+										<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+											data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+											<i class="bi bi-universal-access pe-2"></i> Accessibility
+										</a>
+										<div class="dropdown-menu vjs-accessibility-panel border-0">
+											<div class="p-3">
+												<h6 class="mb-2">Adjust Settings</h6>
+												<div class="d-flex gap-2 mb-3">
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetMode('light')">Light</button>
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetMode('dark')">Dark</button>
+												</div>
+												<div class="d-flex gap-2">
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetFontSize('small')">-A</button>
+													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetFontSize('large')">+A</button>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="nav-item dropdown d-md-none">
+										<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+											data-bs-toggle="dropdown" aria-expanded="false">
+											<span class="vjs-lang-label">ENG</span>
+										</a>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a></li>
+											<li><a class="dropdown-item" href="javascript:translateTo('en')">English</a></li>
+											<li><a class="dropdown-item" href="javascript:translateTo('hi')">Hindi</a></li>
+										</ul>
+									</li>
+									
 								</ul>
 							</div>
 						</nav>
 
-						<div class="right-widget d-none d-lg-flex" style="flex: 0 0 auto;">
-							<ul class="d-flex align-items-center style-none">
-								<li><a href="contact.html" class="btn-one tran3s">Get in Touch</a></li>
-							</ul>
-						</div> <!--/.right-widget-->
+						<div class="right-widget d-none d-lg-flex align-items-center">
+							<!-- Accessibility Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+									<i class="bi bi-universal-access fs-5 text-white"></i>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+								</button>
+								<div class="dropdown-menu dropdown-menu-end vjs-accessibility-panel">
+									<h5>Accessibility Adjustments</h5>
+									<p>Choose the right accessibility profile for you</p>
+									<div class="vjs-divider"></div>
+									<div class="vjs-adjust-grid">
+										<button class="vjs-adjust-btn" onclick="vjsSetMode('light')">Light Mode</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetMode('dark')">Dark Mode</button>
+									</div>
+									<div class="vjs-divider"></div>
+									<div class="vjs-font-grid">
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('small')">-A</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('normal')">A</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('large')">+A</button>
+									</div>
+									<div class="vjs-divider"></div>
+									<div class="text-center">
+										<button class="vjs-reset-btn" onclick="vjsResetSettings()">Reset Settings</button>
+									</div>
+								</div>
+							</div>
+							<!-- Language Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end">
+									<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a></li>
+									<li><a class="dropdown-item" href="javascript:translateTo('en')">English</a></li>
+									<li><a class="dropdown-item" href="javascript:translateTo('hi')">Hindi</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div> <!--/.top-header-->
 			</div> <!-- /.inner-content -->
@@ -657,7 +732,7 @@
         </div>
 
 
-		<!--
+				<!--
 		=====================================================
 			Footer Three
 		=====================================================
@@ -667,15 +742,14 @@
 				<div class="inner-wrapper position-relative">
 					<div class="row justify-content-between">
 						<div class="col-lg-4 footer-intro mb-30">
-							<div class="round-bg color-two rounded-circle text-center d-flex flex-column align-items-center justify-content-center">
-								<div class="logo mb-15">
-									<a href="index-2.html">
-										<img src="images/logo/vijayalakshmi-logo.svg" alt="Vijayalakshmi Group Of Companies" class="site-brand-logo">
-									</a>
-								</div> 
-								<!-- logo -->
-								<p class="lh-sm mb-45 lg-mb-30">2190 Urban Terrace, Mirpur,  <br>Licensed in 50 states.</p>
-								<p class="m0"><a href="#">+757 699-4478</a></p>
+							<div class="round-bg rounded-circle text-center d-flex flex-column align-items-center justify-content-center m-auto">
+								<div class="vjs-footer-brand">
+									<img src="images/logo/vijayalakshmi-mark.png" alt="Vijayalakshmi Group" class="vjs-footer-logo-icon">
+									<div class="vjs-footer-brand-name">Vijayalakshmi Group Of Companies</div>
+								</div>
+								<!-- /.vjs-footer-brand -->
+								<p class="lh-sm mb-30">Headquartered in Chennai, India<br>Delivering Excellence Across Diverse Industries.</p>
+								<p class="m0 fw-500"><a href="tel:+91 9943633443" class="text-dark">+91 9943633443</a></p>
 							</div>
 						</div>
 						<div class="col-lg-2 col-sm-4 mb-20">
@@ -730,7 +804,7 @@
 							</ul>
 						</div>
 						<div class="col-xl-4 col-lg-3 order-lg-1 mb-15">
-							<div class="copyright text-center text-lg-start order-lg-first">Copyright @2023 Vijayalakshmi Group Of Companies.</div>
+							<div class="copyright text-center text-lg-start order-lg-first">Copyright @2019 Vijayalakshmi Group Of Companies.</div>
 						</div>
 					</div>
 				</div>
@@ -896,6 +970,13 @@
 		<!-- Navbar Hover Animation -->
 		<script src="js/navbar-hover.js"></script>
 	</div> <!-- /.main-page-wrapper -->
+	<script src="js/site-utils.js"></script>
+	<div id="google_translate_element" style="display:none;"></div>
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
+
+
+
+

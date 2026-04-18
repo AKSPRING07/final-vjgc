@@ -52,12 +52,31 @@
             item.classList.remove("nav-current");
         });
 
+        var path = window.location.pathname;
+
+        // Detection logic
         currentItem = items.find(function (item) {
-            return item.querySelector(".dropdown-item.active");
+            // Check if any dropdown item is active
+            var activeDropdownItem = item.querySelector(".dropdown-item.active");
+            if (activeDropdownItem) {
+                // User Request: index-2.html is NOT a services page for highlighting
+                if (path.indexOf("index-2.html") !== -1 && item.textContent.trim().indexOf("Services") !== -1) {
+                    return false;
+                }
+                return true;
+            }
+            return false;
         }) || items.find(function (item) {
             var link = getTopLevelLink(item);
             return link && link.classList.contains("active");
         }) || null;
+
+        // Fallback: Default to "About Us" if no match found (or if we are on index-2.html)
+        if (!currentItem || path.indexOf("index-2.html") !== -1) {
+            currentItem = items.find(function (item) {
+                return item.textContent.trim().indexOf("About Us") !== -1;
+            }) || items[0];
+        }
 
         if (currentItem) {
             currentItem.classList.add("nav-current");
