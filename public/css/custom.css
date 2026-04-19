@@ -876,3 +876,14 @@
     top: -20px;
   }
 }
+
+/* ============================================================
+   GLOBAL LOGO BRANDING REFINEMENT
+   ============================================================ */
+.adani-nav-fx .logo img,
+.site-brand-lockup__mark-wrap,
+.site-brand-lockup__mark {
+	background-color: rgba(255, 255, 255, 0.9) !important;
+	background: rgba(255, 255, 255, 0.9) !important;
+	border-radius: 50%;
+}
