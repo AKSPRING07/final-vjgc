@@ -464,6 +464,84 @@
 			color: #dfff7c;
 			transform: rotate(180deg) translateY(-10px);
 		}
+
+		/* ================= ACCESSIBILITY PANEL ================= */
+		.vjs-accessibility-panel {
+			min-width: 320px;
+			background: linear-gradient(135deg, rgba(8, 32, 27, 0.98), rgba(15, 45, 40, 0.98)) !important;
+			backdrop-filter: blur(20px);
+			border: 1px solid rgba(255, 255, 255, 0.12) !important;
+			border-radius: 20px !important;
+			padding: 24px !important;
+			box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45) !important;
+			color: #ffffff !important;
+		}
+
+		.vjs-accessibility-panel h5 {
+			color: #ffffff !important;
+			font-size: 19px;
+			font-weight: 700;
+			margin-bottom: 8px;
+		}
+
+		.vjs-accessibility-panel p {
+			color: rgba(255, 255, 255, 0.6) !important;
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
+
+		.vjs-divider {
+			height: 1px;
+			background: rgba(255, 255, 255, 0.1);
+			margin: 20px 0;
+		}
+
+		.vjs-adjust-grid, .vjs-font-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 12px;
+		}
+
+		.vjs-font-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.vjs-adjust-btn {
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.15);
+			color: #ffffff;
+			padding: 10px;
+			border-radius: 12px;
+			font-size: 14px;
+			font-weight: 600;
+			transition: all 0.3s ease;
+		}
+
+		.vjs-adjust-btn:hover {
+			background: rgba(223, 255, 124, 0.15);
+			border-color: #dfff7c;
+			color: #dfff7c;
+		}
+
+		.vjs-reset-btn {
+			background: transparent;
+			border: none;
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 13px;
+			font-weight: 500;
+			text-decoration: underline;
+			transition: color 0.3s ease;
+			margin-top: 10px;
+		}
+
+		.vjs-reset-btn:hover {
+			color: #ff5f5f;
+		}
+
+		/* 🔥 REMOVE DUPLICATE ARROWS */
+		.vjs-nav-action .dropdown-toggle::after {
+			display: none !important;
+		}
 	</style>
 
 	<!-- Fix Internet Explorer ______________________________________-->

@@ -433,36 +433,44 @@
 										<a class="nav-link" href="contact.html" role="button">Contact Us</a>
 									</li>
 									<li class="nav-item dropdown d-md-none mt-10">
-										<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
-											data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+										<a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+											role="button" data-bs-toggle="dropdown" aria-expanded="false"
+											data-bs-auto-close="outside">
 											<i class="bi bi-universal-access pe-2"></i> Accessibility
 										</a>
 										<div class="dropdown-menu vjs-accessibility-panel border-0">
 											<div class="p-3">
 												<h6 class="mb-2">Adjust Settings</h6>
 												<div class="d-flex gap-2 mb-3">
-													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetMode('light')">Light</button>
-													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetMode('dark')">Dark</button>
+													<button class="vjs-adjust-btn w-50 py-1"
+														onclick="vjsSetMode('light')">Light</button>
+													<button class="vjs-adjust-btn w-50 py-1"
+														onclick="vjsSetMode('dark')">Dark</button>
 												</div>
 												<div class="d-flex gap-2">
-													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetFontSize('small')">-A</button>
-													<button class="vjs-adjust-btn w-50 py-1" onclick="vjsSetFontSize('large')">+A</button>
+													<button class="vjs-adjust-btn w-50 py-1"
+														onclick="vjsSetFontSize('small')">-A</button>
+													<button class="vjs-adjust-btn w-50 py-1"
+														onclick="vjsSetFontSize('large')">+A</button>
 												</div>
 											</div>
 										</div>
 									</li>
 									<li class="nav-item dropdown d-md-none">
-										<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
-											data-bs-toggle="dropdown" aria-expanded="false">
+										<a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+											role="button" data-bs-toggle="dropdown" aria-expanded="false">
 											<span class="vjs-lang-label">ENG</span>
 										</a>
 										<ul class="dropdown-menu">
-											<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a></li>
-											<li><a class="dropdown-item" href="javascript:translateTo('en')">English</a></li>
-											<li><a class="dropdown-item" href="javascript:translateTo('hi')">Hindi</a></li>
+											<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a>
+											</li>
+											<li><a class="dropdown-item" href="javascript:translateTo('en')">English</a>
+											</li>
+											<li><a class="dropdown-item" href="javascript:translateTo('hi')">Hindi</a>
+											</li>
 										</ul>
 									</li>
-									
+
 								</ul>
 							</div>
 						</nav>
@@ -473,7 +481,8 @@
 								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
 									data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
 									<i class="bi bi-universal-access fs-5 text-white"></i>
-									<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
 								</button>
 								<div class="dropdown-menu dropdown-menu-end vjs-accessibility-panel">
 									<h5>Accessibility Adjustments</h5>
@@ -491,7 +500,8 @@
 									</div>
 									<div class="vjs-divider"></div>
 									<div class="text-center">
-										<button class="vjs-reset-btn" onclick="vjsResetSettings()">Reset Settings</button>
+										<button class="vjs-reset-btn" onclick="vjsResetSettings()">Reset
+											Settings</button>
 									</div>
 								</div>
 							</div>
@@ -500,7 +510,8 @@
 								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
 									data-bs-toggle="dropdown" aria-expanded="false">
 									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
-									<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
 								</button>
 								<ul class="dropdown-menu dropdown-menu-end">
 									<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a></li>
@@ -870,6 +881,139 @@
 
 
 			/* ============================================================
+		   CSR Impact Statistics Section
+		   ============================================================ */
+			.vjs-impact-section {
+				background: #f8f9fa;
+				padding: 120px 0;
+				position: relative;
+				overflow: hidden;
+				border-top: 1px solid rgba(0, 0, 0, 0.05);
+			}
+
+			.vjs-impact-section .title-wrap {
+				margin-bottom: 80px;
+			}
+
+			.vjs-impact-section .title-small {
+				font-size: 13px;
+				font-weight: 800;
+				color: #9ec008;
+				text-transform: uppercase;
+				letter-spacing: 0.15em;
+				margin-bottom: 16px;
+				display: block;
+			}
+
+			.vjs-impact-section h2 {
+				font-size: clamp(2rem, 4vw, 3rem);
+				font-weight: 800;
+				color: #08201b;
+				line-height: 1.2;
+				margin: 0;
+			}
+
+			.vjs-impact-card {
+				padding: 50px 30px;
+				transition: all 0.5s cubic-bezier(0.24, 1, 0.32, 1);
+				border-radius: 30px;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				background: #ffffff;
+				position: relative;
+				overflow: hidden;
+				z-index: 1;
+				border: 1px solid rgba(158, 192, 8, 0.1);
+				box-shadow: 0 10px 30px rgba(8, 32, 27, 0.03);
+			}
+
+			.vjs-impact-card::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(135deg, rgb(18, 190, 182) 0%, transparent 40%, transparent 60%, rgba(158, 192, 8, 0.12) 100%);
+				z-index: -1;
+				transition: all 0.5s ease;
+			}
+
+			.vjs-impact-card:hover {
+				transform: translateY(-12px);
+				border-color: rgba(109, 187, 21, 0.795);
+				box-shadow: 0 40px 80px rgba(10, 32, 53, 0.08);
+			}
+
+			.vjs-impact-card:hover::before {
+				background: linear-gradient(135deg, rgba(6, 226, 226, 0.2) 0%, transparent 40%, transparent 60%, rgba(158, 192, 8, 0.2) 100%);
+			}
+
+			.vjs-impact-card .icon-wrap {
+				width: 90px;
+				height: 90px;
+				background: rgba(158, 192, 8, 0.08);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 30px;
+				transition: all 0.4s ease;
+			}
+
+			.vjs-impact-card:hover .icon-wrap {
+				background: #9ec008;
+			}
+
+			.vjs-impact-card .icon-wrap svg {
+				width: 45px;
+				height: 45px;
+				fill: none;
+				stroke: #9ec008;
+				stroke-width: 1.5;
+				transition: all 0.4s ease;
+			}
+
+			.vjs-impact-card:hover .icon-wrap svg {
+				stroke: #ffffff;
+			}
+
+			.vjs-impact-card .num {
+				font-size: clamp(2.5rem, 5vw, 3.5rem);
+				font-weight: 800;
+				color: #08201b;
+				margin-bottom: 12px;
+				line-height: 1;
+				font-family: 'Inter', sans-serif;
+			}
+
+			.vjs-impact-card .label {
+				font-size: 15px;
+				font-weight: 600;
+				color: rgba(8, 32, 27, 0.6);
+				text-align: center;
+				line-height: 1.5;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+
+			@media (max-width: 991px) {
+				.vjs-impact-section {
+					padding: 80px 0;
+				}
+
+				.vjs-impact-section .title-wrap {
+					margin-bottom: 50px;
+				}
+
+				.vjs-impact-card {
+					padding: 30px 15px;
+				}
+			}
+
+			/* ============================================================
 		   Company Vision & Mission Sections
 		   ============================================================ */
 			.vjs-vm-section {
@@ -910,6 +1054,333 @@
 				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 			}
 
+			/* ============================================================
+		   Blog Section Customization
+		   ============================================================ */
+			.blog-section-two {
+				background: #f8f9fa !important;
+				padding: 120px 0;
+			}
+
+			.vjs-blog-slider {
+				margin: 0 -15px;
+			}
+
+			.vjs-blog-slider .slick-track {
+				display: flex !important;
+				align-items: stretch;
+			}
+
+			.vjs-blog-slider .item {
+				padding: 0 15px;
+				height: auto;
+				display: flex;
+			}
+
+			.blog-meta-two {
+				background: #ffffff;
+				border-radius: 20px;
+				overflow: hidden;
+				box-shadow: 0 10px 30px rgba(8, 32, 27, 0.04);
+				transition: all 0.4s ease;
+				border: 1px solid rgba(158, 192, 8, 0.05);
+				height: 100%;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.blog-meta-two:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 25px 50px rgba(8, 32, 27, 0.08);
+				border-color: rgba(158, 192, 8, 0.2);
+			}
+
+			.blog-meta-two .post-img {
+				height: 280px;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.blog-meta-two .post-img::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(to bottom, transparent 50%, rgba(8, 32, 27, 0.4) 100%);
+				opacity: 0;
+				transition: opacity 0.4s ease;
+			}
+
+			.blog-meta-two:hover .post-img::after {
+				opacity: 1;
+			}
+
+			.blog-meta-two .post-img img {
+				transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+			}
+
+			.blog-meta-two:hover .post-img img {
+				transform: scale(1.1);
+			}
+
+			.blog-meta-two .post-data {
+				padding: 30px;
+				flex: 1 1 auto;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.blog-meta-two .post-data > div:first-child {
+				flex: 1 1 auto;
+			}
+
+			.blog-meta-two .blog-title h4 {
+				font-size: 20px;
+				line-height: 1.5;
+				font-weight: 700;
+				color: #08201b;
+				margin-bottom: 20px;
+				transition: color 0.3s ease;
+			}
+
+			.blog-meta-two:hover .blog-title h4 {
+				color: #9ec008;
+			}
+
+			/* ============================================================
+		   Modern Footer Styling
+		   ============================================================ */
+			.footer-modern {
+				background: linear-gradient(to right, #f5f7f8, #e9eef0);
+				padding: 80px 0 40px;
+				font-family: 'Inter', sans-serif;
+				border-top: 1px solid rgba(0, 0, 0, 0.03);
+				position: relative;
+				z-index: 1;
+			}
+
+			.footer-modern::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 100px;
+				background: linear-gradient(to bottom, rgba(158, 192, 8, 0.04), transparent);
+				pointer-events: none;
+			}
+
+			.footer-container {
+				max-width: 1200px;
+				margin: auto;
+				padding: 0 20px;
+			}
+
+			.footer-top {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				gap: 40px;
+			}
+
+			.footer-logo {
+				display: flex;
+				align-items: center;
+				margin-bottom: 25px;
+			}
+
+			.footer-logo img {
+				width: 64px;
+				margin-right: 18px;
+			}
+
+			.footer-logo-text {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.footer-logo-text .text-main {
+				font-size: 18px;
+				font-weight: 800;
+				color: #08201b;
+				letter-spacing: -0.01em;
+				line-height: 1.2;
+				text-transform: uppercase;
+			}
+
+			.footer-logo-text .text-sub {
+				font-size: 18px;
+				font-weight: 800;
+				color: #08201b;
+				letter-spacing: -0.01em;
+				line-height: 1.2;
+				text-transform: uppercase;
+			}
+
+			.social-icons {
+				display: flex;
+				gap: 12px;
+				margin-top: 20px;
+			}
+
+			.social-icons a {
+				width: 40px;
+				height: 40px;
+				background: #ffffff;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #08201b;
+				font-size: 17px;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+			}
+
+			.social-icons a:hover {
+				background: #9ec008;
+				color: #ffffff;
+				transform: translateY(-3px);
+				box-shadow: 0 8px 20px rgba(158, 192, 8, 0.2);
+			}
+
+			.footer-col h5 {
+				font-size: 17px;
+				margin-bottom: 25px;
+				font-weight: 700;
+				color: #08201b;
+				position: relative;
+			}
+
+			.footer-col h5::after {
+				content: "";
+				position: absolute;
+				bottom: -8px;
+				left: 0;
+				width: 30px;
+				height: 2px;
+				background: #9ec008;
+				border-radius: 2px;
+			}
+
+			.footer-col ul {
+				list-style: none;
+				padding: 0;
+			}
+
+			.footer-col ul li {
+				margin-bottom: 12px;
+			}
+
+			.footer-col ul li a {
+				text-decoration: none;
+				color: rgba(8, 32, 27, 0.6);
+				font-size: 14px;
+				font-weight: 500;
+				transition: all 0.3s ease;
+			}
+
+			.footer-col ul li a:hover {
+				color: #9ec008;
+				padding-left: 5px;
+			}
+
+			.footer-bottom {
+				border-top: 1px solid rgba(0, 0, 0, 0.06);
+				margin-top: 60px;
+				padding-top: 30px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				font-size: 14px;
+			}
+
+			.footer-copyright {
+				display: flex;
+				align-items: center;
+				color: rgba(8, 32, 27, 0.8);
+				font-weight: 500;
+			}
+
+			.footer-copyright img {
+				width: 28px;
+				margin-right: 12px;
+			}
+
+			.footer-bottom-links {
+				display: flex;
+				gap: 25px;
+			}
+
+			.footer-bottom-links a {
+				text-decoration: none;
+				color: rgba(8, 32, 27, 0.5);
+				transition: color 0.3s ease;
+			}
+
+			.footer-bottom-links a:hover {
+				color: #9ec008;
+			}
+
+			@media(max-width:768px) {
+				.footer-top {
+					flex-direction: column;
+					gap: 30px;
+				}
+
+				.footer-bottom {
+					flex-direction: column;
+					gap: 20px;
+					text-align: center;
+				}
+
+				.footer-bottom-links {
+					justify-content: center;
+					gap: 15px;
+				}
+			}
+
+			.blog-meta-two .round-btn {
+				width: 45px;
+				height: 45px;
+				background: rgba(158, 192, 8, 0.1);
+				color: #9ec008;
+				font-size: 18px;
+				transition: all 0.3s ease;
+			}
+
+			.blog-meta-two:hover .round-btn {
+				background: #9ec008;
+				color: #ffffff;
+				transform: rotate(45deg);
+			}
+
+			.blog-meta-two .post-info {
+				font-size: 14px;
+				color: rgba(8, 32, 27, 0.5);
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+				gap: 15px;
+			}
+
+			.blog-meta-two .date {
+				background: #9ec008;
+				color: #ffffff;
+				font-size: 12px;
+				font-weight: 800;
+				padding: 6px 15px;
+				border-radius: 30px 0 0 30px;
+				position: absolute;
+				top: 25px;
+				right: 0;
+				z-index: 2;
+			}
+
 			.vjs-vm-label {
 				font-size: 14px;
 				font-weight: 800;
@@ -939,6 +1410,7 @@
 				.vjs-vm-container {
 					gap: 40px;
 				}
+
 				.vjs-vm-title {
 					font-size: 32px;
 				}
@@ -996,7 +1468,8 @@
 					<div class="vjs-vm-content wow fadeInLeft">
 						<span class="vjs-vm-label">Defining Our Purpose</span>
 						<h2 class="vjs-vm-title">COMPANY<br>VISION</h2>
-						<p class="vjs-vm-text">To be a world class leader in businesses that enrich lives and contribute to nations in building infrastructure through sustainable value creation.</p>
+						<p class="vjs-vm-text">To be a world class leader in businesses that enrich lives and contribute
+							to nations in building infrastructure through sustainable value creation.</p>
 					</div>
 					<div class="vjs-vm-image wow fadeInRight">
 						<img src="images/media/vision_landscape.png" alt="Company Vision - Sustainable Value Creation">
@@ -1015,7 +1488,9 @@
 					<div class="vjs-vm-content wow fadeInRight">
 						<span class="vjs-vm-label">Our Path Forward</span>
 						<h2 class="vjs-vm-title">COMPANY<br>MISSION</h2>
-						<p class="vjs-vm-text">Defining sustainable growth through innovative infrastructure, ethical trade, and financial excellence, empowering communities and nations for a resilient future.</p>
+						<p class="vjs-vm-text">Defining sustainable growth through innovative infrastructure, ethical
+							trade, and financial excellence, empowering communities and nations for a resilient future.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -1024,398 +1499,91 @@
 
 		<!-- 
 		=============================================
-			Text Feature Two
+			Impact Statistics Section
 		============================================== 
 		-->
-		<div class="text-feature-two position-relative pt-110 lg-pt-80 pb-110 lg-pb-80">
+		<section class="vjs-impact-section">
 			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-xl-6 col-lg-7">
-						<div class="title-one">
-							<h2 class="text-white">The Numbers Reflect Our Reputation.</h2>
-						</div>
-						<!-- /.title-one -->
+				<div class="row align-items-end title-wrap">
+					<div class="col-lg-7 wow fadeInLeft">
+						<span class="title-small">Our Global Footprint</span>
+						<h2>CREATING THE IMPACT <br>OF A LIFETIME</h2>
 					</div>
-					<div class="col-lg-5 ms-auto">
-						<p class="m0 text-md text-white md-pt-10">Efficient problem-solving, insightful market analysis,
-							and actionable plans made the consulting invaluable to our business's success.</p>
+					<div class="col-lg-5 ms-auto wow fadeInRight">
+						<p class="m0 text-lg opacity-75 md-pt-20">We believe that real growth is measured by the
+							positive change we bring to the environment and the communities we serve.</p>
 					</div>
 				</div>
 
-				<div class="row gx-0 mt-50 lg-mt-20 md-mt-10">
-					<div class="col-lg-4">
-						<div class="card-style-five text-center mt-60">
-							<div class="icon d-flex align-content-center justify-content-center"><img
-									src="images/lazy.svg" data-src="images/icon/icon_17.svg" alt="" class="lazy-img">
-							</div>
-							<div class="main-count fw-500"><span class="counter">120</span>mil+</div>
-							<p class="ps-xxl-5 ps-xl-3 pe-xxl-5 pe-xl-3">We’ve experience more than 10+ years with
-								success.</p>
-						</div>
-						<!-- /.card-style-five -->
-					</div>
-					<div class="col-lg-4">
-						<div class="card-style-five text-center mt-60">
-							<div class="icon d-flex align-content-center justify-content-center"><img
-									src="images/lazy.svg" data-src="images/icon/icon_18.svg" alt="" class="lazy-img">
-							</div>
-							<div class="main-count fw-500">$<span class="counter">1.3</span>b+</div>
-							<p class="ps-xxl-5 ps-xl-3 pe-xxl-5 pe-xl-3">We achieve lot for our work from top certified
-								agency.</p>
-						</div>
-						<!-- /.card-style-five -->
-					</div>
-					<div class="col-lg-4">
-						<div class="card-style-five text-center mt-60">
-							<div class="icon d-flex align-content-center justify-content-center"><img
-									src="images/lazy.svg" data-src="images/icon/icon_19.svg" alt="" class="lazy-img">
-							</div>
-							<div class="main-count fw-500"><span class="counter">730</span>k+</div>
-							<p class="ps-xxl-5 ps-xl-3 pe-xxl-5 pe-xl-3">We’ve more than happy 3000+ client all over the
-								world.</p>
-						</div>
-						<!-- /.card-style-five -->
-					</div>
-				</div>
-			</div>
-			<img src="images/lazy.svg" data-src="images/shape/shape_07.svg" alt="" class="lazy-img shapes shape_01">
-			<img src="images/lazy.svg" data-src="images/shape/shape_08.svg" alt="" class="lazy-img shapes shape_02">
-		</div>
-		<!-- /.text-feature-two -->
-
-
-
-		<!--
-		=====================================================
-			BLock Feature Four
-		=====================================================
-		-->
-		<div class="block-feature-four position-relative mt-150 lg-mt-80 pb-150 lg-pb-80">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-xl-8 col-lg-9 m-auto wow fadeInUp">
-						<div class="title-one text-center mb-50 lg-mb-20">
-							<h2>We're here to help you build, & protect your wealth.</h2>
-						</div>
-						<!-- /.title-one -->
-					</div>
-				</div>
 				<div class="row gx-xxl-5">
-					<div class="col-lg-4 d-flex wow fadeInUp">
-						<div class="card-style-six text-center vstack tran3s w-100 mt-30">
-							<div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto">
-								<img src="images/lazy.svg" data-src="images/icon/icon_20.svg" alt="" class="lazy-img">
+					<!-- Team Strength -->
+					<div class="col-lg-3 col-sm-6 wow fadeInUp">
+						<div class="vjs-impact-card">
+							<div class="icon-wrap">
+								<svg viewBox="0 0 24 24">
+									<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+									<circle cx="9" cy="7" r="4"></circle>
+									<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+									<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+								</svg>
 							</div>
-							<h4 class="fw-bold mt-40 md-mt-30 mb-25">Expert Advisor</h4>
-							<p class="mb-20">Elit esse cillum dolore eu fugiat nulla pariatur</p>
-							<a href="service-v2.html" class="arrow-btn tran3s m-auto stretched-link"><img
-									src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt=""
-									class="lazy-img"></a>
-						</div>
-						<!-- /.card-style-six -->
-					</div>
-					<div class="col-lg-4 d-flex wow fadeInUp" data-wow-delay="0.1s">
-						<div class="card-style-six text-center vstack tran3s w-100 mt-30 active">
-							<div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto">
-								<img src="images/lazy.svg" data-src="images/icon/icon_21.svg" alt="" class="lazy-img">
-							</div>
-							<h4 class="fw-bold mt-40 md-mt-30 mb-25">Highly Secured</h4>
-							<p class="mb-20">Elit esse cillum dolore eu fugiat nulla pariatur</p>
-							<a href="service-v2.html" class="arrow-btn tran3s m-auto stretched-link"><img
-									src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt=""
-									class="lazy-img"></a>
-						</div>
-						<!-- /.card-style-six -->
-					</div>
-					<div class="col-lg-4 d-flex wow fadeInUp" data-wow-delay="0.2s">
-						<div class="card-style-six text-center vstack tran3s w-100 mt-30">
-							<div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto">
-								<img src="images/lazy.svg" data-src="images/icon/icon_22.svg" alt="" class="lazy-img">
-							</div>
-							<h4 class="fw-bold mt-40 md-mt-30 mb-25">Management</h4>
-							<p class="mb-20">Elit esse cillum dolore eu fugiat nulla pariatur</p>
-							<a href="service-v2.html" class="arrow-btn tran3s m-auto stretched-link"><img
-									src="images/lazy.svg" data-src="images/icon/icon_09.svg" alt=""
-									class="lazy-img"></a>
-						</div>
-						<!-- /.card-style-six -->
-					</div>
-				</div>
-			</div>
-			<img src="images/lazy.svg" data-src="images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_01">
-		</div>
-		<!-- /.block-feature-four -->
-
-
-
-		<!-- 
-		=============================================
-			Feedback Section Four
-		============================================== 
-		-->
-		<div class="feedback-section-four">
-			<div class="container">
-				<div class="position-relative">
-					<div class="title-two">
-						<h2>You're in a good hand</h2>
-					</div>
-					<!-- /.title-two -->
-					<p class="text-lg mt-30 lg-mt-20 mb-70 lg-mb-40">Optimize expense tracking across platforms, &
-						product lines using multiple cards.</p>
-					<div class="feedback-slider-four">
-						<div class="item">
-							<div class="feedback-block-four tran3s">
-								<div class="d-flex align-items-center justify-content-between">
-									<ul class="style-none d-flex rating">
-										<li><i class="bi bi-star-fill"></i></li>
-										<li><i class="bi bi-star-fill"></i></li>
-										<li><i class="bi bi-star-fill"></i></li>
-										<li><i class="bi bi-star-fill"></i></li>
-										<li><i class="bi bi-star-fill"></i></li>
-									</ul>
-									<img src="images/icon/icon_48.svg" alt="" class="icon">
-								</div>
-								<blockquote>Game-changer! Boosted efficiency, simplified tasks, and saved time. Highly
-									recommended!</blockquote>
-								<div class="d-flex align-items-center justify-content-between">
-									<div class="d-flex align-items-center">
-										<div class="name fw-500 text-dark">Rashed Kabir,</div>
-										<p class="m0 opacity-75">Claifornia</p>
-									</div>
-									<img src="images/media/img_08.jpg" alt="" class="avatar rounded-circle">
-								</div>
-							</div>
-							<!-- /.feedback-block-four -->
-						</div>
-						<div class="item">
-							<div class="feedback-block-four tran3s">
-								<div class="d-flex align-items-center justify-content-between">
-									<ul class="style-none d-flex rating">
-										<li><i class="bi bi-star-fill"></i></li>
-										<li><i class="bi bi-star-fill"></i></li>
-										<li><i class="bi bi-star-fill"></i></li>
-										<li><i class="bi bi-star-fill"></i></li>
-										<li><i class="bi bi-star-fill"></i></li>
-									</ul>
-									<img src="images/icon/icon_48.svg" alt="" class="icon">
-								</div>
-								<blockquote>Game-changer! Boosted efficiency, simplified tasks, and saved time. Highly
-									recommended!</blockquote>
-								<div class="d-flex align-items-center justify-content-between">
-									<div class="d-flex align-items-center">
-										<div class="name fw-500 text-dark">Zubayer Hasan,</div>
-										<p class="m0 opacity-75">Dhaka</p>
-									</div>
-									<img src="images/media/img_14.jpg" alt="" class="avatar rounded-circle">
-								</div>
-							</div>
-							<!-- /.feedback-block-four -->
-						</div>
-						<div class="item">
-							<div class="feedback-block-four tran3s">
-								<div class="d-flex align-items-center justify-content-between">
-									<ul class="style-none d-flex rating">
-										<li><i class="bi bi-star-fill"></i></li>
-										<li><i class="bi bi-star-fill"></i></li>
-										<li><i class="bi bi-star-fill"></i></li>
-										<li><i class="bi bi-star-fill"></i></li>
-										<li><i class="bi bi-star-fill"></i></li>
-									</ul>
-									<img src="images/icon/icon_48.svg" alt="" class="icon">
-								</div>
-								<blockquote>Game-changer! Boosted efficiency, simplified tasks, and saved time. Highly
-									recommended!</blockquote>
-								<div class="d-flex align-items-center justify-content-between">
-									<div class="d-flex align-items-center">
-										<div class="name fw-500 text-dark">Rashed Kabir,</div>
-										<p class="m0 opacity-75">Claifornia</p>
-									</div>
-									<img src="images/media/img_15.jpg" alt="" class="avatar rounded-circle">
-								</div>
-							</div>
-							<!-- /.feedback-block-four -->
+							<div class="num"><span class="counter">48000</span>+</div>
+							<div class="label">Team Strength</div>
 						</div>
 					</div>
 
-					<ul class="slider-arrows slick-arrow-one d-flex justify-content-center style-none">
-						<li class="prev_a slick-arrow"><i class="bi bi-chevron-left"></i></li>
-						<li class="next_a slick-arrow"><i class="bi bi-chevron-right"></i></li>
-					</ul>
-
-
-					<div class="partner-logo-one pt-80 lg-pt-50 pb-80 lg-pb-50">
-						<div class="partner-slider-one">
-							<div class="item">
-								<div class="logo d-flex align-items-center justify-content-center"><img
-										src="images/logo/media_03.png" alt=""></div>
+					<!-- Farmers -->
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="vjs-impact-card">
+							<div class="icon-wrap">
+								<svg viewBox="0 0 24 24">
+									<path d="m10 11 11 .9c.6 0 .9.5.8 1.1l-.8 5c-.1.6-.6 1-1.2 1H14c-.6 0-1.2-.4-1.3-1l-.2-1.5"></path>
+									<path d="M16 18h2"></path>
+									<path d="M10 11V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2"></path>
+									<path d="m2 7 2 4h6"></path>
+									<path d="M13 18H9"></path>
+									<circle cx="7" cy="15" r="5"></circle>
+									<circle cx="18" cy="15" r="2"></circle>
+								</svg>
 							</div>
-							<div class="item">
-								<div class="logo d-flex align-items-center justify-content-center"><img
-										src="images/logo/media_04.png" alt=""></div>
-							</div>
-							<div class="item">
-								<div class="logo d-flex align-items-center justify-content-center"><img
-										src="images/logo/media_05.png" alt=""></div>
-							</div>
-							<div class="item">
-								<div class="logo d-flex align-items-center justify-content-center"><img
-										src="images/logo/media_01.png" alt=""></div>
-							</div>
-							<div class="item">
-								<div class="logo d-flex align-items-center justify-content-center"><img
-										src="images/logo/media_02.png" alt=""></div>
-							</div>
-							<div class="item">
-								<div class="logo d-flex align-items-center justify-content-center"><img
-										src="images/logo/media_04.png" alt=""></div>
-							</div>
-							<div class="item">
-								<div class="logo d-flex align-items-center justify-content-center"><img
-										src="images/logo/media_05.png" alt=""></div>
-							</div>
+							<div class="num"><span class="counter">1000</span>+</div>
+							<div class="label">Farmers are Happy</div>
 						</div>
 					</div>
-					<!-- /.partner-logo-one -->
-				</div>
-			</div>
-		</div>
-		<!-- /.feedback-section-four -->
 
-
-
-		<!--
-		=====================================================
-			Fancy Banner Five
-		=====================================================
-		-->
-		<div class="fancy-banner-five text-center position-relative mt-150 lg-mt-80 pt-80 md-pt-60 pb-80 md-pb-60">
-			<div class="container">
-				<h2 class="text-white fw-bold">You've Entered Our Corporate Business Zone</h2>
-				<p class="text-white text-xl pt-30 md-pt-10 pb-45 lg-pb-30">Watch our intro video to get the idea about
-					our services & many more</p>
-				<a class="fancybox rounded-circle video-icon tran5s text-center d-flex align-items-center justify-content-center m-auto"
-					data-fancybox="" href="https://www.youtube.com/embed/aXFSJTjVjw0">
-					<img src="images/lazy.svg" data-src="images/assets/sticker_02.png" alt="" class="lazy-img">
-				</a>
-			</div>
-		</div>
-		<!-- /.fancy-banner-five -->
-
-
-
-
-		<!--
-		=====================================================
-			FAQ Section One
-		=====================================================
-		-->
-		<div class="faq-section-one mt-150 lg-mt-80">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-5 wow fadeInLeft">
-						<div class="title-one mb-40 lg-mb-20">
-							<h2>Questions & Answers</h2>
+					<!-- Trees Planted -->
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+						<div class="vjs-impact-card">
+							<div class="icon-wrap">
+								<svg viewBox="0 0 24 24">
+									<path d="M7 20h10"></path>
+									<path d="M10 20c5.5-2.5 8-6.4 8-8.5V9a1 1 0 0 0-1-1c-2.1 0-6 2.5-8.5 8"></path>
+									<path d="M14 20c-5.5-2.5-8-6.4-8-8.5V9a1 1 0 0 1 1-1c2.1 0 6 2.5 8.5 8"></path>
+									<path d="M12 20V9"></path>
+								</svg>
+							</div>
+							<div class="num"><span class="counter">6.75</span></div>
+							<div class="label">Million Trees <br>Planted</div>
 						</div>
-						<!-- /.title-one -->
-						<p class="text-lg mb-40 lg-mb-20">Don’t find the answer? We can help</p>
-						<a href="contact.html" class="btn-four">Contact us</a>
 					</div>
 
-					<div class="col-lg-7">
-						<div class="accordion accordion-style-one mt-15 md-mt-50" id="accordionOne">
-							<div class="accordion-item">
-								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-										How does the free trial work?
-									</button>
-								</h2>
-								<div id="collapseOne" class="accordion-collapse collapse"
-									data-bs-parent="#accordionOne">
-									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
-									</div>
-								</div>
+					<!-- Lives Touched -->
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+						<div class="vjs-impact-card">
+							<div class="icon-wrap">
+								<svg viewBox="0 0 24 24">
+									<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+								</svg>
 							</div>
-							<div class="accordion-item">
-								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-										How do you find different criteria in your process?
-									</button>
-								</h2>
-								<div id="collapseTwo" class="accordion-collapse collapse"
-									data-bs-parent="#accordionOne">
-									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
-									</div>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<h2 class="accordion-header">
-									<button class="accordion-button" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseThree" aria-expanded="true"
-										aria-controls="collapseThree">
-										What do you look for in a founding team?
-									</button>
-								</h2>
-								<div id="collapseThree" class="accordion-collapse collapse show"
-									data-bs-parent="#accordionOne">
-									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
-									</div>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseFour" aria-expanded="false"
-										aria-controls="collapseFour">
-										Do you recommend Pay as you go or Pre pay?
-									</button>
-								</h2>
-								<div id="collapseFour" class="accordion-collapse collapse"
-									data-bs-parent="#accordionOne">
-									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
-									</div>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseFive" aria-expanded="false"
-										aria-controls="collapseFive">
-										What do I get for $0 with my plan?
-									</button>
-								</h2>
-								<div id="collapseFive" class="accordion-collapse collapse"
-									data-bs-parent="#accordionOne">
-									<div class="accordion-body">
-										<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											consequat. Duis aute irure dolor in reprehenderit in voluptate velit .</p>
-									</div>
-								</div>
-							</div>
+							<div class="num"><span class="counter">9.10</span></div>
+							<div class="label">Million Lives <br>Touched</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- /.faq-section-one -->
-
-
-
-		<!--
-		=====================================================
-			Blog Section Two
-		=====================================================
-		-->
-		<div class="blog-section-two position-relative mt-150 lg-mt-80 pb-150 lg-pb-80">
+		</section>
+		<!-- /.vjs-impact-section -->
+		<div class="blog-section-two position-relative mt-0 pt-150 lg-pt-80 pb-150 lg-pb-80">
 			<div class="container">
 				<div class="position-relative">
 					<div class="title-one mb-30 lg-mb-10">
@@ -1423,46 +1591,89 @@
 					</div>
 					<!-- /.title-one -->
 
-					<div class="row gx-xl-5">
-						<div class="col-md-6">
-							<article class="blog-meta-two mt-35 wow fadeInUp">
-								<figure class="post-img position-relative d-flex align-items-end m0"
-									style="background-image: url(images/blog/blog_img_03.jpg);">
-									<a href="blog-details.html" class="stretched-link date tran3s">09 FEB</a>
+					<div class="vjs-blog-slider">
+						<!-- Slide 1 -->
+						<div class="item">
+							<article class="blog-meta-two wow fadeInUp">
+								<figure class="post-img position-relative d-flex align-items-end m0">
+									<img src="images/blog/blog_img_01.jpg" alt="" class="lazy-img w-100 h-100">
+									<a href="blog-details.html" class="stretched-link date tran3s">15 APR</a>
 								</figure>
 								<div class="post-data">
 									<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
 										<a href="blog-details.html" class="blog-title">
-											<h4>Spending Habits, 13 Tips for grow Your Money.</h4>
+											<h4>Sustainable Farming: The Future of Agriculture in TN</h4>
 										</a>
 										<a href="blog-details.html"
 											class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
 												class="bi bi-arrow-up-right"></i></a>
 									</div>
-									<div class="post-info">Rashed Ka . 6 min . Finance </div>
+									<div class="post-info">Admin . 5 min read . Agriculture</div>
 								</div>
 							</article>
-							<!-- /.blog-meta-two -->
 						</div>
-						<div class="col-md-6">
-							<article class="blog-meta-two mt-35 wow fadeInUp" data-wow-delay="0.1s">
-								<figure class="post-img position-relative d-flex align-items-end m0"
-									style="background-image: url(images/blog/blog_img_04.jpg);">
-									<a href="blog-details.html" class="stretched-link date tran3s">12 aug</a>
+
+						<!-- Slide 2 -->
+						<div class="item">
+							<article class="blog-meta-two wow fadeInUp" data-wow-delay="0.1s">
+								<figure class="post-img position-relative d-flex align-items-end m0">
+									<img src="images/blog/blog_img_02.jpg" alt="" class="lazy-img w-100 h-100">
+									<a href="blog-details.html" class="stretched-link date tran3s">08 APR</a>
 								</figure>
 								<div class="post-data">
 									<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
 										<a href="blog-details.html" class="blog-title">
-											<h4>Our Travel Card Makes you Happy.</h4>
+											<h4>How Infrastructure Projects are Defining Chennai's Skyline</h4>
 										</a>
 										<a href="blog-details.html"
 											class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
 												class="bi bi-arrow-up-right"></i></a>
 									</div>
-									<div class="post-info">Jubayer Hasan . 7 min read . Travelling</div>
+									<div class="post-info">VJS Team . 8 min read . Infrastructure</div>
 								</div>
 							</article>
-							<!-- /.blog-meta-two -->
+						</div>
+
+						<!-- Slide 3 -->
+						<div class="item">
+							<article class="blog-meta-two wow fadeInUp" data-wow-delay="0.2s">
+								<figure class="post-img position-relative d-flex align-items-end m0">
+									<img src="images/blog/blog_img_03.jpg" alt="" class="lazy-img w-100 h-100">
+									<a href="blog-details.html" class="stretched-link date tran3s">22 MAR</a>
+								</figure>
+								<div class="post-data">
+									<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
+										<a href="blog-details.html" class="blog-title">
+											<h4>CSR Initiatives: Impacting 10 Million Lives Together</h4>
+										</a>
+										<a href="blog-details.html"
+											class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+												class="bi bi-arrow-up-right"></i></a>
+									</div>
+									<div class="post-info">CSR Team . 6 min read . Community</div>
+								</div>
+							</article>
+						</div>
+
+						<!-- Slide 4 -->
+						<div class="item">
+							<article class="blog-meta-two wow fadeInUp" data-wow-delay="0.3s">
+								<figure class="post-img position-relative d-flex align-items-end m0">
+									<img src="images/blog/blog_img_04.jpg" alt="" class="lazy-img w-100 h-100">
+									<a href="blog-details.html" class="stretched-link date tran3s">10 MAR</a>
+								</figure>
+								<div class="post-data">
+									<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
+										<a href="blog-details.html" class="blog-title">
+											<h4>Logistics Excellence: Streamlining Global Trade Routes</h4>
+										</a>
+										<a href="blog-details.html"
+											class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+												class="bi bi-arrow-up-right"></i></a>
+									</div>
+									<div class="post-info">Logistics . 10 min read . Trading</div>
+								</div>
+							</article>
 						</div>
 					</div>
 
@@ -1477,125 +1688,86 @@
 			</div>
 		</div>
 		<!-- /.blog-section-two -->
-
-
-		<!--
-		=====================================================
-			Fancy Banner Three
-		=====================================================
-		-->
-		<div class="fancy-banner-three position-relative wow fadeInUp">
-			<div class="container">
-				<div class="row align-content-center">
-					<div class="col-lg-8 col-md-9">
-						<div class="title-one mb-20 lg-mb-10">
-							<h2 class="text-white">Start Your Journey with Us</h2>
-						</div>
-						<!-- /.title-one -->
-						<p class="text-lg m0 text-white opacity-75">Connect with our experts to explore solutions
-							tailored to your business needs and goals.</p>
-					</div>
-					<div class="col-lg-4 col-md-3">
-						<a href="contact.html"
-							class="quote-btn tran5s rounded-circle d-flex align-items-center justify-content-center ms-auto">
-							<img src="images/lazy.svg" data-src="images/icon/icon_30.svg" alt="" class="lazy-img">
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /.fancy-banner-three -->
-
-
-
-
 		<!--
 		=====================================================
 			Footer Three
 		=====================================================
 		-->
-		<div class="footer-three">
-			<div class="container">
-				<div class="inner-wrapper position-relative">
-					<div class="row justify-content-between">
-						<div class="col-lg-4 footer-intro mb-30">
-							<div
-								class="round-bg rounded-circle text-center d-flex flex-column align-items-center justify-content-center m-auto">
-								<div class="vjs-footer-brand">
-									<img src="images/logo/vijayalakshmi-mark.png" alt="Vijayalakshmi Group"
-										class="vjs-footer-logo-icon">
-									<div class="vjs-footer-brand-name">Vijayalakshmi Group Of Companies</div>
-								</div>
-								<!-- /.vjs-footer-brand -->
-								<p class="lh-sm mb-30">Headquartered in Chennai, India<br>Delivering Excellence Across
-									Diverse Industries.</p>
-								<p class="m0 fw-500"><a href="tel:+91 9943633443" class="text-dark">+91 9943633443</a>
-								</p>
+		<div class="footer-modern">
+			<div class="footer-container">
+				<!-- TOP SECTION -->
+				<div class="footer-top">
+					<!-- LOGO + SOCIAL -->
+					<div class="footer-brand">
+						<div class="footer-logo">
+							<img src="images/logo/vijayalakshmi-mark.png" alt="Logo Mark">
+							<div class="footer-logo-text">
+								<div class="text-main">Vijayalakshmi Group</div>
+								<div class="text-sub">OF COMPANIES</div>
 							</div>
 						</div>
-						<div class="col-lg-2 col-sm-4 mb-20">
-							<h5 class="footer-title">Links</h5>
-							<ul class="footer-nav-link style-none">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="pricing.html">Pricing Plan</a></li>
-								<li><a href="about-us-v1.html">About us</a></li>
-								<li><a href="service-v1.html">Our services</a></li>
-								<li><a href="project-v2.html">Portfolio</a></li>
-								<li><a href="service-v2.html">Features</a></li>
-							</ul>
-						</div>
-						<div class="col-lg-2 col-sm-4 mb-20">
-							<h5 class="footer-title">Company</h5>
-							<ul class="footer-nav-link style-none">
-								<li><a href="about-us-v2.html">About us</a></li>
-								<li><a href="blog-v2.html">Blogs</a></li>
-								<li><a href="faq.html">FAQ’s</a></li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-						</div>
-						<div class="col-xxl-2 col-lg-3 col-sm-4 mb-20">
-							<h5 class="footer-title">Support</h5>
-							<ul class="footer-nav-link style-none">
-								<li><a href="contact.html">Terms of use</a></li>
-								<li><a href="contact.html">Terms & conditions</a></li>
-								<li><a href="contact.html">Privacy</a></li>
-								<li><a href="contact.html">Cookie policy</a></li>
-							</ul>
+
+						<div class="social-icons">
+							<a href="#"><i class="bi bi-facebook"></i></a>
+							<a href="#"><i class="bi bi-instagram"></i></a>
+							<a href="#"><i class="bi bi-youtube"></i></a>
+							<a href="#"><i class="bi bi-linkedin"></i></a>
 						</div>
 					</div>
-					<img src="images/lazy.svg" data-src="images/shape/shape_38.svg" alt=""
-						class="lazy-img shapes shape_01">
-					<img src="images/lazy.svg" data-src="images/shape/shape_39.svg" alt=""
-						class="lazy-img shapes shape_02">
-				</div> <!-- /.inner-wrapper -->
-			</div>
-			<div class="container">
-				<div class="bottom-footer">
-					<div class="row">
-						<div class="col-xl-4 col-lg-3 order-lg-3 mb-15">
-							<ul
-								class="style-none d-flex align-items-center justify-content-center justify-content-lg-end social-icon">
-								<li><a href="#"><i class="bi bi-facebook"></i></a></li>
-								<li><a href="#"><i class="bi bi-dribbble"></i></a></li>
-								<li><a href="#"><i class="bi bi-instagram"></i></a></li>
-							</ul>
-						</div>
-						<div class="col-xl-4 col-lg-6 order-lg-2 mb-15">
-							<ul class="style-none bottom-nav d-flex justify-content-center order-lg-last">
-								<li><a href="contact.html">Privacy & Terms</a></li>
-								<li><a href="contact.html">Cookies</a></li>
-								<li><a href="contact.html">Contact Us</a></li>
-							</ul>
-						</div>
-						<div class="col-xl-4 col-lg-3 order-lg-1 mb-15">
-							<div class="copyright text-center text-lg-start order-lg-first">Copyright @2019
-								Vijayalakshmi Group Of Companies.</div>
-						</div>
+
+					<!-- ABOUT -->
+					<div class="footer-col">
+						<h5>About Us</h5>
+						<ul>
+							<li><a href="about-us-v2.html">About Company</a></li>
+							<li><a href="about-us-v1.html">Chairman’s Office</a></li>
+							<li><a href="team-v1.html">Leadership</a></li>
+							<li><a href="about-us-v1.html">Our Journey</a></li>
+							<li><a href="service-v1.html">Awards</a></li>
+						</ul>
+					</div>
+
+					<!-- BUSINESSES -->
+					<div class="footer-col">
+						<h5>Businesses</h5>
+						<ul>
+							<li><a href="service-v2.html">Infrastructure</a></li>
+							<li><a href="service-v1.html">Energy & Utilities</a></li>
+							<li><a href="service-v1.html">Transport & Logistics</a></li>
+							<li><a href="service-v1.html">Consumer Products</a></li>
+							<li><a href="service-v2.html">Real Estate</a></li>
+						</ul>
+					</div>
+
+					<!-- RIGHT LINKS -->
+					<div class="footer-col">
+						<h5>Quick Links</h5>
+						<ul>
+							<li><a href="about-us-v2.html">Sustainability</a></li>
+							<li><a href="pricing.html">Investors</a></li>
+							<li><a href="blog-v2.html">Newsroom</a></li>
+							<li><a href="about-us-v1.html">Careers</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+						</ul>
 					</div>
 				</div>
-				<!-- /.bottom-footer -->
+
+				<!-- BOTTOM -->
+				<div class="footer-bottom">
+					<div class="footer-copyright">
+						<img src="images/logo/vijayalakshmi-mark.png" alt="Logo">
+						© 2025 Vijayalakshmi Group Of Companies
+					</div>
+
+					<div class="footer-bottom-links">
+						<a href="contact.html">Legal Disclaimer</a>
+						<a href="contact.html">Privacy Notice</a>
+						<a href="contact.html">Terms & Conditions</a>
+						<a href="contact.html">Cookie Policy</a>
+					</div>
+				</div>
 			</div>
-		</div> <!-- /.footer-three -->
+		</div> <!-- /.footer-modern -->
 
 
 		<!-- Modal -->
@@ -1769,10 +1941,8 @@
 	</div> <!-- /.main-page-wrapper -->
 	<script src="js/site-utils.js"></script>
 	<div id="google_translate_element" style="display:none;"></div>
-	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<script type="text/javascript"
+		src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
-
-
-
