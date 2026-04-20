@@ -38,7 +38,7 @@
 			<script src="vendor/html5shiv.js"></script>
 			<script src="vendor/respond.js"></script>
 		<![endif]-->
-	<style>
+			<style>
 		@media (min-width: 992px) {
 
 			.adani-nav-fx {
@@ -50,7 +50,7 @@
 				box-shadow: none !important;
 				width: 100%;
 
-				/* FIX: lock to top */
+				/* 🔥 FIX: lock to top */
 				position: fixed;
 				top: 0;
 				left: 0;
@@ -66,37 +66,51 @@
 			.adani-nav-fx .top-header {
 				position: relative;
 				padding: 18px 20px;
+
+				/* ❌ REMOVE this (causes line) */
+				/* margin: -1px 0; */
+
 				margin: 0;
+
 				width: 100%;
 				border-radius: 0;
 				transition: padding 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
 				transform: translateZ(0);
 				backface-visibility: hidden;
 				isolation: isolate;
 			}
 		}
 
-		/* GLASS EFFECT */
+		/* ================= GLASS EFFECT ================= */
+
 		.adani-nav-fx .top-header::before {
 			content: "";
 			position: absolute;
+
+			/* 🔥 STRONG FIX */
 			top: -4px;
 			bottom: -3px;
 			left: 0;
 			right: 0;
+
 			border-radius: inherit;
+
 			background: linear-gradient(135deg,
-					var(--vjs-nav-cover-color, #08201b) 0%,
+					rgba(8, 32, 27, 0.88) 0%,
 					rgba(8, 32, 27, 0.82) 50%,
 					rgba(8, 32, 27, 0.88) 100%);
+
 			backdrop-filter: blur(10px);
 			-webkit-backdrop-filter: blur(10px);
+
 			transform: translateZ(0);
 			will-change: transform;
+
 			z-index: 0;
 		}
 
-		/* HARD TOP COVER */
+		/* 🔥 HARD TOP COVER (FINAL LINE KILLER) */
 		.adani-nav-fx::before {
 			content: "";
 			position: absolute;
@@ -118,7 +132,7 @@
 		/* LOGO */
 		.adani-nav-fx .logo img {
 			transition: transform 0.45s ease;
-			background-color: rgba(255, 255, 255, 0.8);
+			background-color: #9ec008;
 			border-radius: 50%;
 		}
 
@@ -128,32 +142,18 @@
 		}
 
 		.adani-nav-fx .nav-item .nav-link {
-			padding: 10px 22px;
+			padding: 6px 16px;
 			border-radius: 999px;
-			font-size: 15px;
-			font-weight: 500;
+			font-size: 14px;
 			color: rgba(255, 255, 255, 0.85);
 			transition: all 0.35s ease;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		/* Underline Removal */
-		.adani-nav-fx .nav-item .nav-link::after {
-			display: none !important;
-		}
-
-		/* Underline Removal */
-		.adani-nav-fx .nav-item .nav-link::after {
-			display: none !important;
 		}
 
 		/* HOVER */
 		.adani-nav-fx .nav-item:hover>.nav-link,
 		.adani-nav-fx .nav-item.nav-current>.nav-link {
 			color: #dfff7c;
-			transform: translateY(-1px);
+			transform: translateY(-0.5px);
 		}
 
 		/* HOVER INDICATOR */
@@ -167,9 +167,11 @@
 			pointer-events: none;
 			opacity: 0;
 			transform: scale(0.92);
+
 			background: linear-gradient(135deg,
 					rgba(255, 255, 255, 0.18),
 					rgba(255, 255, 255, 0.05));
+
 			transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 		}
 
@@ -180,8 +182,10 @@
 			border-radius: 24px;
 			border: 1px solid rgba(255, 255, 255, 0.05);
 			background: rgba(253, 253, 253, 0.719);
+
 			transform: translateY(18px) scale(0.96);
 			clip-path: inset(0 0 100% 0 round 24px);
+
 			transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
 				opacity 0.3s ease,
 				visibility 0.3s ease,
@@ -193,7 +197,8 @@
 			clip-path: inset(0 0 0 0 round 24px);
 		}
 
-		/* STICKY STATE */
+		/* ================= STICKY STATE ================= */
+
 		.adani-nav-fx.fixed {
 			padding-top: 12px;
 			background: #08201b;
@@ -206,10 +211,12 @@
 		.adani-nav-fx.fixed .top-header::before {
 			top: -4px;
 			bottom: -3px;
+
 			background: linear-gradient(135deg,
 					rgba(8, 32, 27, 0.96) 0%,
 					rgba(8, 32, 27, 0.92) 50%,
 					rgba(8, 32, 27, 0.96) 100%);
+
 			backdrop-filter: blur(12px);
 			-webkit-backdrop-filter: blur(12px);
 		}
@@ -249,305 +256,30 @@
 				transform: translateY(0);
 			}
 		}
+	</style>
+</head>
 
-		/* JOURNEY QUOTE STYLES */
-		.vjs-journey-quote-section {
-			background: #f4f7f6;
-			padding: 120px 0;
-			position: relative;
-			overflow: hidden;
-		}
+<body>
+	<div class="main-page-wrapper">
+		<!-- ===================================================
+				Loading Transition
+			==================================================== -->
+		<div id="preloader">
+			<div id="ctn-preloader" class="ctn-preloader">
+				<div class="icon"><video class="m-auto d-block site-loader-video" autoplay muted loop playsinline
+						webkit-playsinline preload="auto" disablepictureinpicture aria-label="Loading animation">
+						<source src="images/fav-icon/reload.ani.mp4" type="video/mp4">
+					</video></div>
+			</div>
+		</div>
 
-		.vjs-quote-box {
-			max-width: 900px;
-			margin: 0 auto;
-			padding: 0 40px;
-			position: relative;
-		}
-
-		.vjs-quote-box p {
-			font-size: clamp(24px, 4vw, 36px);
-			line-height: 1.4;
-			font-weight: 500;
-			color: #19352d;
-			letter-spacing: -0.5px;
-			margin: 0;
-			position: relative;
-			z-index: 2;
-		}
-
-		.vjs-quote-box::before {
-			content: "“";
-			position: absolute;
-			top: -40px;
-			left: -20px;
-			font-size: 150px;
-			font-family: serif;
-			opacity: 0.08;
-			color: #19352d;
-			line-height: 1;
-		}
-
-		.vjs-quote-box::after {
-			content: "";
-			position: absolute;
-			right: 0;
-			bottom: -20px;
-			width: 150px;
-			height: 80px;
-			border-right: 4px solid #19352d;
-			border-bottom: 4px solid #19352d;
-			opacity: 0.15;
-		}
-
-		/* JOURNEY TIMELINE STYLES */
-		.vjs-timeline-section {
-			background: #daece6;
-			padding: 120px 0;
-			position: relative;
-			overflow: hidden;
-		}
-
-		.vjs-timeline-container {
-			position: relative;
-			max-width: 1000px;
-			margin: 0 auto;
-			padding: 50px 0;
-		}
-
-		/* Central Line */
-		.vjs-timeline-container::after {
-			content: "";
-			position: absolute;
-			width: 2px;
-			background: linear-gradient(to bottom, transparent, #1ca161 10%, #1ca161 90%, transparent);
-			top: 0;
-			bottom: 0;
-			left: 50%;
-			margin-left: -1px;
-			opacity: 0.2;
-		}
-
-		.vjs-milestone {
-			padding: 10px 40px;
-			position: relative;
-			width: 50%;
-			z-index: 1;
-		}
-
-		/* Marker Circles */
-		.vjs-milestone::after {
-			content: "";
-			position: absolute;
-			width: 16px;
-			height: 16px;
-			right: -8px;
-			background-color: #d5fcbc;
-			border: 4px solid #1ca161;
-			top: 40px;
-			border-radius: 50%;
-			z-index: 1;
-			box-shadow: 0 0 0 4px rgba(28, 161, 97, 0.1);
-		}
-
-		.vjs-milestone.right {
-			left: 50%;
-		}
-
-		.vjs-milestone.right::after {
-			left: -8px;
-		}
-
-		.vjs-milestone-content {
-			padding: 35px;
-			background-color: #ffffff;
-			border-radius: 20px;
-			position: relative;
-			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-			border: 1px solid rgba(25, 53, 45, 0.04);
-			transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-		}
-
-		.vjs-milestone-content:hover {
-			transform: translateY(-8px) scale(1.02);
-			box-shadow: 0 25px 60px rgba(28, 161, 97, 0.12);
-			border-color: rgba(28, 161, 97, 0.25);
-		}
-
-		.vjs-year {
-			font-size: 20px;
-			font-weight: 800;
-			margin-bottom: 12px;
-			display: block;
-			letter-spacing: 1px;
-		}
-
-		.text-gradient-one {
-			background: linear-gradient(90deg, #1ca161 0%, #dfff7c 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-		}
-
-		.vjs-milestone-content h4 {
-			font-size: 24px;
-			font-weight: 700;
-			color: #19352d;
-			margin-bottom: 15px;
-		}
-
-		.vjs-milestone-content p {
-			margin: 0;
-			color: #5d706a;
-			line-height: 1.6;
-		}
-
-		@media (max-width: 767px) {
-			.vjs-timeline-container::after {
-				left: 31px;
-			}
-
-			.vjs-milestone {
-				width: 100%;
-				padding-left: 70px;
-				padding-right: 25px;
-			}
-
-			.vjs-milestone.right {
-				left: 0%;
-			}
-
-			.vjs-milestone::after {
-				left: 23px !important;
-			}
-		}
-
-		/* FLOATING BUBBLES BG */
-		.vjs-bubble-wrap {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 0;
-			overflow: hidden;
-			pointer-events: none;
-		}
-
-		.vjs-bubble {
-			position: absolute;
-			bottom: -150px;
-			background: rgba(28, 161, 97, 0.06);
-			border-radius: 50%;
-			animation: flowUp 15s infinite linear;
-				opacity: 0;
-			}
-		}
-
-		.vjs-bubble:nth-child(1) {
-			width: 80px;
-			height: 80px;
-			left: 10%;
-			animation-duration: 20s;
-			animation-delay: 2s;
-		}
-
-		.vjs-bubble:nth-child(2) {
-			width: 120px;
-			height: 120px;
-			left: 25%;
-			animation-duration: 15s;
-			animation-delay: 0s;
-		}
-
-		.vjs-bubble:nth-child(3) {
-			width: 50px;
-			height: 50px;
-			left: 45%;
-			animation-duration: 18s;
-			animation-delay: 5s;
-		}
-
-		.vjs-bubble:nth-child(4) {
-			width: 100px;
-			height: 100px;
-			left: 70%;
-			animation-duration: 22s;
-			animation-delay: 1s;
-		}
-
-		.vjs-bubble:nth-child(5) {
-			width: 60px;
-			height: 60px;
-			left: 85%;
-			animation-duration: 16s;
-			animation-delay: 8s;
-		}
-
-		.vjs-bubble:nth-child(6) {
-			width: 90px;
-			height: 90px;
-			left: 15%;
-			animation-duration: 25s;
-			animation-delay: 4s;
-		}
-
-		/* Milestone Gallery Styles */
-		.vjs-milestone-content {
-			cursor: pointer;
-			user-select: none;
-		}
-
-		.vjs-gallery-wrap {
-			display: none;
-			margin-top: 25px;
-			border-radius: 12px;
-			overflow: hidden;
-			background: #f8fcfb;
-			padding: 10px;
-			border: 1px solid rgba(28, 161, 97, 0.08);
-		}
-
-		.vjs-gallery-img {
-			width: 100%;
-			height: 220px;
-			object-fit: cover;
-			border-radius: 10px;
-			transition: transform 0.4s ease;
-		}
-
-		.vjs-milestone-content.active .vjs-gallery-img:hover {
-			transform: scale(1.03);
-		}
-
-		.vjs-milestone-content.active {
-			border-color: rgba(28, 161, 97, 0.4);
-			box-shadow: 0 30px 70px rgba(28, 161, 97, 0.15);
-		}
-
-		.vjs-click-hint {
-			display: block;
-			margin-top: 15px;
-			font-size: 11px;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			color: #1ca161;
-			opacity: 0.6;
-			transition: opacity 0.3s ease;
-		}
-
-		.vjs-milestone-content.active .vjs-click-hint {
-			opacity: 0;
-			height: 0;
-			margin: 0;
-			overflow: hidden;
-		}
-
-		/* UNIFIED SECTION STYLES */
-		.partner-logo-one,
-		.team-section-three {
-			background: #ffffff !important;
-		}
-
+		<!-- Theme Main Menu -->
+						<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
+			<div class="inner-content position-relative">
+				<div class="top-header">
+					<div class="d-flex align-items-center justify-content-between">
+						<div class="logo" style="flex: 1; display: flex; justify-content: flex-start;">
+							<a href="index-2.html" class="d-flex align-items-center">
 								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
 									<span class="site-brand-lockup__mark-wrap"><img
 											src="images/logo/vijayalakshmi-mark.png" alt=""
@@ -560,6 +292,7 @@
 							</a>
 						</div>
 						<!-- logo -->
+
 						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
 							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
 								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -585,63 +318,74 @@
 											</a>
 										</div>
 									</li>
-									<li class="nav-item dropdown nav-current">
+									<li class="nav-item dropdown">
 										<a class="nav-link dropdown-toggle" href="#" role="button"
 											data-bs-toggle="dropdown" data-bs-auto-close="outside"
 											aria-expanded="false">About Us
 										</a>
 										<ul class="dropdown-menu">
-											<li><a href="about-us-v2.html" class="dropdown-item"><span>Our Group</span></a></li>
-											<li><a href="about-us-v1.html" class="dropdown-item"><span>Our Mission and Vision</span></a></li>
-											<li><a href="service-v1.html" class="dropdown-item"><span>Leadership and Awards</span></a></li>
+											<li><a href="about-us-v2.html" class="dropdown-item"><span>Our
+														Group</span></a></li>
+											<li><a href="about-us-v1.html" class="dropdown-item"><span>Our Mission and
+														Vision</span></a></li>
+											<li><a href="service-v1.html" class="dropdown-item"><span>Leadership and
+														Awards</span></a></li>
 										</ul>
 									</li>
 									<li class="nav-item dropdown">
 										<a class="nav-link dropdown-toggle" href="#" role="button"
 											data-bs-toggle="dropdown" data-bs-auto-close="outside"
-											aria-expanded="false">Services
+											aria-expanded="false">Businesses
 										</a>
 										<ul class="dropdown-menu">
 											<li><a href="index.html" class="dropdown-item"><span>Finance</span></a></li>
-											<li><a href="index-2.html" class="dropdown-item"><span>Business Consultancy</span></a></li>
-											<li><a href="index-3.html" class="dropdown-item"><span>Banking</span></a></li>
-											<li><a href="index-4.html" class="dropdown-item"><span>Payment Solution</span></a></li>
-											<li><a href="index-5.html" class="dropdown-item"><span>Digital Agency</span></a></li>
-											<li><a href="index-6.html" class="dropdown-item"><span>Marketing</span></a></li>
-											<li><a href="index-7.html" class="dropdown-item"><span>Insurance</span></a></li>
-											<li><a href="index-8.html" class="dropdown-item"><span>Insurance Two</span></a></li>
+											<li><a href="index-2.html" class="dropdown-item"><span>Business
+														Consultancy</span></a></li>
+											<li><a href="index-3.html" class="dropdown-item"><span>Banking</span></a>
+											</li>
+											<li><a href="index-4.html" class="dropdown-item"><span>Payment
+														Solution</span></a></li>
+											<li><a href="index-5.html" class="dropdown-item"><span>Digital
+														Agency</span></a></li>
+											<li><a href="index-6.html" class="dropdown-item"><span>Marketing</span></a>
+											</li>
+											<li><a href="index-7.html" class="dropdown-item"><span>Insurance</span></a>
+											</li>
+											<li><a href="index-8.html" class="dropdown-item"><span>Insurance
+														Two</span></a></li>
 										</ul>
 									</li>
 									<li class="nav-item dropdown">
 										<a class="nav-link dropdown-toggle" href="#" role="button"
 											data-bs-toggle="dropdown" data-bs-auto-close="outside"
-											aria-expanded="false">Shop
+											aria-expanded="false">Sustainability
 										</a>
 										<ul class="dropdown-menu">
-											<li><a href="shop-grid.html" class="dropdown-item"><span>Shop Grid</span></a></li>
-											<li><a href="shop-details.html" class="dropdown-item"><span>Shop Details</span></a></li>
+											<li><a href="shop-grid.html" class="dropdown-item"><span>Shop
+														Grid</span></a></li>
+											<li><a href="shop-details.html" class="dropdown-item"><span>Shop
+														Details</span></a></li>
 											<li><a href="cart.html" class="dropdown-item"><span>Cart</span></a></li>
-											<li><a href="checkout.html" class="dropdown-item"><span>Checkout</span></a></li>
-										</ul>
-									</li>
-									<li class="nav-item dropdown">
-										<a class="nav-link dropdown-toggle" href="#" role="button"
-											data-bs-toggle="dropdown" data-bs-auto-close="outside"
-											aria-expanded="false">Blog
-										</a>
-										<ul class="dropdown-menu">
-											<li><a href="blog-v1.html" class="dropdown-item"><span>Blog List</span></a></li>
-											<li><a href="blog-v2.html" class="dropdown-item"><span>Blog Grid</span></a></li>
-											<li><a href="blog-details.html" class="dropdown-item"><span>Blog Details</span></a></li>
+											<li><a href="checkout.html" class="dropdown-item"><span>Checkout</span></a>
+											</li>
 										</ul>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="contact.html" role="button">Contact Us</a>
+										<a class="nav-link" href="blog-v1.html" role="button">Vijayalakshmi Foundation</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Newsroom
+										</a>
+										<ul class="dropdown-menu">
+											<li><a href="media-release.html" class="dropdown-item"><span>Media Release</span></a></li>
+											<li><a href="media-kit.html" class="dropdown-item"><span>Media Kit</span></a></li>
+										</ul>
 									</li>
 								</ul>
 							</div>
 						</nav>
-
 
 						<div class="right-widget d-none d-lg-flex align-items-center">
 							<!-- Accessibility Dropdown -->
@@ -688,9 +432,8 @@
 								</ul>
 							</div>
 						</div>
-					</div>
-				</div> <!--/.top-header-->
-			</div> <!-- /.inner-content -->
+					</div> <!--/.top-header-->
+				</div> <!-- /.inner-content -->
 		</header>
 		<!-- /.theme-main-menu -->
 
@@ -1294,3 +1037,4 @@
 </body>
 
 </html>
+

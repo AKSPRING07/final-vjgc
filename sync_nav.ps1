@@ -1,44 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+# sync_nav.ps1
+# This script synchronizes the navigation bar and its styles from index-2.html to all other HTML files.
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="keywords" content="Vijayalakshmi Group, Leadership, Corporate Management, Board of Directors">
-	<meta name="description" content="Meet the visionary leadership team driving excellence and innovation at Vijayalakshmi Group Of Companies.">
-    <meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
-    <meta property="og:url" content="https://creativegigstf.com">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Leadership - Vijayalakshmi Group Of Companies">
-	<meta name='og:image' content='images/assets/ogg.png'>
-	<!-- For IE -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- For Resposive Device -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- For Window Tab Color -->
-	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#1A4137">
-	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#1A4137">
-	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
-	<title>Leadership | Vijayalakshmi Group Of Companies</title>
-	<!-- Favicon -->
-	<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all">
-	<!-- Main style sheet -->
-	<link rel="stylesheet" type="text/css" href="css/style.min.css" media="all">
-	<!-- responsive style sheet -->
-	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
-	<link rel="stylesheet" type="text/css" href="css/custom.css" media="all">
-
-	<!-- Fix Internet Explorer ______________________________________-->
-	<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-			<script src="vendor/html5shiv.js"></script>
-			<script src="vendor/respond.js"></script>
-		<![endif]-->
-		<style>
+$styleBlock = @'
+	<style>
 		@media (min-width: 992px) {
 
 			.adani-nav-fx {
@@ -257,26 +221,10 @@
 			}
 		}
 	</style>
-</head>
+'@
 
-<body>
-	<div class="main-page-wrapper">
-		<!-- ===================================================
-				Loading Transition
-			==================================================== -->
-		<div id="preloader">
-			<div id="ctn-preloader" class="ctn-preloader">
-				<div class="icon"><video class="m-auto d-block site-loader-video" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-label="Loading animation"><source src="images/fav-icon/reload.ani.mp4" type="video/mp4"></video></div>
-			</div>
-		</div>
-
-		
-		<!-- 
-		=============================================
-				Theme Main Menu
-		============================================== 
-		-->
-						<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
+$headerBlock = @'
+		<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
 			<div class="inner-content position-relative">
 				<div class="top-header">
 					<div class="d-flex align-items-center justify-content-between">
@@ -437,231 +385,35 @@
 					</div> <!--/.top-header-->
 				</div> <!-- /.inner-content -->
 		</header>
-				<!--
-		=====================================================
-			Footer Three
-		=====================================================
-		-->
-		
-		<footer class="footer-modern">
-			<div class="footer-container">
-				<div class="footer-top d-flex flex-wrap justify-content-between">
-					<div class="footer-brand" style="flex: 1 1 300px;">
-						<div class="footer-logo d-flex align-items-center mb-4">
-							<img src="images/logo/vijayalakshmi-mark.png" alt="" style="width: 50px;">
-							<div class="ms-3">
-								<div style="font-size: 18px; font-weight: 800; color: #08201b; line-height: 1;">Vijayalakshmi Group</div>
-								<div style="font-size: 14px; font-weight: 700; color: #08201b; opacity: 0.6; letter-spacing: 2px;">OF COMPANIES</div>
-							</div>
-						</div>
-						<div class="social-icons d-flex gap-2">
-							<a href="#" class="rounded-circle bg-white shadow-sm p-2"><i class="bi bi-facebook"></i></a>
-							<a href="#" class="rounded-circle bg-white shadow-sm p-2"><i class="bi bi-instagram"></i></a>
-							<a href="#" class="rounded-circle bg-white shadow-sm p-2"><i class="bi bi-linkedin"></i></a>
-						</div>
-					</div>
-					<div class="footer-col" style="flex: 1 1 150px;">
-						<h5 class="fw-bold mb-4">About Us</h5>
-						<ul class="list-unstyled opacity-75">
-							<li><a href="about-us-v1.html" class="text-decoration-none text-dark">Company</a></li>
-							<li><a href="service-v1.html" class="text-decoration-none text-dark">Leadership</a></li>
-							<li><a href="service-v1.html" class="text-decoration-none text-dark">Awards</a></li>
-						</ul>
-					</div>
-					<div class="footer-col" style="flex: 1 1 150px;">
-						<h5 class="fw-bold mb-4">Businesses</h5>
-						<ul class="list-unstyled opacity-75">
-							<li>Infrastructure</li>
-							<li>Energy</li>
-							<li>Logistics</li>
-						</ul>
-					</div>
-					<div class="footer-col" style="flex: 1 1 150px;">
-						<h5 class="fw-bold mb-4">Support</h5>
-						<ul class="list-unstyled opacity-75">
-							<li><a href="contact.html" class="text-decoration-none text-dark">Contact Us</a></li>
-							<li>Terms & Conditions</li>
-						</ul>
-					</div>
-				</div>
-				<hr class="my-5 opacity-10">
-				<div class="footer-bottom d-flex justify-content-between flex-wrap">
-					<p class="m-0">© 2025 Vijayalakshmi Group Of Companies</p>
-					<div class="footer-links d-flex gap-4">
-						<a href="#" class="text-decoration-none text-dark opacity-50">Privacy Notice</a>
-						<a href="#" class="text-decoration-none text-dark opacity-50">Cookie Policy</a>
-					</div>
-				</div>
-			</div>
-		</footer>
+'@
 
+$scriptBlock = @'
+		<script src="js/site-utils.js"></script>
+		<!-- Google Translate Element -->
+		<div id="google_translate_element" style="display:none;"></div>
+		<script type="text/javascript"
+			src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+'@
 
-		<!-- Modal -->
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
-                <div class="container">
-                    <div class="user-data-form modal-content">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						<div class="form-wrapper m-auto">
-							<ul class="nav nav-tabs border-0 w-100" role="tablist">
-								<li class="nav-item" role="presentation">
-									<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fc1" role="tab">Login</button>
-								</li>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link" data-bs-toggle="tab" data-bs-target="#fc2" role="tab">Signup</button>
-								</li>
-							</ul>
-							<div class="tab-content mt-30">
-								<div class="tab-pane show active" role="tabpanel" id="fc1">
-									<div class="text-center mb-20">
-										<h2>Hi, Welcome Back!</h2>
-										<p>Still don't have an account? <a href="#">Sign up</a></p>
-									</div>
-									<form action="#">
-										<div class="row">
-											<div class="col-12">
-												<div class="input-group-meta position-relative mb-25">
-													<label>Email*</label>
-													<input type="email" placeholder="Youremail@gmail.com">
-												</div>
-											</div>
-											<div class="col-12">
-												<div class="input-group-meta position-relative mb-20">
-													<label>Password*</label>
-													<input type="password" placeholder="Enter Password" class="pass_log_id">
-													<span class="placeholder_icon"><span class="passVicon"><img src="images/icon/icon_13.svg" alt=""></span></span>
-												</div>
-											</div>
-											<div class="col-12">
-												<div class="agreement-checkbox d-flex justify-content-between align-items-center">
-													<div>
-														<input type="checkbox" id="remember">
-														<label for="remember">Keep me logged in</label>
-													</div>
-													<a href="#">Forget Password?</a>
-												</div> <!-- /.agreement-checkbox -->
-											</div>
-											<div class="col-12">
-												<button class="btn-four w-100 tran3s d-block mt-20">Login</button>
-											</div>
-										</div>
-									</form>
-								</div>
-								<!-- /.tab-pane -->
-								<div class="tab-pane" role="tabpanel" id="fc2">
-									<div class="text-center mb-20">
-										<h2>Register</h2>
-										<p>Already have an account? <a href="#">Login</a></p>
-									</div>
-									<form action="#">
-										<div class="row">
-											<div class="col-12">
-												<div class="input-group-meta position-relative mb-25">
-													<label>Name*</label>
-													<input type="text" placeholder="Zubayer Hasan">
-												</div>
-											</div>
-											<div class="col-12">
-												<div class="input-group-meta position-relative mb-25">
-													<label>Email*</label>
-													<input type="email" placeholder="zubayerhasan@gmail.com">
-												</div>
-											</div>
-											<div class="col-12">
-												<div class="input-group-meta position-relative mb-20">
-													<label>Password*</label>
-													<input type="password" placeholder="Enter Password" class="pass_log_id">
-													<span class="placeholder_icon"><span class="passVicon"><img src="images/icon/icon_13.svg" alt=""></span></span>
-												</div>
-											</div>
-											<div class="col-12">
-												<div class="agreement-checkbox d-flex justify-content-between align-items-center">
-													<div>
-														<input type="checkbox" id="remember2">
-														<label for="remember2">By hitting the "Register" button, you agree to the <a href="#">Terms conditions</a> & <a href="#">Privacy Policy</a></label>
-													</div>
-												</div> <!-- /.agreement-checkbox -->
-											</div>
-											<div class="col-12">
-												<button class="btn-four w-100 tran3s d-block mt-20">Sign up</button>
-											</div>
-										</div>
-									</form>
-								</div>
-								<!-- /.tab-pane -->
-							</div>
-							
-							<div class="d-flex align-items-center mt-30 mb-10">
-								<div class="line"></div>
-								<span class="pe-3 ps-3 fs-6">OR</span>
-								<div class="line"></div>
-							</div>
-							<div class="row">
-								<div class="col-sm-6">
-									<a href="#" class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
-										<img src="images/icon/google.png" alt="">
-										<span class="ps-3">Signup with Google</span>
-									</a>
-								</div>
-								<div class="col-sm-6">
-									<a href="#" class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
-										<img src="images/icon/facebook.png" alt="">
-										<span class="ps-3">Signup with Facebook</span>
-									</a>
-								</div>
-							</div>
-						</div>
-						<!-- /.form-wrapper -->
-                    </div>
-                    <!-- /.user-data-form -->
-                </div>
-            </div>
-        </div>
+$files = Get-ChildItem "public/*.html" -Exclude "index-2.html"
 
+foreach ($file in $files) {
+    $content = Get-Content $file.FullName -Raw
+    
+    # 1. Replace Nav Style Block
+    # Look for the style block containing adani-nav-fx
+    $content = $content -replace '(?s)<style>.*?\.adani-nav-fx.*?</style>', $styleBlock
+    
+    # 2. Replace Header Block
+    # Look for the header block with adani-nav-fx
+    $content = $content -replace '(?s)<header class="[^"]*adani-nav-fx[^"]*">.*?</header>', $headerBlock
+    
+    # 3. Ensure site-utils.js and translate scripts are present at the bottom
+    if ($content -notlike "*site-utils.js*") {
+        $content = $content -replace '</body>', "$scriptBlock`n</body>"
+    }
 
-		<button class="scroll-top">
-			<i class="bi bi-arrow-up-short"></i>
-		</button>
+    Set-Content $file.FullName $content
+}
 
-
-
-
-		<!-- Optional JavaScript _____________________________  -->
-
-		<!-- jQuery first, then Bootstrap JS -->
-		<!-- jQuery -->
-		<script src="vendor/jquery.min.js"></script>
-		<!-- Bootstrap JS -->
-		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<!-- WOW js -->
-		<script src="vendor/wow/wow.min.js"></script>
-		<!-- Slick Slider -->
-		<script src="vendor/slick/slick.min.js"></script>
-		<!-- Fancybox -->
-		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
-		<!-- Lazy -->
-		<script src="vendor/jquery.lazy.min.js"></script>
-		<!-- js Counter -->
-		<script src="vendor/jquery.counterup.min.js"></script>
-		<script src="vendor/jquery.waypoints.min.js"></script>
-		
-		<!-- validator js -->
-		<script src="vendor/validator.js"></script>
-
-		<!-- Theme js -->
-		<script src="js/theme.js"></script>
-		<!-- Navbar Hover Animation -->
-		<script src="js/navbar-hover.js"></script>
-	</div> <!-- /.main-page-wrapper -->
-	<script src="js/site-utils.js"></script>
-	<div id="google_translate_element" style="display:none;"></div>
-	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
-
-</html>
-
-
-
-
-
-
+Write-Host "Navigation synchronization complete across $($files.Count) pages."
