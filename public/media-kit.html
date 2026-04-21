@@ -304,86 +304,284 @@
 			</div>
 		</div>
 
-		<footer class="footer-modern" style="background: #f4f6f6; padding-top: 40px; font-family: sans-serif;">
-			<div class="container">
-				<div class="footer-top row pb-30">
-					<!-- Brand Column (Moved Left) -->
-					<div class="col-lg-3 col-md-12 mb-25">
-						<div class="footer-logo d-flex align-items-center mb-25">
-							<img src="images/logo/vijayalakshmi-mark.png" alt="" style="width: 50px; filter: invert(21%) sepia(100%) saturate(2371%) hue-rotate(345deg) brightness(94%) contrast(94%);">
-							<div class="ms-3">
-								<div style="font-size: 18px; font-weight: 800; color: #111; line-height: 1; text-transform: uppercase;">Vijayalakshmi Group</div>
-								<div style="font-size: 10px; color: #666; letter-spacing: 1.1px; text-transform: uppercase; margin-top: 3px; font-weight: 600;">Of Companies</div>
+		<!--
+		=====================================================
+			Footer One
+		=====================================================
+		-->
+			<div class="footer-mini">
+
+				<style>
+					/* RESET (removes unwanted gaps) */
+					* {
+						box-sizing: border-box;
+					}
+
+					html,
+					body {
+						margin: 0;
+						padding: 0;
+					}
+
+					/* FULL WIDTH FOOTER */
+					.footer-mini {
+						width: 100%;
+						background: #f5f7f8;
+						border-top: 1px solid #e5e7ea;
+					}
+
+					/* INNER CONTAINER */
+					.footer-container {
+						max-width: 1200px;
+						margin: 0 auto;
+						padding: 90px 40px 35px;
+						/* 🔥 pushes content downward */
+						font-family: "Helvetica Neue", Arial, sans-serif;
+					}
+
+					/* TOP SECTION */
+					.footer-top {
+						display: flex;
+						justify-content: space-between;
+						align-items: flex-start;
+						gap: 60px;
+						margin-top: 10px;
+					}
+
+					/* LOGO & BRAND POSITIONING */
+					.footer-brand {
+						margin-top: 65px;
+						/* 🔥 Move further down */
+						margin-left: 35px;
+						/* 🔥 Move slightly back to the left */
+					}
+
+					.footer-logo-group {
+						display: flex;
+						flex-direction: row;
+						/* 🔥 Back to side-by-side */
+						align-items: center;
+						padding-right: 20px;
+						gap: 12px;
+						margin-bottom: 25px;
+					}
+
+					.footer-logo-group img {
+						height: 46px;
+						width: auto;
+					}
+
+					.footer-logo-text {
+						display: flex;
+						flex-direction: column;
+						line-height: 1.1;
+					}
+
+					.footer-logo-text span:first-child {
+						font-size: 16px;
+						font-weight: 700;
+						color: #000;
+						letter-spacing: 0.5px;
+						text-transform: uppercase;
+					}
+
+					.footer-logo-text span:last-child {
+						font-size: 10px;
+						font-weight: 600;
+						color: #666;
+						letter-spacing: 1.5px;
+					}
+
+					.social-icons-mini {
+						display: inline-flex;
+						/* 🔥 Borders only span icon area */
+						gap: 14px;
+						margin-top: -10px;
+						/* 🔥 Move closer to text */
+						margin-left: 58px;
+						padding: 4px 0;
+						border-top: 1px solid #7030a0;
+						border-bottom: 1px solid #7030a0;
+					}
+
+					.social-icons-mini a {
+						color: #000;
+						font-size: 14px;
+						transition: 0.3s;
+					}
+
+					.social-icons-mini a:hover {
+						opacity: 0.6;
+					}
+
+					/* COLUMNS */
+					.footer-col h5 {
+						font-size: 14px;
+						font-weight: 600;
+						margin-bottom: 16px;
+						color: #000;
+					}
+
+					.footer-col ul {
+						list-style: none;
+						padding: 0;
+						margin: 0;
+					}
+
+					.footer-col ul li {
+						margin-bottom: 10px;
+					}
+
+					.footer-col ul li a {
+						text-decoration: none;
+						font-size: 12px;
+						color: #666;
+						transition: 0.3s;
+					}
+
+					.footer-col ul li a:hover {
+						color: #000;
+					}
+
+					/* RIGHT SIDE LINKS */
+					.footer-right {
+						display: flex;
+						flex-direction: column;
+						gap: 12px;
+					}
+
+					.footer-right a {
+						text-decoration: none;
+						font-size: 13px;
+						font-weight: 500;
+						color: #000;
+					}
+
+					/* BOTTOM BAR */
+					.footer-bottom {
+						border-top: 1px solid #e5e7ea;
+						margin-top: 50px;
+						/* 🔥 spacing like Adani */
+						padding-top: 20px;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						font-size: 12px;
+						color: #666;
+					}
+
+					.footer-bottom-links {
+						display: flex;
+						gap: 25px;
+						margin-left: auto;
+						/* 🔥 pushes links to the right */
+						padding-left: 500px;
+						/* 🔥 adds small right offset */
+					}
+
+					.footer-bottom-links a {
+						text-decoration: none;
+						color: #666;
+					}
+
+					.footer-bottom-links a:hover {
+						color: #000;
+					}
+
+					/* RESPONSIVE */
+					@media(max-width:768px) {
+						.footer-top {
+							flex-direction: column;
+							gap: 30px;
+						}
+
+						.footer-bottom {
+							flex-direction: column;
+							text-align: center;
+							gap: 10px;
+						}
+					}
+				</style>
+
+
+				<div class="footer-container">
+
+					<div class="footer-top">
+
+						<!-- LOGO & BRAND -->
+						<div class="footer-brand">
+							<div class="footer-logo-group">
+								<img src="images/logo/vijayalakshmi-mark.png" alt="Logo Mark">
+								<div class="footer-logo-text">
+									<span>Vijayalakshmi Group</span>
+									<span>OF COMPANIES</span>
+								</div>
+							</div>
+
+							<div class="social-icons-mini">
+								<a href="#"><i class="bi bi-facebook"></i></a>
+								<a href="#"><i class="bi bi-instagram"></i></a>
+								<a href="#"><i class="bi bi-youtube"></i></a>
+								<a href="#"><i class="bi bi-linkedin"></i></a>
 							</div>
 						</div>
-						<div class="social-icons d-flex gap-3">
-							<a href="#" class="rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; color: #000; font-size: 14px;"><i class="bi bi-facebook"></i></a>
-							<a href="#" class="rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; color: #000; font-size: 14px;"><i class="bi bi-instagram"></i></a>
-							<a href="#" class="rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; color: #000; font-size: 14px;"><i class="bi bi-youtube"></i></a>
-							<a href="#" class="rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; color: #000; font-size: 14px;"><i class="bi bi-linkedin"></i></a>
-						</div>
-					</div>
 
-					<!-- About Us Column (Moved Left) -->
-					<div class="col-lg-2 col-md-4 col-6">
-						<div class="mb-20">
-							<h5 class="fw-bold mb-8" style="color: #111; font-size: 15px;">About Us</h5>
-							<div style="width: 25px; height: 2px; background: #28a745;"></div>
+						<!-- ABOUT -->
+						<div class="footer-col">
+							<h5>About Us</h5>
+							<ul>
+								<li><a href="#">About Company</a></li>
+								<li><a href="#">Chairman’s Office</a></li>
+								<li><a href="#">Leadership</a></li>
+								<li><a href="#">Our Journey</a></li>
+								<li><a href="#">Awards</a></li>
+							</ul>
 						</div>
-						<ul class="list-unstyled">
-							<li class="mb-8"><a href="about-us-v1.html" class="text-decoration-none" style="color: #666; font-size: 13px;">About Company</a></li>
-							<li class="mb-8"><a href="#" class="text-decoration-none" style="color: #666; font-size: 13px;">Chairman's Office</a></li>
-							<li class="mb-8"><a href="service-v1.html" class="text-decoration-none" style="color: #666; font-size: 13px;">Leadership</a></li>
-							<li class="mb-8"><a href="about-us-v1.html" class="text-decoration-none" style="color: #666; font-size: 13px;">Our Journey</a></li>
-							<li class="mb-8"><a href="service-v1.html" class="text-decoration-none" style="color: #666; font-size: 13px;">Awards</a></li>
-						</ul>
-					</div>
 
-					<!-- Businesses Column (Moved Left) -->
-					<div class="col-lg-3 col-md-4 col-6">
-						<div class="mb-20">
-							<h5 class="fw-bold mb-8" style="color: #111; font-size: 15px;">Businesses</h5>
-							<div style="width: 25px; height: 2px; background: #28a745;"></div>
+						<!-- BUSINESS -->
+						<div class="footer-col">
+							<h5>Businesses</h5>
+							<ul>
+								<li><a href="#">Infrastructure</a></li>
+								<li><a href="#">Energy & Utilities</a></li>
+								<li><a href="#">Transport & Logistics</a></li>
+								<li><a href="#">Consumer Products</a></li>
+								<li><a href="#">Real Estate</a></li>
+							</ul>
 						</div>
-						<ul class="list-unstyled">
-							<li class="mb-8"><a href="#" class="text-decoration-none" style="color: #666; font-size: 13px;">Infrastructure</a></li>
-							<li class="mb-8"><a href="#" class="text-decoration-none" style="color: #666; font-size: 13px;">Energy & Utilities</a></li>
-							<li class="mb-8"><a href="#" class="text-decoration-none" style="color: #666; font-size: 13px;">Transport & Logistics</a></li>
-							<li class="mb-8"><a href="#" class="text-decoration-none" style="color: #666; font-size: 13px;">Consumer Products</a></li>
-							<li class="mb-8"><a href="#" class="text-decoration-none" style="color: #666; font-size: 13px;">Real Estate</a></li>
-						</ul>
-					</div>
 
-					<!-- Quick Links Column (Terminal Right) -->
-					<div class="col-lg-4 col-md-4 col-6">
-						<div class="mb-20">
-							<h5 class="fw-bold mb-8" style="color: #111; font-size: 15px;">Quick Links</h5>
-							<div style="width: 25px; height: 2px; background: #28a745;"></div>
+						<!-- QUICK LINKS -->
+						<div class="footer-col">
+							<h5>Quick Links</h5>
+							<ul>
+								<li><a href="#">Sustainability</a></li>
+								<li><a href="#">Investors</a></li>
+								<li><a href="#">Newsroom</a></li>
+								<li><a href="#">Careers</a></li>
+								<li><a href="#">Contact Us</a></li>
+							</ul>
 						</div>
-						<ul class="list-unstyled">
-							<li class="mb-8"><a href="#" class="text-decoration-none" style="color: #666; font-size: 13px;">Sustainability</a></li>
-							<li class="mb-8"><a href="#" class="text-decoration-none" style="color: #666; font-size: 13px;">Investors</a></li>
-							<li class="mb-8"><a href="media-release.html" class="text-decoration-none" style="color: #666; font-size: 13px;">Newsroom</a></li>
-							<li class="mb-8"><a href="#" class="text-decoration-none" style="color: #666; font-size: 13px;">Careers</a></li>
-							<li class="mb-8"><a href="contact.html" class="text-decoration-none" style="color: #666; font-size: 13px;">Contact Us</a></li>
-						</ul>
-					</div>
-				</div>
 
-				<div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap pt-15 pb-15 border-top mt-10">
-					<div class="d-flex align-items-center">
-						<img src="images/logo/vijayalakshmi-mark.png" alt="" style="width: 25px; margin-right: 12px; filter: invert(21%) sepia(100%) saturate(2371%) hue-rotate(345deg) brightness(94%) contrast(94%);">
-						<p class="m-0" style="font-size: 12px; font-weight: 500; color: #333;">© 2025 Vijayalakshmi Group Of Companies</p>
-					</div>
-					<div class="footer-links d-flex gap-3">
-						<a href="#" class="text-decoration-none" style="color: #777; font-size: 11px;">Legal Disclaimer</a>
-						<a href="#" class="text-decoration-none" style="color: #777; font-size: 11px;">Privacy Notice</a>
-						<a href="#" class="text-decoration-none" style="color: #777; font-size: 11px;">Terms & Conditions</a>
-						<a href="#" class="text-decoration-none" style="color: #777; font-size: 11px;">Cookie Policy</a>
+
+						<!-- BOTTOM -->
+						<div class="footer-bottom">
+							<div style="display: flex; align-items: center; gap: 8px;">
+								<img src="images/logo/vijayalakshmi-mark.png" alt="Mark" style="height: 20px; width: auto;">
+								<span>© 2025 Vijayalakshmi Group</span>
+							</div>
+
+
+							<div class="footer-bottom-links">
+								<a href="#">Legal Disclaimer</a>
+								<a href="#">Privacy Notice</a>
+								<a href="#">Terms & Conditions</a>
+								<a href="#">Cookie Policy</a>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
-		</footer>
 	</div>
 
 	<script src="js/jquery.min.js"></script>

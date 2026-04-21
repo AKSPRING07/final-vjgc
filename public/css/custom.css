@@ -1,3 +1,8 @@
+/* GLOBAL FONT SYNCHRONIZATION */
+body, p, li, a, .footer-mini * {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
 .site-brand-logo {
   width: min(280px, 34vw);
   height: auto;
