@@ -250,21 +250,22 @@
 			overflow: hidden;
 		}
 
-		.hero-banner-one .hero-slider-one {
+		.hero-banner-one .vjs-hero-slider {
 			position: relative !important;
 			z-index: 1;
 			height: auto !important;
+			overflow: hidden;
 		}
 
-		.hero-banner-one .item {
+		.vjs-hero-slider .item {
 			position: relative;
 			padding: 0 0 120px;
-			min-height: 750px;
-			display: flex;
+			min-height: 800px;
+			display: flex !important;
 			align-items: flex-end;
 		}
 
-		.hero-banner-one .hero-img {
+		.vjs-hero-slider .hero-img {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -274,6 +275,7 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			z-index: -1;
+			transition: transform 5s linear;
 		}
 
 		.hero-banner-one .hero-img::after {
@@ -572,15 +574,15 @@
 		============================================== 
 		-->
 		<div class="hero-banner-one position-relative scroll-effect-one">
-			<div class="hero-slider-one m0">
-				<!-- Slide 1: Education -->
+			<div class="vjs-hero-slider m0">
+				<!-- Slide 1: Empowerment -->
 				<div class="item m0">
-					<div class="hero-img" style="background-image: url(images/media/hero_foundation_1.png);"></div>
+					<div class="hero-img" style="background-image: url('images/media/hero_empowerment_vjs.png');"></div>
 					<div class="container position-relative">
 						<div class="row">
 							<div class="col-xl-7 col-lg-8">
 								<h1
-									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
+									class="hero-heading hero-heading-glass d-inline-block position-relative">
 									Empowering the Next Generation</h1>
 							</div>
 						</div>
@@ -588,58 +590,45 @@
 				</div>
 				<!-- Slide 2: Healthcare -->
 				<div class="item m0">
-					<div class="hero-img" style="background-image: url(images/media/hero_foundation_2.png);"></div>
+					<div class="hero-img" style="background-image: url('images/media/hero_healthcare_vjs.png');"></div>
 					<div class="container position-relative">
 						<div class="row">
 							<div class="col-xl-7 col-lg-8">
 								<h1
-									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
-									A Healthy Tomorrow for All</h1>
+									class="hero-heading hero-heading-glass d-inline-block position-relative">
+									Quality Medical Care for All</h1>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!-- Slide 3: Sustainability -->
+				<!-- Slide 3: Environment -->
 				<div class="item m0">
-					<div class="hero-img" style="background-image: url(images/media/hero_foundation_3.png);"></div>
+					<div class="hero-img" style="background-image: url('images/media/hero_environment_vjs.png');"></div>
 					<div class="container position-relative">
 						<div class="row">
 							<div class="col-xl-7 col-lg-8">
 								<h1
-									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
-									Protecting Our Environment</h1>
+									class="hero-heading hero-heading-glass d-inline-block position-relative">
+									Greener Future for Tomorrow</h1>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!-- Slide 4: Empowerment -->
+				<!-- Slide 4: Youth & Sports -->
 				<div class="item m0">
-					<div class="hero-img" style="background-image: url(images/media/hero_foundation_4.png);"></div>
+					<div class="hero-img" style="background-image: url('images/media/hero_youth_vjs.png');"></div>
 					<div class="container position-relative">
 						<div class="row">
 							<div class="col-xl-7 col-lg-8">
 								<h1
-									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
-									Skills & Independence for All</h1>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Slide 5: Vijayalakshmi Trust -->
-				<div class="item m0">
-					<div class="hero-img" style="background-image: url(images/media/hero_foundation_5.png);"></div>
-					<div class="container position-relative">
-						<div class="row">
-							<div class="col-xl-7 col-lg-8">
-								<h1
-									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
-									Helping People, Changing Lives</h1>
+									class="hero-heading hero-heading-glass d-inline-block position-relative">
+									Nurturing Talent, Building Leaders</h1>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- /.hero-slider-one -->
+			<!-- /.vjs-hero-slider -->
 		</div>
 		<!-- /.hero-banner-one -->
 
@@ -1112,8 +1101,8 @@
 
 		<script>
 			$(document).ready(function () {
-				if ($(".hero-slider-one").length) {
-					$(".hero-slider-one").slick({
+				if ($(".vjs-hero-slider").length) {
+					$(".vjs-hero-slider").slick({
 						dots: false,
 						arrows: false,
 						fade: true,
@@ -1121,8 +1110,14 @@
 						autoplay: true,
 						autoplaySpeed: 5000,
 						pauseOnHover: false,
-						speed: 1500
+						speed: 1500,
+						cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
 					});
+				}
+				
+				// Re-init WOW for the new slides
+				if (typeof WOW !== 'undefined') {
+					new WOW().init();
 				}
 			});
 		</script>

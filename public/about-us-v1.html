@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -38,225 +38,8 @@
 			<script src="vendor/html5shiv.js"></script>
 			<script src="vendor/respond.js"></script>
 		<![endif]-->
-	<style>
-		@media (min-width: 992px) {
-
-			.adani-nav-fx {
-				padding: 0;
-				align-self: top;
-				margin: 0;
-				background: #08201b;
-				border: none !important;
-				box-shadow: none !important;
-				width: 100%;
-
-				/* 🔥 FIX: lock to top */
-				position: fixed;
-				top: 0;
-				left: 0;
-				z-index: 9999;
-			}
-
-			.adani-nav-fx .inner-content {
-				padding: 0;
-				margin: 0;
-				animation: adaniNavReveal 0.75s cubic-bezier(0.22, 1, 0.36, 1);
-			}
-
-			.adani-nav-fx .top-header {
-				position: relative;
-				padding: 18px 20px;
-
-				/* ❌ REMOVE this (causes line) */
-				/* margin: -1px 0; */
-
-				margin: 0;
-
-				width: 100%;
-				border-radius: 0;
-				transition: padding 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-
-				transform: translateZ(0);
-				backface-visibility: hidden;
-				isolation: isolate;
-			}
-		}
-
-		/* ================= GLASS EFFECT ================= */
-
-		.adani-nav-fx .top-header::before {
-			content: "";
-			position: absolute;
-
-			/* 🔥 STRONG FIX */
-			top: -4px;
-			bottom: -3px;
-			left: 0;
-			right: 0;
-
-			border-radius: inherit;
-
-			background: linear-gradient(135deg,
-					rgba(8, 32, 27, 0.88) 0%,
-					rgba(8, 32, 27, 0.82) 50%,
-					rgba(8, 32, 27, 0.88) 100%);
-
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-
-			transform: translateZ(0);
-			will-change: transform;
-
-			z-index: 0;
-		}
-
-		/* 🔥 HARD TOP COVER (FINAL LINE KILLER) */
-		.adani-nav-fx::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 3px;
-			background: #08201b;
-			z-index: 10000;
-			padding-top: 0%;
-		}
-
-		/* keep content above */
-		.adani-nav-fx .top-header>.d-flex {
-			position: relative;
-			z-index: 2;
-		}
-
-		/* LOGO */
-		.adani-nav-fx .logo img {
-			transition: transform 0.45s ease;
-			background-color: #9ec008;
-			border-radius: 50%;
-		}
-
-		/* NAVBAR */
-		.adani-nav-fx .navbar-nav {
-			gap: 20px;
-		}
-
-		.adani-nav-fx .nav-item .nav-link {
-			padding: 6px 16px;
-			border-radius: 999px;
-			font-size: 14px;
-			color: rgba(255, 255, 255, 0.85);
-			transition: all 0.35s ease;
-		}
-
-		/* HOVER */
-		.adani-nav-fx .nav-item:hover>.nav-link,
-		.adani-nav-fx .nav-item.nav-current>.nav-link {
-			color: #dfff7c;
-			transform: translateY(-0.5px);
-		}
-
-		/* HOVER INDICATOR */
-		.adani-nav-fx .nav-hover-indicator {
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 0;
-			border-radius: 999px;
-			pointer-events: none;
-			opacity: 0;
-			transform: scale(0.92);
-
-			background: linear-gradient(135deg,
-					rgba(255, 255, 255, 0.18),
-					rgba(255, 255, 255, 0.05));
-
-			transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-		}
-
-		/* DROPDOWN */
-		.adani-nav-fx .navbar .dropdown-menu {
-			margin-top: 14px;
-			padding: 14px 8px;
-			border-radius: 24px;
-			border: 1px solid rgba(255, 255, 255, 0.05);
-			background: rgba(253, 253, 253, 0.719);
-
-			transform: translateY(18px) scale(0.96);
-			clip-path: inset(0 0 100% 0 round 24px);
-
-			transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-				opacity 0.3s ease,
-				visibility 0.3s ease,
-				clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-		}
-
-		.adani-nav-fx .navbar .dropdown:hover>.dropdown-menu {
-			transform: translateY(0) scale(1);
-			clip-path: inset(0 0 0 0 round 24px);
-		}
-
-		/* ================= STICKY STATE ================= */
-
-		.adani-nav-fx.fixed {
-			padding-top: 12px;
-			background: #08201b;
-		}
-
-		.adani-nav-fx.fixed .top-header {
-			padding: 12px 0;
-		}
-
-		.adani-nav-fx.fixed .top-header::before {
-			top: -4px;
-			bottom: -3px;
-
-			background: linear-gradient(135deg,
-					rgba(8, 32, 27, 0.96) 0%,
-					rgba(8, 32, 27, 0.92) 50%,
-					rgba(8, 32, 27, 0.96) 100%);
-
-			backdrop-filter: blur(12px);
-			-webkit-backdrop-filter: blur(12px);
-		}
-
-		/* LOGO SCALE */
-		.adani-nav-fx.fixed .logo img {
-			transform: scale(0.94);
-		}
-
-		/* MOBILE */
-		@media (max-width: 991px) {
-			.adani-nav-fx .top-header {
-				position: relative;
-				z-index: 5;
-				margin: 0;
-				background: #08201b;
-			}
-		}
-
-		/* BODY FIX */
-		html,
-		body {
-			margin: 0;
-			padding: 0;
-			background: #08201b;
-		}
-
-		/* ANIMATION */
-		@keyframes adaniNavReveal {
-			from {
-				opacity: 0;
-				transform: translateY(-18px);
-			}
-
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-	</style>
+	
+	<link rel="stylesheet" type="text/css" href="css/navbar-vjs.css" media="all">
 </head>
 
 <body>
@@ -274,7 +57,12 @@
 		</div>
 
 		<!-- Theme Main Menu -->
-		<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
+				<!-- 
+		=============================================
+				Theme Main Menu
+		============================================== 
+		-->
+						<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
 			<div class="inner-content position-relative">
 				<div class="top-header">
 					<div class="d-flex align-items-center justify-content-between">
@@ -505,13 +293,14 @@
 			BLock Feature One
 		============================================== 
 		-->
-		<!--
+				<!--
 		=====================================================
 			Our Journey Timeline
 		=====================================================
 		-->
-		<div class="vjs-timeline-section py-5" style="background: #f8f8f8; color: #081c17; position: relative; overflow: hidden;">
-			<!-- Floating Bubbles BG -->
+		<div class="vjs-timeline-section py-5" style="background: linear-gradient(180deg, #f0f7ec 0%, #f8f8f8 40%, #eef5e8 100%); color: #081c17; position: relative; overflow: hidden;">
+			
+			<!-- Floating Particles BG -->
 			<div class="vjs-bubble-wrap">
 				<div class="vjs-bubble"></div>
 				<div class="vjs-bubble"></div>
@@ -520,255 +309,796 @@
 				<div class="vjs-bubble"></div>
 				<div class="vjs-bubble"></div>
 			</div>
+
 			<div class="container">
 				<div class="title-one text-center mb-70 lg-mb-40 wow fadeInUp">
 					<div class="upper-title">Our Journey</div>
-					<h2>A path of growth, innovation, and expanding excellence across industries.</h2>
+					<h2 style="font-family: 'Inter', sans-serif; font-weight: 800;">From a single venture to a multi-vertical integrated group â€” 20 years of building, growing and leading.</h2>
 				</div>
 
 				<div class="vjs-custom-linear-timeline py-5">
 					<div class="timeline-v-line"></div>
-					
-					<!-- 2012 -->
+
+					<!-- =============================== -->
+					<!-- PHASE BANNER: Foundation Era -->
+					<!-- =============================== -->
+					<div class="vjs-phase-banner wow fadeInUp">
+						<div class="vjs-phase-inner">
+							<span class="phase-tag">Phase 1</span>
+							<h3 class="phase-title">Foundation Era (2005 - 2011)</h3>
+							<p class="phase-desc">Building cash flow, ground network, and asset base</p>
+						</div>
+					</div>
+
+					<!-- 2005 -->
 					<div class="timeline-item left-marker wow fadeInUp">
-						<div class="marker-year blue">2012</div>
+						<div class="marker-year blue">2005</div>
 						<div class="marker-dot"></div>
 						<div class="marker-content">
 							<div class="timeline-card shadow-lg">
-								<img src="images/media/hero_foundation_1.png" alt="" class="card-img">
+								<div class="card-image-wrap">
+									<img src="images/media/hero_foundation_1.png" alt="Lakshmi Travels">
+									<div class="card-year-badge">2005</div>
+								</div>
 								<div class="card-body">
-									<h4 style="color: #08201b;">The Foundation</h4>
-									<p style="color: #666;">Established the Vijayalakshmi Group with a core mission to bring quality and integrity to the infrastructure sector.</p>
+									<h4 class="card-brand"><i class="bi bi-bus-front-fill"></i> Lakshmi Travels</h4>
+									<p class="card-tagline">Connecting people to their destinations</p>
+									<div class="card-details-box">
+										<div class="detail-row">
+											<span class="detail-icon seedling"><i class="bi bi-seedling"></i></span>
+											<div><strong>Initial Stage:</strong> Local travel operations focused on reliability and customer trust</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon growth"><i class="bi bi-graph-up-arrow"></i></span>
+											<div><strong>Growth Phase:</strong> Expanded routes, built repeat customer base</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon current"><i class="bi bi-building"></i></span>
+											<div><strong>Current Role:</strong> Supports tourism + mobility ecosystem</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon strategic"><i class="bi bi-lightning-charge-fill"></i></span>
+											<div><strong>Strategic Value:</strong> First revenue engine; brand trust foundation</div>
+										</div>
+									</div>
 								</div>
 							</div>
+						</div>
+					</div>
+
+					<!-- 2007 -->
+					<div class="timeline-item right-marker wow fadeInUp" data-wow-delay="0.1s">
+						<div class="marker-content">
+							<div class="timeline-card shadow-lg">
+								<div class="card-image-wrap">
+									<img src="images/media/hero_foundation_2.png" alt="NVRS Logistics">
+									<div class="card-year-badge green">2007</div>
+								</div>
+								<div class="card-body">
+									<h4 class="card-brand"><i class="bi bi-truck"></i> NVRS Logistics</h4>
+									<p class="card-tagline">Goods transportation across the region</p>
+									<div class="card-details-box">
+										<div class="detail-row">
+											<span class="detail-icon seedling"><i class="bi bi-seedling"></i></span>
+											<div><strong>Initial Stage:</strong> Entry into goods transportation</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon growth"><i class="bi bi-graph-up-arrow"></i></span>
+											<div><strong>Growth Phase:</strong> Strengthened regional logistics network</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon current"><i class="bi bi-building"></i></span>
+											<div><strong>Current Role:</strong> Backbone for trade and supply chain movement</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon strategic"><i class="bi bi-lightning-charge-fill"></i></span>
+											<div><strong>Strategic Value:</strong> Enables vertical integration (trade + distribution)</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="marker-dot"></div>
+						<div class="marker-year orange">2007</div>
+					</div>
+
+					<!-- 2009 -->
+					<div class="timeline-item left-marker wow fadeInUp" data-wow-delay="0.2s">
+						<div class="marker-year blue">2009</div>
+						<div class="marker-dot"></div>
+						<div class="marker-content">
+							<div class="timeline-card shadow-lg">
+								<div class="card-image-wrap">
+									<img src="images/media/hero_foundation_3.png" alt="Lakshmi Gardens">
+									<div class="card-year-badge">2009</div>
+								</div>
+								<div class="card-body">
+									<h4 class="card-brand"><i class="bi bi-flower1"></i> Lakshmi Gardens & Properties</h4>
+									<p class="card-tagline">Land, plantation & real estate ventures</p>
+									<div class="card-details-box">
+										<div class="detail-row">
+											<span class="detail-icon seedling"><i class="bi bi-seedling"></i></span>
+											<div><strong>Initial Stage:</strong> Land acquisition and plantation setup</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon growth"><i class="bi bi-graph-up-arrow"></i></span>
+											<div><strong>Growth Phase:</strong> Expansion into real estate and asset holding</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon current"><i class="bi bi-building"></i></span>
+											<div><strong>Current Role:</strong> Asset-backed stability + long-term appreciation</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon strategic"><i class="bi bi-lightning-charge-fill"></i></span>
+											<div><strong>Strategic Value:</strong> Balance sheet strength + infrastructure control</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 2011 -->
+					<div class="timeline-item right-marker wow fadeInUp" data-wow-delay="0.3s">
+						<div class="marker-content">
+							<div class="timeline-card shadow-lg">
+								<div class="card-image-wrap">
+									<img src="images/media/hero_foundation_4.png" alt="Vijay Anjenya Traders">
+									<div class="card-year-badge green">2011</div>
+								</div>
+								<div class="card-body">
+									<h4 class="card-brand"><i class="bi bi-shop"></i> Vijay Anjenya Traders</h4>
+									<p class="card-tagline">Agricultural trading & global supply chain</p>
+									<div class="card-details-box">
+										<div class="detail-row">
+											<span class="detail-icon seedling"><i class="bi bi-seedling"></i></span>
+											<div><strong>Initial Stage:</strong> Agricultural trading (fresh produce)</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon growth"><i class="bi bi-graph-up-arrow"></i></span>
+											<div><strong>Growth Phase:</strong> Expanded into B2B and D2C channels</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon current"><i class="bi bi-building"></i></span>
+											<div><strong>Current Role:</strong> Export-import and domestic supply chain</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon strategic"><i class="bi bi-lightning-charge-fill"></i></span>
+											<div><strong>Strategic Value:</strong> Cash-flow driven business with global scalability</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="marker-dot"></div>
+						<div class="marker-year orange">2011</div>
+					</div>
+
+					<!-- =============================== -->
+					<!-- PHASE BANNER: Expansion Era -->
+					<!-- =============================== -->
+					<div class="vjs-phase-banner wow fadeInUp">
+						<div class="vjs-phase-inner phase-2">
+							<span class="phase-tag">Phase 2</span>
+							<h3 class="phase-title">Expansion & Diversification (2015 - 2019)</h3>
+							<p class="phase-desc">Entering future-focused and scalable sectors</p>
 						</div>
 					</div>
 
 					<!-- 2015 -->
-					<div class="timeline-item right-marker wow fadeInUp" data-wow-delay="0.1s">
+					<div class="timeline-item left-marker wow fadeInUp" data-wow-delay="0.1s">
+						<div class="marker-year blue">2015</div>
+						<div class="marker-dot"></div>
 						<div class="marker-content">
 							<div class="timeline-card shadow-lg">
-								<img src="images/media/hero_foundation_2.png" alt="" class="card-img">
+								<div class="card-image-wrap">
+									<img src="images/media/hero_foundation_5.png" alt="Aditya Powers">
+									<div class="card-year-badge">2015</div>
+								</div>
 								<div class="card-body">
-									<h4 style="color: #08201b;">Energy & Utilities</h4>
-									<p style="color: #666;">Strategic expansion into power and energy sectors, laying the groundwork for sustainable utility solutions.</p>
+									<h4 class="card-brand"><i class="bi bi-sun-fill"></i> Aditya Powers</h4>
+									<p class="card-tagline">Rural electrification & green energy</p>
+									<div class="card-details-box">
+										<div class="detail-row">
+											<span class="detail-icon seedling"><i class="bi bi-seedling"></i></span>
+											<div><strong>Initial Stage:</strong> Rural electrification (panchayat-level solar deployment)</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon growth"><i class="bi bi-graph-up-arrow"></i></span>
+											<div><strong>Growth Phase:</strong> Small-scale energy solutions</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon current"><i class="bi bi-building"></i></span>
+											<div><strong>Current Role:</strong> Green energy vertical (early-stage scaling)</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon strategic"><i class="bi bi-lightning-charge-fill"></i></span>
+											<div><strong>Strategic Value:</strong> ESG alignment + future infrastructure play</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="marker-dot"></div>
-						<div class="marker-year orange">2015</div>
 					</div>
 
 					<!-- 2018 -->
+					<div class="timeline-item right-marker wow fadeInUp" data-wow-delay="0.2s">
+						<div class="marker-content">
+							<div class="timeline-card shadow-lg">
+								<div class="card-image-wrap">
+									<img src="images/media/csr_solutions.png" alt="Springreen">
+									<div class="card-year-badge green">2018</div>
+								</div>
+								<div class="card-body">
+									<h4 class="card-brand"><i class="bi bi-laptop"></i> Springreen</h4>
+									<p class="card-tagline">IT services, AI & digital consulting</p>
+									<div class="card-details-box">
+										<div class="detail-row">
+											<span class="detail-icon seedling"><i class="bi bi-seedling"></i></span>
+											<div><strong>Initial Stage:</strong> IT services and consulting</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon growth"><i class="bi bi-graph-up-arrow"></i></span>
+											<div><strong>Growth Phase:</strong> Multi-service tech capabilities (AI, apps, automation)</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon current"><i class="bi bi-building"></i></span>
+											<div><strong>Current Status:</strong> Core growth engine of the group</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon strategic"><i class="bi bi-lightning-charge-fill"></i></span>
+											<div><strong>Strategic Value:</strong> High-margin, scalable, global positioning</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="marker-dot"></div>
+						<div class="marker-year orange">2018</div>
+					</div>
+
+					<!-- 2019 -->
+					<div class="timeline-item left-marker wow fadeInUp" data-wow-delay="0.3s">
+						<div class="marker-year blue">2019</div>
+						<div class="marker-dot"></div>
+						<div class="marker-content">
+							<div class="timeline-card shadow-lg">
+								<div class="card-image-wrap">
+									<img src="images/media/solutions_new.png" alt="Aditya Solutions">
+									<div class="card-year-badge">2019</div>
+								</div>
+								<div class="card-body">
+									<h4 class="card-brand"><i class="bi bi-server"></i> Aditya Solutions</h4>
+									<p class="card-tagline">Hosting, infrastructure & managed services</p>
+									<div class="card-details-box">
+										<div class="detail-row">
+											<span class="detail-icon seedling"><i class="bi bi-seedling"></i></span>
+											<div><strong>Initial Stage:</strong> Hosting and infrastructure services</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon growth"><i class="bi bi-graph-up-arrow"></i></span>
+											<div><strong>Growth Phase:</strong> Managed services + domain reselling</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon current"><i class="bi bi-building"></i></span>
+											<div><strong>Current Status:</strong> Digital backbone supporting tech clients</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon strategic"><i class="bi bi-lightning-charge-fill"></i></span>
+											<div><strong>Strategic Value:</strong> Ownership of infrastructure layer (critical for scale)</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- =============================== -->
+					<!-- PHASE BANNER: Ecosystem Phase -->
+					<!-- =============================== -->
+					<div class="vjs-phase-banner wow fadeInUp">
+						<div class="vjs-phase-inner phase-3">
+							<span class="phase-tag">Phase 3</span>
+							<h3 class="phase-title">Ecosystem Consolidation (2022 - 2025)</h3>
+							<p class="phase-desc">Talent creation, brand expansion & lifestyle integration</p>
+						</div>
+					</div>
+
+					<!-- 2022 -->
+					<div class="timeline-item right-marker wow fadeInUp" data-wow-delay="0.1s">
+						<div class="marker-content">
+							<div class="timeline-card shadow-lg">
+								<div class="card-image-wrap">
+									<img src="images/media/csr_education.png" alt="Aditya Institute">
+									<div class="card-year-badge green">2022</div>
+								</div>
+								<div class="card-body">
+									<h4 class="card-brand"><i class="bi bi-mortarboard-fill"></i> Aditya Institute</h4>
+									<p class="card-tagline">Skill development & IT training</p>
+									<div class="card-details-box">
+										<div class="detail-row">
+											<span class="detail-icon seedling"><i class="bi bi-seedling"></i></span>
+											<div><strong>Initial Stage:</strong> Skill development and IT training</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon growth"><i class="bi bi-graph-up-arrow"></i></span>
+											<div><strong>Growth Phase:</strong> Structured programs and career pathways</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon current"><i class="bi bi-building"></i></span>
+											<div><strong>Current Status:</strong> Talent pipeline for internal + external demand</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon strategic"><i class="bi bi-lightning-charge-fill"></i></span>
+											<div><strong>Strategic Value:</strong> Reduces hiring dependency, builds workforce control</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="marker-dot"></div>
+						<div class="marker-year orange">2022</div>
+					</div>
+
+					<!-- 2025 -->
 					<div class="timeline-item left-marker wow fadeInUp" data-wow-delay="0.2s">
-						<div class="marker-year blue">2018</div>
+						<div class="marker-year blue">2025</div>
 						<div class="marker-dot"></div>
 						<div class="marker-content">
 							<div class="timeline-card shadow-lg">
-								<img src="images/media/hero_foundation_3.png" alt="" class="card-img">
+								<div class="card-image-wrap">
+									<img src="images/media/csr_wellness.png" alt="Aham Graham">
+									<div class="card-year-badge">2025</div>
+								</div>
 								<div class="card-body">
-									<h4 style="color: #08201b;">Regional Expansion</h4>
-									<p style="color: #666;">Broadening our footprint across the region with successful large-scale industrial projects.</p>
+									<h4 class="card-brand"><i class="bi bi-heart-pulse-fill"></i> Aham Graham</h4>
+									<p class="card-tagline">Wellness, self-healing & lifestyle academy</p>
+									<div class="card-details-box">
+										<div class="detail-row">
+											<span class="detail-icon seedling"><i class="bi bi-seedling"></i></span>
+											<div><strong>Initial Stage:</strong> Wellness and self-healing academy</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon growth"><i class="bi bi-graph-up-arrow"></i></span>
+											<div><strong>Growth Phase:</strong> Community-driven brand development</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon current"><i class="bi bi-building"></i></span>
+											<div><strong>Current Status:</strong> Emerging lifestyle and wellness vertical</div>
+										</div>
+										<div class="detail-row">
+											<span class="detail-icon strategic"><i class="bi bi-lightning-charge-fill"></i></span>
+											<div><strong>Strategic Value:</strong> Expands into consumer + experience economy</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- 2021 -->
-					<div class="timeline-item right-marker wow fadeInUp" data-wow-delay="0.3s">
-						<div class="marker-content">
-							<div class="timeline-card shadow-lg">
-								<img src="images/media/about_hero_bg.png" alt="" class="card-img">
-								<div class="card-body">
-									<h4 style="color: #08201b;">Diversified Portfolio</h4>
-									<p style="color: #666;">Entering new domains including education and consumer goods, creating a multi-industry ecosystem.</p>
-								</div>
-							</div>
-						</div>
-						<div class="marker-dot"></div>
-						<div class="marker-year orange">2021</div>
-					</div>
+				</div>
 
-					<!-- 2024 -->
-					<div class="timeline-item left-marker wow fadeInUp" data-wow-delay="0.4s">
-						<div class="marker-year blue">2024</div>
-						<div class="marker-dot"></div>
-						<div class="marker-content">
-							<div class="timeline-card shadow-lg">
-								<img src="images/media/hero_foundation_1.png" alt="" class="card-img">
-								<div class="card-body">
-									<h4 style="color: #08201b;">Innovation Leadership</h4>
-									<p style="color: #666;">Pioneering smart infrastructure and digital transformation across all business verticals.</p>
-								</div>
-							</div>
-						</div>
+				<!-- CURRENT POSITIONING 2026 -->
+				<div class="vjs-positioning-section wow fadeInUp mt-80">
+					<div class="vjs-positioning-header">
+						<span class="phase-tag">2026</span>
+						<h3>Current Positioning â€” A Self-Sustaining Ecosystem</h3>
+						<p>You have evolved into a multi-vertical integrated group with presence across six distinct verticals â€” achieving cross-leverage rarely seen at this scale.</p>
 					</div>
-
-					<!-- 2026 -->
-					<div class="timeline-item right-marker wow fadeInUp" data-wow-delay="0.5s">
-						<div class="marker-content">
-							<div class="timeline-card shadow-lg">
-								<img src="images/media/about_hero_bg.png" alt="" class="card-img">
-								<div class="card-body">
-									<h4 style="color: #08201b;">Sustainable Future</h4>
-									<p style="color: #666;">Aiming for carbon neutrality and global impact through sustainable business practices and innovation.</p>
-								</div>
-							</div>
-						</div>
-						<div class="marker-dot"></div>
-						<div class="marker-year orange">2026</div>
+					<div class="vjs-verticals-grid">
+						<div class="vertical-chip"><span><i class="bi bi-laptop"></i></span> Technology & Infrastructure</div>
+						<div class="vertical-chip"><span><i class="bi bi-truck"></i></span> Logistics & Trade</div>
+						<div class="vertical-chip"><span><i class="bi bi-sun-fill"></i></span> Energy & Sustainability</div>
+						<div class="vertical-chip"><span><i class="bi bi-house-fill"></i></span> Real Estate & Assets</div>
+						<div class="vertical-chip"><span><i class="bi bi-mortarboard-fill"></i></span> Education & Talent</div>
+						<div class="vertical-chip"><span><i class="bi bi-bus-front-fill"></i></span> Travel & Wellness</div>
 					</div>
 				</div>
 
-				<style>
-					.vjs-custom-linear-timeline {
-						position: relative;
-						max-width: 1100px;
-						margin: 0 auto;
-						padding: 40px 0;
-						z-index: 2; /* Keep content above bubbles */
-					}
-					
-					/* Background Animated Bubbles */
-					.vjs-journey-bg-bubbles {
-						position: absolute;
-						top: 0;
-						left: 0;
-						width: 100%;
-						height: 100%;
-						overflow: hidden;
-						z-index: 1;
-						pointer-events: none;
-					}
-					.vjs-bubble-item {
-						position: absolute;
-						border-radius: 50%;
-						background: linear-gradient(135deg, rgba(158, 192, 8, 0.15), rgba(8, 32, 27, 0.12));
-						backdrop-filter: blur(2px);
-						animation: floatBubble 20s infinite linear;
-						filter: blur(0.5px);
-						bottom: -150px;
-					}
-					
-					@keyframes floatBubble {
-						0% { transform: translateY(0) scale(0.6); opacity: 0; }
-						20% { opacity: 0.6; }
-						80% { opacity: 0.6; }
-						100% { transform: translateY(-120vh) scale(1.3); opacity: 0; }
-					}
-					
-					/* Specific Bubble Positions & Speeds */
-					.vjs-bubble-item:nth-child(1) { width: 150px; height: 150px; left: 10%; animation-duration: 22s; animation-delay: 0s; }
-					.vjs-bubble-item:nth-child(2) { width: 250px; height: 250px; left: 75%; animation-duration: 30s; animation-delay: -5s; }
-					.vjs-bubble-item:nth-child(3) { width: 100px; height: 100px; left: 45%; animation-duration: 18s; animation-delay: -10s; }
-					.vjs-bubble-item:nth-child(4) { width: 200px; height: 200px; left: 20%; animation-duration: 35s; animation-delay: -15s; }
-					.vjs-bubble-item:nth-child(5) { width: 120px; height: 120px; left: 85%; animation-duration: 25s; animation-delay: -2s; }
-					.vjs-bubble-item:nth-child(6) { width: 180px; height: 180px; left: 30%; animation-duration: 28s; animation-delay: -8s; }
-
-					.timeline-v-line {
-						position: absolute;
-						left: 50%;
-						top: 0;
-						bottom: 0;
-						width: 2px;
-						background: #ddd;
-						transform: translateX(-50%);
-					}
-					.timeline-item {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						margin-bottom: 100px;
-						position: relative;
-						width: 100%;
-					}
-					.marker-year {
-						width: 100px;
-						height: 100px;
-						border-radius: 50%;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-weight: 800;
-						font-size: 20px;
-						background: #fff;
-						z-index: 3;
-						border: 6px solid;
-						flex-shrink: 0;
-						position: relative;
-					}
-					.marker-year.blue { border-color: #08201b; color: #08201b; }
-					.marker-year.orange { border-color: #9ec008; color: #9ec008; }
-					
-					.marker-dot {
-						width: 16px;
-						height: 16px;
-						background: #08201b;
-						border-radius: 50%;
-						position: absolute;
-						left: 50%;
-						transform: translateX(-50%);
-						z-index: 4;
-						border: 3px solid #fff;
-					}
-					.timeline-item:nth-child(even) .marker-dot { background: #9ec008; }
-
-					.marker-content {
-						flex: 1;
-						padding: 0 50px;
-						max-width: 500px;
-						z-index: 3;
-					}
-					
-					.timeline-card {
-						background: rgba(255, 255, 255, 0.95);
-						border-radius: 15px;
-						overflow: hidden;
-						transition: transform 0.3s ease, box-shadow 0.3s ease;
-						border: 1px solid rgba(0,0,0,0.05);
-						backdrop-filter: blur(10px);
-					}
-					.timeline-card:hover { 
-						transform: translateY(-8px);
-						box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
-					}
-					
-					.card-img {
-						width: 100%;
-						height: 180px;
-						object-fit: cover;
-					}
-					.card-body { padding: 25px; }
-					
-					.left-marker .marker-year { order: 1; }
-					.left-marker .marker-content { order: 2; text-align: left; }
-					
-					.right-marker .marker-year { order: 2; }
-					.right-marker .marker-content { order: 1; text-align: right; }
-
-					@media (max-width: 991px) {
-						.timeline-v-line { left: 30px; }
-						.marker-dot { left: 30px; }
-						.timeline-item { flex-direction: row-reverse; justify-content: flex-end; margin-bottom: 50px; }
-						.marker-year { width: 70px; height: 70px; font-size: 16px; border-width: 4px; }
-						.marker-content { text-align: left !important; padding-left: 20px; max-width: none; }
-						.left-marker .marker-year, .right-marker .marker-year { order: 1; }
-						.left-marker .marker-content, .right-marker .marker-content { order: 2; }
-					}
-				</style>
-
-				<!-- Bubble Container -->
-				<div class="vjs-journey-bg-bubbles">
-					<div class="vjs-bubble-item"></div>
-					<div class="vjs-bubble-item"></div>
-					<div class="vjs-bubble-item"></div>
-					<div class="vjs-bubble-item"></div>
-					<div class="vjs-bubble-item"></div>
-					<div class="vjs-bubble-item"></div>
+				<!-- FUTURE VISION -->
+				<div class="vjs-future-section wow fadeInUp mt-80 mb-60">
+					<div class="vjs-future-header">
+						<span class="phase-tag">Vision</span>
+						<h3>Strategic Direction â€” Where We Go Next</h3>
+					</div>
+					<div class="vjs-future-grid">
+						<div class="future-card">
+							<div class="future-num">01</div>
+							<h4>Unified Group Brand</h4>
+							<p>Transition into a parent entity structure. Strengthen perception for investors and global clients.</p>
+						</div>
+						<div class="future-card">
+							<div class="future-num">02</div>
+							<h4>Vertical Integration at Scale</h4>
+							<p>Tech + Infra + Talent. Logistics + Trade â†’ End-to-end supply chain ownership.</p>
+						</div>
+						<div class="future-card">
+							<div class="future-num">03</div>
+							<h4>Global Expansion</h4>
+							<p>IT services to international clients. Agri exports to new markets. Hosting â€” global infra partnerships.</p>
+						</div>
+						<div class="future-card">
+							<div class="future-num">04</div>
+							<h4>High-Value Focus Areas</h4>
+							<p>AI-led products via Springreen. Renewable energy scaling via Aditya Powers. Data center expansion.</p>
+						</div>
+					</div>
 				</div>
+
 			</div>
+
+			<style>
+				@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+				.vjs-timeline-section {
+					font-family: 'Inter', sans-serif;
+				}
+
+				.vjs-bubble-wrap {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					overflow: hidden;
+					z-index: 0;
+					pointer-events: none;
+				}
+
+				.vjs-bubble {
+					position: absolute;
+					border-radius: 50%;
+					background: radial-gradient(circle, rgba(158, 192, 8, 0.15), transparent 70%);
+					animation: vjsBubbleFloat linear infinite;
+					opacity: 0;
+				}
+
+				@keyframes vjsBubbleFloat {
+					0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+					10% { opacity: 1; }
+					90% { opacity: 1; }
+					100% { transform: translateY(-20vh) scale(1.5); opacity: 0; }
+				}
+
+				.vjs-bubble:nth-child(1) { width: 150px; height: 150px; left: 10%; animation-duration: 22s; animation-delay: 0s; }
+				.vjs-bubble:nth-child(2) { width: 250px; height: 250px; left: 75%; animation-duration: 30s; animation-delay: -5s; }
+				.vjs-bubble:nth-child(3) { width: 100px; height: 100px; left: 45%; animation-duration: 18s; animation-delay: -10s; }
+				.vjs-bubble:nth-child(4) { width: 200px; height: 200px; left: 20%; animation-duration: 35s; animation-delay: -15s; }
+				.vjs-bubble:nth-child(5) { width: 120px; height: 120px; left: 85%; animation-duration: 25s; animation-delay: -2s; }
+				.vjs-bubble:nth-child(6) { width: 180px; height: 180px; left: 30%; animation-duration: 28s; animation-delay: -8s; }
+
+				.vjs-custom-linear-timeline {
+					position: relative;
+					max-width: 1100px;
+					margin: 0 auto;
+					z-index: 2;
+				}
+
+				.timeline-v-line {
+					position: absolute;
+					left: 50%;
+					top: 0;
+					bottom: 0;
+					width: 2px;
+					background: #ddead1;
+					transform: translateX(-50%);
+				}
+
+				.vjs-phase-banner {
+					width: 100%;
+					text-align: center;
+					margin: 50px 0;
+					position: relative;
+					z-index: 3;
+				}
+
+				.vjs-phase-inner {
+					display: inline-block;
+					background: #08201b;
+					color: #fff;
+					padding: 20px 40px;
+					border-radius: 50px;
+					box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+					border: 1px solid rgba(158, 192, 8, 0.2);
+				}
+
+				.vjs-phase-inner.phase-2 { background: #1a3c34; }
+				.vjs-phase-inner.phase-3 { background: #2c544b; }
+
+				.phase-tag {
+					background: #9ec008;
+					color: #08201b;
+					font-size: 11px;
+					font-weight: 800;
+					padding: 4px 12px;
+					border-radius: 20px;
+					text-transform: uppercase;
+					letter-spacing: 1.5px;
+					font-family: 'Outfit', sans-serif;
+				}
+
+				.phase-title {
+					font-family: 'Outfit', sans-serif;
+					font-size: 26px;
+					font-weight: 700;
+					margin: 12px 0 6px;
+					letter-spacing: -0.5px;
+				}
+
+				.phase-desc {
+					font-size: 15px;
+					opacity: 0.85;
+					margin: 0;
+					font-weight: 400;
+				}
+
+				.timeline-item {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					margin-bottom: 90px;
+					position: relative;
+					width: 100%;
+				}
+
+				.marker-year {
+					width: 85px;
+					height: 85px;
+					border-radius: 50%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-family: 'Outfit', sans-serif;
+					font-weight: 800;
+					font-size: 20px;
+					background: #fff;
+					z-index: 3;
+					border: 4px solid;
+					flex-shrink: 0;
+					box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+				}
+
+				.marker-year.blue { border-color: #08201b; color: #08201b; }
+				.marker-year.orange { border-color: #9ec008; color: #9ec008; }
+
+				.marker-dot {
+					width: 14px;
+					height: 14px;
+					background: #08201b;
+					border-radius: 50%;
+					position: relative;
+					z-index: 4;
+					border: 3px solid #fff;
+					box-shadow: 0 0 0 3px rgba(158, 192, 8, 0.3);
+				}
+
+				.marker-content {
+					width: 45%;
+					padding: 0 40px;
+				}
+
+				.timeline-card {
+					background: #fff;
+					border-radius: 28px;
+					overflow: hidden;
+					transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+					border: 1px solid rgba(222, 234, 209, 1);
+					box-shadow: 0 15px 35px rgba(8, 32, 27, 0.04);
+				}
+
+				.timeline-card:hover {
+					transform: translateY(-12px) scale(1.01);
+					box-shadow: 0 40px 80px rgba(8, 32, 27, 0.12) !important;
+					border-color: #9ec008;
+				}
+
+				.card-image-wrap {
+					position: relative;
+					height: 190px;
+					overflow: hidden;
+				}
+
+				.card-image-wrap img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					transition: transform 1s ease;
+				}
+
+				.timeline-card:hover .card-image-wrap img {
+					transform: scale(1.12);
+				}
+
+				.card-year-badge {
+					position: absolute;
+					bottom: 15px;
+					right: 20px;
+					background: rgba(8, 32, 27, 0.85);
+					backdrop-filter: blur(8px);
+					color: #9ec008;
+					padding: 6px 18px;
+					border-radius: 30px;
+					font-weight: 800;
+					font-size: 14px;
+					border: 1px solid rgba(255,255,255,0.1);
+					font-family: 'Outfit', sans-serif;
+				}
+
+				.card-year-badge.green { background: rgba(158, 192, 8, 0.9); color: #08201b; }
+
+				.card-body { padding: 35px; }
+
+				.card-brand {
+					font-family: 'Outfit', sans-serif;
+					font-size: 24px;
+					font-weight: 800;
+					color: #08201b;
+					margin-bottom: 6px;
+					letter-spacing: -0.5px;
+				}
+
+				.card-tagline {
+					font-size: 14px;
+					color: #777;
+					font-style: italic;
+					margin-bottom: 25px;
+					font-weight: 400;
+				}
+
+				.card-details-box {
+					background: #fbfdf9;
+					padding: 25px;
+					border-radius: 20px;
+					display: flex;
+					flex-direction: column;
+					gap: 18px;
+					border: 1px solid #f0f7ec;
+				}
+
+				.detail-row {
+					display: flex;
+					gap: 16px;
+					align-items: flex-start;
+					font-size: 14.5px;
+					line-height: 1.6;
+					color: #333;
+				}
+
+				.detail-icon {
+					font-size: 18px;
+					flex-shrink: 0;
+					margin-top: 3px;
+					width: 24px;
+					height: 24px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+				.detail-icon.seedling { color: #27ae60; }
+				.detail-icon.growth { color: #9ec008; }
+				.detail-icon.current { color: #196164; }
+				.detail-icon.strategic { color: #e67e22; }
+
+				.detail-row strong {
+					color: #08201b;
+					font-weight: 700;
+				}
+
+				.vjs-positioning-header h3, .vjs-future-header h3 {
+					font-family: 'Outfit', sans-serif;
+					font-size: 34px;
+					font-weight: 800;
+					color: #08201b;
+					margin: 15px 0;
+					letter-spacing: -1px;
+				}
+
+				.vjs-positioning-header p {
+					font-size: 17px;
+					color: #555;
+					max-width: 800px;
+					margin: 0 auto 40px;
+				}
+
+				.vjs-verticals-grid {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 15px;
+					justify-content: center;
+				}
+
+				.vertical-chip {
+					background: #fff;
+					border: 1px solid #eef5e8;
+					padding: 14px 35px;
+					border-radius: 50px;
+					font-weight: 700;
+					display: flex;
+					align-items: center;
+					gap: 12px;
+					transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+					box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+					font-family: 'Outfit', sans-serif;
+					font-size: 15px;
+				}
+
+				.vertical-chip span { color: #9ec008; font-size: 18px; }
+
+				.vertical-chip:hover {
+					background: #08201b;
+					color: #fff;
+					transform: scale(1.08) translateY(-3px);
+					border-color: #08201b;
+					box-shadow: 0 10px 25px rgba(8, 32, 27, 0.2);
+				}
+
+				.vjs-future-grid {
+					display: grid;
+					grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+					gap: 25px;
+				}
+
+				.future-card {
+					background: #fff;
+					padding: 45px;
+					border-radius: 30px;
+					border: 1px solid #f0f7ec;
+					transition: all 0.4s ease;
+					position: relative;
+				}
+
+				.future-card:hover {
+					border-color: #9ec008;
+					transform: translateY(-8px);
+					box-shadow: 0 25px 50px rgba(8, 32, 27, 0.08);
+				}
+
+				.future-num {
+					font-family: 'Outfit', sans-serif;
+					font-size: 42px;
+					font-weight: 800;
+					color: rgba(158, 192, 8, 0.2);
+					position: absolute;
+					top: 30px;
+					right: 30px;
+					line-height: 1;
+				}
+
+				.future-card h4 {
+					font-family: 'Outfit', sans-serif;
+					font-size: 20px;
+					font-weight: 800;
+					margin-bottom: 18px;
+					color: #08201b;
+				}
+
+				.future-card p {
+					font-size: 15px;
+					color: #666;
+					line-height: 1.7;
+					margin: 0;
+				}
+
+				@media (max-width: 991px) {
+					.timeline-v-line { left: 40px; transform: none; }
+					.timeline-item { flex-direction: row-reverse; justify-content: flex-end; padding-left: 40px; margin-bottom: 60px; }
+					.marker-content { width: 100%; padding: 0 0 0 50px; }
+					.marker-year { width: 65px; height: 65px; font-size: 15px; border-width: 3px; position: absolute; left: 7px; top: 0; }
+					.marker-dot { position: absolute; left: 40px; top: 32px; transform: translateX(-50%); width: 12px; height: 12px; }
+					.vjs-phase-banner { text-align: left; padding: 0 40px; }
+					.vjs-phase-inner { width: 100%; padding: 25px; }
+					.phase-title { font-size: 22px; }
+				}
+
+				@media (max-width: 768px) {
+					.vjs-positioning-header h3, .vjs-future-header h3 { font-size: 28px; }
+					.future-card { padding: 30px; }
+				}
+			</style>
+
 		</div>
 		<!-- /.vjs-timeline-section -->
+
 		<!-- /.block-feature-one -->
 
 
@@ -976,7 +1306,7 @@
 						max-width: 1200px;
 						margin: 0 auto;
 						padding: 90px 40px 35px;
-						/* 🔥 pushes content downward */
+						/* ?? pushes content downward */
 						font-family: "Helvetica Neue", Arial, sans-serif;
 					}
 
@@ -992,15 +1322,15 @@
 					/* LOGO & BRAND POSITIONING */
 					.footer-brand {
 						margin-top: 65px;
-						/* 🔥 Move further down */
+						/* ?? Move further down */
 						margin-left: 35px;
-						/* 🔥 Move slightly back to the left */
+						/* ?? Move slightly back to the left */
 					}
 
 					.footer-logo-group {
 						display: flex;
 						flex-direction: row;
-						/* 🔥 Back to side-by-side */
+						/* ?? Back to side-by-side */
 						align-items: center;
 						padding-right: 20px;
 						gap: 12px;
@@ -1035,10 +1365,10 @@
 
 					.social-icons-mini {
 						display: inline-flex;
-						/* 🔥 Borders only span icon area */
+						/* ?? Borders only span icon area */
 						gap: 14px;
 						margin-top: -10px;
-						/* 🔥 Move closer to text */
+						/* ?? Move closer to text */
 						margin-left: 58px;
 						padding: 4px 0;
 						border-top: 1px solid #7030a0;
@@ -1102,7 +1432,7 @@
 					.footer-bottom {
 						border-top: 1px solid #e5e7ea;
 						margin-top: 50px;
-						/* 🔥 spacing like Adani */
+						/* ?? spacing like Adani */
 						padding-top: 20px;
 						display: flex;
 						justify-content: space-between;
@@ -1115,9 +1445,9 @@
 						display: flex;
 						gap: 25px;
 						margin-left: auto;
-						/* 🔥 pushes links to the right */
+						/* ?? pushes links to the right */
 						padding-left: 500px;
-						/* 🔥 adds small right offset */
+						/* ?? adds small right offset */
 					}
 
 					.footer-bottom-links a {
@@ -1172,7 +1502,7 @@
 							<h5>About Us</h5>
 							<ul>
 								<li><a href="#">About Company</a></li>
-								<li><a href="#">Chairman’s Office</a></li>
+								<li><a href="#">Chairman�s Office</a></li>
 								<li><a href="#">Leadership</a></li>
 								<li><a href="#">Our Journey</a></li>
 								<li><a href="#">Awards</a></li>
@@ -1208,7 +1538,7 @@
 						<div class="footer-bottom">
 							<div style="display: flex; align-items: center; gap: 8px;">
 								<img src="images/logo/vijayalakshmi-mark.png" alt="Mark" style="height: 20px; width: auto;">
-								<span>© 2025 Vijayalakshmi Group</span>
+								<span>� 2025 Vijayalakshmi Group</span>
 							</div>
 
 
@@ -1417,3 +1747,4 @@
 </body>
 
 </html>
+

@@ -1,5 +1,9 @@
 /* GLOBAL FONT SYNCHRONIZATION */
-body, p, li, a, .footer-mini * {
+body,
+p,
+li,
+a,
+.footer-mini * {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -1125,5 +1129,6 @@ body, p, li, a, .footer-mini * {
 }
 
 .hero-slider-one .item .hero-img {
-  background-image: none !important; /* Force override of static images */
+  background-image: none !important;
+  /* Force override of static images */
 }
