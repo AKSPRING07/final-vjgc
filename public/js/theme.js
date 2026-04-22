@@ -103,16 +103,41 @@
 
         // ------------------------ Hero Slider One
         if($(".hero-slider-one").length) {
-          $('.hero-slider-one').slick({
-              dots: false,
-              arrows: false,
-              lazyLoad: 'ondemand',
-              centerPadding: '0px',
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              autoplay: true,
-              fade: true,
-              autoplaySpeed: 7000,
+            var $heroSlider = $('.hero-slider-one');
+            
+            $heroSlider.on('init', function(event, slick) {
+                var firstVideo = $(slick.$slides[0]).find('video').get(0);
+                if (firstVideo) {
+                    firstVideo.play().catch(function(e) {
+                        console.log("Autoplay blocked, waiting for interaction");
+                    });
+                }
+            });
+
+            $heroSlider.slick({
+                dots: false,
+                arrows: false,
+                lazyLoad: 'ondemand',
+                centerPadding: '0px',
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: false, // Critical: Video controls the timing
+                fade: true,
+                speed: 1000 // Smooth fade transition
+            });
+
+            // Play video on slide change
+            $heroSlider.on('afterChange', function(event, slick, currentSlide) {
+                var activeVideo = $(slick.$slides[currentSlide]).find('video').get(0);
+                if (activeVideo) {
+                    activeVideo.currentTime = 0;
+                    activeVideo.play();
+                }
+            });
+
+            // Sequential Playback: When video ends, go to next slide
+            $heroSlider.find('video').on('ended', function() {
+                $heroSlider.slick('slickNext');
             });
         }
 
