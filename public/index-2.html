@@ -235,6 +235,8 @@
 			margin: 0;
 			padding: 0;
 			background: #08201b;
+			overflow-x: hidden !important;
+			/* Prevent horizontal scroll */
 		}
 
 		/* ANIMATION */
@@ -586,6 +588,120 @@
 				margin-top: 20px !important;
 			}
 		}
+
+		/* ================= MEGA MENU (Businesses) ================= */
+
+		@media (min-width: 992px) {
+			.adani-nav-fx .navbar .nav-item.mega-dropdown {
+				position: static !important;
+			}
+
+			.adani-nav-fx .navbar .mega-dropdown .dropdown-menu {
+				position: absolute !important;
+				top: 100% !important;
+				left: 0 !important;
+				right: 0 !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				margin: 0 !important;
+				padding: 60px 0 !important;
+				background: #fbfbfb !important;
+				/* OFF-WHITE LIKE IMAGE 2 */
+				border-radius: 0 !important;
+				/* SQUARE CORNERS LIKE IMAGE 2 */
+				border: none !important;
+				border-top: 1px solid #eeeeee !important;
+				box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05) !important;
+				backdrop-filter: none !important;
+				-webkit-backdrop-filter: none !important;
+				clip-path: none !important;
+				opacity: 0 !important;
+				visibility: hidden !important;
+				display: block !important;
+				max-height: 0 !important;
+				overflow: hidden !important;
+				transform: translateY(10px) !important;
+				/* Subtle slide */
+				transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s !important;
+				pointer-events: none;
+				z-index: 99999 !important;
+			}
+
+			.adani-nav-fx .navbar .nav-item.mega-dropdown:hover .dropdown-menu {
+				opacity: 1 !important;
+				visibility: visible !important;
+				max-height: 2000px !important;
+				overflow: visible !important;
+				transform: translateY(0) !important;
+				pointer-events: all;
+			}
+
+			.mega-menu-content {
+				display: grid !important;
+				grid-template-columns: repeat(5, 1fr) !important;
+				/* 5 COLUMNS LIKE IMAGE 2 */
+				gap: 50px !important;
+				max-width: 1300px !important;
+				margin: 0 auto !important;
+				padding: 0 50px !important;
+				align-items: start !important;
+			}
+
+			.mega-column {
+				display: block !important;
+				width: 100% !important;
+			}
+
+			.mega-section {
+				margin-bottom: 30px !important;
+			}
+
+			.mega-title {
+				font-size: 13px !important;
+				font-weight: 700 !important;
+				color: #000 !important;
+				margin-bottom: 20px !important;
+				padding-bottom: 12px !important;
+				border-bottom: 1px solid #dddddd !important;
+				/* THIN LINE LIKE IMAGE 2 */
+				display: block !important;
+				letter-spacing: 0.2px;
+				font-family: inherit;
+				text-transform: none !important;
+			}
+
+			.mega-list {
+				list-style: none !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			.mega-list li {
+				margin-bottom: 10px !important;
+				display: block !important;
+			}
+
+			.mega-list li a {
+				font-size: 13px !important;
+				color: #666666 !important;
+				text-decoration: none !important;
+				transition: color 0.2s ease !important;
+				display: block !important;
+				font-weight: 400 !important;
+			}
+
+			.mega-list li a:hover {
+				color: #000 !important;
+				font-weight: 500 !important;
+				padding-left: 2px !important;
+			}
+		}
+
+		@media (max-width: 991px) {
+			.adani-nav-fx .navbar .mega-dropdown .dropdown-menu {
+				display: none !important;
+			}
+		}
 	</style>
 
 	<!-- Fix Internet Explorer ______________________________________-->
@@ -673,28 +789,72 @@
 														Awards</span></a></li>
 										</ul>
 									</li>
-									<li class="nav-item dropdown">
+									<li class="nav-item dropdown mega-dropdown">
 										<a class="nav-link dropdown-toggle" href="#" role="button"
 											data-bs-toggle="dropdown" data-bs-auto-close="outside"
 											aria-expanded="false">Businesses
 										</a>
-										<ul class="dropdown-menu">
-											<li><a href="index.html" class="dropdown-item"><span>Finance</span></a></li>
-											<li><a href="index-2.html" class="dropdown-item"><span>Business
-														Consultancy</span></a></li>
-											<li><a href="index-3.html" class="dropdown-item"><span>Banking</span></a>
-											</li>
-											<li><a href="index-4.html" class="dropdown-item"><span>Payment
-														Solution</span></a></li>
-											<li><a href="index-5.html" class="dropdown-item"><span>Digital
-														Agency</span></a></li>
-											<li><a href="index-6.html" class="dropdown-item"><span>Marketing</span></a>
-											</li>
-											<li><a href="index-7.html" class="dropdown-item"><span>Insurance</span></a>
-											</li>
-											<li><a href="index-8.html" class="dropdown-item"><span>Insurance
-														Two</span></a></li>
-										</ul>
+										<div class="dropdown-menu">
+											<div class="mega-menu-content">
+												<!-- Column 1 -->
+												<div class="mega-column">
+													<div class="mega-section">
+														<span class="mega-title">IT Infrastructure</span>
+														<ul class="mega-list">
+															<li><a href="index-5.html">IT Consulting</a></li>
+															<li><a href="index-2.html">Data Centers & Hosting</a></li>
+															<li><a href="index-3.html">Domain Services</a></li>
+														</ul>
+													</div>
+												</div>
+												<!-- Column 2 -->
+												<div class="mega-column">
+													<div class="mega-section">
+														<span class="mega-title">Education & Skills</span>
+														<ul class="mega-list">
+															<li><a href="service-v1.html">IT Training</a></li>
+															<li><a href="index-6.html">Yoga & Wellness</a></li>
+														</ul>
+													</div>
+												</div>
+												<!-- Column 3 -->
+												<div class="mega-column">
+													<div class="mega-section">
+														<span class="mega-title">Energy & Sustainability</span>
+														<ul class="mega-list">
+															<li><a href="index-7.html">Green Energy</a></li>
+															<li><a href="index-8.html">Solar Solutions</a></li>
+														</ul>
+													</div>
+												</div>
+												<!-- Column 4 -->
+												<div class="mega-column">
+													<div class="mega-section">
+														<span class="mega-title">Agri & Trade</span>
+														<ul class="mega-list">
+															<li><a href="index.html">Export & Import</a></li>
+															<li><a href="index-4.html">Plantations</a></li>
+														</ul>
+													</div>
+												</div>
+												<!-- Column 5 -->
+												<div class="mega-column">
+													<div class="mega-section">
+														<span class="mega-title">Real Estate</span>
+														<ul class="mega-list">
+															<li><a href="about-us-v1.html">Property Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Logistics & Travel</span>
+														<ul class="mega-list">
+															<li><a href="about-us-v2.html">Logistics Services</a></li>
+															<li><a href="contact.html">Travel & Rentals</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
 									</li>
 									<li class="nav-item dropdown">
 										<a class="nav-link dropdown-toggle" href="#" role="button"
@@ -1598,7 +1758,7 @@
 						.pane-overlay {
 							position: absolute;
 							inset: 0;
-							background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+							background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
 							opacity: 0.8;
 							transition: opacity 0.5s ease;
 						}
@@ -1681,7 +1841,7 @@
 							border: 1px solid rgba(255, 255, 255, 0.15);
 							padding: 30px;
 							border-radius: 24px;
-							box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+							box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 						}
 
 						.csr-card h3 {
@@ -1694,7 +1854,7 @@
 						.csr-card p {
 							font-size: 15px;
 							line-height: 1.6;
-							color: rgba(255,255,255,0.8);
+							color: rgba(255, 255, 255, 0.8);
 							margin-bottom: 20px;
 						}
 
@@ -1716,25 +1876,31 @@
 								flex-direction: column;
 								height: auto;
 							}
+
 							.purpose-pane {
 								height: 120px;
 							}
+
 							.purpose-pane.active {
 								height: 450px;
 							}
+
 							.pane-content-left {
 								left: 20px;
 								flex-direction: row;
 							}
+
 							.pane-label {
 								writing-mode: horizontal-tb;
 								transform: none;
 								font-size: 16px;
 							}
+
 							.content-wrap {
 								left: 30px;
 								bottom: 30px;
 							}
+
 							.content-wrap .title {
 								font-size: 32px;
 							}
@@ -1817,7 +1983,8 @@
 											2023
 										</div>
 										<a href="blog-details.html" class="mt-15">
-											<h4 class="tran3s blog-title"> Connecting India: Unlocking Opportunities Through Connectivity</h4>
+											<h4 class="tran3s blog-title"> Connecting India: Unlocking Opportunities
+												Through Connectivity</h4>
 										</a>
 									</div>
 									<figure
@@ -1837,7 +2004,8 @@
 											2023
 										</div>
 										<a href="blog-details.html" class="mt-15">
-											<h4 class="tran3s blog-title">Coding in the Modern Era: Powering Technology and Transformation</h4>
+											<h4 class="tran3s blog-title">Coding in the Modern Era: Powering Technology
+												and Transformation</h4>
 										</a>
 									</div>
 									<figure

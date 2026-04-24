@@ -186,6 +186,8 @@ html,
 body {
 	margin: 0;
 	padding: 0;
+	overflow-x: hidden !important;
+	/* Prevent horizontal scroll */
 }
 
 /* ANIMATION */
@@ -232,7 +234,7 @@ body {
 .site-brand-lockup__subtitle {
 	font-size: 10px;
 	font-weight: 500;
-	color: rgba(255,255,255,0.55);
+	color: rgba(255, 255, 255, 0.55);
 	letter-spacing: 1.5px;
 	text-transform: uppercase;
 }
@@ -243,8 +245,8 @@ body {
 	min-width: 260px;
 	padding: 20px;
 	border-radius: 20px !important;
-	box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-	border: 1px solid rgba(0,0,0,0.05) !important;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+	border: 1px solid rgba(0, 0, 0, 0.05) !important;
 	background: #fff !important;
 }
 
@@ -320,4 +322,133 @@ body {
 
 .vjs-lang-label {
 	font-family: inherit;
+}
+
+/* ================= MEGA MENU (Businesses) ================= */
+
+@media (min-width: 992px) {
+
+	/* Full-width container setup */
+	.adani-nav-fx .navbar .nav-item.mega-dropdown {
+		position: static !important;
+	}
+
+	.adani-nav-fx .navbar .mega-dropdown .dropdown-menu {
+		position: absolute !important;
+		top: 100% !important;
+		left: 0 !important;
+		right: 0 !important;
+		width: 100% !important;
+		/* Changed from 100vw to fix horizontal scroll */
+		max-width: 100% !important;
+		margin: 0 !important;
+		margin-top: 5px !important;
+		padding: 60px 0 !important;
+		background: #ffffff !important;
+		border-radius: 0 0 20px 20px !important;
+		border: 1px solid #eaeaea !important;
+		box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15) !important;
+
+		/* Remove all glass/blur effects */
+		backdrop-filter: none !important;
+		-webkit-backdrop-filter: none !important;
+		clip-path: none !important;
+
+		/* Animation and Visibility */
+		opacity: 0 !important;
+		visibility: hidden !important;
+		display: block !important;
+		max-height: 0 !important;
+		/* Ensure it doesn't take vertical space when hidden */
+		overflow: hidden !important;
+		transform: translateY(20px) !important;
+		transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.4s, max-height 0s 0.4s !important;
+		pointer-events: none;
+		z-index: 99999 !important;
+	}
+
+    /* Show on Hover */
+    .adani-nav-fx .navbar .nav-item.mega-dropdown:hover .dropdown-menu {
+		opacity: 1 !important;
+		visibility: visible !important;
+		max-height: 2000px !important;
+		/* Allow it to expand */
+		overflow: visible !important;
+		transform: translateY(0) !important;
+		pointer-events: all;
+		transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.4s, max-height 0s !important;
+	}
+
+	/* Grid Layout - 6 Columns */
+	.mega-menu-content {
+		display: grid !important;
+		grid-template-columns: repeat(6, 1fr) !important;
+		/* 6 Columns for 6 categories */
+		gap: 30px !important;
+		max-width: 1400px !important;
+		margin: 0 auto !important;
+		padding: 0 40px !important;
+		align-items: start !important;
+	}
+
+	.mega-column {
+		display: block !important;
+		width: 100% !important;
+	}
+
+	.mega-section {
+		margin-bottom: 30px !important;
+	}
+
+	/* Section Headings - Pixel Perfect to Reference */
+	.mega-title {
+		font-size: 14px !important;
+		font-weight: 800 !important;
+		/* Very bold headers */
+		color: #111 !important;
+		margin-bottom: 15px !important;
+		padding-bottom: 10px !important;
+		border-bottom: 1.5px solid #ededed !important;
+		/* Divider line below */
+		display: block !important;
+		letter-spacing: -0.1px;
+		font-family: inherit;
+		text-transform: none !important;
+	}
+
+	/* List Items */
+	.mega-list {
+		list-style: none !important;
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	.mega-list li {
+		margin-bottom: 10px !important;
+		display: block !important;
+	}
+
+	.mega-list li a {
+		font-size: 14px !important;
+		color: #666 !important;
+		/* Grey items like reference */
+		text-decoration: none !important;
+		transition: all 0.2s ease !important;
+		display: block !important;
+		font-weight: 400 !important;
+	}
+
+	.mega-list li a:hover {
+		color: #000 !important;
+		font-weight: 500 !important;
+		padding-left: 2px !important;
+	}
+}
+
+/* Mobile Fallback */
+@media (max-width: 991px) {
+	.adani-nav-fx .navbar .mega-dropdown .dropdown-menu {
+		display: none !important;
+		/* Hide mega layout on mobile to avoid breaking */
+	}
 }
