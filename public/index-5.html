@@ -231,6 +231,60 @@
 		</header>
 		<!-- /.theme-main-menu -->
 
+		<!-- Background Bubble Animation -->
+		<div class="vjs-bubble-container">
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+		</div>
+
+		<style>
+			.vjs-bubble-container {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+				overflow: hidden;
+				pointer-events: none;
+				background: #ffffff; /* Ensures base background is solid */
+			}
+			.vjs-bubble {
+				position: absolute;
+				bottom: -150px;
+				background: rgba(223, 255, 124, 0.15); /* Brand lime-yellow */
+				border-radius: 50%;
+				opacity: 0;
+				animation: vjs-rise var(--speed) infinite ease-in;
+				left: var(--left);
+				width: var(--size);
+				height: var(--size);
+			}
+
+			/* Individual bubble variations */
+			.vjs-bubble:nth-child(1) { --left: 10%; --size: 80px; --speed: 15s; animation-delay: 0s; }
+			.vjs-bubble:nth-child(2) { --left: 25%; --size: 150px; --speed: 20s; animation-delay: 2s; }
+			.vjs-bubble:nth-child(3) { --left: 40%; --size: 100px; --speed: 18s; animation-delay: 5s; }
+			.vjs-bubble:nth-child(4) { --left: 60%; --size: 120px; --speed: 22s; animation-delay: 1s; }
+			.vjs-bubble:nth-child(5) { --left: 75%; --size: 180px; --speed: 25s; animation-delay: 8s; }
+			.vjs-bubble:nth-child(6) { --left: 85%; --size: 90px; --speed: 16s; animation-delay: 3s; }
+			.vjs-bubble:nth-child(7) { --left: 5%; --size: 60px; --speed: 12s; animation-delay: 10s; }
+			.vjs-bubble:nth-child(8) { --left: 50%; --size: 200px; --speed: 30s; animation-delay: 4s; }
+
+			@keyframes vjs-rise {
+				0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+				20% { opacity: 0.5; }
+				80% { opacity: 0.5; }
+				100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+			}
+		</style>
+
 
 
 		<!-- 
@@ -375,38 +429,144 @@ Serving industries like aerospace, energy, healthcare, banking, retail, and publ
 			<div class="block-feature-nine position-relative pt-80 pb-150 lg-pb-80">
 				<div class="container">
 					<div class="title-four text-center mb-30 lg-mb-10">
-						<h2>What We Do</h2>
+						<h2>At a Glance.</h2>
 					</div>
 					<!-- /.title-four -->
 
 					<div class="row gx-xl-5 justify-content-center">
+						<!-- Card 1: Solution -->
 						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
-							<div class="card-style-thirteen text-center vstack tran3s w-100 mt-30">
-								<div class="icon d-flex align-items-center justify-content-center"><img src="images/lazy.svg" data-src="images/icon/icon_51.svg" alt="" class="lazy-img"></div>
-								<p class="mt-45 lg-mt-30 mb-30 lg-mb-20">SOLUTION</p>
-								<h3 class="fw-500">Get all digital solution from our expert</h3>
+							<div class="vjs-glance-card">
+								<div class="icon-box">
+									<span class="emoji-icon rocket">🚀</span>
+								</div>
+								<div class="content">
+									<h4 class="card-title">Solution</h4>
+									<p class="card-desc">End-to-end digital solutions from cloud to AI to cybersecurity.</p>
+								</div>
+								<div class="card-glow"></div>
 							</div>
-							<!-- /.card-style-thirteen -->
 						</div>
+
+						<!-- Card 2: Reputated -->
 						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
-							<div class="card-style-thirteen text-center vstack tran3s w-100 mt-30">
-								<div class="icon d-flex align-items-center justify-content-center"><img src="images/lazy.svg" data-src="images/icon/icon_52.svg" alt="" class="lazy-img"></div>
-								<p class="mt-45 lg-mt-30 mb-30 lg-mb-20">REPUTATED</p>
-								<h3 class="fw-500">13+ years of successful client relations.</h3>
+							<div class="vjs-glance-card">
+								<div class="icon-box">
+									<span class="emoji-icon trophy">🏆</span>
+								</div>
+								<div class="content">
+									<h4 class="card-title">Reputated</h4>
+									<p class="card-desc">13+ years of trusted client relationships across industries.</p>
+								</div>
+								<div class="card-glow"></div>
 							</div>
-							<!-- /.card-style-thirteen -->
 						</div>
+
+						<!-- Card 3: Support -->
 						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
-							<div class="card-style-thirteen text-center vstack tran3s w-100 mt-30">
-								<div class="icon d-flex align-items-center justify-content-center"><img src="images/lazy.svg" data-src="images/icon/icon_53.svg" alt="" class="lazy-img"></div>
-								<p class="mt-45 lg-mt-30 mb-30 lg-mb-20">SUPPORT</p>
-								<h3 class="fw-500">Get quick & reliable support by us.</h3>
+							<div class="vjs-glance-card">
+								<div class="icon-box">
+									<span class="emoji-icon lightning">⚡</span>
+								</div>
+								<div class="content">
+									<h4 class="card-title">Support</h4>
+									<p class="card-desc">Fast, reliable support when you need it most.</p>
+								</div>
+								<div class="card-glow"></div>
 							</div>
-							<!-- /.card-style-thirteen -->
 						</div>
 					</div>
 
-					<h3 class="heading font-magnita text-white mt-110 lg-mt-80">Design, <span>Marketing,</span> Branding,  <span>Development</span> & more. <a href="#"><img src="images/lazy.svg" data-src="images/icon/icon_54.svg" alt="" class="lazy-img"></a></h3>
+					<style>
+						.vjs-glance-card {
+							background: #ffffff;
+							border-radius: 24px;
+							padding: 40px 30px;
+							text-align: center;
+							position: relative;
+							overflow: hidden;
+							transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+							box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+							border: 1px solid rgba(0,0,0,0.03);
+							width: 100%;
+							margin-top: 30px;
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							z-index: 1;
+						}
+						.vjs-glance-card:hover {
+							transform: translateY(-10px);
+							box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+							border-color: #dfff7c;
+						}
+						.icon-box {
+							width: 80px;
+							height: 80px;
+							background: #f8f9fa;
+							border-radius: 20px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							margin-bottom: 25px;
+							transition: all 0.4s ease;
+						}
+						.vjs-glance-card:hover .icon-box {
+							background: #dfff7c;
+							transform: scale(1.1);
+						}
+						.emoji-icon {
+							font-size: 40px;
+							display: inline-block;
+						}
+						.card-title {
+							font-size: 22px;
+							font-weight: 700;
+							color: #000;
+							margin-bottom: 15px;
+							text-transform: uppercase;
+							letter-spacing: 1px;
+						}
+						.card-desc {
+							font-size: 16px;
+							color: #666;
+							line-height: 1.6;
+							margin: 0;
+						}
+						
+						/* Animations */
+						.rocket { animation: float 3s ease-in-out infinite; }
+						.trophy { animation: rotate 4s ease-in-out infinite; }
+						.lightning { animation: pulse 2s ease-in-out infinite; }
+
+						@keyframes float {
+							0%, 100% { transform: translateY(0); }
+							50% { transform: translateY(-10px); }
+						}
+						@keyframes rotate {
+							0%, 100% { transform: rotate(0deg); }
+							50% { transform: rotate(10deg); }
+						}
+						@keyframes pulse {
+							0%, 100% { transform: scale(1); opacity: 1; }
+							50% { transform: scale(1.2); opacity: 0.8; }
+						}
+
+						.card-glow {
+							position: absolute;
+							top: 0; left: 0; width: 100%; height: 100%;
+							background: radial-gradient(circle at 50% 50%, rgba(223, 255, 124, 0.1) 0%, transparent 70%);
+							opacity: 0;
+							transition: opacity 0.4s ease;
+							pointer-events: none;
+							z-index: -1;
+						}
+						.vjs-glance-card:hover .card-glow {
+							opacity: 1;
+						}
+					</style>
+
+					<h3 class="heading font-magnita text-white mt-110 lg-mt-80">Design, Marketing,Branding, Development & more. Our services, our pride. <a href="#"><img src="images/lazy.svg" data-src="images/icon/icon_54.svg" alt="" class="lazy-img"></a></h3>
 				</div>
 				<img src="images/lazy.svg" data-src="images/shape/shape_21.svg" alt="" class="lazy-img shapes shape_01">
 				<img src="images/lazy.svg" data-src="images/shape/shape_22.svg" alt="" class="lazy-img shapes shape_02">
@@ -417,119 +577,101 @@ Serving industries like aerospace, energy, healthcare, banking, retail, and publ
 
 			<!--
 			=====================================================
-				Portfolio One
+				Businesses Section
 			=====================================================
 			-->
-			<div class="portfolio-one border-100 position-relative pt-150 lg-pt-80 pb-100 lg-pb-60">
+			<!--
+			=====================================================
+				Businesses Section
+			=====================================================
+			-->
+			<style>
+				.vjs-business-card {
+					overflow: hidden;
+					display: block;
+					margin-bottom: 20px;
+					position: relative;
+				}
+				.vjs-business-card::after {
+					content: '';
+					position: absolute;
+					top: 0; left: 0; width: 100%; height: 100%;
+					background: rgba(0,0,0,0);
+					transition: background 0.4s ease;
+					pointer-events: none;
+				}
+				.business-block:hover .vjs-business-card::after {
+					background: rgba(0,0,0,0.1);
+				}
+				.vjs-business-card img {
+					width: 100%;
+					object-fit: cover;
+					aspect-ratio: 4/3;
+					transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+				}
+				.business-block:hover .vjs-business-card img {
+					transform: scale(1.08);
+				}
+				.business-block h5 {
+					font-weight: 700; 
+					color: #424242; 
+					font-size: 18px;
+					transition: color 0.3s ease;
+				}
+				.business-block:hover h5 {
+					color: #1A4137;
+				}
+				.businesses-section {
+					background-color: #f0f5ec;
+				}
+			</style>
+			<div class="businesses-section position-relative pt-120 lg-pt-80 pb-80 lg-pb-40">
 				<div class="container">
-					<div class="position-relative">
-						<div class="row">
-							<div class="col-lg-7">
-								<div class="title-four mb-80 lg-mb-40">
-									<h2>Our Recent Work & Portfolio.</h2>
+					<div class="mb-50 lg-mb-40">
+						<h2 style="font-weight: 700; color: #333; font-size: 32px; text-transform: uppercase;">BUSINESSES</h2>
+					</div>
+					
+					<div class="row">
+						<!-- Item 1 -->
+						<div class="col-lg-3 col-md-6 mb-40">
+							<a href="#" class="business-block text-decoration-none d-block">
+								<div class="vjs-business-card">
+									<img src="images/assets/power_transmission.png" alt="Power Transmission">
 								</div>
-								<!-- /.title-four -->
-							</div>
+								<h5>Power Transmission</h5>
+							</a>
 						</div>
-						<div id="isotop-gallery-wrapper" class="column-two">
-							<div class="grid-sizer"></div>
-							<div class="isotop-item">
-								<div class="portfolio-block-one mb-60 lg-mb-40">
-									<div class="img-holder round-border">
-										<img src="images/gallery/img_05.jpg" alt="" class="img-meta w-100 tran5s">
-										<a class="fancybox expend d-flex align-items-center justify-content-center tran3s" data-fancybox="" title="Click for large view" href="images/gallery/img_05.jpg" tabindex="0"><i class="bi bi-plus"></i></a>
-									</div>
-									<div class="caption">
-										<div class="d-flex align-items-center justify-content-between">
-											<div>
-												<ul class="style-none d-flex tag">
-													<li>PRINT</li>
-													<li>DESIGN</li>
-												</ul>
-												<h6><a href="project-details-v1.html" class="pj-title">Tax Preparation.</a></h6>
-											</div>
-											<div>
-												<a href="project-details-v1.html" class="arrow tran3s"><i class="bi bi-arrow-up-right"></i></a>
-											</div>
-										</div>
-									</div> <!-- /.caption -->
-								</div> <!-- /.portfolio-block-one -->
-							</div> <!-- /.isotop-item -->
-							<div class="isotop-item">
-								<div class="portfolio-block-one mb-60 lg-mb-40">
-									<div class="img-holder round-border">
-										<img src="images/gallery/img_06.jpg" alt="" class="img-meta w-100 tran5s">
-										<a class="fancybox expend d-flex align-items-center justify-content-center tran3s" data-fancybox="" title="Click for large view" href="images/gallery/img_06.jpg" tabindex="0"><i class="bi bi-plus"></i></a>
-									</div>
-									<div class="caption">
-										<div class="d-flex align-items-center justify-content-between">
-											<div>
-												<ul class="style-none d-flex tag">
-													<li>Mobile</li>
-													<li>UI/UX</li>
-												</ul>
-												<h6><a href="project-details-v1.html" class="pj-title">Investment Planning</a></h6>
-											</div>
-											<div>
-												<a href="project-details-v1.html" class="arrow tran3s"><i class="bi bi-arrow-up-right"></i></a>
-											</div>
-										</div>
-									</div> <!-- /.caption -->
-								</div> <!-- /.portfolio-block-one -->
-							</div> <!-- /.isotop-item -->
-							<div class="isotop-item">
-								<div class="portfolio-block-one mb-60 lg-mb-40">
-									<div class="img-holder round-border">
-										<img src="images/gallery/img_07.jpg" alt="" class="img-meta w-100 tran5s">
-										<a class="fancybox expend d-flex align-items-center justify-content-center tran3s" data-fancybox="" title="Click for large view" href="images/gallery/img_07.jpg" tabindex="0"><i class="bi bi-plus"></i></a>
-									</div>
-									<div class="caption">
-										<div class="d-flex align-items-center justify-content-between">
-											<div>
-												<ul class="style-none d-flex tag">
-													<li>Branding</li>
-													<li>UI/UX</li>
-												</ul>
-												<h6><a href="project-details-v1.html" class="pj-title">Case Studies & Branding</a></h6>
-											</div>
-											<div>
-												<a href="project-details-v1.html" class="arrow tran3s"><i class="bi bi-arrow-up-right"></i></a>
-											</div>
-										</div>
-									</div> <!-- /.caption -->
-								</div> <!-- /.portfolio-block-one -->
-							</div> <!-- /.isotop-item -->
-							<div class="isotop-item">
-								<div class="portfolio-block-one mb-60 lg-mb-40">
-									<div class="img-holder round-border">
-										<img src="images/gallery/img_09.jpg" alt="" class="img-meta w-100 tran5s">
-										<a class="fancybox expend d-flex align-items-center justify-content-center tran3s" data-fancybox="" title="Click for large view" href="images/gallery/img_09.jpg" tabindex="0"><i class="bi bi-plus"></i></a>
-									</div>
-									<div class="caption">
-										<div class="d-flex align-items-center justify-content-between">
-											<div>
-												<ul class="style-none d-flex tag">
-													<li>BANNER</li>
-													<li>WEB DESIGN</li>
-												</ul>
-												<h6><a href="project-details-v1.html" class="pj-title">Online Banking</a></h6>
-											</div>
-											<div>
-												<a href="project-details-v1.html" class="arrow tran3s"><i class="bi bi-arrow-up-right"></i></a>
-											</div>
-										</div>
-									</div> <!-- /.caption -->
-								</div> <!-- /.portfolio-block-one -->
-							</div> <!-- /.isotop-item -->
+						<!-- Item 2 -->
+						<div class="col-lg-3 col-md-6 mb-40">
+							<a href="#" class="business-block text-decoration-none d-block">
+								<div class="vjs-business-card">
+									<img src="images/assets/power_distribution.png" alt="Power Distribution">
+								</div>
+								<h5>Power Distribution</h5>
+							</a>
 						</div>
-
-						<div class="section-btn md-mt-10">
-							<a href="project-v2.html" class="btn-nine rounded-circle d-inline-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+						<!-- Item 3 -->
+						<div class="col-lg-3 col-md-6 mb-40">
+							<a href="#" class="business-block text-decoration-none d-block">
+								<div class="vjs-business-card">
+									<img src="images/assets/smart_metering.png" alt="Smart Metering">
+								</div>
+								<h5>Smart Metering</h5>
+							</a>
+						</div>
+						<!-- Item 4 -->
+						<div class="col-lg-3 col-md-6 mb-40">
+							<a href="#" class="business-block text-decoration-none d-block">
+								<div class="vjs-business-card">
+									<img src="images/assets/cooling_solutions.png" alt="Cooling Solutions">
+								</div>
+								<h5>Cooling Solutions</h5>
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- /.portfolio-one -->
+			<!-- /.businesses-section -->
 
 
 			<!-- 
@@ -575,74 +717,7 @@ Serving industries like aerospace, energy, healthcare, banking, retail, and publ
 			</div>
 			<!-- /.feedback-section-five -->
 
-			<!--
-			=====================================================
-				Team Section Two
-			=====================================================
-			-->
-			<div class="team-section-two position-relative border-100 pt-130 lg-pt-80 pb-130 lg-pb-80">
-				<div class="container">
-					<div class="position-relative">
-						<div class="title-four mb-25 lg-mb-10">
-							<h2>Our Team</h2>
-						</div>
-						<!-- /.title-four -->
-						<p class="text-xl text-dark mb-30 lg-mb-10">We?ve verity package for our client based on your business</p>
 
-						<div class="row">
-							<div class="col-lg-3 col-sm-6 wow fadeInUp">
-								<div class="card-style-fourteen text-center mt-35">
-									<div class="media d-flex align-items-center justify-content-center position-relative overflow-hidden">
-										<img src="images/lazy.svg" data-src="images/media/img_22.jpg" alt="" class="lazy-img w-100">
-										<a href="team-details.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
-									</div>
-									<p class="fs-6 pt-30 lg-pt-10 pb-5 m0">Owner & Founder</p>
-									<h4 class="fw-500 m0">Rashed kabir</h4>
-								</div>
-								<!-- /.card-style-fourteen -->
-							</div>
-							<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-								<div class="card-style-fourteen text-center mt-35">
-									<div class="media d-flex align-items-center justify-content-center position-relative overflow-hidden">
-										<img src="images/lazy.svg" data-src="images/media/img_23.jpg" alt="" class="lazy-img w-100">
-										<a href="team-details.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
-									</div>
-									<p class="fs-6 pt-30 lg-pt-10 pb-5 m0">Project Manager</p>
-									<h4 class="fw-500 m0">Jubayer Hasan</h4>
-								</div>
-								<!-- /.card-style-fourteen -->
-							</div>
-							<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
-								<div class="card-style-fourteen text-center mt-35">
-									<div class="media d-flex align-items-center justify-content-center position-relative overflow-hidden">
-										<img src="images/lazy.svg" data-src="images/media/img_24.jpg" alt="" class="lazy-img w-100">
-										<a href="team-details.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
-									</div>
-									<p class="fs-6 pt-30 lg-pt-10 pb-5 m0">Lead Product Design</p>
-									<h4 class="fw-500 m0">Mahfuz Riad</h4>
-								</div>
-								<!-- /.card-style-fourteen -->
-							</div>
-							<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-								<div class="card-style-fourteen text-center mt-35">
-									<div class="media d-flex align-items-center justify-content-center position-relative overflow-hidden">
-										<img src="images/lazy.svg" data-src="images/media/img_25.jpg" alt="" class="lazy-img w-100">
-										<a href="team-details.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
-									</div>
-									<p class="fs-6 pt-30 lg-pt-10 pb-5 m0">UI Design</p>
-									<h4 class="fw-500 m0">MD Hasan</h4>
-								</div>
-								<!-- /.card-style-fourteen -->
-							</div>
-						</div>
-
-						<div class="section-btn md-mt-40">
-							<a href="team-v1.html" class="btn-nine rounded-circle d-inline-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /.team-section-two -->
 
 			<!--
 			=====================================================
@@ -705,50 +780,84 @@ Serving industries like aerospace, energy, healthcare, banking, retail, and publ
 
 			<!--
 			=====================================================
-				Footer Five
+				Footer Three
 			=====================================================
 			-->
-			<div class="footer-five position-relative border-100">
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-11 m-auto">
-							<h2 class="text-center text-white font-magnita">Work Inquiry? Send us message</h2>
-							<div class="btn-group d-block d-lg-flex justify-content-between align-items-center">
-								<h3>Let?s <span>Discuss & Start.</span></h3>
-								<a href="contact.html" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-right"></i></a>
-							</div>
-							<div class="bottom-footer">
-								<div class="row">
-									<div class="col-lg-4 mb-15">
-										<div class="logo text-center text-lg-start mb-25">
-											<a href="index-2.html">
-												<img src="images/logo/vijayalakshmi-logo.svg" alt="Vijayalakshmi Group Of Companies" class="site-brand-logo">
-											</a>
-										</div> 
-										<!-- logo -->
-									</div>
-									<div class="col-lg-4 mb-15">
-										<ul class="style-none d-flex align-items-center justify-content-center social-icon">
-											<li><a href="#"><i class="bi bi-facebook"></i></a></li>
-											<li><a href="#"><i class="bi bi-dribbble"></i></a></li>
-											<li><a href="#"><i class="bi bi-instagram"></i></a></li>
-										</ul>
-									</div>
-									<div class="col-lg-4 mb-15">
-										<ul class="style-none bottom-nav d-flex justify-content-center justify-content-lg-end">
-											<li><a href="contact.html">Terms & Policy</a></li>
-											<li><a href="contact.html">Contact Us</a></li>
-										</ul>
-									</div>
+			<div class="footer-modern">
+				<div class="footer-container">
+					<!-- TOP SECTION -->
+					<div class="footer-top">
+						<!-- LOGO + SOCIAL -->
+						<div class="footer-brand">
+							<div class="footer-logo">
+								<img src="images/logo/vijayalakshmi-mark.png" alt="Logo Mark">
+								<div class="footer-logo-text">
+									<div class="text-main">VIJAYALAKSHMI GROUP</div>
+									<div class="text-sub">OF COMPANIES</div>
 								</div>
 							</div>
-							<!-- /.bottom-footer -->
+
+							<div class="social-icons">
+								<a href="#"><i class="bi bi-facebook"></i></a>
+								<a href="#"><i class="bi bi-instagram"></i></a>
+								<a href="#"><i class="bi bi-youtube"></i></a>
+								<a href="#"><i class="bi bi-linkedin"></i></a>
+							</div>
+						</div>
+
+						<!-- ABOUT -->
+						<div class="footer-col">
+							<h5>About Us</h5>
+							<ul>
+								<li><a href="about-us-v2.html">About Company</a></li>
+								<li><a href="about-us-v1.html">Chairman's Office</a></li>
+								<li><a href="team-v1.html">Leadership</a></li>
+								<li><a href="about-us-v1.html">Our Journey</a></li>
+								<li><a href="service-v1.html">Awards</a></li>
+							</ul>
+						</div>
+
+						<!-- BUSINESSES -->
+						<div class="footer-col">
+							<h5>Businesses</h5>
+							<ul>
+								<li><a href="service-v2.html">Infrastructure</a></li>
+								<li><a href="service-v1.html">Energy & Utilities</a></li>
+								<li><a href="service-v1.html">Transport & Logistics</a></li>
+								<li><a href="service-v1.html">Consumer Products</a></li>
+								<li><a href="service-v2.html">Real Estate</a></li>
+							</ul>
+						</div>
+
+						<!-- RIGHT LINKS -->
+						<div class="footer-col">
+							<h5>Quick Links</h5>
+							<ul>
+								<li><a href="about-us-v2.html">Sustainability</a></li>
+								<li><a href="pricing.html">Investors</a></li>
+								<li><a href="blog-v2.html">Newsroom</a></li>
+								<li><a href="about-us-v1.html">Careers</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- BOTTOM -->
+					<div class="footer-bottom">
+						<div class="footer-copyright">
+							<img src="images/logo/vijayalakshmi-mark.png" alt="Logo">
+							@2026 Vijayalakshmi Group
+						</div>
+
+						<div class="footer-bottom-links">
+							<a href="contact.html">Legal Disclaimer</a>
+							<a href="contact.html">Privacy Notice</a>
+							<a href="contact.html">Terms & Conditions</a>
+							<a href="contact.html">Cookie Policy</a>
 						</div>
 					</div>
 				</div>
-				<img src="images/lazy.svg" data-src="images/shape/shape_40.svg" alt="" class="lazy-img shapes shape_01">
-				<img src="images/lazy.svg" data-src="images/shape/shape_41.svg" alt="" class="lazy-img shapes shape_02">
-			</div>
+			</div> <!-- /.footer-modern -->
 		</div>
 		<!-- /.light-bg-page-wrapper -->
 		
