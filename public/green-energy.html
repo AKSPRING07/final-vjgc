@@ -379,6 +379,7 @@
 			}
 			.vjs-velocity-wrapper {
 				display: flex;
+				width: max-content;
 				white-space: nowrap;
 				will-change: transform;
 			}
@@ -406,7 +407,7 @@
 				const track = document.getElementById('vjs-marquee');
 				let x = 0;
 				let lastScrollY = window.scrollY;
-				let speed = 0.2; // Base speed (set to very slow crawl)
+				let speed = 0.05; // Base speed (set to very slow crawl)
 				
 				function animate() {
 					const currentScrollY = window.scrollY;
@@ -414,7 +415,7 @@
 					lastScrollY = currentScrollY;
 					
 					// Dynamic velocity mapping: faster scroll = faster marquee (very low sensitivity)
-					const targetSpeed = 0.2 + (scrollDelta * 0.02);
+					const targetSpeed = 0.05 + (scrollDelta * 0.01);
 					speed = speed * 0.9 + targetSpeed * 0.1; // Smooth damping
 					
 					x -= speed;

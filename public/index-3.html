@@ -408,6 +408,7 @@
 
 			.vjs-velocity-wrapper {
 				display: flex;
+				width: max-content;
 				white-space: nowrap;
 				will-change: transform;
 			}
@@ -444,7 +445,7 @@
 				const track = document.getElementById('vjs-marquee');
 				let x = 0;
 				let lastScrollY = window.scrollY;
-				let speed = 0.2; // Base speed (set to very slow crawl)
+				let speed = 0.05; // Base speed (set to very slow crawl)
 
 				function animate() {
 					const currentScrollY = window.scrollY;
@@ -452,7 +453,7 @@
 					lastScrollY = currentScrollY;
 
 					// Dynamic velocity mapping: faster scroll = faster marquee (very low sensitivity)
-					const targetSpeed = 0.2 + (scrollDelta * 0.02);
+					const targetSpeed = 0.05 + (scrollDelta * 0.01);
 					speed = speed * 0.9 + targetSpeed * 0.1; // Smooth damping
 
 					x -= speed;
@@ -489,7 +490,7 @@
 						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
 							<div class="vjs-glance-card">
 								<div class="icon-box">
-									<span class="emoji-icon infrastructure">🏢</span>
+									<img src="images/media/img_47.jpg" alt="Infrastructure" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
 								</div>
 								<div class="content">
 									<h4 class="card-title">INFRASTRUCTURE</h4>
@@ -504,7 +505,7 @@
 						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
 							<div class="vjs-glance-card">
 								<div class="icon-box">
-									<span class="emoji-icon hosting">☁️</span>
+									<img src="images/media/img_49.jpg" alt="Hosting" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
 								</div>
 								<div class="content">
 									<h4 class="card-title">HOSTING</h4>
@@ -519,7 +520,7 @@
 						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
 							<div class="vjs-glance-card">
 								<div class="icon-box">
-									<span class="emoji-icon domains">🌐</span>
+									<img src="images/media/img_50.jpg" alt="Domains" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
 								</div>
 								<div class="content">
 									<h4 class="card-title">DOMAINS</h4>
@@ -777,17 +778,7 @@
 					transform: scale(1.08);
 				}
 
-				/* Icon-only card variant */
-				.vjs-biz-icon-bg {
-					width: 100%;
-					aspect-ratio: 4/3;
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					justify-content: center;
-					gap: 12px;
-					font-size: 52px;
-				}
+				/* Icon-only card variant removed */
 
 				.vjs-biz-card-body {
 					padding: 18px 20px 20px;
@@ -868,10 +859,7 @@
 							<!-- Card 1: Cloud Infrastructure -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg"
-										style="background: linear-gradient(135deg,#2980b9 0%,#2c3e50 100%);">
-										<span style="color:white;">☁️</span>
-									</div>
+									<img src="images/media/img_47.jpg" alt="Cloud Infrastructure">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Cloud Infrastructure</h5>
@@ -882,10 +870,7 @@
 							<!-- Card 2: Managed Hosting -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg"
-										style="background: linear-gradient(135deg,#8e44ad 0%,#2980b9 100%);">
-										<span style="color:white;">🖥️</span>
-									</div>
+									<img src="images/media/img_49.jpg" alt="Managed Hosting">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Managed Hosting</h5>
@@ -896,10 +881,7 @@
 							<!-- Card 3: Data Storage & Backup -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg"
-										style="background: linear-gradient(135deg,#16a085 0%,#2ecc71 100%);">
-										<span style="color:white;">💾</span>
-									</div>
+									<img src="images/media/img_50.jpg" alt="Data Storage & Backup">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Data Storage &amp; Backup</h5>
@@ -910,10 +892,7 @@
 							<!-- Card 4: Network & Security -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg"
-										style="background: linear-gradient(135deg,#c0392b 0%,#8e44ad 100%);">
-										<span style="color:white;">🛡️</span>
-									</div>
+									<img src="images/media/img_52.jpg" alt="Network & Security">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Network &amp; Security</h5>
@@ -924,10 +903,7 @@
 							<!-- Card 5: Domain Registration & Management -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg"
-										style="background: linear-gradient(135deg,#f39c12 0%,#d35400 100%);">
-										<span style="color:white;">🌐</span>
-									</div>
+									<img src="images/media/img_34.jpg" alt="Domain Registration & Management">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Domain Registration &amp; Management</h5>
@@ -938,10 +914,7 @@
 							<!-- Card 6: Reseller Solutions -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg"
-										style="background: linear-gradient(135deg,#34495e 0%,#2c3e50 100%);">
-										<span style="color:white;">🤝</span>
-									</div>
+									<img src="images/media/img_32.jpg" alt="Reseller Solutions">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Reseller Solutions</h5>
@@ -1087,6 +1060,7 @@
 				Blog Section Five
 			=====================================================
 			-->
+			<!--
 			<div class="blog-section-five position-relative border-100 pt-100 lg-pt-80">
 				<div class="container">
 					<div class="position-relative">
@@ -1095,7 +1069,7 @@
 								<div class="title-four mb-25">
 									<h2>Our Recent News & Insights.</h2>
 								</div>
-								<!-- /.title-four -->
+								
 							</div>
 						</div>
 
@@ -1129,7 +1103,7 @@
 										</div>
 									</div>
 								</article>
-								<!-- /.blog-meta-three -->
+								
 							</div>
 							<div class="col-md-5">
 								<article class="blog-meta-three pt-60 lg-pt-40 pb-70 lg-pb-40 h-100 wow fadeInUp"
@@ -1151,12 +1125,13 @@
 										</div>
 									</div>
 								</article>
-								<!-- /.blog-meta-three -->
+								
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			-->
 			<!-- /.blog-section-five -->
 
 			<!--

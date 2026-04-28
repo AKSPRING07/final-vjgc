@@ -297,8 +297,8 @@
                 <div class="container position-relative" style="z-index: 2;">
                     <div class="row justify-content-between">
                         <div class="col-lg-8 col-md-10 wow fadeInLeft">
-                            <h1 class="hero-heading font-magnita text-white">Beyond Digital<br>Across Every Industry.</h1>
-                            <p class="text-lg text-white pt-20 pb-20 ps-3 pe-3 mt-40 lg-mt-30" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); border-radius: 8px; display: inline-block;">Beyond digital, we deliver cloud, AI, cybersecurity, engineering, finance, and infrastructure solutions.<br>Serving industries like aerospace, energy, healthcare, banking, retail, and public services.</p>
+                            <h1 class="hero-heading font-magnita text-white">Beyond Learning Across Every <br> Technology</h1>
+                            <p class="text-lg text-white pt-20 pb-20 ps-3 pe-3 mt-40 lg-mt-30" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); border-radius: 8px; display: inline-block;">Our institute is dedicated to shaping future tech professionals <br> through focused IT education, combining modern tools, guided learning, <br> and hands-on practice to help students confidently step into real-world careers.</p>
                         </div>
                     </div>
                 </div>
@@ -314,6 +314,7 @@
 		============================================== 
 		-->
 		<!-- ScrollVelocity Section -->
+		 <!--
 		<div class="vjs-velocity-section">
 			<div class="vjs-velocity-pill">
 				<div class="vjs-velocity-wrapper" id="vjs-marquee">
@@ -337,7 +338,7 @@
 						<span class="vjs-velocity-item">Sustainability &bull;</span>
 						<span class="vjs-velocity-item">Talent and Organization &bull;</span>
 						<span class="vjs-velocity-item">Technology Transformation &bull;</span>
-						<!-- Duplicate for seamless loop -->
+						
 						<span class="vjs-velocity-item">Cloud &bull;</span>
 						<span class="vjs-velocity-item">Customer Service &bull;</span>
 						<span class="vjs-velocity-item">Cybersecurity &bull;</span>
@@ -379,6 +380,7 @@
 			}
 			.vjs-velocity-wrapper {
 				display: flex;
+				width: max-content;
 				white-space: nowrap;
 				will-change: transform;
 			}
@@ -406,7 +408,7 @@
 				const track = document.getElementById('vjs-marquee');
 				let x = 0;
 				let lastScrollY = window.scrollY;
-				let speed = 0.2; // Base speed (set to very slow crawl)
+				let speed = 0.05; // Base speed (set to very slow crawl)
 				
 				function animate() {
 					const currentScrollY = window.scrollY;
@@ -414,7 +416,7 @@
 					lastScrollY = currentScrollY;
 					
 					// Dynamic velocity mapping: faster scroll = faster marquee (very low sensitivity)
-					const targetSpeed = 0.2 + (scrollDelta * 0.02);
+					const targetSpeed = 0.05 + (scrollDelta * 0.01);
 					speed = speed * 0.9 + targetSpeed * 0.1; // Smooth damping
 					
 					x -= speed;
@@ -433,7 +435,7 @@
 		</script>
 
 
-		<div class="light-bg-page-wrapper">
+		<div class="light-bg-page-wrapper">  -->
 			<!--
 			=====================================================
 				BLock Feature Nine
@@ -454,8 +456,8 @@
 									<span class="emoji-icon rocket">🚀</span>
 								</div>
 								<div class="content">
-									<h4 class="card-title">Solution</h4>
-									<p class="card-desc">End-to-end digital solutions from cloud to AI to cybersecurity.</p>
+									<h4 class="card-title">SKILL-FOCUSED</h4>
+									<p class="card-desc">Practical IT training from basics to advanced in today’s in-demand technologies.</p>
 								</div>
 								<div class="card-glow"></div>
 							</div>
@@ -468,8 +470,8 @@
 									<span class="emoji-icon trophy">🏆</span>
 								</div>
 								<div class="content">
-									<h4 class="card-title">Reputated</h4>
-									<p class="card-desc">13+ years of trusted client relationships across industries.</p>
+									<h4 class="card-title">EXPERIENCED</h4>
+									<p class="card-desc">Guided by industry experts with proven knowledge and teaching experience.</p>
 								</div>
 								<div class="card-glow"></div>
 							</div>
@@ -482,8 +484,8 @@
 									<span class="emoji-icon lightning">⚡</span>
 								</div>
 								<div class="content">
-									<h4 class="card-title">Support</h4>
-									<p class="card-desc">Fast, reliable support when you need it most.</p>
+									<h4 class="card-title">CAREER SUPPORT</h4>
+									<p class="card-desc">Dedicated support to help you learn, grow, and step into real-world opportunities.</p>
 								</div>
 								<div class="card-glow"></div>
 							</div>
@@ -579,7 +581,7 @@
 						}
 					</style>
 
-					<h3 class="heading font-magnita text-white mt-110 lg-mt-80">Design, Marketing,Branding, Development & more. Our services, our pride. <a href="#"><img src="images/lazy.svg" data-src="images/icon/icon_54.svg" alt="" class="lazy-img"></a></h3>
+					<h3 class="heading font-magnita text-white mt-110 lg-mt-80">Training, Mentorship, Certification, Career Support & more. Our learning, your success. <a href="#"><img src="images/lazy.svg" data-src="images/icon/icon_54.svg" alt="" class="lazy-img"></a></h3>
 				</div>
 				<img src="images/lazy.svg" data-src="images/shape/shape_21.svg" alt="" class="lazy-img shapes shape_01">
 				<img src="images/lazy.svg" data-src="images/shape/shape_22.svg" alt="" class="lazy-img shapes shape_02">
@@ -676,17 +678,7 @@
 				.vjs-biz-card:hover .vjs-biz-img-wrap img {
 					transform: scale(1.08);
 				}
-				/* Icon-only card variant */
-				.vjs-biz-icon-bg {
-					width: 100%;
-					aspect-ratio: 4/3;
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					justify-content: center;
-					gap: 12px;
-					font-size: 52px;
-				}
+				/* Icon-only card variant removed */
 				.vjs-biz-card-body {
 					padding: 18px 20px 20px;
 				}
@@ -751,9 +743,7 @@
 							<!-- Card 1: Cloud -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#2980b9 0%,#2c3e50 100%);">
-										<span style="color:white;">☁️</span>
-									</div>
+									<img src="images/media/img_47.jpg" alt="Cloud">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Cloud</h5>
@@ -764,9 +754,7 @@
 							<!-- Card 2: Cybersecurity -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#c0392b 0%,#8e44ad 100%);">
-										<span style="color:white;">🔒</span>
-									</div>
+									<img src="images/media/img_49.jpg" alt="Cybersecurity">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Cybersecurity</h5>
@@ -777,9 +765,7 @@
 							<!-- Card 3: Data & Artificial Intelligence -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#16a085 0%,#f39c12 100%);">
-										<span style="color:white;">🧠</span>
-									</div>
+									<img src="images/media/img_50.jpg" alt="Data & Artificial Intelligence">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Data &amp; Artificial Intelligence</h5>
@@ -790,9 +776,7 @@
 							<!-- Card 4: Digital Engineering -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#27ae60 0%,#2ecc71 100%);">
-										<span style="color:white;">⚙️</span>
-									</div>
+									<img src="images/media/img_52.jpg" alt="Digital Engineering">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Digital Engineering</h5>
@@ -803,9 +787,7 @@
 							<!-- Card 5: Finance and Risk Management -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#8e44ad 0%,#2980b9 100%);">
-										<span style="color:white;">📈</span>
-									</div>
+									<img src="images/media/img_34.jpg" alt="Finance and Risk Management">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Finance &amp; Risk Management</h5>
@@ -816,9 +798,7 @@
 							<!-- Card 6: Infrastructure -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#f39c12 0%,#d35400 100%);">
-										<span style="color:white;">🏗️</span>
-									</div>
+									<img src="images/media/img_32.jpg" alt="Infrastructure">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Infrastructure &amp; Capital Projects</h5>
@@ -829,9 +809,7 @@
 							<!-- Card 7: Supply Chain -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#34495e 0%,#2c3e50 100%);">
-										<span style="color:white;">📦</span>
-									</div>
+									<img src="images/media/img_31.jpg" alt="Supply Chain">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Supply Chain</h5>
@@ -842,9 +820,7 @@
 							<!-- Card 8: Technology Transformation -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#e67e22 0%,#f1c40f 100%);">
-										<span style="color:white;">🚀</span>
-									</div>
+									<img src="images/media/img_26.jpg" alt="Technology Transformation">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Technology Transformation</h5>
@@ -855,9 +831,7 @@
 							<!-- Card 9: Sustainability -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#1A4137 0%,#2d7a6b 100%);">
-										<span style="color:white;">🌱</span>
-									</div>
+									<img src="images/media/csr_sustainability.png" alt="Sustainability">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Sustainability</h5>
@@ -868,9 +842,7 @@
 							<!-- Card 10: Emerging Technology -->
 							<a href="#" class="vjs-biz-card">
 								<div class="vjs-biz-img-wrap">
-									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#9b59b6 0%,#34495e 100%);">
-										<span style="color:white;">🔮</span>
-									</div>
+									<img src="images/media/csr_solutions.png" alt="Emerging Technology">
 								</div>
 								<div class="vjs-biz-card-body">
 									<h5>Emerging Technology</h5>
