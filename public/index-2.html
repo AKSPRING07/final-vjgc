@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -614,120 +614,7 @@
 			}
 		}
 
-		/* ================= MEGA MENU (Businesses) ================= */
-
-		@media (min-width: 992px) {
-			.adani-nav-fx .navbar .nav-item.mega-dropdown {
-				position: static !important;
-			}
-
-			.adani-nav-fx .navbar .mega-dropdown .dropdown-menu {
-				position: absolute !important;
-				top: 100% !important;
-				left: 0 !important;
-				right: 0 !important;
-				width: 100% !important;
-				max-width: 100% !important;
-				margin: 0 !important;
-				padding: 60px 0 !important;
-				background: #fbfbfb !important;
-				/* OFF-WHITE LIKE IMAGE 2 */
-				border-radius: 0 !important;
-				/* SQUARE CORNERS LIKE IMAGE 2 */
-				border: none !important;
-				border-top: 1px solid #eeeeee !important;
-				box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05) !important;
-				backdrop-filter: none !important;
-				-webkit-backdrop-filter: none !important;
-				clip-path: none !important;
-				opacity: 0 !important;
-				visibility: hidden !important;
-				display: block !important;
-				max-height: 0 !important;
-				overflow: hidden !important;
-				transform: translateY(10px) !important;
-				/* Subtle slide */
-				transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s !important;
-				pointer-events: none;
-				z-index: 99999 !important;
-			}
-
-			.adani-nav-fx .navbar .nav-item.mega-dropdown:hover .dropdown-menu {
-				opacity: 1 !important;
-				visibility: visible !important;
-				max-height: 2000px !important;
-				overflow: visible !important;
-				transform: translateY(0) !important;
-				pointer-events: all;
-			}
-
-			.mega-menu-content {
-				display: grid !important;
-				grid-template-columns: repeat(5, 1fr) !important;
-				/* 5 COLUMNS LIKE IMAGE 2 */
-				gap: 50px !important;
-				max-width: 1300px !important;
-				margin: 0 auto !important;
-				padding: 0 50px !important;
-				align-items: start !important;
-			}
-
-			.mega-column {
-				display: block !important;
-				width: 100% !important;
-			}
-
-			.mega-section {
-				margin-bottom: 30px !important;
-			}
-
-			.mega-title {
-				font-size: 13px !important;
-				font-weight: 700 !important;
-				color: #000 !important;
-				margin-bottom: 20px !important;
-				padding-bottom: 12px !important;
-				border-bottom: 1px solid #dddddd !important;
-				/* THIN LINE LIKE IMAGE 2 */
-				display: block !important;
-				letter-spacing: 0.2px;
-				font-family: inherit;
-				text-transform: none !important;
-			}
-
-			.mega-list {
-				list-style: none !important;
-				padding: 0 !important;
-				margin: 0 !important;
-			}
-
-			.mega-list li {
-				margin-bottom: 10px !important;
-				display: block !important;
-			}
-
-			.mega-list li a {
-				font-size: 13px !important;
-				color: #666666 !important;
-				text-decoration: none !important;
-				transition: color 0.2s ease !important;
-				display: block !important;
-				font-weight: 400 !important;
-			}
-
-			.mega-list li a:hover {
-				color: #000 !important;
-				font-weight: 500 !important;
-				padding-left: 2px !important;
-			}
-		}
-
-		@media (max-width: 991px) {
-			.adani-nav-fx .navbar .mega-dropdown .dropdown-menu {
-				display: none !important;
-			}
-		}
-	</style>
+		</style>
 
 	<!-- Fix Internet Explorer ______________________________________-->
 	<!--[if lt IE 9]>
@@ -878,8 +765,60 @@
 											</li>
 										</ul>
 									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="shop-grid.html" role="button">Sustainability</a>
+																		<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Sustainability
+										</a>
+										<ul class="dropdown-menu sus-dropdown">
+											<li>
+												<div class="mega-menu-content mega-4-col">
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Core Services</span>
+															<ul class="mega-list">
+																<li><a href="digital-transformation-sustainability.html">Digital Transformation & IT Consulting</a></li>
+																<li><a href="cloud-infrastructure-sustainability.html">Cloud, Hosting & Infrastructure</a></li>
+																<li><a href="renewable-energy-solutions.html">Renewable Energy Solutions</a></li>
+																<li><a href="logistics-trade-sustainability.html">Logistics & Trade Enablement</a></li>
+																<li><a href="education-skill-sustainability.html">Education & Skill Development</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Environmental Initiatives</span>
+															<ul class="mega-list">
+																<li><a href="tree-plantation-sustainability.html">Tree Plantation & Green Cover</a></li>
+																<li><a href="eco-tech-solutions.html">Eco-conscious Technology Solutions</a></li>
+																<li><a href="renewable-energy-adoption.html">Renewable Energy Adoption</a></li>
+																<li><a href="sustainable-business-practices.html">Sustainable Business Practices</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Social Responsibility</span>
+															<ul class="mega-list">
+																<li><a href="educational-support-csr.html">Educational Support</a></li>
+																<li><a href="financial-material-aid.html">Financial & Material Aid</a></li>
+																<li><a href="skill-building-youth.html">Skill-Building Programs</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Community Development</span>
+															<ul class="mega-list">
+																<li><a href="rural-semi-urban-engagement.html">Rural & Semi-Urban Engagement</a></li>
+																<li><a href="awareness-programs-community.html">Awareness Programs</a></li>
+																<li><a href="local-infrastructure-support.html">Local Infrastructure Support</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" href="blog-v1.html" role="button">Vijayalakshmi
@@ -2556,6 +2495,7 @@
 
 				<!-- Theme js -->
 				<script src="js/theme.js"></script>
+		<script src="js/mega-dropdown.js"></script>
 				<!-- Navbar Hover Animation -->
 				<script src="js/navbar-hover.js"></script>
 			</div> <!-- /.main-page-wrapper -->

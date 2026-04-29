@@ -1,5 +1,5 @@
 
-$publicPath = 'C:\Users\ELCOT\vjs-website-\public'
+$publicPath = "$PSScriptRoot\public"
 $scriptTag = "`n`t`t<!-- Navbar Hover Animation -->`n`t`t<script src=`"js/navbar-hover.js`"></script>"
 $themeJs = '<script src="js/theme.js"></script>'
 
