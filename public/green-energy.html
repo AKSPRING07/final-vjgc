@@ -378,8 +378,8 @@
                 <div class="container position-relative" style="z-index: 2;">
                     <div class="row justify-content-between">
                         <div class="col-lg-8 col-md-10 wow fadeInLeft">
-                            <h1 class="hero-heading font-magnita text-white">Beyond Digital<br>Across Every Industry.</h1>
-                            <p class="text-lg text-white pt-20 pb-20 ps-3 pe-3 mt-40 lg-mt-30" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); border-radius: 8px; display: inline-block;">Beyond digital, we deliver cloud, AI, cybersecurity, engineering, finance, and infrastructure solutions.<br>Serving industries like aerospace, energy, healthcare, banking, retail, and public services.</p>
+                            <h1 class="hero-heading font-magnita text-white">Powering Change <br>Sustaining the Future.</h1>
+                            <p class="text-lg text-white pt-20 pb-20 ps-3 pe-3 mt-40 lg-mt-30" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); border-radius: 8px; display: inline-block;">Beyond traditional power, we drive innovation in solar, clean energy, <br>and sustainable systems.Supporting industries including energy,<br> infrastructure, manufacturing, utilities, and global sustainability initiatives.</p>
                         </div>
                     </div>
                 </div>
@@ -394,128 +394,6 @@
 			Partner Logo Two
 		============================================== 
 		-->
-		<!-- ScrollVelocity Section -->
-		<div class="vjs-velocity-section">
-			<div class="vjs-velocity-pill">
-				<div class="vjs-velocity-wrapper" id="vjs-marquee">
-					<div class="vjs-velocity-track">
-						<span class="vjs-velocity-item">Cloud &bull;</span>
-						<span class="vjs-velocity-item">Customer Service &bull;</span>
-						<span class="vjs-velocity-item">Cybersecurity &bull;</span>
-						<span class="vjs-velocity-item">Data and Artificial Intelligence &bull;</span>
-						<span class="vjs-velocity-item">Digital Engineering and Manufacturing &bull;</span>
-						<span class="vjs-velocity-item">Ecosystem Partners &bull;</span>
-						<span class="vjs-velocity-item">Emerging Technology &bull;</span>
-						<span class="vjs-velocity-item">Finance and Risk Management &bull;</span>
-						<span class="vjs-velocity-item">Infrastructure and Capital Projects &bull;</span>
-						<span class="vjs-velocity-item">Learning &bull;</span>
-						<span class="vjs-velocity-item">Managed Services &bull;</span>
-						<span class="vjs-velocity-item">Marketing and Experience &bull;</span>
-						<span class="vjs-velocity-item">Metaverse &bull;</span>
-						<span class="vjs-velocity-item">Sales and Commerce &bull;</span>
-						<span class="vjs-velocity-item">Strategy &bull;</span>
-						<span class="vjs-velocity-item">Supply Chain &bull;</span>
-						<span class="vjs-velocity-item">Sustainability &bull;</span>
-						<span class="vjs-velocity-item">Talent and Organization &bull;</span>
-						<span class="vjs-velocity-item">Technology Transformation &bull;</span>
-						<!-- Duplicate for seamless loop -->
-						<span class="vjs-velocity-item">Cloud &bull;</span>
-						<span class="vjs-velocity-item">Customer Service &bull;</span>
-						<span class="vjs-velocity-item">Cybersecurity &bull;</span>
-						<span class="vjs-velocity-item">Data and Artificial Intelligence &bull;</span>
-						<span class="vjs-velocity-item">Digital Engineering and Manufacturing &bull;</span>
-						<span class="vjs-velocity-item">Ecosystem Partners &bull;</span>
-						<span class="vjs-velocity-item">Emerging Technology &bull;</span>
-						<span class="vjs-velocity-item">Finance and Risk Management &bull;</span>
-						<span class="vjs-velocity-item">Infrastructure and Capital Projects &bull;</span>
-						<span class="vjs-velocity-item">Learning &bull;</span>
-						<span class="vjs-velocity-item">Managed Services &bull;</span>
-						<span class="vjs-velocity-item">Marketing and Experience &bull;</span>
-						<span class="vjs-velocity-item">Metaverse &bull;</span>
-						<span class="vjs-velocity-item">Sales and Commerce &bull;</span>
-						<span class="vjs-velocity-item">Strategy &bull;</span>
-						<span class="vjs-velocity-item">Supply Chain &bull;</span>
-						<span class="vjs-velocity-item">Sustainability &bull;</span>
-						<span class="vjs-velocity-item">Talent and Organization &bull;</span>
-						<span class="vjs-velocity-item">Technology Transformation &bull;</span>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<style>
-			.vjs-velocity-section {
-				padding: 40px 0;
-				overflow: hidden;
-				background: #ffffff;
-			}
-			.vjs-velocity-pill {
-				background: #dfff7c; /* Lime yellow from reference */
-				padding: 18px 0;
-				border-radius: 999px; /* Pill shape */
-				margin: 0 40px;
-				overflow: hidden;
-				border: 1.5px solid #000000; /* Crisp outline */
-				box-shadow: 0 10px 30px rgba(223, 255, 124, 0.25);
-			}
-			.vjs-velocity-wrapper {
-				display: flex;
-				width: max-content;
-				white-space: nowrap;
-				will-change: transform;
-			}
-			.vjs-velocity-track {
-				display: inline-flex;
-				align-items: center;
-				gap: 40px;
-				padding-right: 40px;
-			}
-			.vjs-velocity-item {
-				font-size: 26px;
-				font-weight: 700;
-				color: #000000;
-				text-transform: none;
-				letter-spacing: -0.5px;
-			}
-			@media (max-width: 768px) {
-				.vjs-velocity-item { font-size: 18px; }
-				.vjs-velocity-pill { margin: 0 20px; padding: 12px 0; }
-			}
-		</style>
-
-		<script>
-			window.addEventListener('DOMContentLoaded', () => {
-				const track = document.getElementById('vjs-marquee');
-				let x = 0;
-				let lastScrollY = window.scrollY;
-				let speed = 0.05; // Base speed (set to very slow crawl)
-				
-				function animate() {
-					const currentScrollY = window.scrollY;
-					const scrollDelta = Math.abs(currentScrollY - lastScrollY);
-					lastScrollY = currentScrollY;
-					
-					// Dynamic velocity mapping: faster scroll = faster marquee (very low sensitivity)
-					const targetSpeed = 0.05 + (scrollDelta * 0.01);
-					speed = speed * 0.9 + targetSpeed * 0.1; // Smooth damping
-					
-					x -= speed;
-					
-					// Seamless loop reset (using 50% since we duplicated the content)
-					if (x <= -50) {
-						x = 0;
-					}
-					
-					track.style.transform = `translateX(${x}%)`;
-					requestAnimationFrame(animate);
-				}
-				
-				requestAnimationFrame(animate);
-			});
-		</script>
-
-
-		<div class="light-bg-page-wrapper">
 			<!--
 			=====================================================
 				BLock Feature Nine
