@@ -1,8 +1,8 @@
 # Master Synchronization Script for VJS Website Navigation
 # Source of Truth: index-2.html
 
-$sourcePath = "c:\Users\Admin\vjs-website-\public\index-2.html"
-$targetDir = "c:\Users\Admin\vjs-website-\public"
+$sourcePath = "c:\Users\ELCOT\vjs-website-\public\index-2.html"
+$targetDir = "c:\Users\ELCOT\vjs-website-\public"
 
 if (-not (Test-Path $sourcePath)) {
     Write-Error "Source file $sourcePath not found."
