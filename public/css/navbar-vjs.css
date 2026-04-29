@@ -213,8 +213,8 @@ body {
 }
 
 .site-brand-lockup__mark {
-	height: 40px;
-	width: 40px;
+	height: 54px;
+	width: 54px;
 	object-fit: contain;
 }
 
@@ -225,17 +225,17 @@ body {
 }
 
 .site-brand-lockup__title {
-	font-size: 15px;
+	font-size: 18px;
 	font-weight: 700;
 	color: #fff;
 	letter-spacing: -0.3px;
 }
 
 .site-brand-lockup__subtitle {
-	font-size: 10px;
+	font-size: 11px;
 	font-weight: 500;
 	color: rgba(255, 255, 255, 0.55);
-	letter-spacing: 1.5px;
+	letter-spacing: 1.8px;
 	text-transform: uppercase;
 }
 
