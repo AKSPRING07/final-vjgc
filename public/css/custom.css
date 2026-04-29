@@ -799,6 +799,68 @@ a,
   opacity: 0.15;
 }
 
+/* CTA Section Styles */
+.vjs-cta-section {
+    position: relative;
+    padding: 80px 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+}
+
+.vjs-cta-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.45) 100%);
+    z-index: 1;
+}
+
+.vjs-cta-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.vjs-cta-section h2 {
+    font-family: "ClashDisplay", "Helvetica Neue", sans-serif;
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: -0.01em;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.vjs-cta-section .btn-visit {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 44px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 999px;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.vjs-cta-section .btn-visit:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    border-color: #ffffff;
+}
+
 .vjs-leadership-banner .leader-portrait {
   width: 100%;
   border-radius: 30px;
