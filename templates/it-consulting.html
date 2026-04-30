@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
+	<meta name="description" content="Vijayalakshmi Group Of Companies website.">
+    <meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
+    <meta property="og:url" content="https://creativegigstf.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vijayalakshmi Group Of Companies">
+	<meta name='og:image' content='{{ url_for('static', filename='images/assets/ogg.png') }}?v=1.2'>
+	<!-- For IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- For Resposive Device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- For Window Tab Color -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#1A4137">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#1A4137">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
+	<title>Vijayalakshmi Group Of Companies</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="56x56" href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0" media="all">
+	<!-- Main style sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0" media="all">
+	<!-- responsive style sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.0" media="all">
+
+	<!-- Fix Internet Explorer ______________________________________-->
+	<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="{{ url_for('static', filename='vendor/html5shiv.js') }}?v=1.0"></script>
+			<script src="{{ url_for('static', filename='vendor/respond.js') }}?v=1.0"></script>
+		<![endif]-->
+		
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0" media="all">
+</head>
+
+<body>
+	<div class="main-page-wrapper">
+		<!-- ===================================================
+				Loading Transition
+			==================================================== -->
+		<div id="preloader">
+			<div id="ctn-preloader" class="ctn-preloader">
+				<div class="icon"><video class="m-auto d-block site-loader-video" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-label="Loading animation"><source src="{{ url_for('static', filename='images/fav-icon/reload.ani.mp4') }}?v=1.0" type="video/mp4"></video></div>
+			</div>
+		</div>
+
+
+		
+		<!-- 
+		=============================================
+				Theme Main Menu
+		============================================== 
+		-->
+								<!-- 
+		=============================================
+				Theme Main Menu
+		============================================== 
+		-->
+						<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
+			<div class="inner-content position-relative">
+				<div class="top-header">
+					<div class="d-flex align-items-center justify-content-between">
+						<div class="logo" style="flex: 1; display: flex; justify-content: flex-start;">
+							<a href="{{ url_for('home') }}" class="d-flex align-items-center">
+								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
+									<span class="site-brand-lockup__mark-wrap"><img
+											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt=""
+											class="site-brand-lockup__mark"></span>
+									<span class="site-brand-lockup__text">
+										<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;Groups</span>
+										<span class="site-brand-lockup__subtitle">Of Companies</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<!-- logo -->
+
+						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
+							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav align-items-lg-center">
+									<li class="d-block d-lg-none">
+										<div class="logo">
+											<a href="{{ url_for('home') }}" class="d-block">
+												<span class="site-brand-lockup"
+													aria-label="Vijayalakshmi Group Of Companies">
+													<span class="site-brand-lockup__mark-wrap"><img
+															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt=""
+															class="site-brand-lockup__mark"></span>
+													<span class="site-brand-lockup__text">
+														<span class="site-brand-lockup__title">Vijayalakshmi
+															Groups</span>
+														<span class="site-brand-lockup__subtitle">OF COMPANIES</span>
+													</span>
+												</span>
+											</a>
+										</div>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">About Us
+										</a>
+										<ul class="dropdown-menu about-dropdown compact-dropdown">
+											<li><a href="{{ url_for('catch_all', filename='about-us-v2.html') }}">About Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}">Mission & Vision</a></li>
+											<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}">Leadership and Awards</a></li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+																														<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Businesses
+										</a>
+										<ul class="dropdown-menu biz-dropdown">
+											<li>
+												<div class="mega-menu-content mega-3-col">
+													<div class="mega-section">
+														<span class="mega-title">IT Infrastructure</span>
+														<ul class="mega-list">
+															<li><a href="{{ url_for('catch_all', filename='it-consulting.html') }}">IT Consulting</a></li>
+															<li><a href="{{ url_for('catch_all', filename='data-centers-hosting.html') }}?v=1.0">Enterprise Data Centers & Hosting Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Education & Skills</span>
+														<ul class="mega-list">
+															<li><a href="{{ url_for('catch_all', filename='it-training.html') }}">IT Training</a></li>
+															<li><a href="{{ url_for('catch_all', filename='yoga-wellness.html') }}?v=1.0">Yoga & Wellness</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Energy & Sustainability</span>
+														<ul class="mega-list">
+															<li><a href="{{ url_for('catch_all', filename='green-energy.html') }}?v=1.0">Green Energy & Solar Manufacturing</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Agri & Trade</span>
+														<ul class="mega-list">
+															<li><a href="{{ url_for('catch_all', filename='export-import.html') }}">Export & Import</a></li>
+															<li><a href="{{ url_for('catch_all', filename='plantations.html') }}">Plantations & Exotic Trees</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Real Estate</span>
+														<ul class="mega-list">
+															<li><a href="{{ url_for('catch_all', filename='property-services.html') }}">Property Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Logistics & Travel</span>
+														<ul class="mega-list">
+															<li><a href="{{ url_for('catch_all', filename='logistics-services.html') }}">Logistics Services</a></li>
+															<li><a href="{{ url_for('catch_all', filename='travel-rentals.html') }}">Travel & Rentals</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Sustainability
+										</a>
+										<ul class="dropdown-menu sus-dropdown">
+											<li>
+												<div class="mega-menu-content mega-4-col">
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Core Services</span>
+															<ul class="mega-list">
+																<li><a href="{{ url_for('catch_all', filename='digital-transformation-sustainability.html') }}?v=1.0">Digital Transformation & IT Consulting</a></li>
+																<li><a href="{{ url_for('catch_all', filename='cloud-infrastructure-sustainability.html') }}?v=1.0">Cloud, Hosting & Infrastructure</a></li>
+																<li><a href="{{ url_for('catch_all', filename='renewable-energy-solutions.html') }}?v=1.0">Renewable Energy Solutions</a></li>
+																<li><a href="{{ url_for('catch_all', filename='logistics-trade-sustainability.html') }}">Logistics & Trade Enablement</a></li>
+																<li><a href="{{ url_for('catch_all', filename='education-skill-sustainability.html') }}">Education & Skill Development</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Environmental Initiatives</span>
+															<ul class="mega-list">
+																<li><a href="{{ url_for('catch_all', filename='tree-plantation-sustainability.html') }}">Tree Plantation & Green Cover</a></li>
+																<li><a href="{{ url_for('catch_all', filename='eco-tech-solutions.html') }}">Eco-conscious Technology Solutions</a></li>
+																<li><a href="{{ url_for('catch_all', filename='renewable-energy-adoption.html') }}?v=1.0">Renewable Energy Adoption</a></li>
+																<li><a href="{{ url_for('catch_all', filename='sustainable-business-practices.html') }}">Sustainable Business Practices</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Social Responsibility</span>
+															<ul class="mega-list">
+																<li><a href="{{ url_for('catch_all', filename='educational-support-csr.html') }}">Educational Support</a></li>
+																<li><a href="{{ url_for('catch_all', filename='financial-material-aid.html') }}?v=1.0">Financial & Material Aid</a></li>
+																<li><a href="{{ url_for('catch_all', filename='skill-building-youth.html') }}">Skill-Building Programs</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Community Development</span>
+															<ul class="mega-list">
+																<li><a href="{{ url_for('catch_all', filename='rural-semi-urban-engagement.html') }}?v=1.0">Rural & Semi-Urban Engagement</a></li>
+																<li><a href="{{ url_for('catch_all', filename='awareness-programs-community.html') }}">Awareness Programs</a></li>
+																<li><a href="{{ url_for('catch_all', filename='local-infrastructure-support.html') }}">Local Infrastructure Support</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('catch_all', filename='blog-v1.html') }}?v=1.0" role="button">Vijayalakshmi
+											Foundation</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Newsroom
+										</a>
+										<ul class="dropdown-menu news-dropdown compact-dropdown">
+											<li><a href="{{ url_for('catch_all', filename='media-release.html') }}">Media Releases</a></li>
+											<li><a href="{{ url_for('catch_all', filename='media-kit.html') }}">Media Kit</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</nav>
+
+						<div class="right-widget d-none d-lg-flex align-items-center">
+							<!-- Accessibility Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+									<i class="bi bi-universal-access fs-5 text-white"></i>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
+								</button>
+								<div class="dropdown-menu dropdown-menu-end vjs-accessibility-panel">
+									<h5>Accessibility Adjustments</h5>
+									<p>Choose the right accessibility profile for you</p>
+									<div class="vjs-divider"></div>
+									<div class="vjs-adjust-grid">
+										<button class="vjs-adjust-btn" onclick="vjsSetMode('light')">Light Mode</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetMode('dark')">Dark Mode</button>
+									</div>
+									<div class="vjs-divider"></div>
+									<div class="vjs-font-grid">
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('small')">-A</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('normal')">A</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('large')">+A</button>
+									</div>
+									<div class="vjs-divider"></div>
+									<div class="text-center">
+										<button class="vjs-reset-btn" onclick="vjsResetSettings()">Reset
+											Settings</button>
+									</div>
+								</div>
+							</div>
+							<!-- Language Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end">
+									<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a></li>
+									<li><a class="dropdown-item" href="javascript:translateTo('en')">English</a></li>
+									<li><a class="dropdown-item" href="javascript:translateTo('hi')">Hindi</a></li>
+								</ul>
+							</div>
+						</div>
+					</div> <!--/.top-header-->
+				</div> <!-- /.inner-content -->
+		</header>
+		<!-- /.theme-main-menu -->
+
+		<!-- Background Bubble Animation -->
+		<div class="vjs-bubble-container">
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+		</div>
+
+		<style>
+			.vjs-bubble-container {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+				overflow: hidden;
+				pointer-events: none;
+				background: #ffffff; /* Ensures base background is solid */
+			}
+			.vjs-bubble {
+				position: absolute;
+				bottom: -150px;
+				background: rgba(223, 255, 124, 0.15); /* Brand lime-yellow */
+				border-radius: 50%;
+				opacity: 0;
+				animation: vjs-rise var(--speed) infinite ease-in;
+				left: var(--left);
+				width: var(--size);
+				height: var(--size);
+			}
+
+			/* Individual bubble variations */
+			.vjs-bubble:nth-child(1) { --left: 10%; --size: 80px; --speed: 15s; animation-delay: 0s; }
+			.vjs-bubble:nth-child(2) { --left: 25%; --size: 150px; --speed: 20s; animation-delay: 2s; }
+			.vjs-bubble:nth-child(3) { --left: 40%; --size: 100px; --speed: 18s; animation-delay: 5s; }
+			.vjs-bubble:nth-child(4) { --left: 60%; --size: 120px; --speed: 22s; animation-delay: 1s; }
+			.vjs-bubble:nth-child(5) { --left: 75%; --size: 180px; --speed: 25s; animation-delay: 8s; }
+			.vjs-bubble:nth-child(6) { --left: 85%; --size: 90px; --speed: 16s; animation-delay: 3s; }
+			.vjs-bubble:nth-child(7) { --left: 5%; --size: 60px; --speed: 12s; animation-delay: 10s; }
+			.vjs-bubble:nth-child(8) { --left: 50%; --size: 200px; --speed: 30s; animation-delay: 4s; }
+
+			@keyframes vjs-rise {
+				0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+				20% { opacity: 0.5; }
+				80% { opacity: 0.5; }
+				100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+			}
+		</style>
+
+
+
+		<!-- 
+		=============================================
+			Hero Banner
+		============================================== 
+		-->
+		<div class="hero-banner-five">
+			<div class="bg-wrapper position-relative pt-150 sm-pt-50 pb-120 xl-pb-100 sm-pb-10" style="background-image: url('{{ url_for('static', filename='images/media/about_hero_cinematic.png') }}'); background-size: cover; background-position: center; min-height: 80vh; display: flex; align-items: center;">
+                <div class="container position-relative" style="z-index: 2;">
+                    <div class="row justify-content-between">
+                        <div class="col-lg-8 col-md-10 wow fadeInLeft">
+                            <h1 class="hero-heading font-magnita text-white">Beyond Digital<br>Across Every Industry.</h1>
+                            <p class="text-lg text-white pt-20 pb-20 ps-3 pe-3 mt-40 lg-mt-30" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); border-radius: 8px; display: inline-block;">Beyond digital, we deliver cloud, AI, cybersecurity, engineering, finance, and infrastructure solutions.<br>Serving industries like aerospace, energy, healthcare, banking, retail, and public services.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+            </div>
+		</div>
+		<!-- /.hero-banner-five -->
+
+
+		<!-- 
+		=============================================
+			Partner Logo Two
+		============================================== 
+		-->
+		<!-- ScrollVelocity Section -->
+		<div class="vjs-velocity-section">
+			<div class="vjs-velocity-pill">
+				<div class="vjs-velocity-wrapper" id="vjs-marquee">
+					<div class="vjs-velocity-track">
+						<span class="vjs-velocity-item">Cloud &bull;</span>
+						<span class="vjs-velocity-item">Customer Service &bull;</span>
+						<span class="vjs-velocity-item">Cybersecurity &bull;</span>
+						<span class="vjs-velocity-item">Data and Artificial Intelligence &bull;</span>
+						<span class="vjs-velocity-item">Digital Engineering and Manufacturing &bull;</span>
+						<span class="vjs-velocity-item">Ecosystem Partners &bull;</span>
+						<span class="vjs-velocity-item">Emerging Technology &bull;</span>
+						<span class="vjs-velocity-item">Finance and Risk Management &bull;</span>
+						<span class="vjs-velocity-item">Infrastructure and Capital Projects &bull;</span>
+						<span class="vjs-velocity-item">Learning &bull;</span>
+						<span class="vjs-velocity-item">Managed Services &bull;</span>
+						<span class="vjs-velocity-item">Marketing and Experience &bull;</span>
+						<span class="vjs-velocity-item">Metaverse &bull;</span>
+						<span class="vjs-velocity-item">Sales and Commerce &bull;</span>
+						<span class="vjs-velocity-item">Strategy &bull;</span>
+						<span class="vjs-velocity-item">Supply Chain &bull;</span>
+						<span class="vjs-velocity-item">Sustainability &bull;</span>
+						<span class="vjs-velocity-item">Talent and Organization &bull;</span>
+						<span class="vjs-velocity-item">Technology Transformation &bull;</span>
+						<!-- Duplicate for seamless loop -->
+						<span class="vjs-velocity-item">Cloud &bull;</span>
+						<span class="vjs-velocity-item">Customer Service &bull;</span>
+						<span class="vjs-velocity-item">Cybersecurity &bull;</span>
+						<span class="vjs-velocity-item">Data and Artificial Intelligence &bull;</span>
+						<span class="vjs-velocity-item">Digital Engineering and Manufacturing &bull;</span>
+						<span class="vjs-velocity-item">Ecosystem Partners &bull;</span>
+						<span class="vjs-velocity-item">Emerging Technology &bull;</span>
+						<span class="vjs-velocity-item">Finance and Risk Management &bull;</span>
+						<span class="vjs-velocity-item">Infrastructure and Capital Projects &bull;</span>
+						<span class="vjs-velocity-item">Learning &bull;</span>
+						<span class="vjs-velocity-item">Managed Services &bull;</span>
+						<span class="vjs-velocity-item">Marketing and Experience &bull;</span>
+						<span class="vjs-velocity-item">Metaverse &bull;</span>
+						<span class="vjs-velocity-item">Sales and Commerce &bull;</span>
+						<span class="vjs-velocity-item">Strategy &bull;</span>
+						<span class="vjs-velocity-item">Supply Chain &bull;</span>
+						<span class="vjs-velocity-item">Sustainability &bull;</span>
+						<span class="vjs-velocity-item">Talent and Organization &bull;</span>
+						<span class="vjs-velocity-item">Technology Transformation &bull;</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<style>
+			.vjs-velocity-section {
+				padding: 40px 0;
+				overflow: hidden;
+				background: #ffffff;
+			}
+			.vjs-velocity-pill {
+				background: #dfff7c; /* Lime yellow from reference */
+				padding: 18px 0;
+				border-radius: 999px; /* Pill shape */
+				margin: 0 40px;
+				overflow: hidden;
+				border: 1.5px solid #000000; /* Crisp outline */
+				box-shadow: 0 10px 30px rgba(223, 255, 124, 0.25);
+			}
+			.vjs-velocity-wrapper {
+				display: flex;
+				width: max-content;
+				white-space: nowrap;
+				will-change: transform;
+			}
+			.vjs-velocity-track {
+				display: inline-flex;
+				align-items: center;
+				gap: 40px;
+				padding-right: 40px;
+			}
+			.vjs-velocity-item {
+				font-size: 26px;
+				font-weight: 700;
+				color: #000000;
+				text-transform: none;
+				letter-spacing: -0.5px;
+			}
+			@media (max-width: 768px) {
+				.vjs-velocity-item { font-size: 18px; }
+				.vjs-velocity-pill { margin: 0 20px; padding: 12px 0; }
+			}
+		</style>
+
+		<script>
+			window.addEventListener('DOMContentLoaded', () => {
+				const track = document.getElementById('vjs-marquee');
+				let x = 0;
+				let lastScrollY = window.scrollY;
+				let speed = 0.05; // Base speed (set to very slow crawl)
+				
+				function animate() {
+					const currentScrollY = window.scrollY;
+					const scrollDelta = Math.abs(currentScrollY - lastScrollY);
+					lastScrollY = currentScrollY;
+					
+					// Dynamic velocity mapping: faster scroll = faster marquee (very low sensitivity)
+					const targetSpeed = 0.05 + (scrollDelta * 0.01);
+					speed = speed * 0.9 + targetSpeed * 0.1; // Smooth damping
+					
+					x -= speed;
+					
+					// Seamless loop reset (using 50% since we duplicated the content)
+					if (x <= -50) {
+						x = 0;
+					}
+					
+					track.style.transform = `translateX(${x}%)`;
+					requestAnimationFrame(animate);
+				}
+				
+				requestAnimationFrame(animate);
+			});
+		</script>
+
+
+		<div class="light-bg-page-wrapper">
+			<!--
+			=====================================================
+				BLock Feature Nine
+			=====================================================
+			-->
+			<div class="block-feature-nine position-relative pt-80 pb-150 lg-pb-80">
+				<div class="container">
+					<div class="title-four text-center mb-30 lg-mb-10">
+						<h2>At a Glance.</h2>
+					</div>
+					<!-- /.title-four -->
+
+					<div class="row gx-xl-5 justify-content-center">
+						<!-- Card 1: Solution -->
+						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
+							<div class="vjs-glance-card">
+								<div class="icon-box">
+									<span class="emoji-icon rocket">??</span>
+								</div>
+								<div class="content">
+									<h4 class="card-title">Solution</h4>
+									<p class="card-desc">End-to-end digital solutions from cloud to AI to cybersecurity.</p>
+								</div>
+								<div class="card-glow"></div>
+							</div>
+						</div>
+
+						<!-- Card 2: Reputated -->
+						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
+							<div class="vjs-glance-card">
+								<div class="icon-box">
+									<span class="emoji-icon trophy">??</span>
+								</div>
+								<div class="content">
+									<h4 class="card-title">Reputated</h4>
+									<p class="card-desc">13+ years of trusted client relationships across industries.</p>
+								</div>
+								<div class="card-glow"></div>
+							</div>
+						</div>
+
+						<!-- Card 3: Support -->
+						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
+							<div class="vjs-glance-card">
+								<div class="icon-box">
+									<span class="emoji-icon lightning">?</span>
+								</div>
+								<div class="content">
+									<h4 class="card-title">Support</h4>
+									<p class="card-desc">Fast, reliable support when you need it most.</p>
+								</div>
+								<div class="card-glow"></div>
+							</div>
+						</div>
+					</div>
+
+					<style>
+						.vjs-glance-card {
+							background: #ffffff;
+							border-radius: 24px;
+							padding: 40px 30px;
+							text-align: center;
+							position: relative;
+							overflow: hidden;
+							transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+							box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+							border: 1px solid rgba(0,0,0,0.03);
+							width: 100%;
+							margin-top: 30px;
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							z-index: 1;
+						}
+						.vjs-glance-card:hover {
+							transform: translateY(-10px);
+							box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+							border-color: #dfff7c;
+						}
+						.icon-box {
+							width: 80px;
+							height: 80px;
+							background: #f8f9fa;
+							border-radius: 20px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							margin-bottom: 25px;
+							transition: all 0.4s ease;
+						}
+						.vjs-glance-card:hover .icon-box {
+							background: #dfff7c;
+							transform: scale(1.1);
+						}
+						.emoji-icon {
+							font-size: 40px;
+							display: inline-block;
+						}
+						.card-title {
+							font-size: 22px;
+							font-weight: 700;
+							color: #000;
+							margin-bottom: 15px;
+							text-transform: uppercase;
+							letter-spacing: 1px;
+						}
+						.card-desc {
+							font-size: 16px;
+							color: #666;
+							line-height: 1.6;
+							margin: 0;
+						}
+						
+						/* Animations */
+						.rocket { animation: float 3s ease-in-out infinite; }
+						.trophy { animation: rotate 4s ease-in-out infinite; }
+						.lightning { animation: pulse 2s ease-in-out infinite; }
+
+						@keyframes float {
+							0%, 100% { transform: translateY(0); }
+							50% { transform: translateY(-10px); }
+						}
+						@keyframes rotate {
+							0%, 100% { transform: rotate(0deg); }
+							50% { transform: rotate(10deg); }
+						}
+						@keyframes pulse {
+							0%, 100% { transform: scale(1); opacity: 1; }
+							50% { transform: scale(1.2); opacity: 0.8; }
+						}
+
+						.card-glow {
+							position: absolute;
+							top: 0; left: 0; width: 100%; height: 100%;
+							background: radial-gradient(circle at 50% 50%, rgba(223, 255, 124, 0.1) 0%, transparent 70%);
+							opacity: 0;
+							transition: opacity 0.4s ease;
+							pointer-events: none;
+							z-index: -1;
+						}
+						.vjs-glance-card:hover .card-glow {
+							opacity: 1;
+						}
+					</style>
+
+					<h3 class="heading font-magnita text-white mt-110 lg-mt-80">Design, Marketing,Branding, Development & more. Our services, our pride. <a href="#"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_54.svg') }}?v=1.0" alt="" class="lazy-img"></a></h3>
+				</div>
+				<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_21.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_01">
+				<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_22.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_02">
+				<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_23.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_03">
+			</div>
+			<!-- /.block-feature-nine -->
+			<!--
+			=====================================================
+				Businesses Carousel Section
+			=====================================================
+			-->
+			<style>
+				/* ---- Businesses Carousel ---- */
+				.vjs-biz-section {
+					background: #f0f5ec;
+					padding: 80px 0 70px;
+					overflow: hidden;
+				}
+				.vjs-biz-header {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					margin-bottom: 40px;
+				}
+				.vjs-biz-header h2 {
+					font-weight: 800;
+					font-size: 32px;
+					color: #1a1a1a;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					margin: 0;
+				}
+				.vjs-biz-nav {
+					display: flex;
+					gap: 10px;
+				}
+				.vjs-biz-nav-btn {
+					width: 44px; height: 44px;
+					border-radius: 50%;
+					border: 2px solid #1A4137;
+					background: transparent;
+					color: #1A4137;
+					font-size: 18px;
+					cursor: pointer;
+					display: flex; align-items: center; justify-content: center;
+					transition: all 0.3s ease;
+				}
+				.vjs-biz-nav-btn:hover {
+					background: #1A4137;
+					color: #fff;
+				}
+				.vjs-biz-viewport {
+					overflow: hidden;
+					width: 100%;
+				}
+				.vjs-biz-track {
+					display: flex;
+					gap: 24px;
+					transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+					will-change: transform;
+				}
+				.vjs-biz-card {
+					flex: 0 0 calc(25% - 18px);
+					min-width: calc(25% - 18px);
+					border-radius: 16px;
+					overflow: hidden;
+					background: #fff;
+					box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+					transition: transform 0.35s ease, box-shadow 0.35s ease;
+					cursor: pointer;
+					text-decoration: none;
+					display: block;
+					color: inherit;
+				}
+				.vjs-biz-card:hover {
+					transform: translateY(-8px);
+					box-shadow: 0 16px 48px rgba(0,0,0,0.13);
+					color: inherit;
+					text-decoration: none;
+				}
+				.vjs-biz-img-wrap {
+					position: relative;
+					overflow: hidden;
+					aspect-ratio: 4/3;
+				}
+				.vjs-biz-img-wrap img {
+					width: 100%; height: 100%;
+					object-fit: cover;
+					transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+					display: block;
+				}
+				.vjs-biz-card:hover .vjs-biz-img-wrap img {
+					transform: scale(1.08);
+				}
+				/* Icon-only card variant removed */
+				.vjs-biz-card-body {
+					padding: 18px 20px 20px;
+				}
+				.vjs-biz-card-body h5 {
+					font-size: 16px;
+					font-weight: 700;
+					color: #1a1a1a;
+					margin: 0 0 6px;
+					transition: color 0.3s;
+				}
+				.vjs-biz-card:hover .vjs-biz-card-body h5 {
+					color: #1A4137;
+				}
+				.vjs-biz-card-body p {
+					font-size: 13px;
+					color: #888;
+					margin: 0;
+					line-height: 1.5;
+				}
+				/* Dots */
+				.vjs-biz-dots {
+					display: flex;
+					justify-content: center;
+					gap: 8px;
+					margin-top: 36px;
+				}
+				.vjs-biz-dot {
+					width: 8px; height: 8px;
+					border-radius: 50%;
+					background: #ccc;
+					border: none;
+					padding: 0;
+					cursor: pointer;
+					transition: all 0.3s ease;
+				}
+				.vjs-biz-dot.active {
+					background: #1A4137;
+					width: 28px;
+					border-radius: 4px;
+				}
+				@media (max-width: 991px) {
+					.vjs-biz-card { flex: 0 0 calc(50% - 12px); min-width: calc(50% - 12px); }
+				}
+				@media (max-width: 575px) {
+					.vjs-biz-card { flex: 0 0 calc(100%); min-width: 100%; }
+				}
+			</style>
+
+			<section class="vjs-biz-section">
+				<div class="container">
+					<div class="vjs-biz-header">
+						<h2>Our Businesses</h2>
+						<div class="vjs-biz-nav">
+							<button class="vjs-biz-nav-btn" id="vjsBizPrev" aria-label="Previous">&#8592;</button>
+							<button class="vjs-biz-nav-btn" id="vjsBizNext" aria-label="Next">&#8594;</button>
+						</div>
+					</div>
+
+					<div class="vjs-biz-viewport" id="vjsBizViewport">
+						<div class="vjs-biz-track" id="vjsBizTrack">
+
+							<!-- Card 1: Cloud -->
+							<a href="#" class="vjs-biz-card">
+								<div class="vjs-biz-img-wrap">
+									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#2980b9 0%,#2c3e50 100%);">
+										<span style="color:white;">??</span>
+									</div>
+								</div>
+								<div class="vjs-biz-card-body">
+									<h5>Cloud</h5>
+									<p>Scalable cloud infrastructure, migration, and management services.</p>
+								</div>
+							</a>
+
+							<!-- Card 2: Cybersecurity -->
+							<a href="#" class="vjs-biz-card">
+								<div class="vjs-biz-img-wrap">
+									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#c0392b 0%,#8e44ad 100%);">
+										<span style="color:white;">??</span>
+									</div>
+								</div>
+								<div class="vjs-biz-card-body">
+									<h5>Cybersecurity</h5>
+									<p>Advanced threat protection, risk mitigation, and compliance.</p>
+								</div>
+							</a>
+
+							<!-- Card 3: Data & Artificial Intelligence -->
+							<a href="#" class="vjs-biz-card">
+								<div class="vjs-biz-img-wrap">
+									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#16a085 0%,#f39c12 100%);">
+										<span style="color:white;">??</span>
+									</div>
+								</div>
+								<div class="vjs-biz-card-body">
+									<h5>Data &amp; Artificial Intelligence</h5>
+									<p>Unlock insights with machine learning, AI, and big data analytics.</p>
+								</div>
+							</a>
+
+							<!-- Card 4: Digital Engineering -->
+							<a href="#" class="vjs-biz-card">
+								<div class="vjs-biz-img-wrap">
+									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#27ae60 0%,#2ecc71 100%);">
+										<span style="color:white;">??</span>
+									</div>
+								</div>
+								<div class="vjs-biz-card-body">
+									<h5>Digital Engineering</h5>
+									<p>Innovative product design, manufacturing, and lifecycle management.</p>
+								</div>
+							</a>
+
+							<!-- Card 5: Finance and Risk Management -->
+							<a href="#" class="vjs-biz-card">
+								<div class="vjs-biz-img-wrap">
+									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#8e44ad 0%,#2980b9 100%);">
+										<span style="color:white;">??</span>
+									</div>
+								</div>
+								<div class="vjs-biz-card-body">
+									<h5>Finance &amp; Risk Management</h5>
+									<p>Strategic financial advisory, compliance, and risk analytics.</p>
+								</div>
+							</a>
+
+							<!-- Card 6: Infrastructure -->
+							<a href="#" class="vjs-biz-card">
+								<div class="vjs-biz-img-wrap">
+									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#f39c12 0%,#d35400 100%);">
+										<span style="color:white;">???</span>
+									</div>
+								</div>
+								<div class="vjs-biz-card-body">
+									<h5>Infrastructure &amp; Capital Projects</h5>
+									<p>End-to-end management of large-scale capital and infrastructure.</p>
+								</div>
+							</a>
+
+							<!-- Card 7: Supply Chain -->
+							<a href="#" class="vjs-biz-card">
+								<div class="vjs-biz-img-wrap">
+									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#34495e 0%,#2c3e50 100%);">
+										<span style="color:white;">??</span>
+									</div>
+								</div>
+								<div class="vjs-biz-card-body">
+									<h5>Supply Chain</h5>
+									<p>Optimized logistics, inventory management, and procurement.</p>
+								</div>
+							</a>
+
+							<!-- Card 8: Technology Transformation -->
+							<a href="#" class="vjs-biz-card">
+								<div class="vjs-biz-img-wrap">
+									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#e67e22 0%,#f1c40f 100%);">
+										<span style="color:white;">??</span>
+									</div>
+								</div>
+								<div class="vjs-biz-card-body">
+									<h5>Technology Transformation</h5>
+									<p>Modernize legacy systems and accelerate digital adoption.</p>
+								</div>
+							</a>
+
+							<!-- Card 9: Sustainability -->
+							<a href="#" class="vjs-biz-card">
+								<div class="vjs-biz-img-wrap">
+									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#1A4137 0%,#2d7a6b 100%);">
+										<span style="color:white;">??</span>
+									</div>
+								</div>
+								<div class="vjs-biz-card-body">
+									<h5>Sustainability</h5>
+									<p>Eco-friendly solutions, carbon footprint reduction, and ESG consulting.</p>
+								</div>
+							</a>
+
+							<!-- Card 10: Emerging Technology -->
+							<a href="#" class="vjs-biz-card">
+								<div class="vjs-biz-img-wrap">
+									<div class="vjs-biz-icon-bg" style="background: linear-gradient(135deg,#9b59b6 0%,#34495e 100%);">
+										<span style="color:white;">??</span>
+									</div>
+								</div>
+								<div class="vjs-biz-card-body">
+									<h5>Emerging Technology</h5>
+									<p>Explore Web3, Quantum Computing, and future tech innovations.</p>
+								</div>
+							</a>
+
+						</div><!-- /.vjs-biz-track -->
+					</div><!-- /.vjs-biz-viewport -->
+
+					<!-- Dots -->
+					<div class="vjs-biz-dots" id="vjsBizDots"></div>
+				</div>
+			</section>
+
+			<script>
+			(function () {
+				var CARDS_PER_VIEW = 4;
+				var AUTO_INTERVAL = 7000;
+				var track = document.getElementById('vjsBizTrack');
+				var dotsWrap = document.getElementById('vjsBizDots');
+				var btnPrev = document.getElementById('vjsBizPrev');
+				var btnNext = document.getElementById('vjsBizNext');
+				var cards = track ? track.querySelectorAll('.vjs-biz-card') : [];
+				var total = cards.length;
+				var maxIndex = Math.max(0, total - CARDS_PER_VIEW);
+				var current = 0;
+				var timer = null;
+
+				function getCardWidth() {
+					if (!cards[0]) return 0;
+					var rect = cards[0].getBoundingClientRect();
+					var style = window.getComputedStyle(track);
+					var gap = parseFloat(style.gap || style.columnGap || 24) || 24;
+					return rect.width + gap;
+				}
+
+				function goTo(idx) {
+					current = Math.max(0, Math.min(idx, maxIndex));
+					track.style.transform = 'translateX(-' + (getCardWidth() * current) + 'px)';
+					updateDots();
+				}
+
+				function buildDots() {
+					if (!dotsWrap) return;
+					dotsWrap.innerHTML = ';
+					var numDots = maxIndex + 1;
+					for (var i = 0; i <= maxIndex; i++) {
+						var btn = document.createElement('button');
+						btn.className = 'vjs-biz-dot' + (i === 0 ? ' active' : ');
+						btn.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+						(function (idx) {
+							btn.addEventListener('click', function () { goTo(idx); resetTimer(); });
+						})(i);
+						dotsWrap.appendChild(btn);
+					}
+				}
+
+				function updateDots() {
+					if (!dotsWrap) return;
+					var dots = dotsWrap.querySelectorAll('.vjs-biz-dot');
+					dots.forEach(function (d, i) {
+						d.classList.toggle('active', i === current);
+					});
+				}
+
+				function next() { goTo(current >= maxIndex ? 0 : current + 1); }
+				function prev() { goTo(current <= 0 ? maxIndex : current - 1); }
+
+				function startTimer() {
+					timer = setInterval(next, AUTO_INTERVAL);
+				}
+				function resetTimer() {
+					clearInterval(timer);
+					startTimer();
+				}
+
+				// Responsive: recalculate on resize
+				window.addEventListener('resize', function () { goTo(current); });
+
+				if (btnNext) btnNext.addEventListener('click', function () { next(); resetTimer(); });
+				if (btnPrev) btnPrev.addEventListener('click', function () { prev(); resetTimer(); });
+
+				buildDots();
+				startTimer();
+			})();
+			</script>
+			<!-- /.businesses-section -->
+
+
+			<!-- 
+			=============================================
+				Feedback Section Five
+			============================================== 
+			-->
+			<div class="feedback-section-five border-100 position-relative pt-225 xl-pt-200 lg-pt-120 md-pt-80 pb-300 xl-pb-200 lg-pb-150">
+				<div class="container">
+					<div class="position-relative">
+						<div class="feedback-slider-three">
+							<div class="item">
+								<div class="feedback-block-five">
+									<blockquote>"Technology is at its finest when it becomes invisible — quietly shaping progress with precision and purpose."</blockquote>
+
+
+								</div>
+								<!-- /.feedback-block-five -->
+							</div>
+							<div class="item">
+								<div class="feedback-block-five">
+									<blockquote>"True innovation lies not in complexity, but in the elegance with which technology transforms the world."</blockquote>
+
+
+								</div>
+								<!-- /.feedback-block-five -->
+							</div>
+							<div class="item">
+								<div class="feedback-block-five">
+									<blockquote>"Beyond systems and code, technology is the architecture of modern progress."</blockquote>
+
+
+								</div>
+								<!-- /.feedback-block-five -->
+							</div>
+
+						</div>
+						<!-- /.feedback-slider-three -->
+					</div>
+				</div>
+				<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_24.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_01">
+				
+			</div>
+			<!-- /.feedback-section-five -->
+
+			<!--
+			=====================================================
+				Footer Three
+			=====================================================
+			-->
+			<!-- CTA Section -->
+			<section class="vjs-cta-section" style="background-image: url('corporate_cta_bg_1777455273969.png');">
+				<div class="container text-center">
+					<h2 class="text-white">To Know More About Vijayalakshmi IT Consulting</h2>
+					<a href="#" class="btn-visit">Visit Website</a>
+				</div>
+			</section>
+
+			<div class="footer-modern">
+				<div class="footer-container">
+					<!-- TOP SECTION -->
+					<div class="footer-top">
+						<!-- LOGO + SOCIAL -->
+						<div class="footer-brand">
+							<div class="footer-logo">
+								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="Logo Mark">
+								<div class="footer-logo-text">
+									<div class="text-main">VIJAYALAKSHMI GROUP</div>
+									<div class="text-sub">OF COMPANIES</div>
+								</div>
+							</div>
+
+							<div class="social-icons">
+								<a href="#"><i class="bi bi-facebook"></i></a>
+								<a href="#"><i class="bi bi-instagram"></i></a>
+								<a href="#"><i class="bi bi-youtube"></i></a>
+								<a href="#"><i class="bi bi-linkedin"></i></a>
+							</div>
+						</div>
+
+						<!-- ABOUT -->
+						<div class="footer-col">
+							<h5>About Us</h5>
+							<ul>
+								<li><a href="{{ url_for('catch_all', filename='about-us-v2.html') }}">About Company</a></li>
+								<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}">Chairman's Office</a></li>
+								<li><a href="{{ url_for('catch_all', filename='team-v1.html') }}">Leadership</a></li>
+								<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}">Our Journey</a></li>
+								<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}">Awards</a></li>
+							</ul>
+						</div>
+
+						<!-- BUSINESSES -->
+						<div class="footer-col">
+							<h5>Businesses</h5>
+							<ul>
+								<li><a href="{{ url_for('catch_all', filename='service-v2.html') }}">Infrastructure</a></li>
+								<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}">Energy & Utilities</a></li>
+								<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}">Transport & Logistics</a></li>
+								<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}">Consumer Products</a></li>
+								<li><a href="{{ url_for('catch_all', filename='service-v2.html') }}">Real Estate</a></li>
+							</ul>
+						</div>
+
+						<!-- RIGHT LINKS -->
+						<div class="footer-col">
+							<h5>Quick Links</h5>
+							<ul>
+								<li><a href="{{ url_for('catch_all', filename='about-us-v2.html') }}">Sustainability</a></li>
+								<li><a href="{{ url_for('catch_all', filename='pricing.html') }}">Investors</a></li>
+								<li><a href="{{ url_for('catch_all', filename='blog-v2.html') }}?v=1.0">Newsroom</a></li>
+								<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}">Careers</a></li>
+								<li><a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- BOTTOM -->
+					<div class="footer-bottom">
+						<div class="footer-copyright">
+							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="Logo">
+							@2026 Vijayalakshmi Group
+						</div>
+
+						<div class="footer-bottom-links">
+							<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0">Legal Disclaimer</a>
+							<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0">Privacy Notice</a>
+							<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0">Terms & Conditions</a>
+							<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0">Cookie Policy</a>
+						</div>
+					</div>
+				</div>
+			</div> <!-- /.footer-modern -->
+		</div>
+		<!-- /.light-bg-page-wrapper -->
+		
+
+
+
+		<!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+                <div class="container">
+                    <div class="user-data-form modal-content">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<div class="form-wrapper m-auto">
+							<ul class="nav nav-tabs border-0 w-100" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fc1" role="tab">Login</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" data-bs-toggle="tab" data-bs-target="#fc2" role="tab">Signup</button>
+								</li>
+							</ul>
+							<div class="tab-content mt-30">
+								<div class="tab-pane show active" role="tabpanel" id="fc1">
+									<div class="text-center mb-20">
+										<h2>Hi, Welcome Back!</h2>
+										<p>Still don't have an account? <a href="#">Sign up</a></p>
+									</div>
+									<form action="#">
+										<div class="row">
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Email*</label>
+													<input type="email" placeholder="Youremail@gmail.com">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-20">
+													<label>Password*</label>
+													<input type="password" placeholder="Enter Password" class="pass_log_id">
+													<span class="placeholder_icon"><span class="passVicon"><img src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0" alt=""></span></span>
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="agreement-checkbox d-flex justify-content-between align-items-center">
+													<div>
+														<input type="checkbox" id="remember">
+														<label for="remember">Keep me logged in</label>
+													</div>
+													<a href="#">Forget Password?</a>
+												</div> <!-- /.agreement-checkbox -->
+											</div>
+											<div class="col-12">
+												<button class="btn-four w-100 tran3s d-block mt-20">Login</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- /.tab-pane -->
+								<div class="tab-pane" role="tabpanel" id="fc2">
+									<div class="text-center mb-20">
+										<h2>Register</h2>
+										<p>Already have an account? <a href="#">Login</a></p>
+									</div>
+									<form action="#">
+										<div class="row">
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Name*</label>
+													<input type="text" placeholder="Zubayer Hasan">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Email*</label>
+													<input type="email" placeholder="zubayerhasan@gmail.com">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-20">
+													<label>Password*</label>
+													<input type="password" placeholder="Enter Password" class="pass_log_id">
+													<span class="placeholder_icon"><span class="passVicon"><img src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0" alt=""></span></span>
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="agreement-checkbox d-flex justify-content-between align-items-center">
+													<div>
+														<input type="checkbox" id="remember2">
+														<label for="remember2">By hitting the "Register" button, you agree to the <a href="#">Terms conditions</a> & <a href="#">Privacy Policy</a></label>
+													</div>
+												</div> <!-- /.agreement-checkbox -->
+											</div>
+											<div class="col-12">
+												<button class="btn-four w-100 tran3s d-block mt-20">Sign up</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- /.tab-pane -->
+							</div>
+							
+							<div class="d-flex align-items-center mt-30 mb-10">
+								<div class="line"></div>
+								<span class="pe-3 ps-3 fs-6">OR</span>
+								<div class="line"></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<a href="#" class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+										<img src="{{ url_for('static', filename='images/icon/google.png') }}?v=1.0" alt="">
+										<span class="ps-3">Signup with Google</span>
+									</a>
+								</div>
+								<div class="col-sm-6">
+									<a href="#" class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+										<img src="{{ url_for('static', filename='images/icon/facebook.png') }}?v=1.0" alt="">
+										<span class="ps-3">Signup with Facebook</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- /.form-wrapper -->
+                    </div>
+                    <!-- /.user-data-form -->
+                </div>
+            </div>
+        </div>
+
+
+		<button class="scroll-top">
+			<i class="bi bi-arrow-up-short"></i>
+		</button>
+
+
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+		<!-- jQuery first, then Bootstrap JS -->
+		<!-- jQuery -->
+		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
+		<!-- Bootstrap JS -->
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
+		<!-- WOW js -->
+		<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
+		<!-- Slick Slider -->
+		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
+		<!-- Fancybox -->
+		<script src="{{ url_for('static', filename='vendor/fancybox/dist/jquery.fancybox.min.js') }}?v=1.0"></script>
+		<!-- Lazy -->
+		<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}?v=1.0"></script>
+		<!-- js Counter -->
+		<script src="{{ url_for('static', filename='vendor/jquery.counterup.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.waypoints.min.js') }}?v=1.0"></script>
+		
+		<!-- validator js -->
+		<script src="{{ url_for('static', filename='vendor/validator.js') }}?v=1.0"></script>
+		<!-- isotop -->
+		<script  src="{{ url_for('static', filename='vendor/isotope.pkgd.min.js') }}?v=1.0"></script>
+
+		<!-- Theme js -->
+		<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
+		<!-- Navbar Hover Animation -->
+		<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
+	</div> <!-- /.main-page-wrapper -->
+	<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
+	<div id="google_translate_element" style="display:none;"></div>
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+

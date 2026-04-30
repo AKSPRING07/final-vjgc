@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="Sustainability, Vijayalakshmi Group, Education & Skill Development">
+	<meta name="description" content="Vijayalakshmi Group Of Companies - Education & Skill Development">
+    <meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Education & Skill Development | Vijayalakshmi Group Of Companies">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Education & Skill Development | Vijayalakshmi Group Of Companies</title>
+	<link rel="icon" type="image/png" sizes="56x56" href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0" media="all">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/slick/slick.css') }}?v=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0" media="all">
+</head>
+
+<body class="sus-sub-page">
+	<div class="main-page-wrapper">
+		<!-- Loading Transition -->
+		<div id="preloader">
+			<div id="ctn-preloader" class="ctn-preloader">
+				<div class="icon"><video class="m-auto d-block site-loader-video" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-label="Loading animation"><source src="{{ url_for('static', filename='images/fav-icon/reload.ani.mp4') }}?v=1.0" type="video/mp4"></video></div>
+			</div>
+		</div>
+
+		<!-- Header -->
+		<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
+			<div class="inner-content position-relative">
+				<div class="top-header">
+					<div class="d-flex align-items-center justify-content-between">
+						<div class="logo" style="flex: 1; display: flex; justify-content: flex-start;">
+							<a href="{{ url_for('home') }}" class="d-flex align-items-center">
+								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
+									<span class="site-brand-lockup__mark-wrap"><img
+											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt=""
+											class="site-brand-lockup__mark"></span>
+									<span class="site-brand-lockup__text">
+										<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;Groups</span>
+										<span class="site-brand-lockup__subtitle">Of Companies</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<!-- logo -->
+
+						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
+							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav align-items-lg-center">
+									<li class="d-block d-lg-none">
+										<div class="logo">
+											<a href="{{ url_for('home') }}" class="d-block">
+												<span class="site-brand-lockup"
+													aria-label="Vijayalakshmi Group Of Companies">
+													<span class="site-brand-lockup__mark-wrap"><img
+															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt=""
+															class="site-brand-lockup__mark"></span>
+													<span class="site-brand-lockup__text">
+														<span class="site-brand-lockup__title">Vijayalakshmi
+															Groups</span>
+														<span class="site-brand-lockup__subtitle">OF COMPANIES</span>
+													</span>
+												</span>
+											</a>
+										</div>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">About Us
+										</a>
+										<ul class="dropdown-menu about-dropdown compact-dropdown">
+											<li><a href="{{ url_for('catch_all', filename='about-us-v2.html') }}">About Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}">Mission & Vision</a></li>
+											<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}">Leadership and Awards</a></li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+																														<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Businesses
+										</a>
+										<ul class="dropdown-menu biz-dropdown">
+											<li>
+												<div class="mega-menu-content mega-3-col">
+													<div class="mega-section">
+														<span class="mega-title">IT Infrastructure</span>
+														<ul class="mega-list">
+															<li><a href="{{ url_for('catch_all', filename='it-consulting.html') }}">IT Consulting</a></li>
+															<li><a href="{{ url_for('catch_all', filename='data-centers-hosting.html') }}?v=1.0">Enterprise Data Centers & Hosting Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Education & Skills</span>
+														<ul class="mega-list">
+															<li><a href="{{ url_for('catch_all', filename='it-training.html') }}">IT Training</a></li>
+															<li><a href="{{ url_for('catch_all', filename='yoga-wellness.html') }}?v=1.0">Yoga & Wellness</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Energy & Sustainability</span>
+														<ul class="mega-list">
+															<li><a href="{{ url_for('catch_all', filename='green-energy.html') }}?v=1.0">Green Energy & Solar Manufacturing</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Agri & Trade</span>
+														<ul class="mega-list">
+															<li><a href="{{ url_for('catch_all', filename='export-import.html') }}">Export & Import</a></li>
+															<li><a href="{{ url_for('catch_all', filename='plantations.html') }}">Plantations & Exotic Trees</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Real Estate</span>
+														<ul class="mega-list">
+															<li><a href="{{ url_for('catch_all', filename='property-services.html') }}">Property Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Logistics & Travel</span>
+														<ul class="mega-list">
+															<li><a href="{{ url_for('catch_all', filename='logistics-services.html') }}">Logistics Services</a></li>
+															<li><a href="{{ url_for('catch_all', filename='travel-rentals.html') }}">Travel & Rentals</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Sustainability
+										</a>
+										<ul class="dropdown-menu sus-dropdown">
+											<li>
+												<div class="mega-menu-content mega-4-col">
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Core Services</span>
+															<ul class="mega-list">
+																<li><a href="{{ url_for('catch_all', filename='digital-transformation-sustainability.html') }}?v=1.0">Digital Transformation & IT Consulting</a></li>
+																<li><a href="{{ url_for('catch_all', filename='cloud-infrastructure-sustainability.html') }}?v=1.0">Cloud, Hosting & Infrastructure</a></li>
+																<li><a href="{{ url_for('catch_all', filename='renewable-energy-solutions.html') }}?v=1.0">Renewable Energy Solutions</a></li>
+																<li><a href="{{ url_for('catch_all', filename='logistics-trade-sustainability.html') }}">Logistics & Trade Enablement</a></li>
+																<li><a href="{{ url_for('catch_all', filename='education-skill-sustainability.html') }}">Education & Skill Development</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Environmental Initiatives</span>
+															<ul class="mega-list">
+																<li><a href="{{ url_for('catch_all', filename='tree-plantation-sustainability.html') }}">Tree Plantation & Green Cover</a></li>
+																<li><a href="{{ url_for('catch_all', filename='eco-tech-solutions.html') }}">Eco-conscious Technology Solutions</a></li>
+																<li><a href="{{ url_for('catch_all', filename='renewable-energy-adoption.html') }}?v=1.0">Renewable Energy Adoption</a></li>
+																<li><a href="{{ url_for('catch_all', filename='sustainable-business-practices.html') }}">Sustainable Business Practices</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Social Responsibility</span>
+															<ul class="mega-list">
+																<li><a href="{{ url_for('catch_all', filename='educational-support-csr.html') }}">Educational Support</a></li>
+																<li><a href="{{ url_for('catch_all', filename='financial-material-aid.html') }}?v=1.0">Financial & Material Aid</a></li>
+																<li><a href="{{ url_for('catch_all', filename='skill-building-youth.html') }}">Skill-Building Programs</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Community Development</span>
+															<ul class="mega-list">
+																<li><a href="{{ url_for('catch_all', filename='rural-semi-urban-engagement.html') }}?v=1.0">Rural & Semi-Urban Engagement</a></li>
+																<li><a href="{{ url_for('catch_all', filename='awareness-programs-community.html') }}">Awareness Programs</a></li>
+																<li><a href="{{ url_for('catch_all', filename='local-infrastructure-support.html') }}">Local Infrastructure Support</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('catch_all', filename='blog-v1.html') }}?v=1.0" role="button">Vijayalakshmi
+											Foundation</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Newsroom
+										</a>
+										<ul class="dropdown-menu news-dropdown compact-dropdown">
+											<li><a href="{{ url_for('catch_all', filename='media-release.html') }}">Media Releases</a></li>
+											<li><a href="{{ url_for('catch_all', filename='media-kit.html') }}">Media Kit</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</nav>
+
+						<div class="right-widget d-none d-lg-flex align-items-center">
+							<!-- Accessibility Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+									<i class="bi bi-universal-access fs-5 text-white"></i>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
+								</button>
+								<div class="dropdown-menu dropdown-menu-end vjs-accessibility-panel">
+									<h5>Accessibility Adjustments</h5>
+									<p>Choose the right accessibility profile for you</p>
+									<div class="vjs-divider"></div>
+									<div class="vjs-adjust-grid">
+										<button class="vjs-adjust-btn" onclick="vjsSetMode('light')">Light Mode</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetMode('dark')">Dark Mode</button>
+									</div>
+									<div class="vjs-divider"></div>
+									<div class="vjs-font-grid">
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('small')">-A</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('normal')">A</button>
+										<button class="vjs-adjust-btn" onclick="vjsSetFontSize('large')">+A</button>
+									</div>
+									<div class="vjs-divider"></div>
+									<div class="text-center">
+										<button class="vjs-reset-btn" onclick="vjsResetSettings()">Reset
+											Settings</button>
+									</div>
+								</div>
+							</div>
+							<!-- Language Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end">
+									<li><a class="dropdown-item" href="javascript:translateTo('ta')">Tamil</a></li>
+									<li><a class="dropdown-item" href="javascript:translateTo('en')">English</a></li>
+									<li><a class="dropdown-item" href="javascript:translateTo('hi')">Hindi</a></li>
+								</ul>
+							</div>
+						</div>
+					</div> <!--/.top-header-->
+				</div> <!-- /.inner-content -->
+		</header>
+
+		<!-- Hero Section -->
+		<div class="sustainability-hero" style="background-image: url('{{ url_for('static', filename='images/assets/sustainability_hero.png') }}');">
+			<div class="container" data-aos="fade-up">
+				<div class="row">
+					<div class="col-lg-10">
+						<span class="section-label text-white opacity-75 mb-10 d-block">Core Services</span>
+						<h1 class="mb-20">Education & Skill Development</h1>
+						<p class="text-white opacity-75">Empowering individuals for the digital economy through Aditya Institute.</p>
+						<ul class="style-none d-inline-flex pager mt-40">
+							<li><a href="{{ url_for('home') }}" class="text-white opacity-50">Home</a></li>
+							<li><span class="text-white opacity-50 px-2">/</span></li>
+							<li><a href="{{ url_for('catch_all', filename='sustainability.html') }}" class="text-white opacity-50">Sustainability</a></li>
+							<li><span class="text-white opacity-50 px-2">/</span></li>
+							<li class="text-white fw-bold">Education & Skill Development</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Overview Section -->
+		<div class="section-spacing bg-white pb-0">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-7" data-aos="fade-right">
+						<h2 class="fw-bold mb-30" style="color: #08201b;">Overview</h2>
+						<p class="sus-overview-text mb-30">Aditya Institute empowers individuals through education and skill development. We create a talent pipeline that reduces hiring dependency and builds workforce control.</p>
+                        
+                        <div class="strategic-message text-start p-4 mt-0 mb-30" style="padding: 25px !important;">
+                            <h4 class="text-white mb-2" style="font-weight: 700; font-size: 18px;">Strategic Positioning</h4>
+                            <p class="fs-6 text-white-50" style="font-style: normal; font-size: 14px !important;">Creates in-house talent supply, reduces hiring costs, and builds a community-led brand moat through talent and human capital development.</p>
+                        </div>
+					</div>
+                    <div class="col-lg-5 ms-auto" data-aos="fade-left">
+                        <div class="simple-auto-slider">
+                            <div><img src="{{ url_for('static', filename='images/media/sustainability_new.png') }}?v=1.0" alt="Sustainability"></div>
+                            <div><img src="{{ url_for('static', filename='images/media/solutions_new.png') }}?v=1.0" alt="Solutions"></div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+
+        <!-- ESG Framework Section (Redesigned) -->
+        <div class="section-spacing bg-white pt-40 pb-40">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="esg-card esg-env">
+                            <div class="esg-icon-wrap"><i class="bi bi-tree-fill"></i></div>
+                            <h4>Environmental</h4>
+                            <p>Driving decarbonization and resource circularity through innovative Education & Skill Development solutions.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="esg-card esg-soc">
+                            <div class="esg-icon-wrap"><i class="bi bi-people-fill"></i></div>
+                            <h4>Social</h4>
+                            <p>Fostering inclusive growth and empowering local talent ecosystems in the Core Services sector.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="esg-card esg-gov">
+                            <div class="esg-icon-wrap"><i class="bi bi-shield-check"></i></div>
+                            <h4>Governance</h4>
+                            <p>Ensuring ethical leadership and transparent reporting across all our sustainability initiatives.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategic Pillars Section (New - Adani Style) -->
+        <div class="section-spacing" style="background: #f8fcfb;">
+            <div class="container">
+                <div class="row mb-40 text-center" data-aos="fade-up">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="fw-bold mb-20">Strategic Pillars</h2>
+                        <p class="text-muted">Our approach to Education & Skill Development is anchored in four core focus areas that drive long-term value.</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="strategy-pillar">
+                            <span class="pillar-num">Pillar 01</span>
+                            <h5>Decarbonization</h5>
+                            <p class="small text-muted">Eliminating operational carbon footprint through automation and green energy.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="strategy-pillar">
+                            <span class="pillar-num">Pillar 02</span>
+                            <h5>Resource Efficiency</h5>
+                            <p class="small text-muted">Optimizing input resources to ensure zero-waste workflows and high yields.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="strategy-pillar">
+                            <span class="pillar-num">Pillar 03</span>
+                            <h5>Digital Inclusion</h5>
+                            <p class="small text-muted">Bridging the digital divide by providing access to modern tech and skills.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="strategy-pillar">
+                            <span class="pillar-num">Pillar 04</span>
+                            <h5>Asset Security</h5>
+                            <p class="small text-muted">Protecting natural and digital assets through robust governance and tech.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!-- What We Offer Section -->
+		<div class="section-spacing bg-white">
+			<div class="container">
+				<div class="row mb-40">
+					<div class="col-12 text-center" data-aos="fade-up">
+						<h2 class="fw-bold" style="color: #08201b;">What We Offer</h2>
+						<div class="vjs-divider m-auto mt-20 mb-20" style="width: 50px; height: 3px; background: #008D96;"></div>
+					</div>
+				</div>
+				<div class="row g-4 justify-content-center">
+										<div class="col-lg-3 col-md-6" data-aos="fade-up">
+						<div class="offer-card">
+							<div class="icon-circle-lg"><i class="bi bi-person-gear"></i></div>
+							<h4>IT skilling and digital literacy programs</h4>
+						</div>
+					</div>					<div class="col-lg-3 col-md-6" data-aos="fade-up">
+						<div class="offer-card">
+							<div class="icon-circle-lg"><i class="bi bi-briefcase"></i></div>
+							<h4>Career readiness and professional development</h4>
+						</div>
+					</div>					<div class="col-lg-3 col-md-6" data-aos="fade-up">
+						<div class="offer-card">
+							<div class="icon-circle-lg"><i class="bi bi-laptop"></i></div>
+							<h4>Digital-first learning pathways</h4>
+						</div>
+					</div>					<div class="col-lg-3 col-md-6" data-aos="fade-up">
+						<div class="offer-card">
+							<div class="icon-circle-lg"><i class="bi bi-mortarboard"></i></div>
+							<h4>Industry-aligned technical training</h4>
+						</div>
+					</div>					<div class="col-lg-3 col-md-6" data-aos="fade-up">
+						<div class="offer-card">
+							<div class="icon-circle-lg"><i class="bi bi-people-fill"></i></div>
+							<h4>Corporate leadership workshops</h4>
+						</div>
+					</div>					<div class="col-lg-3 col-md-6" data-aos="fade-up">
+						<div class="offer-card">
+							<div class="icon-circle-lg"><i class="bi bi-book"></i></div>
+							<h4>Grassroots educational support</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Our Approach & Impact Section (Redesigned Impact Box) -->
+		<div class="section-spacing" style="background: #fbfdfd;">
+			<div class="container">
+				<div class="row g-5">
+					<div class="col-lg-7" data-aos="fade-right">
+						<h2 class="fw-bold mb-30" style="color: #08201b;">Implementation Strategy</h2>
+						<p class="mb-30" style="font-size: 17px; color: #555; line-height: 1.7;">We promote digital learning platforms that reduce physical resource usage while providing industry-relevant skills for long-term employability.</p>
+						
+                        <div class="accordion sus-accordion" id="susAccordion">
+                                                        <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#faq-1">
+                                        What are digital-first pathways?
+                                    </button>
+                                </h2>
+                                <div id="faq-1" class="accordion-collapse collapse show" data-bs-parent="#susAccordion">
+                                    <div class="accordion-body">
+                                        These are learning models that prioritize online and interactive digital content, reducing the need for physical books and travel.
+                                    </div>
+                                </div>
+                            </div>                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2">
+                                        How do you ensure employability?
+                                    </button>
+                                </h2>
+                                <div id="faq-2" class="accordion-collapse collapse " data-bs-parent="#susAccordion">
+                                    <div class="accordion-body">
+                                        By aligning our curriculum with the actual needs of our group companies and industry partners, ensuring students learn high-demand skills.
+                                    </div>
+                                </div>
+                            </div>                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3">
+                                        Is there a scholarship program?
+                                    </button>
+                                </h2>
+                                <div id="faq-3" class="accordion-collapse collapse " data-bs-parent="#susAccordion">
+                                    <div class="accordion-body">
+                                        Yes, through our Lakshmi Trust Initiative, we provide scholarships to deserving students from underserved communities.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+                    <div class="col-lg-5 ms-auto" data-aos="fade-left">
+                        <div class="impact-highlight h-100 d-flex flex-column">
+							<h3 class="mb-30">Sustainability Impact</h3>
+							<ul class="impact-list flex-grow-1">
+								<li><i class='bi bi-check-circle-fill'></i> Digital-first learning reducing physical resource usage</li><li><i class='bi bi-check-circle-fill'></i> Long-term social sustainability via improved employability</li><li><i class='bi bi-check-circle-fill'></i> Creation of a skilled workforce for the digital economy</li><li><i class='bi bi-check-circle-fill'></i> Grassroots talent development for sustainable growth</li><li><i class='bi bi-check-circle-fill'></i> Lower hiring costs through in-house talent supply</li>
+							</ul>
+                            
+                            <!-- Impact Progress (Replacing Radar) -->
+                            <div class="impact-progress-grid">
+                                <div class="progress-item">
+                                    <div class="label-group"><span>Operational Efficiency</span><span>85%</span></div>
+                                    <div class="progress-bar-wrap"><div class="progress-fill" style="width: 85%;"></div></div>
+                                </div>
+                                <div class="progress-item">
+                                    <div class="label-group"><span>Resource Optimization</span><span>92%</span></div>
+                                    <div class="progress-bar-wrap"><div class="progress-fill" style="width: 92%;"></div></div>
+                                </div>
+                                <div class="progress-item">
+                                    <div class="label-group"><span>Community Impact</span><span>78%</span></div>
+                                    <div class="progress-bar-wrap"><div class="progress-fill" style="width: 78%;"></div></div>
+                                </div>
+                            </div>
+						</div>
+                    </div>
+				</div>
+			</div>
+		</div>
+
+        <!-- Governance & Collaboration Section -->
+        <div class="section-spacing bg-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5" data-aos="fade-right">
+                        <h2 class="fw-bold mb-20">Governance & Value</h2>
+                        <p class="text-muted">We ensure that every sustainability initiative creates long-term societal and business value through strict governance and strategic alliances.</p>
+                        <div class="row g-4 mt-20">
+                            <div class="col-12">
+                                <div class="d-flex align-items-center mb-15">
+                                    <div class="icon-circle bg-light p-3 rounded-circle me-3"><i class="bi bi-shield-check text-primary"></i></div>
+                                    <div><h6 class="mb-0">Ethics-Led Growth</h6><p class="small text-muted mb-0">Adhering to global ESG compliance standards.</p></div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="icon-circle bg-light p-3 rounded-circle me-3"><i class="bi bi-infinity text-primary"></i></div>
+                                    <div><h6 class="mb-0">Shared Value Creation</h6><p class="small text-muted mb-0">Balancing profitability with planetary health.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ms-auto" data-aos="fade-left">
+                        <div class="sdg-badge-container justify-content-start">
+                            <div class="sdg-badge sdg-7" title="Affordable and Clean Energy"><i class="bi bi-sun"></i><span>ENERGY</span></div>
+                            <div class="sdg-badge sdg-9" title="Industry, Innovation and Infrastructure"><i class="bi bi-building-gear"></i><span>INNOVATION</span></div>
+                            <div class="sdg-badge sdg-13" title="Climate Action"><i class="bi bi-cloud-sun"></i><span>CLIMATE</span></div>
+                            <div class="sdg-badge sdg-17" title="Partnerships for the Goals"><i class="bi bi-people"></i><span>PARTNERS</span></div>
+                        </div>
+                        <div class="strategic-message bg-dark mt-40 p-4 rounded-4">
+                            <h5 class="text-white mb-2">Sustainable Alliances</h5>
+                            <p class="text-white-50 small">Collaborating with global tech giants and environmental bodies to scale our impact across the ecosystem.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!-- Roadmap Section -->
+		<div class="section-spacing" style="background: #f8fcfb;">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-5" data-aos="fade-right">
+						<h2 class="fw-bold mb-30">Sustainability Roadmap</h2>
+						<p class="text-muted">From ethical foundation to a future-ready sustainable ecosystem.</p>
+                        <div class="vjs-divider mt-20 mb-40" style="width: 50px; height: 3px; background: #9ec008;"></div>
+					</div>
+					<div class="col-lg-7" data-aos="fade-left">
+						<div class="roadmap-container">
+							<div class="roadmap-item">
+								<h5>Phase 1: Foundation (2005 - 2015)</h5>
+								<p>Establishing ground networks and asset-backed stability across travel and logistics.</p>
+							</div>
+							<div class="roadmap-item">
+								<h5>Phase 2: Transition (2018 - 2022)</h5>
+								<p>Entering future-focused tech and renewable sectors via Springreen and Aditya Powers.</p>
+							</div>
+							<div class="roadmap-item">
+								<h5>Phase 3: Integration (2025+)</h5>
+								<p>Achieving a fully consolidated ecosystem with talent creation and ESG leadership.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Our Commitment Section (Redesigned) -->
+		<div class="commitment-wrapper bg-white">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-10" data-aos="zoom-in">
+						<div class="commitment-box text-center">
+							<h3 class="w-100 mb-20" style="color: #08201b; font-weight: 800;">Our Commitment</h3>
+							<p class="fs-5 text-dark" style="font-style: italic; line-height: 1.6;">"We are committed to building a skilled and sustainable future through knowledge and talent empowerment."</p>
+						</div>
+					</div>
+				</div>
+                
+                <div class="row mt-60" data-aos="fade-up">
+                    <div class="col-12">
+                        <div class="strategic-message">
+                            <h2>Integrated Sustainable Ecosystem</h2>
+                            <p>"Sustainability is not an initiative - it is embedded into every service, every solution, and every ecosystem we build."</p>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer class="footer-modern">
+			<div class="footer-container">
+				<div class="footer-top d-flex flex-wrap justify-content-between">
+					<div class="footer-brand" style="flex: 1 1 300px;">
+						<div class="footer-logo d-flex align-items-center mb-4">
+							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="" style="width: 50px;">
+							<div class="ms-3">
+								<div style="font-size: 18px; font-weight: 800; color: #08201b; line-height: 1;">Vijayalakshmi Group</div>
+								<div style="font-size: 14px; font-weight: 700; color: #08201b; opacity: 0.6; letter-spacing: 2px;">OF COMPANIES</div>
+							</div>
+						</div>
+						<div class="social-icons d-flex gap-2">
+							<a href="#" class="rounded-circle bg-white shadow-sm p-2"><i class="bi bi-facebook"></i></a>
+							<a href="#" class="rounded-circle bg-white shadow-sm p-2"><i class="bi bi-instagram"></i></a>
+							<a href="#" class="rounded-circle bg-white shadow-sm p-2"><i class="bi bi-linkedin"></i></a>
+						</div>
+					</div>
+					<div class="footer-col" style="flex: 1 1 150px;">
+						<h5 class="fw-bold mb-4">About Us</h5>
+						<ul class="list-unstyled opacity-75">
+							<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}" class="text-decoration-none text-dark">Company</a></li>
+							<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}" class="text-decoration-none text-dark">Leadership</a></li>
+							<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}" class="text-decoration-none text-dark">Awards</a></li>
+						</ul>
+					</div>
+					<div class="footer-col" style="flex: 1 1 150px;">
+						<h5 class="fw-bold mb-4">Businesses</h5>
+						<ul class="list-unstyled opacity-75">
+							<li>Infrastructure</li>
+							<li>Energy</li>
+							<li>Logistics</li>
+						</ul>
+					</div>
+					<div class="footer-col" style="flex: 1 1 150px;">
+						<h5 class="fw-bold mb-4">Support</h5>
+						<ul class="list-unstyled opacity-75">
+							<li><a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0" class="text-decoration-none text-dark">Contact Us</a></li>
+							<li>Terms & Conditions</li>
+						</ul>
+					</div>
+				</div>
+				<hr class="my-5 opacity-10">
+				<div class="footer-bottom d-flex justify-content-between flex-wrap">
+					<p class="m-0">© 2025 Vijayalakshmi Group Of Companies</p>
+					<div class="footer-links d-flex gap-4">
+						<a href="#" class="text-decoration-none text-dark opacity-50">Privacy Notice</a>
+						<a href="#" class="text-decoration-none text-dark opacity-50">Cookie Policy</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<button class="scroll-top"><i class="bi bi-arrow-up-short"></i></button>
+
+		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/aos-next/dist/aos.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.appear.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.countTo.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
+        <script>
+            $(document).ready(function(){
+                if ($('.simple-auto-slider').length) {
+                    $('.simple-auto-slider').slick({autoplay: true, autoplaySpeed: 4000, dots: true, arrows: false, fade: true, cssEase: 'linear'});
+                }
+                // Trigger progress bar animation on scroll
+                $(window).on('scroll', function() {
+                    $('.progress-fill').each(function() {
+                        var pos = $(this).offset().top;
+                        var winTop = $(window).scrollTop();
+                        if (pos < winTop + 600) {
+                            $(this).css('width', $(this).parent().prev().find('span:last-child').text());
+                        }
+                    });
+                });
+            });
+        </script>
+	</div>
+	<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
+	<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
+</body>
+</html>
