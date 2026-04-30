@@ -1,11 +1,10 @@
 /* ============================================================
-   VJS NAVBAR - Shared Stylesheet
-   Source of truth: blog-v1.html / index.html navbar design
-   DO NOT override these styles on individual pages.
+   VJS NAVBAR - Master Shared Stylesheet
+   Source of truth: Consolidated Mega-Menu System
+   Last Updated: 2024-04-30
    ============================================================ */
 
 @media (min-width: 992px) {
-
 	.adani-nav-fx {
 		padding: 0;
 		align-self: top;
@@ -14,8 +13,6 @@
 		border: none !important;
 		box-shadow: none !important;
 		width: 100%;
-
-		/* lock to top */
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -98,13 +95,21 @@
 	font-size: 14px;
 	color: rgba(255, 255, 255, 0.85);
 	transition: all 0.35s ease;
+	background: transparent !important;
 }
 
-/* HOVER */
-.adani-nav-fx .nav-item:hover>.nav-link,
-.adani-nav-fx .nav-item.nav-current>.nav-link {
-	color: #dfff7c;
+/* HOVER & ACTIVE */
+.adani-nav-fx .nav-item:hover>.nav-link {
+	color: #dfff7c !important;
 	transform: translateY(-0.5px);
+}
+
+.adani-nav-fx .nav-item.nav-current:not(:hover)>.nav-link {
+	color: #dfff7c !important;
+}
+
+.adani-nav-fx .nav-item:not(:hover):not(.nav-current)>.nav-link {
+	color: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* HOVER INDICATOR */
@@ -124,24 +129,116 @@
 	transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* DROPDOWN */
+/* DROPDOWN BASE (Mega-Menu Style) */
 .adani-nav-fx .navbar .dropdown-menu {
 	margin-top: 14px;
-	padding: 14px 8px;
-	border-radius: 24px;
-	border: 1px solid rgba(255, 255, 255, 0.05);
-	background: rgba(253, 253, 253, 0.719);
-	transform: translateY(18px) scale(0.96);
-	clip-path: inset(0 0 100% 0 round 24px);
-	transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-		opacity 0.3s ease,
-		visibility 0.3s ease,
-		clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+	padding: 48px 0 !important;
+	border-radius: 16px;
+	border: 1px solid #eee;
+	background: #ffffff !important;
+	box-shadow: 0 20px 80px rgba(0, 0, 0, 0.14);
+	
+	/* Animation & Positioning */
+	position: absolute !important;
+	top: 100% !important;
+	left: 50% !important;
+	transform: translateX(-50%) translateY(16px) !important;
+	opacity: 0 !important;
+	visibility: hidden !important;
+	display: block !important;
+	max-height: 0 !important;
+	overflow: hidden !important;
+	transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.35s, max-height 0s 0.35s !important;
+	pointer-events: none;
+	z-index: 99999 !important;
 }
 
-.adani-nav-fx .navbar .dropdown:hover>.dropdown-menu {
-	transform: translateY(0) scale(1);
-	clip-path: inset(0 0 0 0 round 24px);
+/* GAP BRIDGER: Prevents flickering when moving mouse from link to menu */
+.adani-nav-fx .navbar .dropdown-menu::before {
+	content: "";
+	position: absolute;
+	top: -20px;
+	left: 0;
+	width: 100%;
+	height: 20px;
+	background: transparent;
+}
+
+/* Show on Hover OR when Bootstrap 'show' class is present */
+.adani-nav-fx .navbar .nav-item:hover .dropdown-menu,
+.adani-nav-fx .navbar .dropdown-menu.show {
+	opacity: 1 !important;
+	visibility: visible !important;
+	max-height: 2000px !important;
+	overflow: visible !important;
+	transform: translateX(-50%) translateY(0) !important;
+	pointer-events: all;
+	transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0s linear !important;
+}
+
+/* ================= MEGA MENU GRID SYSTEM ================= */
+
+.mega-menu-content {
+	display: grid !important;
+	gap: 28px !important;
+	width: 100% !important;
+	margin: 0 auto !important;
+	padding: 0 56px !important;
+	align-items: start !important;
+}
+
+/* Column Variants */
+.mega-2-col { grid-template-columns: repeat(2, 1fr) !important; width: 600px !important; }
+.mega-3-col { grid-template-columns: repeat(3, 1fr) !important; width: 900px !important; }
+.mega-4-col { grid-template-columns: repeat(4, 1fr) !important; width: 1200px !important; }
+.mega-6-col { grid-template-columns: repeat(6, 1fr) !important; width: 1400px !important; }
+
+/* Fixed widths for specific menus to ensure premium look */
+.adani-nav-fx .navbar .dropdown-menu.biz-dropdown { width: 1250px !important; }
+.adani-nav-fx .navbar .dropdown-menu.sus-dropdown { width: 1250px !important; }
+.adani-nav-fx .navbar .dropdown-menu.about-dropdown { width: 1000px !important; }
+.adani-nav-fx .navbar .dropdown-menu.news-dropdown { width: 700px !important; }
+
+.mega-column {
+	display: block !important;
+	width: 100% !important;
+}
+
+.mega-title {
+	font-size: 12px !important;
+	font-weight: 700 !important;
+	color: #333 !important;
+	margin-bottom: 18px !important;
+	padding-bottom: 10px !important;
+	border-bottom: 1px solid #ececec !important;
+	display: block !important;
+	letter-spacing: 0.8px !important;
+	text-transform: uppercase !important;
+}
+
+.mega-list {
+	list-style: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.mega-list li {
+	margin-bottom: 10px !important;
+}
+
+.mega-list li a {
+	font-size: 14px !important;
+	line-height: 1.5 !important;
+	color: #555 !important;
+	text-decoration: none !important;
+	transition: color 0.2s ease, padding-left 0.2s ease !important;
+	display: block !important;
+	font-weight: 400 !important;
+}
+
+.mega-list li a:hover {
+	color: #008D96 !important;
+	padding-left: 3px !important;
 }
 
 /* ================= STICKY STATE ================= */
@@ -166,18 +263,18 @@
 	-webkit-backdrop-filter: blur(12px);
 }
 
-/* LOGO SCALE on sticky */
 .adani-nav-fx.fixed .logo img {
 	transform: scale(0.94);
 }
 
-/* MOBILE */
+/* MOBILE RESPONSIVE */
 @media (max-width: 991px) {
-	.adani-nav-fx .top-header {
-		position: relative;
-		z-index: 5;
-		margin: 0;
-		background: #08201b;
+	.adani-nav-fx {
+		position: relative !important;
+		background: #08201b !important;
+	}
+	.adani-nav-fx .navbar .dropdown-menu {
+		display: none !important; /* Hide mega layout on mobile fallback */
 	}
 }
 
@@ -187,20 +284,12 @@ body {
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden !important;
-	/* Prevent horizontal scroll */
 }
 
 /* ANIMATION */
 @keyframes adaniNavReveal {
-	from {
-		opacity: 0;
-		transform: translateY(-18px);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+	from { opacity: 0; transform: translateY(-18px); }
+	to { opacity: 1; transform: translateY(0); }
 }
 
 /* ================= BRAND LOCKUP ================= */
@@ -208,35 +297,56 @@ body {
 .site-brand-lockup {
 	display: inline-flex;
 	align-items: center;
-	gap: 10px;
+	gap: 13px;
+	padding: 8px 13px 8px 10px;
+	border-radius: 999px;
+	background: transparent;
 	text-decoration: none;
 }
 
+.site-brand-lockup__mark-wrap {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.03));
+	box-shadow: 0 6px 18px rgba(255, 61, 61, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+	flex: 0 0 auto;
+}
+
 .site-brand-lockup__mark {
-	height: 54px;
-	width: 54px;
+	width: 48px;
+	height: 48px;
 	object-fit: contain;
+	flex: 0 0 auto;
+	filter: brightness(1.18) saturate(1.18) drop-shadow(0 0 12px rgba(255, 95, 95, 0.32));
 }
 
 .site-brand-lockup__text {
 	display: flex;
 	flex-direction: column;
-	line-height: 1.15;
+	line-height: 1;
 }
 
 .site-brand-lockup__title {
-	font-size: 18px;
+	font-family: "ClashDisplay", "Satoshi", Arial, sans-serif;
+	font-size: 23px;
 	font-weight: 700;
-	color: #fff;
-	letter-spacing: -0.3px;
+	color: #ffffff;
+	white-space: nowrap;
+	text-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
 }
 
 .site-brand-lockup__subtitle {
-	font-size: 11px;
-	font-weight: 500;
-	color: rgba(255, 255, 255, 0.55);
-	letter-spacing: 1.8px;
-	text-transform: uppercase;
+	margin-top: 2px;
+	font-family: "ClashDisplay", "Satoshi", Arial, sans-serif;
+	font-size: 23px;
+	font-weight: 700;
+	letter-spacing: normal;
+	color: rgba(255, 255, 255, 0.92);
+	white-space: nowrap;
 }
 
 /* ================= ACCESSIBILITY PANEL ================= */
@@ -322,157 +432,4 @@ body {
 
 .vjs-lang-label {
 	font-family: inherit;
-}
-
-/* ================= MEGA MENU (Businesses) ================= */
-
-@media (min-width: 992px) {
-
-	/* Full-width container setup */
-	.adani-nav-fx .navbar .nav-item.mega-dropdown {
-		position: static !important;
-	}
-
-	.adani-nav-fx .navbar .mega-dropdown .dropdown-menu {
-		position: absolute !important;
-		top: 100% !important;
-		left: 50% !important;
-		transform: translateX(-50%) translateY(16px) !important;
-		width: 1400px !important; /* Default for 6-column Businesses */
-		max-width: 96vw !important;
-		margin: 0 !important;
-		margin-top: 10px !important;
-		padding: 48px 0 !important;
-		background: #ffffff !important;
-		border-radius: 16px !important;
-		border: 1px solid #eee !important;
-		box-shadow: 0 20px 80px rgba(0, 0, 0, 0.14) !important;
-
-		/* Remove all glass/blur effects */
-		backdrop-filter: none !important;
-		-webkit-backdrop-filter: none !important;
-		clip-path: none !important;
-
-		/* Animation and Visibility */
-		opacity: 0 !important;
-		visibility: hidden !important;
-		display: block !important;
-		max-height: 0 !important;
-		overflow: hidden !important;
-		transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.35s, max-height 0s 0.35s !important;
-		pointer-events: none;
-		z-index: 99999 !important;
-	}
-
-	/* Specific width for 4-column Sustainability menu - Increased for long text */
-	.adani-nav-fx .navbar .mega-dropdown .dropdown-menu.sus-dropdown {
-		width: 1250px !important;
-	}
-
-    /* Show on Hover OR when Clicked (Bootstrap .show) */
-    .adani-nav-fx .navbar .nav-item.mega-dropdown:hover .dropdown-menu,
-    .adani-nav-fx .navbar .mega-dropdown .dropdown-menu.show {
-		opacity: 1 !important;
-		visibility: visible !important;
-		max-height: 2000px !important;
-		overflow: visible !important;
-		transform: translateX(-50%) translateY(0) !important;
-		pointer-events: all;
-		transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.4s, max-height 0s !important;
-	}
-
-	/* Transparent bridge to prevent closing when moving across the 10px gap */
-	.adani-nav-fx .navbar .mega-dropdown .dropdown-menu::before {
-		content: "";
-		position: absolute;
-		top: -20px;
-		left: 0;
-		width: 100%;
-		height: 20px;
-		background: transparent;
-	}
-
-	/* Grid Layout - Default 6 columns for Businesses */
-	.mega-menu-content {
-		display: grid !important;
-		grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
-		gap: 28px !important;
-		width: 100% !important;
-		margin: 0 auto !important;
-		padding: 0 56px !important;
-		align-items: start !important;
-	}
-
-	/* 4-column layout for Sustainability — generous min-width */
-	.mega-menu-content.mega-4-col {
-		grid-template-columns: repeat(4, minmax(220px, 1fr)) !important;
-		gap: 50px !important;
-	}
-
-	.mega-column {
-		display: block !important;
-		width: 100% !important;
-		min-width: 0 !important;
-		overflow: hidden !important;        /* contain text within column */
-	}
-
-	.mega-section {
-		margin-bottom: 0 !important;
-	}
-
-	/* Section Headings */
-	.mega-title {
-		font-size: 12px !important;
-		font-weight: 700 !important;
-		color: #333 !important;
-		margin-top: 0 !important;
-		margin-bottom: 18px !important;
-		padding-bottom: 10px !important;
-		border-bottom: 1px solid #ececec !important;
-		display: block !important;
-		letter-spacing: 0.8px !important;
-		text-transform: uppercase !important;
-	}
-
-	/* List Items */
-	.mega-list {
-		list-style: none !important;
-		padding: 0 !important;
-		margin: 0 !important;
-	}
-
-	.mega-list li {
-		margin-bottom: 10px !important;
-		display: block !important;
-	}
-
-	.mega-list li:last-child {
-		margin-bottom: 0 !important;
-	}
-
-	.mega-list li a {
-		font-size: 14px !important;
-		line-height: 1.5 !important;
-		color: #555 !important;
-		text-decoration: none !important;
-		transition: color 0.2s ease, padding-left 0.2s ease !important;
-		display: block !important;
-		font-weight: 400 !important;
-		white-space: nowrap !important; /* PREVENT WRAPPING */
-		overflow: hidden !important;
-		text-overflow: ellipsis !important; 
-	}
-
-	.mega-list li a:hover {
-		color: #008D96 !important;
-		padding-left: 3px !important;
-	}
-}
-
-/* Mobile Fallback */
-@media (max-width: 991px) {
-	.adani-nav-fx .navbar .mega-dropdown .dropdown-menu {
-		display: none !important;
-		/* Hide mega layout on mobile to avoid breaking */
-	}
 }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -31,227 +31,8 @@
 	<!-- responsive style sheet -->
 	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/custom.css" media="all">
+	<link rel='stylesheet' type='text/css' href='css/navbar-vjs.css' media='all'>
 	<style>
-		@media (min-width: 992px) {
-
-			.adani-nav-fx {
-				padding: 0;
-				align-self: top;
-				margin: 0;
-				background: #08201b;
-				border: none !important;
-				box-shadow: none !important;
-				width: 100%;
-
-				/* ðŸ”¥ FIX: lock to top */
-				position: fixed;
-				top: 0;
-				left: 0;
-				z-index: 9999;
-			}
-
-			.adani-nav-fx .inner-content {
-				padding: 0;
-				margin: 0;
-				animation: adaniNavReveal 0.75s cubic-bezier(0.22, 1, 0.36, 1);
-			}
-
-			.adani-nav-fx .top-header {
-				position: relative;
-				padding: 18px 20px;
-
-				/* âŒ REMOVE this (causes line) */
-				/* margin: -1px 0; */
-
-				margin: 0;
-
-				width: 100%;
-				border-radius: 0;
-				transition: padding 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-
-				transform: translateZ(0);
-				backface-visibility: hidden;
-				isolation: isolate;
-			}
-		}
-
-		/* ================= GLASS EFFECT ================= */
-
-		.adani-nav-fx .top-header::before {
-			content: "";
-			position: absolute;
-
-			/* ðŸ”¥ STRONG FIX */
-			top: -4px;
-			bottom: -3px;
-			left: 0;
-			right: 0;
-
-			border-radius: inherit;
-
-			background: linear-gradient(135deg,
-					rgba(8, 32, 27, 0.88) 0%,
-					rgba(8, 32, 27, 0.82) 50%,
-					rgba(8, 32, 27, 0.88) 100%);
-
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-
-			transform: translateZ(0);
-			will-change: transform;
-
-			z-index: 0;
-		}
-
-		/* ðŸ”¥ HARD TOP COVER (FINAL LINE KILLER) */
-		.adani-nav-fx::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 3px;
-			background: #08201b;
-			z-index: 10000;
-			padding-top: 0%;
-		}
-
-		/* keep content above */
-		.adani-nav-fx .top-header>.d-flex {
-			position: relative;
-			z-index: 2;
-		}
-
-		/* LOGO */
-		.adani-nav-fx .logo img {
-			transition: transform 0.45s ease;
-			background-color: #9ec008;
-			border-radius: 50%;
-		}
-
-		/* NAVBAR */
-		.adani-nav-fx .navbar-nav {
-			gap: 20px;
-		}
-
-		.adani-nav-fx .nav-item .nav-link {
-			padding: 6px 16px;
-			border-radius: 999px;
-			font-size: 14px;
-			color: rgba(255, 255, 255, 0.85);
-			transition: all 0.35s ease;
-		}
-
-		/* HOVER */
-		.adani-nav-fx .nav-item:hover>.nav-link,
-		.adani-nav-fx .nav-item.nav-current>.nav-link {
-			color: #dfff7c;
-			transform: translateY(-0.5px);
-		}
-
-		/* HOVER INDICATOR */
-		.adani-nav-fx .nav-hover-indicator {
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 0;
-			border-radius: 999px;
-			pointer-events: none;
-			opacity: 0;
-			transform: scale(0.92);
-
-			background: linear-gradient(135deg,
-					rgba(255, 255, 255, 0.18),
-					rgba(255, 255, 255, 0.05));
-
-			transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-		}
-
-		/* DROPDOWN */
-		.adani-nav-fx .navbar .dropdown-menu {
-			margin-top: 14px;
-			padding: 14px 8px;
-			border-radius: 24px;
-			border: 1px solid rgba(255, 255, 255, 0.05);
-			background: rgba(253, 253, 253, 0.719);
-
-			transform: translateY(18px) scale(0.96);
-			clip-path: inset(0 0 100% 0 round 24px);
-
-			transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-				opacity 0.3s ease,
-				visibility 0.3s ease,
-				clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-		}
-
-		.adani-nav-fx .navbar .dropdown:hover>.dropdown-menu {
-			transform: translateY(0) scale(1);
-			clip-path: inset(0 0 0 0 round 24px);
-		}
-
-		/* ================= STICKY STATE ================= */
-
-		.adani-nav-fx.fixed {
-			padding-top: 12px;
-			background: #08201b;
-		}
-
-		.adani-nav-fx.fixed .top-header {
-			padding: 12px 0;
-		}
-
-		.adani-nav-fx.fixed .top-header::before {
-			top: -4px;
-			bottom: -3px;
-
-			background: linear-gradient(135deg,
-					rgba(8, 32, 27, 0.96) 0%,
-					rgba(8, 32, 27, 0.92) 50%,
-					rgba(8, 32, 27, 0.96) 100%);
-
-			backdrop-filter: blur(12px);
-			-webkit-backdrop-filter: blur(12px);
-		}
-
-		/* LOGO SCALE */
-		.adani-nav-fx.fixed .logo img {
-			transform: scale(0.94);
-		}
-
-		/* MOBILE */
-		@media (max-width: 991px) {
-			.adani-nav-fx .top-header {
-				position: relative;
-				z-index: 5;
-				margin: 0;
-				background: #08201b;
-			}
-		}
-
-		/* BODY FIX */
-		html,
-		body {
-			margin: 0;
-			padding: 0;
-			background: #08201b;
-			overflow-x: hidden !important;
-			/* Prevent horizontal scroll */
-		}
-
-		/* ANIMATION */
-		@keyframes adaniNavReveal {
-			from {
-				opacity: 0;
-				transform: translateY(-18px);
-			}
-
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-
 		.hero-banner-one .hero-heading.hero-heading-glass {
 			position: relative;
 			overflow: visible;
@@ -687,18 +468,40 @@
 											</a>
 										</div>
 									</li>
-									<li class="nav-item dropdown">
+									<li class="nav-item dropdown mega-dropdown">
 										<a class="nav-link dropdown-toggle" href="#" role="button"
 											data-bs-toggle="dropdown" data-bs-auto-close="outside"
 											aria-expanded="false">About Us
 										</a>
-										<ul class="dropdown-menu">
-											<li><a href="about-us-v2.html" class="dropdown-item"><span>Our
-														Group</span></a></li>
-											<li><a href="about-us-v1.html" class="dropdown-item"><span>Our Mission and
-														Vision</span></a></li>
-											<li><a href="service-v1.html" class="dropdown-item"><span>Leadership and
-														Awards</span></a></li>
+										<ul class="dropdown-menu about-dropdown">
+											<li>
+												<div class="mega-menu-content mega-3-col">
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Our Group</span>
+															<ul class="mega-list">
+																<li><a href="about-us-v2.html">About Vijayalakshmi Group</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Purpose</span>
+															<ul class="mega-list">
+																<li><a href="about-us-v1.html">Our Mission and Vision</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Recognition</span>
+															<ul class="mega-list">
+																<li><a href="service-v1.html">Leadership and Awards</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</li>
 										</ul>
 									</li>
 									<li class="nav-item dropdown mega-dropdown">
@@ -706,9 +509,9 @@
 											data-bs-toggle="dropdown" data-bs-auto-close="outside"
 											aria-expanded="false">Businesses
 										</a>
-										<ul class="dropdown-menu">
+										<ul class="dropdown-menu biz-dropdown">
 											<li>
-												<div class="mega-menu-content">
+												<div class="mega-menu-content mega-6-col">
 													<div class="mega-column">
 														<div class="mega-section">
 															<span class="mega-title">IT Infrastructure</span>
@@ -824,16 +627,32 @@
 										<a class="nav-link" href="blog-v1.html" role="button">Vijayalakshmi
 											Foundation</a>
 									</li>
-									<li class="nav-item dropdown">
+									<li class="nav-item dropdown mega-dropdown">
 										<a class="nav-link dropdown-toggle" href="#" role="button"
 											data-bs-toggle="dropdown" data-bs-auto-close="outside"
 											aria-expanded="false">Newsroom
 										</a>
-										<ul class="dropdown-menu">
-											<li><a href="media-release.html" class="dropdown-item"><span>Media
-														Release</span></a></li>
-											<li><a href="media-kit.html" class="dropdown-item"><span>Media
-														Kit</span></a></li>
+										<ul class="dropdown-menu news-dropdown">
+											<li>
+												<div class="mega-menu-content mega-2-col">
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Media</span>
+															<ul class="mega-list">
+																<li><a href="media-release.html">Media Release</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Resources</span>
+															<ul class="mega-list">
+																<li><a href="media-kit.html">Media Kit</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</li>
 										</ul>
 									</li>
 								</ul>
