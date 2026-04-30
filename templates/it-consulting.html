@@ -44,9 +44,9 @@
 
 <body>
 	<div class="main-page-wrapper">
-		<!-- ===================================================
+		<!-- ==
 				Loading Transition
-			==================================================== -->
+			=== -->
 		<div id="preloader">
 			<div id="ctn-preloader" class="ctn-preloader">
 				<div class="icon"><video class="m-auto d-block site-loader-video" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-label="Loading animation"><source src="{{ url_for('static', filename='images/fav-icon/reload.ani.mp4') }}?v=1.0" type="video/mp4"></video></div>
@@ -56,14 +56,14 @@
 
 		
 		<!-- 
-		=============================================
+		===
 				Theme Main Menu
-		============================================== 
+		==== 
 		-->
 								<!-- 
-		=============================================
+		===
 				Theme Main Menu
-		============================================== 
+		==== 
 		-->
 						<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
 			<div class="inner-content position-relative">
@@ -352,9 +352,9 @@
 
 
 		<!-- 
-		=============================================
+		===
 			Hero Banner
-		============================================== 
+		==== 
 		-->
 		<div class="hero-banner-five">
 			<div class="bg-wrapper position-relative pt-150 sm-pt-50 pb-120 xl-pb-100 sm-pb-10" style="background-image: url('{{ url_for('static', filename='images/media/about_hero_cinematic.png') }}'); background-size: cover; background-position: center; min-height: 80vh; display: flex; align-items: center;">
@@ -373,9 +373,9 @@
 
 
 		<!-- 
-		=============================================
+		===
 			Partner Logo Two
-		============================================== 
+		==== 
 		-->
 		<!-- ScrollVelocity Section -->
 		<div class="vjs-velocity-section">
@@ -500,57 +500,47 @@
 
 		<div class="light-bg-page-wrapper">
 			<!--
-			=====================================================
+			====
 				BLock Feature Nine
-			=====================================================
+			====
 			-->
-			<div class="block-feature-nine position-relative pt-80 pb-150 lg-pb-80">
+						<!-- 
+			====
+				At a Glance Section
+			====
+			-->
+			<section class="glance-section-v3">
 				<div class="container">
-					<div class="title-four text-center mb-30 lg-mb-10">
-						<h2>At a Glance.</h2>
-					</div>
-					<!-- /.title-four -->
-
-					<div class="row gx-xl-5 justify-content-center">
-						<!-- Card 1: Solution -->
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
-							<div class="vjs-glance-card">
-								<div class="icon-box">
-									<span class="emoji-icon rocket">??</span>
+					<h2 class="section-title">At a Glance.</h2>
+					<div class="row justify-content-center g-4">
+						<!-- Card 1 -->
+						<div class="col-lg-4 col-md-6 wow fadeInUp">
+							<div class="vjs-glance-card-v3">
+								<div class="img-wrap">
+									<img src="images/media/glance_it_1.png" alt="Solution">
 								</div>
-								<div class="content">
-									<h4 class="card-title">Solution</h4>
-									<p class="card-desc">End-to-end digital solutions from cloud to AI to cybersecurity.</p>
-								</div>
-								<div class="card-glow"></div>
+								<h4 class="card-title">Solution</h4>
+								<p class="card-desc">End-to-end digital solutions from cloud to AI to cybersecurity.</p>
 							</div>
 						</div>
-
-						<!-- Card 2: Reputated -->
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
-							<div class="vjs-glance-card">
-								<div class="icon-box">
-									<span class="emoji-icon trophy">??</span>
+						<!-- Card 2 -->
+						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+							<div class="vjs-glance-card-v3">
+								<div class="img-wrap">
+									<img src="images/media/glance_it_2.png" alt="Reputated">
 								</div>
-								<div class="content">
-									<h4 class="card-title">Reputated</h4>
-									<p class="card-desc">13+ years of trusted client relationships across industries.</p>
-								</div>
-								<div class="card-glow"></div>
+								<h4 class="card-title">Reputated</h4>
+								<p class="card-desc">13+ years of trusted client relationships across industries.</p>
 							</div>
 						</div>
-
-						<!-- Card 3: Support -->
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
-							<div class="vjs-glance-card">
-								<div class="icon-box">
-									<span class="emoji-icon lightning">?</span>
+						<!-- Card 3 -->
+						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+							<div class="vjs-glance-card-v3">
+								<div class="img-wrap">
+									<img src="images/media/glance_it_3.png" alt="Support">
 								</div>
-								<div class="content">
-									<h4 class="card-title">Support</h4>
-									<p class="card-desc">Fast, reliable support when you need it most.</p>
-								</div>
-								<div class="card-glow"></div>
+								<h4 class="card-title">Support</h4>
+								<p class="card-desc">Fast, reliable support when you need it most.</p>
 							</div>
 						</div>
 					</div>
@@ -651,150 +641,71 @@
 				<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_23.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_03">
 			</div>
 			<!-- /.block-feature-nine -->
-			<!--
-			=====================================================
-				Businesses Carousel Section
-			=====================================================
-			-->
-			<style>
-				/* ---- Businesses Carousel ---- */
-				.vjs-biz-section {
-					background: #f0f5ec;
-					padding: 80px 0 70px;
-					overflow: hidden;
-				}
-				.vjs-biz-header {
-					display: flex;
-					align-items: center;
-					justify-content: space-between;
-					margin-bottom: 40px;
-				}
-				.vjs-biz-header h2 {
-					font-weight: 800;
-					font-size: 32px;
-					color: #1a1a1a;
-					text-transform: uppercase;
-					letter-spacing: 1px;
-					margin: 0;
-				}
-				.vjs-biz-nav {
-					display: flex;
-					gap: 10px;
-				}
-				.vjs-biz-nav-btn {
-					width: 44px; height: 44px;
-					border-radius: 50%;
-					border: 2px solid #1A4137;
-					background: transparent;
-					color: #1A4137;
-					font-size: 18px;
-					cursor: pointer;
-					display: flex; align-items: center; justify-content: center;
-					transition: all 0.3s ease;
-				}
-				.vjs-biz-nav-btn:hover {
-					background: #1A4137;
-					color: #fff;
-				}
-				.vjs-biz-viewport {
-					overflow: hidden;
-					width: 100%;
-				}
-				.vjs-biz-track {
-					display: flex;
-					gap: 24px;
-					transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-					will-change: transform;
-				}
-				.vjs-biz-card {
-					flex: 0 0 calc(25% - 18px);
-					min-width: calc(25% - 18px);
-					border-radius: 16px;
-					overflow: hidden;
-					background: #fff;
-					box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-					transition: transform 0.35s ease, box-shadow 0.35s ease;
-					cursor: pointer;
-					text-decoration: none;
-					display: block;
-					color: inherit;
-				}
-				.vjs-biz-card:hover {
-					transform: translateY(-8px);
-					box-shadow: 0 16px 48px rgba(0,0,0,0.13);
-					color: inherit;
-					text-decoration: none;
-				}
-				.vjs-biz-img-wrap {
-					position: relative;
-					overflow: hidden;
-					aspect-ratio: 4/3;
-				}
-				.vjs-biz-img-wrap img {
-					width: 100%; height: 100%;
-					object-fit: cover;
-					transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-					display: block;
-				}
-				.vjs-biz-card:hover .vjs-biz-img-wrap img {
-					transform: scale(1.08);
-				}
-				/* Icon-only card variant removed */
-				.vjs-biz-card-body {
-					padding: 18px 20px 20px;
-				}
-				.vjs-biz-card-body h5 {
-					font-size: 16px;
-					font-weight: 700;
-					color: #1a1a1a;
-					margin: 0 0 6px;
-					transition: color 0.3s;
-				}
-				.vjs-biz-card:hover .vjs-biz-card-body h5 {
-					color: #1A4137;
-				}
-				.vjs-biz-card-body p {
-					font-size: 13px;
-					color: #888;
-					margin: 0;
-					line-height: 1.5;
-				}
-				/* Dots */
-				.vjs-biz-dots {
-					display: flex;
-					justify-content: center;
-					gap: 8px;
-					margin-top: 36px;
-				}
-				.vjs-biz-dot {
-					width: 8px; height: 8px;
-					border-radius: 50%;
-					background: #ccc;
-					border: none;
-					padding: 0;
-					cursor: pointer;
-					transition: all 0.3s ease;
-				}
-				.vjs-biz-dot.active {
-					background: #1A4137;
-					width: 28px;
-					border-radius: 4px;
-				}
-				@media (max-width: 991px) {
-					.vjs-biz-card { flex: 0 0 calc(50% - 12px); min-width: calc(50% - 12px); }
-				}
-				@media (max-width: 575px) {
-					.vjs-biz-card { flex: 0 0 calc(100%); min-width: 100%; }
-				}
-			</style>
 
-			<section class="vjs-biz-section">
+				</div>
+			</section>
+>>>>>>> Stashed changes:public/it-consulting.html
+			<!--
+			====
+				Businesses Carousel Section
+			====
+			-->
+						<!-- 
+			====
+				Our Businesses Section
+			====
+			-->
+			<section class="biz-section-v2">
 				<div class="container">
-					<div class="vjs-biz-header">
-						<h2>Our Businesses</h2>
-						<div class="vjs-biz-nav">
-							<button class="vjs-biz-nav-btn" id="vjsBizPrev" aria-label="Previous">&#8592;</button>
-							<button class="vjs-biz-nav-btn" id="vjsBizNext" aria-label="Next">&#8594;</button>
+					<h2 class="section-title">Our Businesses</h2>
+					<div class="row g-4">
+						<!-- Card 1 -->
+						<div class="col-lg-3 col-md-6 wow fadeInUp">
+							<a href="#" class="vjs-biz-card-v2">
+								<div class="img-wrap">
+									<img src="images/media/biz_it_consulting.png" alt="Cloud">
+								</div>
+								<div class="content">
+									<h4 class="card-title">Cloud</h4>
+									<p class="card-desc">Scalable cloud infrastructure and management services.</p>
+								</div>
+							</a>
+						</div>
+						<!-- Card 2 -->
+						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+							<a href="#" class="vjs-biz-card-v2">
+								<div class="img-wrap">
+									<img src="images/media/biz_it_consulting.png" alt="Cybersecurity">
+								</div>
+								<div class="content">
+									<h4 class="card-title">Cybersecurity</h4>
+									<p class="card-desc">Advanced threat protection and compliance solutions.</p>
+								</div>
+							</a>
+						</div>
+						<!-- Card 3 -->
+						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+							<a href="#" class="vjs-biz-card-v2">
+								<div class="img-wrap">
+									<img src="images/media/biz_data_centers.png" alt="Data & AI">
+								</div>
+								<div class="content">
+									<h4 class="card-title">Data & AI</h4>
+									<p class="card-desc">Unlock insights with machine learning and big data analytics.</p>
+								</div>
+							</a>
+						</div>
+						<!-- Card 4 -->
+						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+							<a href="#" class="vjs-biz-card-v2">
+								<div class="img-wrap">
+									<img src="images/media/biz_it_consulting.png" alt="Engineering">
+								</div>
+								<div class="content">
+									<h4 class="card-title">Digital Engineering</h4>
+									<p class="card-desc">Innovative product design and manufacturing solutions.</p>
+								</div>
+							</a>
 						</div>
 					</div>
 
@@ -1011,13 +922,17 @@
 				startTimer();
 			})();
 			</script>
+
+				</div>
+			</section>
+>>>>>>> Stashed changes:public/it-consulting.html
 			<!-- /.businesses-section -->
 
 
 			<!-- 
-			=============================================
+			===
 				Feedback Section Five
-			============================================== 
+			==== 
 			-->
 			<div class="feedback-section-five border-100 position-relative pt-225 xl-pt-200 lg-pt-120 md-pt-80 pb-300 xl-pb-200 lg-pb-150">
 				<div class="container">
@@ -1025,7 +940,7 @@
 						<div class="feedback-slider-three">
 							<div class="item">
 								<div class="feedback-block-five">
-									<blockquote>"Technology is at its finest when it becomes invisible â€” quietly shaping progress with precision and purpose."</blockquote>
+									<blockquote>"Technology is at its finest when it becomes invisible — quietly shaping progress with precision and purpose."</blockquote>
 
 
 								</div>
@@ -1058,9 +973,9 @@
 			<!-- /.feedback-section-five -->
 
 			<!--
-			=====================================================
+			====
 				Footer Three
-			=====================================================
+			====
 			-->
 			<!-- CTA Section -->
 			<section class="vjs-cta-section" style="background-image: url('corporate_cta_bg_1777455273969.png');">
@@ -1317,6 +1232,8 @@
 </body>
 
 </html>
+
+
 
 
 
