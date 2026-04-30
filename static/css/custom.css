@@ -1659,44 +1659,60 @@ a,
 }
 
 .vjs-biz-card-v2 {
-    margin-bottom: 30px;
-    padding: 0;
-    transition: all 0.3s ease;
-    border-radius: 4px;
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 30px;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    text-decoration: none !important;
 }
 
-.vjs-biz-card-v2 .img-box {
+.vjs-biz-card-v2 .img-wrap {
     width: 100%;
-    aspect-ratio: 1/1;
+    height: 200px;
+    border-radius: 20px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.vjs-biz-card-v2 .img-box img {
+.vjs-biz-card-v2 .img-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
-.vjs-biz-card-v2:hover .img-box img {
-    transform: scale(1.05);
+.vjs-biz-card-v2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.08);
+    border-color: rgba(223, 255, 124, 0.4);
 }
 
-.vjs-biz-card-v2 .title {
-    font-size: 20px;
+.vjs-biz-card-v2:hover .img-wrap img {
+    transform: scale(1.1);
+}
+
+.vjs-biz-card-v2 .card-title {
+    font-size: 24px;
     font-weight: 800;
-    color: #1a1a1a;
-    text-align: left;
-    margin: 0;
-    line-height: 1.3;
+    color: #1A4137;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
 }
 
-.vjs-biz-card-v2.highlight {
-    background: #f4f4f4;
-    padding: 20px;
-    margin-top: -20px;
-    margin-bottom: 10px;
+.vjs-biz-card-v2:hover .card-title {
+    color: #000;
+}
+
+.vjs-biz-card-v2 .card-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
 }
 
 /* AT A GLANCE - Layout 3 (User Requested Style) */
@@ -1728,10 +1744,10 @@ a,
 }
 
 .vjs-glance-card-v3 .img-wrap {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 180px;
     background: #f5f5f5;
-    border-radius: 24px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1740,9 +1756,9 @@ a,
 }
 
 .vjs-glance-card-v3 .img-wrap img {
-    width: 60%;
-    height: auto;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .vjs-glance-card-v3 .card-title {
