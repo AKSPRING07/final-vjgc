@@ -5,10 +5,10 @@
 	<meta charset="UTF-8">
 	<meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
 	<meta name="description" content="Vijayalakshmi Group Of Companies website.">
-    <meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
-    <meta property="og:url" content="https://creativegigstf.com">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Vijayalakshmi Group Of Companies">
+	<meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
+	<meta property="og:url" content="https://creativegigstf.com">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Vijayalakshmi Group Of Companies">
 	<meta name='og:image' content='{{ url_for('static', filename='images/assets/ogg.png') }}?v=1.2'>
 	<!-- For IE -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,6 +31,371 @@
 	<!-- responsive style sheet -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0" media="all">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.0" media="all">
+	<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.1" media='all'>
+	<style>
+		.hero-banner-one .hero-heading.hero-heading-glass {
+			position: relative;
+			overflow: visible;
+			max-width: 600px;
+			padding: 0;
+			border-radius: 0;
+			border: none;
+			background: transparent !important;
+			-webkit-backdrop-filter: none !important;
+			backdrop-filter: none !important;
+			box-shadow: none !important;
+			color: #ffffff !important;
+			line-height: 1.15em;
+			letter-spacing: -0.01em;
+			font-size: min(48px, 8vw);
+			text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+			background-image: none;
+			display: block !important;
+			width: 100%;
+			margin-bottom: 24px !important;
+		}
+
+		.hero-banner-one .hero-slider-one {
+			position: relative !important;
+			z-index: 1;
+			height: auto !important;
+		}
+
+		.hero-slider-one .item {
+			position: relative;
+			height: 75vh;
+			min-height: 700px;
+			max-height: 850px;
+			display: flex !important;
+			align-items: flex-end;
+			padding-bottom: 100px;
+		}
+
+		.hero-slider-one .item .hero-img video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			z-index: 0;
+		}
+
+		.hero-slider-one .item .hero-img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			background-size: cover;
+			background-position: center;
+		}
+
+		.hero-slider-one .item .container {
+			position: relative;
+			z-index: 5;
+			width: 100%;
+		}
+
+		.hero-banner-one .hero-heading.hero-heading-glass::before,
+		.hero-banner-one .hero-heading.hero-heading-glass::after {
+			content: none !important;
+		}
+
+		@media (max-width: 991px) {
+			.hero-slider-one .item {
+				min-height: 700px;
+			}
+
+			.hero-banner-one .hero-heading.hero-heading-glass {
+				max-width: 100%;
+				padding: 0;
+				border-radius: 0;
+				line-height: 1.25em;
+				font-size: 28px;
+				background: transparent !important;
+				box-shadow: none !important;
+				color: #ffffff !important;
+				display: block !important;
+			}
+		}
+
+		@keyframes adaniNavReveal {
+			from {
+				opacity: 0;
+				transform: translateY(-18px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		/* Purpose Section Enhancements */
+		.purpose-section {
+			display: flex;
+			min-height: 600px;
+			background: #000;
+			overflow: hidden;
+		}
+
+		.purpose-slider {
+			flex: 1;
+			width: 80%;
+		}
+
+		.purpose-slide {
+			height: 500px;
+			background-size: cover;
+			background-position: center;
+			position: relative;
+			display: flex !important;
+			flex-direction: column;
+			justify-content: center;
+			padding: 0 100px;
+		}
+
+		.purpose-slide::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+			z-index: 0;
+		}
+
+		.purpose-title {
+			color: #fff;
+			font-size: 64px;
+			font-weight: 800;
+			line-height: 1.1;
+			position: relative;
+			z-index: 1;
+			margin-bottom: 40px;
+			letter-spacing: -2px;
+			text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		.purpose-pledge-box {
+			position: relative;
+			z-index: 1;
+			background: rgba(255, 255, 255, 0.08);
+			backdrop-filter: blur(20px);
+			-webkit-backdrop-filter: blur(20px);
+			border: 1px solid rgba(255, 255, 255, 0.15);
+			padding: 30px 45px;
+			border-radius: 28px;
+			max-width: 500px;
+			box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+		}
+
+		.purpose-pledge-box h3 {
+			color: #dfff7c;
+			font-size: 28px;
+			font-weight: 700;
+			margin-bottom: 15px;
+			letter-spacing: 1px;
+		}
+
+		.purpose-pledge-box .impact-link {
+			color: #ffffff;
+			text-decoration: none;
+			font-weight: 600;
+			display: inline-flex;
+			align-items: center;
+			transition: all 0.3s ease;
+			font-size: 18px;
+		}
+
+		.purpose-pledge-box .impact-link:hover {
+			color: #dfff7c;
+			transform: translateX(10px);
+		}
+
+		.purpose-sidebar {
+			width: 20%;
+			background: #051411;
+			display: flex;
+			flex-direction: column;
+			border-left: 1px solid rgba(255, 255, 255, 0.05);
+		}
+
+		.vertical-tab {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 40px 20px;
+			text-decoration: none;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+			transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.vertical-tab:hover {
+			background: rgba(223, 255, 124, 0.05);
+		}
+
+		.vertical-tab .tab-text {
+			color: rgba(255, 255, 255, 0.4);
+			font-size: 24px;
+			font-weight: 600;
+			writing-mode: vertical-rl;
+			transform: rotate(180deg);
+			transition: all 0.4s ease;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+		}
+
+		.vertical-tab:hover .tab-text {
+			color: #dfff7c;
+			transform: rotate(180deg) translateY(-10px);
+		}
+
+		/* ================= ACCESSIBILITY PANEL ================= */
+		.vjs-accessibility-panel {
+			min-width: 320px;
+			background: linear-gradient(135deg, rgba(8, 32, 27, 0.98), rgba(15, 45, 40, 0.98)) !important;
+			backdrop-filter: blur(20px);
+			border: 1px solid rgba(255, 255, 255, 0.12) !important;
+			border-radius: 20px !important;
+			padding: 24px !important;
+			box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45) !important;
+			color: #ffffff !important;
+		}
+
+		.vjs-accessibility-panel h5 {
+			color: #ffffff !important;
+			font-size: 19px;
+			font-weight: 700;
+			margin-bottom: 8px;
+		}
+
+		.vjs-accessibility-panel p {
+			color: rgba(255, 255, 255, 0.6) !important;
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
+
+		.vjs-divider {
+			height: 1px;
+			background: rgba(255, 255, 255, 0.1);
+			margin: 20px 0;
+		}
+
+		.vjs-adjust-grid,
+		.vjs-font-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 12px;
+		}
+
+		.vjs-font-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.vjs-adjust-btn {
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.15);
+			color: #ffffff;
+			padding: 10px;
+			border-radius: 12px;
+			font-size: 14px;
+			font-weight: 600;
+			transition: all 0.3s ease;
+		}
+
+		.vjs-adjust-btn:hover {
+			background: rgba(223, 255, 124, 0.15);
+			border-color: #dfff7c;
+			color: #dfff7c;
+		}
+
+		.vjs-reset-btn {
+			background: transparent;
+			border: none;
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 13px;
+			font-weight: 500;
+			text-decoration: underline;
+			transition: color 0.3s ease;
+			margin-top: 10px;
+		}
+
+		.vjs-reset-btn:hover {
+			color: #ff5f5f;
+		}
+
+		/* Ã°Å¸â€Â¥ REMOVE DUPLICATE ARROWS */
+		.vjs-nav-action .dropdown-toggle::after {
+			display: none !important;
+		}
+
+		/* UI REFINEMENT: Shorter Floating Arrow Icon */
+		.more-btn {
+			width: 65px !important;
+			height: 65px !important;
+		}
+
+		.more-btn i {
+			font-size: 22px !important;
+		}
+
+		/* Reposition Heading Downwards after paragraph removal */
+		.hero-banner-one .hero-heading.hero-heading-glass {
+			margin-top: 0 !important;
+			max-width: 600px !important;
+			font-size: min(46px, 6vw) !important;
+			padding: 0 !important;
+			border: none !important;
+			background: transparent !important;
+			backdrop-filter: none !important;
+			-webkit-backdrop-filter: none !important;
+			box-shadow: none !important;
+			color: #ffffff !important;
+			text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+			display: block !important;
+			margin-bottom: 24px !important;
+		}
+
+		/* Resize and Move Button */
+		.hero-banner-one .btn-two.icon-link {
+			display: inline-flex !important;
+			font-size: 14px !important;
+			padding: 10px 22px !important;
+			margin-top: 0 !important;
+			clear: both;
+		}
+
+		/* Column layout: heading on top, button underneath */
+		.hero-slider-one .item .container .row > [class*="col-"] {
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: flex-start !important;
+		}
+
+		.hero-banner-one .btn-two .icon {
+			width: 18px !important;
+		}
+
+		@media (max-width: 991px) {
+			.hero-banner-one .hero-heading.hero-heading-glass {
+				margin-top: 0 !important;
+				max-width: 100% !important;
+				font-size: 26px !important;
+				margin-bottom: 18px !important;
+				display: block !important;
+			}
+
+			.hero-banner-one .btn-two.icon-link {
+				margin-top: 0 !important;
+			}
+		}
+
+		</style>
 
 	<!-- Fix Internet Explorer ______________________________________-->
 	<!--[if lt IE 9]>
@@ -38,9 +403,6 @@
 			<script src="{{ url_for('static', filename='vendor/html5shiv.js') }}?v=1.0"></script>
 			<script src="{{ url_for('static', filename='vendor/respond.js') }}?v=1.0"></script>
 		<![endif]-->
-		
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0" media="all">
-</head>
 
 <body>
 	<div class="main-page-wrapper">
@@ -49,23 +411,20 @@
 			==================================================== -->
 		<div id="preloader">
 			<div id="ctn-preloader" class="ctn-preloader">
-				<div class="icon"><video class="m-auto d-block site-loader-video" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-label="Loading animation"><source src="{{ url_for('static', filename='images/fav-icon/reload.ani.mp4') }}?v=1.0" type="video/mp4"></video></div>
+				<div class="icon"><video class="m-auto d-block site-loader-video" autoplay muted loop playsinline
+						webkit-playsinline preload="auto" disablepictureinpicture aria-label="Loading animation">
+						<source src="{{ url_for('static', filename='images/fav-icon/reload.ani.mp4') }}?v=1.0" type="video/mp4">
+					</video></div>
 			</div>
 		</div>
 
 
-		
 		<!-- 
 		=============================================
 				Theme Main Menu
 		============================================== 
 		-->
-								<!-- 
-		=============================================
-				Theme Main Menu
-		============================================== 
-		-->
-						<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
+		<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
 			<div class="inner-content position-relative">
 				<div class="top-header">
 					<div class="d-flex align-items-center justify-content-between">
@@ -302,627 +661,1301 @@
 			Hero Banner
 		============================================== 
 		-->
-		<div class="hero-banner-two light-bg pt-200 pb-85 position-relative">
-			<div class="container position-relative">
-				<div class="row">
-					<div class="col-lg-10 m-auto">
-						<h1 class="hero-heading text-center fw-bold wow fadeInUp mt-10">Your Goals, Our Expertise ? <span class="d-inline-block position-relative">Financial <img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_04.svg') }}?v=1.0" alt="" class="lazy-img"></span> Success</h1>
-						<p class="text-xl text-center pt-35 pb-35 wow fadeInUp" data-wow-delay="0.1s">Finance insights enable smart moves towards wealth & security.</p>
-						<form action="#" class="m-auto position-relative wow fadeInUp" data-wow-delay="0.2s">
-                            <input type="email" placeholder="Your email address...">
-                            <button class="btn-four">Connect</button>
-                        </form>
+		<div class="hero-banner-one position-relative scroll-effect-one">
+			<div class="hero-slider-one m0">
+				<!-- Slide 1: Community -->
+				<div class="item m0">
+					<div class="hero-img">
+						<video class="hero-video-bg" muted playsinline preload="auto">
+							<source
+								src="{{ url_for('static', filename='images/hero video/african-american-mother-playing-with-her-daughters-2026-01-20-18-10-31-utc.mp4') }}?v=1.0"
+								type="video/mp4">
+						</video>
+						<div class="hero-video-overlay"></div>
+					</div>
+					<div class="container position-relative">
+						<div class="row">
+							<div class="col-xl-6 col-lg-7 ms-auto">
+								<h1
+									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
+									Building Stronger Communities Together</h1>
+
+								<a href="{{ url_for('catch_all', filename='about-us-v1.html') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+									<span>Our Values</span>
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
+										class="lazy-img icon ms-2">
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
-                <div class="row">
-                    <div class="col-xl-10 m-auto">
-                        <div class="partner-logo-one pt-80 md-p-70">
-                            <p class="fw-500 text-dark text-center mb-40"><span class="text-decoration-underline">Join 27,000+</span> companies who?ve reached </p>
-                            <div class="partner-slider-one">
-                                <div class="item">
-                                    <div class="logo d-flex align-items-center justify-content-center"><img src="{{ url_for('static', filename='images/logo/media_03.png') }}?v=1.0" alt=""></div>
-                                </div>
-                                <div class="item">
-                                    <div class="logo d-flex align-items-center justify-content-center"><img src="{{ url_for('static', filename='images/logo/media_04.png') }}?v=1.0" alt=""></div>
-                                </div>
-                                <div class="item">
-                                    <div class="logo d-flex align-items-center justify-content-center"><img src="{{ url_for('static', filename='images/logo/media_05.png') }}?v=1.0" alt=""></div>
-                                </div>
-                                <div class="item">
-                                    <div class="logo d-flex align-items-center justify-content-center"><img src="{{ url_for('static', filename='images/logo/media_01.png') }}?v=1.0" alt=""></div>
-                                </div>
-                                <div class="item">
-                                    <div class="logo d-flex align-items-center justify-content-center"><img src="{{ url_for('static', filename='images/logo/media_02.png') }}?v=1.0" alt=""></div>
-                                </div>
-                                <div class="item">
-                                    <div class="logo d-flex align-items-center justify-content-center"><img src="{{ url_for('static', filename='images/logo/media_04.png') }}?v=1.0" alt=""></div>
-                                </div>
-                                <div class="item">
-                                    <div class="logo d-flex align-items-center justify-content-center"><img src="{{ url_for('static', filename='images/logo/media_05.png') }}?v=1.0" alt=""></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.partner-logo-one -->
-                    </div>
-                </div>
+
+				<!-- Slide 2: Agriculture -->
+				<div class="item m0">
+					<div class="hero-img">
+						<video class="hero-video-bg" muted playsinline preload="auto">
+							<source
+								src="{{ url_for('static', filename='images/hero video/farm-agricultural-field-leveling-tractor-farm-work-2026-01-22-22-50-45-utc.mp4') }}?v=1.0"
+								type="video/mp4">
+						</video>
+						<div class="hero-video-overlay"></div>
+					</div>
+					<div class="container position-relative">
+						<div class="row">
+							<div class="col-xl-6 col-lg-7 ms-auto">
+								<h1
+									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
+									Modernizing Global Agriculture</h1>
+
+								<a href="{{ url_for('catch_all', filename='service-v1.html') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+									<span>Agri Solutions</span>
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
+										class="lazy-img icon ms-2">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide 3: Logistics -->
+				<div class="item m0">
+					<div class="hero-img">
+						<video class="hero-video-bg" muted playsinline preload="auto">
+							<source src="{{ url_for('static', filename='images/hero video/freight-transport-2025-12-17-20-47-07-utc.mp4') }}?v=1.0"
+								type="video/mp4">
+						</video>
+						<div class="hero-video-overlay"></div>
+					</div>
+					<div class="container position-relative">
+						<div class="row">
+							<div class="col-xl-6 col-lg-7 ms-auto">
+								<h1
+									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
+									Seamless Logistics & Supply Chain</h1>
+
+								<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+									<span>Global Trade</span>
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
+										class="lazy-img icon ms-2">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide 4: Corporate Strategy -->
+				<div class="item m0">
+					<div class="hero-img">
+						<video class="hero-video-bg" muted playsinline preload="auto">
+							<source
+								src="{{ url_for('static', filename='images/hero video/people-meeting-and-documents-in-office-for-busine-2026-01-22-06-04-12-utc.mp4') }}?v=1.0"
+								type="video/mp4">
+						</video>
+						<div class="hero-video-overlay"></div>
+					</div>
+					<div class="container position-relative">
+						<div class="row">
+							<div class="col-xl-6 col-lg-7 me-auto">
+								<h1
+									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp text-start">
+									Strategic Corporate Excellence</h1>
+
+								<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+									<span>Consult Us</span>
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
+										class="lazy-img icon ms-2">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide 5: Education -->
+				<div class="item m0">
+					<div class="hero-img">
+						<video class="hero-video-bg" muted playsinline preload="auto">
+							<source
+								src="{{ url_for('static', filename='images/hero video/professor-classroom-and-student-with-question-for-2025-12-17-23-05-05-utc.mp4') }}?v=1.0"
+								type="video/mp4">
+						</video>
+						<div class="hero-video-overlay"></div>
+					</div>
+					<div class="container position-relative">
+						<div class="row">
+							<div class="col-xl-6 col-lg-7 me-auto">
+								<h1
+									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp text-start">
+									Empowering Future Generations</h1>
+
+								<a href="{{ url_for('catch_all', filename='service-v1.html') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+									<span>Explore Learning</span>
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
+										class="lazy-img icon ms-2">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide 6: Innovation -->
+				<div class="item m0">
+					<div class="hero-img">
+						<video class="hero-video-bg" muted playsinline preload="auto">
+							<source
+								src="{{ url_for('static', filename='images/hero video/scientist-pours-chemicals-from-a-test-tube-into-a-2025-12-17-07-28-37-utc.mp4') }}?v=1.0"
+								type="video/mp4">
+						</video>
+						<div class="hero-video-overlay"></div>
+					</div>
+					<div class="container position-relative">
+						<div class="row">
+							<div class="col-xl-6 col-lg-7 ms-auto">
+								<h1
+									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
+									Innovation Through Scientific R&D</h1>
+
+								<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+									<span>View R&D</span>
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
+										class="lazy-img icon ms-2">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide 7: Wellness -->
+				<div class="item m0">
+					<div class="hero-img">
+						<video class="hero-video-bg" muted playsinline preload="auto">
+							<source src="{{ url_for('static', filename='images/hero video/yoga-2026-01-21-05-24-27-utc.mp4') }}?v=1.0" type="video/mp4">
+						</video>
+						<div class="hero-video-overlay"></div>
+					</div>
+					<div class="container position-relative">
+						<div class="row">
+							<div class="col-xl-6 col-lg-7 me-auto">
+								<h1
+									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp text-start">
+									Holistic Wellness & Healthcare</h1>
+								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="btn-two icon-link wow fadeInUp"
+									data-wow-delay="0.2s">
+									<span>Health Services</span>
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
+										class="lazy-img icon ms-2">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_05.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_01">
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_06.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_02">
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/assets/screen_02.png') }}?v=1.0" alt="" class="lazy-img shapes shape_03">
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/assets/screen_03.png') }}?v=1.0" alt="" class="lazy-img shapes shape_04">
+			<!-- /.hero-slider-one -->
+			<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0"
+				class="more-btn rounded-circle d-flex align-items-center justify-content-center tran3s wow fadeInLeft"
+				target="_blank"><i class="bi bi-arrow-up-right"></i></a>
 		</div>
-		<!-- /.hero-banner-two -->
+		<!-- /.hero-banner-one -->
 
 
 		<!-- 
 		=============================================
-			Text Feature Two
+			Fancy Banner One
 		============================================== 
 		-->
-		<div class="text-feature-two position-relative pt-110 lg-pt-80 pb-110 lg-pb-80">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-xl-6 col-lg-7">
-						<div class="title-one">
-							<h2 class="text-white">The Numbers Reflect Our Reputation.</h2>
-						</div>
-						<!-- /.title-one -->
-					</div>
-					<div class="col-lg-5 ms-auto">
-						<p class="m0 text-md text-white md-pt-10">Efficient problem-solving, insightful market analysis, and actionable plans made the consulting invaluable to our business's success.</p>
-					</div>
+		<div class="fancy-banner-one position-relative pt-30 md-pt-20 pb-40 md-pb-20 bg-white">
+			<div class="row align-items-center">
+				<div class="col-md-6 text-center text-md-end">
+					<h2 class="pe-xl-5 pe-md-4 sm-pb-50">Born to lead.<br><span>Built like a lion</span></h2>
 				</div>
-
-				<div class="row gx-0 mt-50 lg-mt-20 md-mt-10">
-					<div class="col-lg-4">
-						<div class="card-style-five text-center mt-60">
-							<div class="icon d-flex align-content-center justify-content-center"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_17.svg') }}?v=1.0" alt="" class="lazy-img"></div>
-							<div class="main-count fw-500"><span class="counter">120</span>mil+</div>
-							<p class="ps-xxl-5 ps-xl-3 pe-xxl-5 pe-xl-3">We?ve experience more than 10+ years with success.</p>
+				<div class="col-md-6">
+					<div class="ps-xl-5 ps-md-4 pe-xxl-5 d-flex align-items-center justify-content-between">
+						<div>
+							<h3 class="fw-bold">We donâ€™t compete â€” we set the standard</h3>
+							<p class="text-md m0">Driven by pride. Defined by results.</p>
 						</div>
-						<!-- /.card-style-five -->
-					</div>
-					<div class="col-lg-4">
-						<div class="card-style-five text-center mt-60">
-							<div class="icon d-flex align-content-center justify-content-center"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_18.svg') }}?v=1.0" alt="" class="lazy-img"></div>
-							<div class="main-count fw-500">$<span class="counter">1.3</span>b+</div>
-							<p class="ps-xxl-5 ps-xl-3 pe-xxl-5 pe-xl-3">We achieve lot for our work from top certified agency.</p>
-						</div>
-						<!-- /.card-style-five -->
-					</div>
-					<div class="col-lg-4">
-						<div class="card-style-five text-center mt-60">
-							<div class="icon d-flex align-content-center justify-content-center"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_19.svg') }}?v=1.0" alt="" class="lazy-img"></div>
-							<div class="main-count fw-500"><span class="counter">730</span>k+</div>
-							<p class="ps-xxl-5 ps-xl-3 pe-xxl-5 pe-xl-3">We?ve more than happy 3000+ client all over the world.</p>
-						</div>
-						<!-- /.card-style-five -->
+						<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/assets/screen_01.png') }}?v=1.0" alt=""
+							class="lazy-img screen me-xxl-5">
 					</div>
 				</div>
 			</div>
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_07.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_01">
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_08.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_02">
 		</div>
-		<!-- /.text-feature-two -->
-		
+		<!-- /.fancy-banner-one -->
 
 
-		<!--
-		=====================================================
-			BLock Feature Four
-		=====================================================
+		<!-- 
+		=============================================
+			BLock Feature One
+		============================================== 
 		-->
-		<div class="block-feature-four position-relative mt-150 lg-mt-80 pb-150 lg-pb-80">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-xl-8 col-lg-9 m-auto wow fadeInUp">
-						<div class="title-one text-center mb-50 lg-mb-20">
-							<h2>We're here to help you build,  & protect your wealth.</h2>
-						</div>
-						<!-- /.title-one -->
-					</div>
-				</div>
-				<div class="row gx-xxl-5">
-					<div class="col-lg-4 d-flex wow fadeInUp">
-						<div class="card-style-six text-center vstack tran3s w-100 mt-30">
-							<div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_20.svg') }}?v=1.0" alt="" class="lazy-img"></div>
-							<h4 class="fw-bold mt-40 md-mt-30 mb-25">Expert Advisor</h4>
-							<p class="mb-20">Elit esse cillum dolore eu fugiat nulla pariatur</p>
-							<a href="{{ url_for('catch_all', filename='service-v2.html') }}" class="arrow-btn tran3s m-auto stretched-link"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt="" class="lazy-img"></a>
-						</div>
-						<!-- /.card-style-six -->
-					</div>
-					<div class="col-lg-4 d-flex wow fadeInUp" data-wow-delay="0.1s">
-						<div class="card-style-six text-center vstack tran3s w-100 mt-30 active">
-							<div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_21.svg') }}?v=1.0" alt="" class="lazy-img"></div>
-							<h4 class="fw-bold mt-40 md-mt-30 mb-25">Highly Secured</h4>
-							<p class="mb-20">Elit esse cillum dolore eu fugiat nulla pariatur</p>
-							<a href="{{ url_for('catch_all', filename='service-v2.html') }}" class="arrow-btn tran3s m-auto stretched-link"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt="" class="lazy-img"></a>
-						</div>
-						<!-- /.card-style-six -->
-					</div>
-					<div class="col-lg-4 d-flex wow fadeInUp" data-wow-delay="0.2s">
-						<div class="card-style-six text-center vstack tran3s w-100 mt-30">
-							<div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_22.svg') }}?v=1.0" alt="" class="lazy-img"></div>
-							<h4 class="fw-bold mt-40 md-mt-30 mb-25">Management</h4>
-							<p class="mb-20">Elit esse cillum dolore eu fugiat nulla pariatur</p>
-							<a href="{{ url_for('catch_all', filename='service-v2.html') }}" class="arrow-btn tran3s m-auto stretched-link"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt="" class="lazy-img"></a>
-						</div>
-						<!-- /.card-style-six -->
-					</div>
-				</div>
-			</div>
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_05.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_01">
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_06.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_02">
-		</div>
-		<!-- /.block-feature-four -->
-
-
-		<!--
-		=====================================================
-			Text Feature Three
-		=====================================================
-		-->
-		<div class="text-feature-three position-relative mt-30 pb-150 lg-pb-80">
-			<div class="container">
-				<div class="row">
-					<div class="col-xxl-5 col-lg-6 ms-auto d-flex flex-column order-lg-last wow fadeInRight">
-						<div class="title-one">
-							<div class="upper-title">About us</div>
-							<h2>Guideline for your financial grow.</h2>
-						</div>
-						<!-- /.title-one -->
-						<p class="text-lg mt-45 lg-mt-30 mb-35 lg-mb-30">Your success is our mission. As business advisors, we offer expert guidance, unlocking your potential for growth and profitability</p>
-						<div><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}" class="btn-four mt-15">More About us</a></div>
-						<div class="counter-wrapper mt-60 lg-mt-40 pt-25 lg-pt-10">
-							<div class="row">
-								<div class="col-xl-6 col-sm-5">
-									<div class="counter-block-one mt-20">
-										<div class="main-count fw-bold"><span class="counter">1.2</span>x</div>
-										<p class="m0">Rapid wealth grow</p>
-									</div>
-									<!-- /.counter-block-one -->
+		<div class="block-feature-one position-relative pt-75 bg-white">
+			<div class="upper-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 wow fadeInUp">
+							<div class="card-style-one d-flex w-100 mb-35">
+								<div
+									class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_03.svg') }}?v=1.0" alt=""
+										class="lazy-img">
 								</div>
-								<div class="col-xl-6 col-sm-7">
-									<div class="counter-block-one mt-20">
-										<div class="main-count fw-bold">$<span class="counter">1.3</span>b+</div>
-										<p class="m0">Cumulative trading volume</p>
-									</div>
-									<!-- /.counter-block-one -->
+								<div class="text ps-4">
+									<h4 class="fw-bold">Excellence in Every Delivery</h4>
+									<p class="pe-xl-4">Every delivery reflects our dedication to excellence, combining
+										expertise, innovation, and meticulous execution to achieve outstanding results
+										for our clients.</p>
 								</div>
 							</div>
+							<!-- /.card-style-one -->
 						</div>
-						<!-- /.counter-wrapper -->
-					</div>
-					<div class="col-xxl-6 col-lg-5 d-flex order-lg-first wow fadeInLeft">
-						<div class="media-wrapper w-100 position-relative">
-							<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/assets/screen_04.svg') }}?v=1.0" alt="" class="lazy-img shapes screen_01">
-							<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/assets/screen_05.svg') }}?v=1.0" alt="" class="lazy-img shapes screen_02">
+						<div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+							<div class="card-style-one d-flex w-100 mb-35">
+								<div
+									class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_04.svg') }}?v=1.0" alt=""
+										class="lazy-img">
+								</div>
+								<div class="text ps-4">
+									<h4 class="fw-bold">Industry Expertise</h4>
+									<p class="pe-xl-4">Our experienced professionals deliver strategic guidance across
+										IT, education, wellness, and trading sectors.</p>
+								</div>
+							</div>
+							<!-- /.card-style-one -->
+						</div>
+						<div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+							<div class="card-style-one d-flex w-100 mb-35">
+								<div
+									class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_05.svg') }}?v=1.0" alt=""
+										class="lazy-img">
+								</div>
+								<div class="text ps-4">
+									<h4 class="fw-bold">Reliable Support</h4>
+									<p class="pe-xl-4">Committed to offering continuous assistance and dependable
+										service to ensure your business success.</p>
+								</div>
+							</div>
+							<!-- /.card-style-one -->
 						</div>
 					</div>
 				</div>
 			</div>
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_06.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_01">
-		</div>
-		<!-- /.text-feature-three -->
-		
+			<!-- /.upper-wrapper -->
 
+			<!-- Leadership Statement Section -->
+			<div class="vjs-leadership-banner">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-5 wow fadeInLeft">
+							<div class="leader-portrait-wrap">
+								<img src="{{ url_for('static', filename='images/media/chairman_portrait.png') }}?v=1.0" alt="Mr. Vijayalakshmi"
+									class="leader-portrait lazy-img">
+							</div>
+						</div>
+						<div class="col-lg-7 wow fadeInRight">
+							<div class="vjs-quote-wrapper">
+								<div class="vjs-quote-box">
+									<p>"Empowerment is not just about providing technology or services; it's about
+										building an ecosystem where innovation and trust create a legacy of sustainable
+										growth for everyone."</p>
+									<div class="vjs-leader-meta">
+										<h5>Ms. S. Vijayalakshmi</h5>
+										<p>Managing Director of VJS Group</p>
+									</div>
+								</div>
+								<a href="{{ url_for('catch_all', filename='about-us-v1.html') }}" class="btn-sixteen mt-10">View Profile</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.Leadership Statement Section -->
 
-		<!--
-		=====================================================
-			BLock Feature Five
-		=====================================================
-		-->
-		<div class="block-feature-five light-bg position-relative mt-80 md-mt-50 pt-120 lg-pt-80 pb-150 lg-pb-80">
-			<div class="container">
+			<div class="container pt-120 lg-pt-80">
 				<div class="position-relative">
-					<div class="row">
-						<div class="col-lg-8 wow fadeInLeft">
-							<div class="title-one mb-50 lg-mb-30 md-mb-10">
-								<h2>Confidently secure assets with expert guidance.</h2>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<div class="title-one text-center text-md-start mb-30 sm-mb-10">
+								<h2>Delivering Quality Services Across Industries</h2>
 							</div>
-							<!-- /.title-one -->
+						</div>
+						<div class="col-md-6 text-center text-md-end">
+							<p class="text-lg mb-20">Integrated solutions <br>designed for growth and <br>long-term
+								success.</p>
+							<div class="section-subheading">
+								<a href="{{ url_for('catch_all', filename='service-v1.html') }}" class="btn-three icon-link">
+									<span>See All Services</span>
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
+										class="lazy-img icon ms-1">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center row-cols-1 row-cols-md-3 row-cols-lg-5">
+						<div class="col d-flex wow fadeInUp">
+							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
+								style="padding: 25px;">
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_06.svg') }}?v=1.0" alt=""
+									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+								<h4 class="fw-bold mb-15" style="font-size: 18px;">IT Solutions</h4>
+								<p style="font-size: 14px; line-height: 1.6em;">Providing innovative software
+									development, web solutions, and digital transformation services.</p>
+								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
+										class="lazy-img"></a>
+							</div>
+							<!-- /.card-style-two -->
+						</div>
+						<div class="col d-flex wow fadeInUp" data-wow-delay="0.1s">
+							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
+								style="padding: 25px;">
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_07.svg') }}?v=1.0" alt=""
+									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+								<h4 class="fw-bold mb-15" style="font-size: 18px;">Education & Training</h4>
+								<p style="font-size: 14px; line-height: 1.6em;">Offering quality education and skill
+									development programs to empower students.</p>
+								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
+										class="lazy-img"></a>
+							</div>
+							<!-- /.card-style-two -->
+						</div>
+						<div class="col d-flex wow fadeInUp" data-wow-delay="0.2s">
+							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
+								style="padding: 25px;">
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_08.svg') }}?v=1.0" alt=""
+									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+								<h4 class="fw-bold mb-15" style="font-size: 18px;">Healthcare & Wellness</h4>
+								<p style="font-size: 14px; line-height: 1.6em;">Delivering holistic wellness solutions
+									through Ayurveda, yoga, and natural therapies.</p>
+								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
+										class="lazy-img"></a>
+							</div>
+							<!-- /.card-style-two -->
+						</div>
+						<div class="col d-flex wow fadeInUp" data-wow-delay="0.3s">
+							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
+								style="padding: 25px;">
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_18_dual.svg') }}?v=1.0" alt=""
+									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+								<h4 class="fw-bold mb-15" style="font-size: 18px;">Export & Trading</h4>
+								<p style="font-size: 14px; line-height: 1.6em;">Supplying high-quality agricultural
+									products like pepper and coconut to global markets.</p>
+								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
+										class="lazy-img"></a>
+							</div>
+							<!-- /.card-style-two -->
+						</div>
+						<div class="col d-flex wow fadeInUp" data-wow-delay="0.4s">
+							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
+								style="padding: 25px;">
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_20_dual.svg') }}?v=1.0" alt=""
+									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+								<h4 class="fw-bold mb-15" style="font-size: 18px;">Business Consulting</h4>
+								<p style="font-size: 14px; line-height: 1.6em;">Helping businesses grow with strategic
+									planning, expert guidance, and actionable solutions.</p>
+								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
+										class="lazy-img"></a>
+							</div>
+							<!-- /.card-style-two -->
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="col-xl-3 col-md-6 d-flex wow fadeInUp">
-							<div class="card-style-seven text-center vstack tran3s w-100 mt-30">
-								<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center m-auto"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_23.svg') }}?v=1.0" alt="" class="lazy-img"></div>
-								<h4 class="fw-bold mt-40 md-mt-20 mb-20">Banking</h4>
-								<p class="mb-60 md-mb-40">Effortless payments and transfers with our streamlined banking process.</p>
-								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s m-auto stretched-link"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-seven -->
-						</div>
-						<div class="col-xl-3 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
-							<div class="card-style-seven text-center vstack tran3s w-100 mt-30">
-								<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center m-auto"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_24.svg') }}?v=1.0" alt="" class="lazy-img"></div>
-								<h4 class="fw-bold mt-40 md-mt-20 mb-20">Earning</h4>
-								<p class="mb-60 md-mb-40">Earning potential grows with dedication, innovation, and continuous improvement.</p>
-								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s m-auto stretched-link"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-seven -->
-						</div>
-						<div class="col-xl-3 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
-							<div class="card-style-seven text-center vstack tran3s w-100 mt-30">
-								<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center m-auto"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_25.svg') }}?v=1.0" alt="" class="lazy-img"></div>
-								<h4 class="fw-bold mt-40 md-mt-20 mb-20">Expense Track</h4>
-								<p class="mb-60 md-mb-40">Empower your budgeting with accurate and intuitive expense tracking</p>
-								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s m-auto stretched-link"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-seven -->
-						</div>
-						<div class="col-xl-3 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.3s">
-							<div class="card-style-seven text-center vstack tran3s w-100 mt-30">
-								<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center m-auto"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_26.svg') }}?v=1.0" alt="" class="lazy-img"></div>
-								<h4 class="fw-bold mt-40 md-mt-20 mb-20">Savings</h4>
-								<p class="mb-60 md-mb-40">Secure your dreams through disciplined savings & prudent investments.</p>
-								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s m-auto stretched-link"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-seven -->
-						</div>
-					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.block-feature-one -->
 
-					<div class="section-btn md-mt-40">
-						<a href="{{ url_for('catch_all', filename='service-v2.html') }}" class="btn-seven d-inline-flex align-items-center">
-							<span class="text">All Services</span>
-							<div class="icon tran3s rounded-circle d-flex align-items-center"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_27.svg') }}?v=1.0" alt="" class="lazy-img"></i></div>
-						</a>
+
+
+		<!--
+		=====================================================
+			Text Feature One
+		=====================================================
+		-->
+
+		<!-- /.text-feature-one -->
+
+
+		<!--
+		=====================================================
+			BLock Feature Two
+		=====================================================
+		-->
+		<div class="block-feature-two mt-80 bg-mission-light">
+			<div class="container">
+				<div class="wrapper">
+					<div class="row align-items-stretch">
+						<div class="col-lg-4 col-md-6 wow fadeInUp d-flex">
+							<div class="card-style-three pb-35 sm-pb-30 w-100"
+								style="background-color: #A2D732; border-radius: 20px; padding: 30px; padding-top: 10px !important; display: flex; flex-direction: column;">
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_10.svg') }}?v=1.0" alt=""
+									class="lazy-img icon"
+									style="height: 40px; width: auto; margin: 0 0 25px 0; display: block;align-self: self-start;">
+								<h4 class="fw-bold text-dark" style="font-size: 24px; margin: 0 0 15px 0;">Our Mission
+								</h4>
+								<p class="text-dark" style="margin: 0; line-height: 1.6;">To deliver innovative and
+									reliable solutions across diverse
+									industries by combining
+									technology, expertise, and customer-focused servicesÃ¢â‚¬â€empowering businesses and
+									communities to achieve sustainable growth.
+								</p>
+							</div>
+							<!-- /.card-style-three -->
+						</div>
+						<div class="col-lg-4 col-md-6 wow fadeInUp d-flex" data-wow-delay="0.1s">
+							<div class="card-style-three pb-35 sm-pb-30 w-100"
+								style="background-color: #196164; border-radius: 20px; padding: 30px; padding-top: 10px !important; display: flex; flex-direction: column; justify-content: flex-start; height: 100%;">
+
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_11.svg') }}?v=1.0" alt=""
+									class="lazy-img icon"
+									style="height: 40px; width: auto; margin: 0 0 25px 0; display: block; align-self: flex-start;">
+
+								<h4 class="fw-bold text-white" style="font-size: 24px; margin: 0 0 15px 0;">
+									Our Vision
+								</h4>
+
+								<p class="text-white" style="margin: 0; line-height: 1.6;">
+									To become a trusted and leading group of companies recognized
+									for excellence in technology, education, wellness, and global trade,
+									creating long-term value and positive impact worldwide.
+								</p>
+
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-12 wow fadeInUp d-flex" data-wow-delay="0.2s">
+							<div
+								class="ps-lg-5 ps-md-3 ps-4 sm-pt-60 sm-pb-60 d-flex flex-column align-items-center justify-content-center w-100">
+								<div class="experience-badge-wrapper position-relative d-flex align-items-center justify-content-center"
+									style="width: 220px; height: 220px; cursor: pointer;">
+									<!-- Outer Circle (Dashed & Rotating) -->
+									<div class="outer-circle position-absolute rounded-circle tran5s"
+										style="inset: 0; border: 3px dashed #A2D732; opacity: 0.6; transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);">
+									</div>
+
+									<!-- Inner Circle (Official Mark with Divine Glow) -->
+									<div class="inner-circle d-flex align-items-center justify-content-center rounded-circle shadow-lg tran3s"
+										style="width: 170px; height: 170px; background: radial-gradient(circle, rgba(255, 223, 112, 0.45) 0%, rgba(255, 255, 255, 1) 70%); position: relative; z-index: 1; overflow: hidden;">
+										<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="VJS Mark"
+											style="width: 110px; height: auto; position: relative; z-index: 2; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.2));">
+										<!-- Subtle ray effect -->
+										<div class="divine-rays position-absolute"
+											style="inset: 0; background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.1), transparent 10deg); animation: rotateRays 20s linear infinite;">
+										</div>
+									</div>
+
+									<style>
+										@keyframes rotateRays {
+											from {
+												transform: rotate(0deg);
+											}
+
+											to {
+												transform: rotate(360deg);
+											}
+										}
+
+										.experience-badge-wrapper:hover .outer-circle {
+											transform: rotate(45deg) scale(1.1);
+											opacity: 1;
+										}
+
+										.experience-badge-wrapper:hover .inner-circle {
+											transform: translate(-5px, -10px);
+											box-shadow: 10px 15px 30px rgba(162, 215, 50, 0.3) !important;
+										}
+									</style>
+								</div>
+
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_06.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_01">
 		</div>
-		<!-- /.block-feature-five -->
+		<!-- /.block-feature-two -->
+
+
+
+		<!--
+		=====================================================
+			BLock Feature Three
+		=====================================================
+		-->
+		<!-- /.block-feature-three -->
 
 
 
 		<!-- 
 		=============================================
-			Feedback Section Two
+			Feedback Section One
 		============================================== 
 		-->
-		<div class="feedback-section-two position-relative mt-150 lg-mt-80">
-			<div class="container">
-				<div class="position-relative">
-					<div class="row">
-						<div class="col-lg-8 m-auto">
-							<div class="title-one text-center mb-80 lg-mb-40 wow fadeInUp">
-								<h2>We help 10k+ Customers to full fill their dream.</h2>
-							</div>
-							<!-- /.title-one -->
-						</div>
-					</div>
-				</div>
-			</div>
 
-			<div class="slider-wrapper">
-				<div class="feedback-slider-two">
-					<div class="item">
-						<div class="feedback-block-two tran3s">
-							<div class="d-flex align-items-center">
-								<img src="{{ url_for('static', filename='images/media/img_08.jpg') }}?v=1.0" alt="" class="avatar rounded-circle">
-								<div class="ps-3">
-									<div class="name fw-bold">James Bond.</div>
-									<p class="m0">Thailad</p>
-								</div>
-							</div>
-							<blockquote class="text-lg">We are absolutely thrilled with the services provided by Babun! Their team went above and beyond to transform our outdated website into a stunning, user-friendly masterpiece.</blockquote>
-							<div class="bottom-line d-flex align-items-center justify-content-between">
-								<ul class="style-none d-flex rating">
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-								</ul>
-								<img src="{{ url_for('static', filename='images/icon/icon_28.svg') }}?v=1.0" alt="" class="icon">
-							</div>
-						</div>
-						<!-- /.feedback-block-two -->
-					</div>
-					<div class="item">
-						<div class="feedback-block-two tran3s">
-							<div class="d-flex align-items-center">
-								<img src="{{ url_for('static', filename='images/media/img_09.jpg') }}?v=1.0" alt="" class="avatar rounded-circle">
-								<div class="ps-3">
-									<div class="name fw-bold">James Bond.</div>
-									<p class="m0">Thailad</p>
-								</div>
-							</div>
-							<blockquote class="text-lg">It's been an absolute pleasure working with Babun on our brand identity overhaul. Their ability to capture the essence of our culinary vision and translate it into a visual identity has been commendable. </blockquote>
-							<div class="bottom-line d-flex align-items-center justify-content-between">
-								<ul class="style-none d-flex rating">
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-								</ul>
-								<img src="{{ url_for('static', filename='images/icon/icon_28.svg') }}?v=1.0" alt="" class="icon">
-							</div>
-						</div>
-						<!-- /.feedback-block-two -->
-					</div>
-					<div class="item">
-						<div class="feedback-block-two tran3s">
-							<div class="d-flex align-items-center">
-								<img src="{{ url_for('static', filename='images/media/img_08.jpg') }}?v=1.0" alt="" class="avatar rounded-circle">
-								<div class="ps-3">
-									<div class="name fw-bold">Zubayer Al Hasan</div>
-									<p class="m0">Dhaka</p>
-								</div>
-							</div>
-							<blockquote class="text-lg">Babun Solutions has truly been a game changer for our business. Their expertise in developing our mobile app has streamlined our operations and enhanced the user experience remarkably.</blockquote>
-							<div class="bottom-line d-flex align-items-center justify-content-between">
-								<ul class="style-none d-flex rating">
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-								</ul>
-								<img src="{{ url_for('static', filename='images/icon/icon_28.svg') }}?v=1.0" alt="" class="icon">
-							</div>
-						</div>
-						<!-- /.feedback-block-two -->
-					</div>
-					<div class="item">
-						<div class="feedback-block-two tran3s">
-							<div class="d-flex align-items-center">
-								<img src="{{ url_for('static', filename='images/media/img_09.jpg') }}?v=1.0" alt="" class="avatar rounded-circle">
-								<div class="ps-3">
-									<div class="name fw-bold">James Bond.</div>
-									<p class="m0">Thailad</p>
-								</div>
-							</div>
-							<blockquote class="text-lg">Babun thumbs up to the team! Their personalized approach to fitness training has been a breath of fresh air. The trainers are not only knowledgeable but also genuinely invested in their clients' well-being</blockquote>
-							<div class="bottom-line d-flex align-items-center justify-content-between">
-								<ul class="style-none d-flex rating">
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-									<li><i class="bi bi-star-fill"></i></li>
-								</ul>
-								<img src="{{ url_for('static', filename='images/icon/icon_28.svg') }}?v=1.0" alt="" class="icon">
-							</div>
-						</div>
-						<!-- /.feedback-block-two -->
-					</div>
-				</div>
-			</div>
-			<!-- /.slider-wrapper -->
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_06.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_01">
-		</div>
-		<!-- /.feedback-section-two -->
+		<!-- /.feedback-section-one -->
 
-
-		
-
-		<!--
-		=====================================================
-			FAQ Section Two
-		=====================================================
-		-->
-		<div class="faq-section-two position-relative mt-180 lg-mt-100 pb-150 lg-pb-80">
-			<div class="container">
-				<div class="position-relative">
-					<div class="title-one mb-40">
-						<h2>Our Successful Projects.</h2>
-						<p class="text-lg pt-15 lg-pt-10">See some of our client success story in details.</p>
-					</div>
-					<!-- /.title-one -->
-					<div class="row">
-						<div class="col-12">
-							<div class="accordion accordion-style-two mt-15" id="accordionOne">
-								<div class="accordion-item">
-									<h2 class="accordion-header">
-										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-											1. The Criminal Mind Analysis & Results
-										</button>
-									  </h2>
-									  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
-										<div class="accordion-body">
-											<div class="row">
-												<div class="col-lg-6">
-													<h6>Aproach</h6>
-													<p class="mb-50">Consultants specializing in strategy support organizations in achieving competitive excellence through deliberate.</p>
-													<h6>FINAL results</h6>
-													<ul class="style-none pt-20 pb-30">
-														<li>Expanded investment via Innovative Solutions.</li>
-														<li>Improving risk management with advanced analytics.</li>
-														<li>Grow profit, enhanced clients satisfaction.</li>
-													</ul>
-													<a href="{{ url_for('catch_all', filename='project-details-v1.html') }}" class="btn-eight icon-link">
-														<span class="text">Full Case Study</span>
-														<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><i class="bi bi-arrow-right"></i></div>
-													</a>
-												</div>
-												<div class="col-lg-6 d-flex">
-													<div class="media-wrapper ms-auto me-auto w-100 d-flex align-items-center justify-content-center position-relative" style="background-image: url('{{ url_for('static', filename='images/media/img_01.jpg') }}');">
-														<a class="fancybox rounded-circle video-icon tran3s text-center d-flex align-items-center justify-content-center" data-fancybox="" href="https://www.youtube.com/embed/aXFSJTjVjw0">
-															<img src="{{ url_for('static', filename='images/icon/icon_29.svg') }}?v=1.0" alt="">
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									  </div>
-								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header">
-										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-											2. Invest the saving fund in proper way to get healthy return.
-										</button>
-									</h2>
-									<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
-										<div class="accordion-body">
-											<div class="row">
-												<div class="col-lg-6">
-													<h6>Aproach</h6>
-													<p class="mb-50">Consultants specializing in strategy support organizations in achieving competitive excellence through deliberate.</p>
-													<h6>FINAL results</h6>
-													<ul class="style-none pt-20 pb-30">
-														<li>Expanded investment via Innovative Solutions.</li>
-														<li>Improving risk management with advanced analytics.</li>
-														<li>Grow profit, enhanced clients satisfaction.</li>
-													</ul>
-													<a href="{{ url_for('catch_all', filename='project-details-v1.html') }}" class="btn-eight icon-link">
-														<span class="text">Full Case Study</span>
-														<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><i class="bi bi-arrow-right"></i></div>
-													</a>
-												</div>
-												<div class="col-lg-6 d-flex">
-													<div class="media-wrapper ms-auto me-auto w-100 d-flex align-items-center justify-content-center position-relative" style="background-image: url('{{ url_for('static', filename='images/media/img_02.jpg') }}');">
-														<a class="fancybox rounded-circle video-icon tran3s text-center d-flex align-items-center justify-content-center" data-fancybox="" href="https://www.youtube.com/embed/aXFSJTjVjw0">
-															<img src="{{ url_for('static', filename='images/icon/icon_29.svg') }}?v=1.0" alt="">
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header">
-										<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-											3. Digital Transformation Roadmap
-										</button>
-									</h2>
-									<div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionOne">
-										<div class="accordion-body">
-											<div class="row">
-												<div class="col-lg-6">
-													<h6>Aproach</h6>
-													<p class="mb-50">Consultants specializing in strategy support organizations in achieving competitive excellence through deliberate.</p>
-													<h6>FINAL results</h6>
-													<ul class="style-none pt-20 pb-30">
-														<li>Expanded investment via Innovative Solutions.</li>
-														<li>Improving risk management with advanced analytics.</li>
-														<li>Grow profit, enhanced clients satisfaction.</li>
-													</ul>
-													<a href="{{ url_for('catch_all', filename='project-details-v1.html') }}" class="btn-eight icon-link">
-														<span class="text">Full Case Study</span>
-														<div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><i class="bi bi-arrow-right"></i></div>
-													</a>
-												</div>
-												<div class="col-lg-6 d-flex">
-													<div class="media-wrapper ms-auto me-auto w-100 d-flex align-items-center justify-content-center position-relative" style="background-image: url('{{ url_for('static', filename='images/media/img_16.jpg') }}');">
-														<a class="fancybox rounded-circle video-icon tran3s text-center d-flex align-items-center justify-content-center" data-fancybox="" href="https://www.youtube.com/embed/aXFSJTjVjw0">
-															<img src="{{ url_for('static', filename='images/icon/icon_29.svg') }}?v=1.0" alt="">
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /.accordion-style-two -->
-						</div>
-					</div>
-
-					<div class="section-btn sm-mt-40">
-						<a href="{{ url_for('catch_all', filename='project-v2.html') }}" class="btn-nine rounded-circle d-inline-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
-					</div>
-				</div>
-			</div>
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_06.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_01">
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_06.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_02">
-		</div>
-		<!-- /.faq-section-two -->
 
 
 		<!--
 		=====================================================
-			Blog Section Two
+			Team Section One
 		=====================================================
 		-->
-		<div class="blog-section-two position-relative mt-20 pb-150 lg-pb-80">
-			<div class="container">
-				<div class="position-relative">
-					<div class="title-one mb-30 lg-mb-10">
-						<h2>Insights News.</h2>
-					</div>
-					<!-- /.title-one -->
 
-					<div class="row gx-xl-5">
-						<div class="col-md-6">
-							<article class="blog-meta-two mt-35 wow fadeInUp">
-								<figure class="post-img position-relative d-flex align-items-end m0" style="background-image: url('{{ url_for('static', filename='images/blog/blog_img_03.jpg') }}');">
-									<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0" class="stretched-link date tran3s">09 FEB</a>
-								</figure>
-								<div class="post-data">
-									<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
-										<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0" class="blog-title"><h4>Spending Habits, 13 Tips for grow Your Money.</h4></a>
-										<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
-									</div>
-									<div class="post-info">Rashed Ka . 6 min . Finance </div>
-								</div>
-							</article>
-							<!-- /.blog-meta-two -->
-						</div>
-						<div class="col-md-6">
-							<article class="blog-meta-two mt-35 wow fadeInUp" data-wow-delay="0.1s">
-								<figure class="post-img position-relative d-flex align-items-end m0" style="background-image: url('{{ url_for('static', filename='images/blog/blog_img_04.jpg') }}');">
-									<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0" class="stretched-link date tran3s">12 aug</a>
-								</figure>
-								<div class="post-data">
-									<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
-										<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0" class="blog-title"><h4>Our Travel Card Makes you Happy.</h4></a>
-										<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
-									</div>
-									<div class="post-info">Jubayer Hasan . 7 min read . Travelling</div>
-								</div>
-							</article>
-							<!-- /.blog-meta-two -->
-						</div>
-					</div>
-
-					<div class="section-btn sm-mt-60">
-						<a href="{{ url_for('catch_all', filename='blog-v1.html') }}?v=1.0" class="btn-seven d-inline-flex align-items-center">
-							<span class="text">See all blogs</span>
-							<div class="icon tran3s rounded-circle d-flex align-items-center"><img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_27.svg') }}?v=1.0" alt="" class="lazy-img"></i></div>
-						</a>
-					</div>
-				</div>
-			</div>
-			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/shape/shape_06.svg') }}?v=1.0" alt="" class="lazy-img shapes shape_01">
-		</div>
-		<!-- /.blog-section-two -->
+		<!-- /.team-section-one -->
 
 
 		<!--
 		=====================================================
-			Fancy Banner Three
+			Purpose Section
 		=====================================================
 		-->
-		<div class="fancy-banner-three position-relative wow fadeInUp">
-			<div class="container">
-				<div class="row align-content-center">
-					<div class="col-lg-8 col-md-9">
+		<div class="purpose-wrapper">
+
+			<style>
+				body {
+					margin: 0;
+					padding: 0;
+					background: #f5f5f5;
+					font-family: Arial, sans-serif;
+				}
+
+				.purpose-wrapper {
+					padding: 30px;
+				}
+
+				.purpose-container {
+					display: flex;
+					border-radius: 20px;
+					overflow: hidden;
+					height: 85vh;
+					position: relative;
+				}
+
+				/* MAIN SLIDER */
+				.purpose-main {
+					flex: 1;
+					position: relative;
+				}
+
+				.slide {
+					position: absolute;
+					inset: 0;
+					background-size: cover;
+					background-position: center;
+					opacity: 0;
+					transition: opacity 1s ease-in-out;
+					display: flex;
+					align-items: flex-end;
+					padding: 40px;
+				}
+
+				.slide.active {
+					opacity: 1;
+					z-index: 1;
+				}
+
+				/* OVERLAY */
+				.slide::before {
+					content: "";
+					position: absolute;
+					inset: 0;
+					background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+				}
+
+				.content {
+					position: relative;
+					z-index: 2;
+					color: #fff;
+					transform: translateY(30px);
+					opacity: 0;
+					transition: all 0.8s ease;
+				}
+
+				.slide.active .content {
+					transform: translateY(0);
+					opacity: 1;
+				}
+
+				.title {
+					font-size: 42px;
+					font-weight: bold;
+					margin-bottom: 20px;
+				}
+
+				.card {
+					background: rgba(0, 0, 0, 0.5);
+					padding: 20px;
+					border-radius: 15px;
+					backdrop-filter: blur(6px);
+					max-width: 300px;
+				}
+
+				.card h3 {
+					color: #c6ff4d;
+					font-size: 16px;
+					margin-bottom: 10px;
+				}
+
+				.card a {
+					color: #fff;
+					text-decoration: none;
+					font-size: 14px;
+				}
+
+				/* SIDE THUMBNAILS */
+				.purpose-side {
+					width: 150px;
+					display: flex;
+					flex-direction: column;
+					background: #0b2f2f;
+				}
+
+				.sidebar-tab {
+					flex: 1;
+					display: flex;
+					align-items: center;
+					padding: 0 30px;
+					cursor: pointer;
+					color: #fff;
+					position: relative;
+					transition: 0.3s;
+					border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+				}
+
+				.sidebar-tab::before {
+					content: "";
+					position: absolute;
+					inset: 0;
+					background-size: cover;
+					background-position: center;
+					opacity: 0;
+					transition: 0.5s;
+				}
+
+				.sidebar-tab:hover::before,
+				.sidebar-tab.active::before {
+					opacity: 0.3;
+				}
+
+				.sidebar-tab.active {
+					background: #1a4d4d;
+				}
+
+				.indicator {
+					width: 4px;
+					height: 20px;
+					background: #c6ff4d;
+					margin-right: 15px;
+					opacity: 0;
+				}
+
+				.sidebar-tab.active .indicator {
+					opacity: 1;
+				}
+
+				.tab-label {
+					position: relative;
+					z-index: 2;
+					font-weight: 600;
+				}
+
+				@media(max-width:768px) {
+					.purpose-container {
+						flex-direction: column;
+						height: auto;
+					}
+				}
+			</style>
+
+			<div class="purpose-section mt-120 lg-mt-80">
+				<div class="purpose-container">
+
+					<!-- PANE 1: Sustainability -->
+					<div class="purpose-pane active" style="--bg: url('images/media/sustainability_new.png')">
+						<div class="pane-overlay"></div>
+						<div class="pane-content-left">
+							<div class="pane-number">01</div>
+							<div class="pane-label">Sustainability</div>
+						</div>
+						<div class="content-wrap">
+							<div class="title">FOR A <br> SUSTAINABLE <br> TOMORROW</div>
+							<div class="csr-card">
+								<h3>100 MILLION TREES PLEDGED</h3>
+								<p>Driving environmental impact through global reforestation initiatives.</p>
+								<a href="#" class="view-impact">View Impact Ã¢â€ â€™</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- PANE 2: Solutions -->
+					<div class="purpose-pane" style="--bg: url('images/media/solutions_new.png')">
+						<div class="pane-overlay"></div>
+						<div class="pane-content-left">
+							<div class="pane-number">02</div>
+							<div class="pane-label">Solutions</div>
+						</div>
+						<div class="content-wrap">
+							<div class="title">BUILDING <br> FUTURE-READY <br> SOLUTIONS</div>
+							<div class="csr-card">
+								<h3>ENTERPRISE INNOVATION</h3>
+								<p>Empowering businesses with full-stack digital transformation.</p>
+								<a href="#" class="view-impact">Explore More Ã¢â€ â€™</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- PANE 3: Education -->
+					<div class="purpose-pane" style="--bg: url('images/media/education_new.png')">
+						<div class="pane-overlay"></div>
+						<div class="pane-content-left">
+							<div class="pane-number">03</div>
+							<div class="pane-label">Education</div>
+						</div>
+						<div class="content-wrap">
+							<div class="title">EMPOWERING <br> THE NEXT <br> GENERATION</div>
+							<div class="csr-card">
+								<h3>15,000+ STUDENTS</h3>
+								<p>Providing skills and education for a digital-first future.</p>
+								<a href="#" class="view-impact">See Impact Ã¢â€ â€™</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- PANE 4: Wellness -->
+					<div class="purpose-pane" style="--bg: url('images/media/img_52.jpg')">
+						<div class="pane-overlay"></div>
+						<div class="pane-content-left">
+							<div class="pane-number">04</div>
+							<div class="pane-label">Wellness</div>
+						</div>
+						<div class="content-wrap">
+							<div class="title">HOLISTIC <br> WELLNESS <br> JOURNEYS</div>
+							<div class="csr-card">
+								<h3>AYURVEDA & YOGA</h3>
+								<p>Fostering physical and mental balance through ancient wisdom.</p>
+								<a href="#" class="view-impact">Discover Wellness Ã¢â€ â€™</a>
+							</div>
+						</div>
+					</div>
+
+					<style>
+						.purpose-container {
+							display: flex;
+							height: 750px;
+							width: 100%;
+							gap: 10px;
+							overflow: hidden;
+							border-radius: 40px;
+							background: #000;
+						}
+
+						.purpose-pane {
+							flex: 1;
+							position: relative;
+							overflow: hidden;
+							cursor: pointer;
+							transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+							background-size: cover;
+							background-position: center;
+							background-image: var(--bg);
+						}
+
+						.purpose-pane.active {
+							flex: 6;
+						}
+
+						.pane-overlay {
+							position: absolute;
+							inset: 0;
+							background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
+							opacity: 0.8;
+							transition: opacity 0.5s ease;
+						}
+
+						.purpose-pane:hover .pane-overlay {
+							opacity: 0.6;
+						}
+
+						/* LEFT ALIGNED INDICATORS (Satisfies "aligned in the left") */
+						.pane-content-left {
+							position: absolute;
+							left: 30px;
+							top: 50%;
+							transform: translateY(-50%);
+							z-index: 10;
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							gap: 40px;
+							pointer-events: none;
+						}
+
+						.pane-number {
+							font-size: 18px;
+							font-weight: 700;
+							color: #dfff7c;
+							letter-spacing: 2px;
+							opacity: 0.8;
+						}
+
+						.pane-label {
+							writing-mode: vertical-rl;
+							text-transform: uppercase;
+							color: #fff;
+							font-size: 20px;
+							font-weight: 600;
+							letter-spacing: 4px;
+							transform: rotate(180deg);
+							white-space: nowrap;
+							transition: all 0.5s ease;
+						}
+
+						.purpose-pane.active .pane-label {
+							opacity: 0;
+							transform: rotate(180deg) translateY(20px);
+						}
+
+						/* EXPANDED CONTENT */
+						.content-wrap {
+							position: absolute;
+							bottom: 80px;
+							left: 100px;
+							max-width: 500px;
+							z-index: 20;
+							color: #fff;
+							opacity: 0;
+							transform: translateX(-30px);
+							transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+							pointer-events: none;
+						}
+
+						.purpose-pane.active .content-wrap {
+							opacity: 1;
+							transform: translateX(0);
+							pointer-events: auto;
+						}
+
+						.content-wrap .title {
+							font-size: 56px;
+							font-weight: 800;
+							line-height: 1.1;
+							margin-bottom: 30px;
+							letter-spacing: -2px;
+						}
+
+						.csr-card {
+							background: rgba(255, 255, 255, 0.08);
+							backdrop-filter: blur(20px);
+							-webkit-backdrop-filter: blur(20px);
+							border: 1px solid rgba(255, 255, 255, 0.15);
+							padding: 30px;
+							border-radius: 24px;
+							box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+						}
+
+						.csr-card h3 {
+							color: #dfff7c;
+							font-size: 16px;
+							margin-bottom: 15px;
+							letter-spacing: 1px;
+						}
+
+						.csr-card p {
+							font-size: 15px;
+							line-height: 1.6;
+							color: rgba(255, 255, 255, 0.8);
+							margin-bottom: 20px;
+						}
+
+						.view-impact {
+							color: #fff;
+							font-weight: 600;
+							text-decoration: none;
+							display: inline-block;
+							transition: transform 0.3s ease;
+						}
+
+						.view-impact:hover {
+							transform: translateX(8px);
+							color: #dfff7c;
+						}
+
+						@media (max-width: 991px) {
+							.purpose-container {
+								flex-direction: column;
+								height: auto;
+							}
+
+							.purpose-pane {
+								height: 120px;
+							}
+
+							.purpose-pane.active {
+								height: 450px;
+							}
+
+							.pane-content-left {
+								left: 20px;
+								flex-direction: row;
+							}
+
+							.pane-label {
+								writing-mode: horizontal-tb;
+								transform: none;
+								font-size: 16px;
+							}
+
+							.content-wrap {
+								left: 30px;
+								bottom: 30px;
+							}
+
+							.content-wrap .title {
+								font-size: 32px;
+							}
+						}
+					</style>
+
+				</div>
+
+				<script>
+					document.addEventListener("DOMContentLoaded", function () {
+						const panes = document.querySelectorAll(".purpose-pane");
+						let activeIndex = 0;
+						let autoCycle = null;
+						const CYCLE_TIME = 7000; // 7 Seconds
+
+						function startCycle() {
+							stopCycle();
+							autoCycle = setInterval(() => {
+								activeIndex = (activeIndex + 1) % panes.length;
+								updateActivePane(activeIndex);
+							}, CYCLE_TIME);
+						}
+
+						function stopCycle() {
+							if (autoCycle) clearInterval(autoCycle);
+						}
+
+						function updateActivePane(index) {
+							panes.forEach((p, i) => {
+								if (i === index) p.classList.add("active");
+								else p.classList.remove("active");
+							});
+						}
+
+						panes.forEach((pane, index) => {
+							pane.addEventListener("mouseenter", () => {
+								activeIndex = index;
+								updateActivePane(activeIndex);
+								stopCycle(); // Pause on hover
+							});
+
+							pane.addEventListener("mouseleave", () => {
+								startCycle(); // Resume on leave
+							});
+
+							pane.addEventListener("click", () => {
+								activeIndex = index;
+								updateActivePane(activeIndex);
+								startCycle(); // Reset timer and continue
+							});
+						});
+
+						startCycle(); // Initialize 7-second move
+					});
+				</script>
+
+			</div>
+			<!-- /.purpose-section -->
+
+
+			<!--
+		=====================================================
+			Blog Section One
+		=====================================================
+		-->
+			<div class="blog-section-one position-relative mt-60 lg-mt-40 pt-80 lg-pt-60">
+				<div class="container">
+					<div class="position-relative">
 						<div class="title-one mb-20 lg-mb-10">
-							<h2 class="text-white">Want to Chat? Feel free to Contact our Team.</h2>
+							<h2>Latest News.</h2>
 						</div>
 						<!-- /.title-one -->
-						<p class="text-lg m0 text-white opacity-75">If you have anything in mind just contact us with our expert.</p>
-					</div>
-					<div class="col-lg-4 col-md-3">
-						<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0" class="quote-btn tran5s rounded-circle d-flex align-items-center justify-content-center ms-auto">
-							<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_30.svg') }}?v=1.0" alt="" class="lazy-img">
-						</a>
+						<p class="text-lg mb-40 lg-mb-10">Get the latest update, trips & tricks from our expert.</p>
+
+						<div class="row gx-xxl-5">
+							<div class="col-md-6">
+								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp">
+									<div class="post-data">
+										<div class="post-info"><span class="fw-500 text-dark">Rashed Ka -</span> 18 Jul
+											2023
+										</div>
+										<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0" class="mt-15">
+											<h4 class="tran3s blog-title"> Connecting India: Unlocking Opportunities
+												Through Connectivity</h4>
+										</a>
+									</div>
+									<figure
+										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
+										<video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+											<source src="{{ url_for('static', filename='images/news video/transport-victoria-2025-12-17-05-37-19-utc.mp4') }}?v=1.0" type="video/mp4">
+										</video>
+										<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0"
+											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s" style="z-index: 1;"><i
+												class="bi bi-arrow-up-right"></i></a>
+									</figure>
+								</article>
+								<!-- /.blog-meta-one -->
+							</div>
+							<div class="col-md-6">
+								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="0.1s">
+									<div class="post-data">
+										<div class="post-info"><span class="fw-500 text-dark">Mark Joe -</span> 09 Feb
+											2023
+										</div>
+										<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0" class="mt-15">
+											<h4 class="tran3s blog-title">Coding in the Modern Era: Powering Technology
+												and Transformation</h4>
+										</a>
+									</div>
+									<figure
+										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
+										<video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+											<source src="{{ url_for('static', filename='images/news video/Code.mp4') }}?v=1.0" type="video/mp4">
+										</video>
+										<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0"
+											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s" style="z-index: 1;"><i
+												class="bi bi-arrow-up-right"></i></a>
+									</figure>
+								</article>
+								<!-- /.blog-meta-one -->
+							</div>
+						</div>
+
+						<div class="section-btn sm-mt-40">
+							<a href="{{ url_for('catch_all', filename='blog-v2.html') }}?v=1.0" class="btn-five icon-link">
+								<span class="text">See all blogs</span>
+								<div
+									class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+									<i class="bi bi-arrow-up-right"></i>
+								</div>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- /.fancy-banner-three -->
+			<!-- /.blog-section-one -->
+
+
+			<!--
+		=====================================================
+			Fancy Banner Two
+		=====================================================
+		-->
+			<div class="fancy-banner-two quote-section mt-150 lg-mt-80 mb-0">
+
+				<style>
+					.quote-section {
+						background: linear-gradient(135deg, #f8fbfb, #eef7f6);
+						padding: 100px 20px;
+						border-radius: 40px 40px 0 0;
+						position: relative;
+						overflow: hidden;
+						text-align: center;
+						border: 1px solid rgba(198, 255, 77, 0.15);
+						border-bottom: none;
+						box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.03);
+					}
+
+					/* SOFT GLOW */
+					.quote-section::before {
+						content: "";
+						position: absolute;
+						width: 300px;
+						height: 300px;
+						background: rgba(198, 255, 77, 0.25);
+						filter: blur(120px);
+						top: -60px;
+						left: -60px;
+					}
+
+					.quote-container {
+						max-width: 850px;
+						margin: auto;
+						position: relative;
+						z-index: 2;
+					}
+
+					/* QUOTE TEXT */
+					.quote-text {
+						font-size: 26px;
+						line-height: 1.8;
+						color: #0b2f2f;
+						font-weight: 500;
+						margin-bottom: 40px;
+						position: relative;
+						display: inline-block;
+						padding: 0 30px;
+						animation: floatText 4s ease-in-out infinite;
+					}
+
+					/* FLOAT ANIMATION */
+					@keyframes floatText {
+
+						0%,
+						100% {
+							transform: translateY(0);
+						}
+
+						50% {
+							transform: translateY(-8px);
+						}
+					}
+
+					/* OPENING QUOTE */
+					.quote-text::before {
+						content: "'";
+						font-size: 55px;
+						position: absolute;
+						left: 0;
+						top: -20px;
+						color: #c6ff4d;
+						opacity: 0.8;
+					}
+
+					/* CLOSING QUOTE */
+					.quote-text::after {
+						content: "'";
+						font-size: 55px;
+						position: absolute;
+						right: 0;
+						bottom: -20px;
+						color: #c6ff4d;
+						opacity: 0.8;
+					}
+
+					/* Ã¢Å“Â¨ SPARKLES */
+					.spark {
+						position: absolute;
+						width: 6px;
+						height: 6px;
+						background: #c6ff4d;
+						border-radius: 50%;
+						box-shadow: 0 0 10px #c6ff4d;
+						animation: sparkle 3s infinite ease-in-out;
+					}
+
+					.spark:nth-child(1) {
+						top: 20%;
+						left: 10%;
+					}
+
+					.spark:nth-child(2) {
+						top: 30%;
+						right: 15%;
+					}
+
+					.spark:nth-child(3) {
+						bottom: 25%;
+						left: 20%;
+					}
+
+					.spark:nth-child(4) {
+						bottom: 20%;
+						right: 10%;
+					}
+
+					@keyframes sparkle {
+
+						0%,
+						100% {
+							transform: scale(0.5);
+							opacity: 0.3;
+						}
+
+						50% {
+							transform: scale(1.5);
+							opacity: 1;
+						}
+					}
+
+					/* AUTHOR SECTION */
+					.quote-author {
+						margin-top: 30px;
+						text-align: center;
+					}
+
+					.quote-by {
+						font-size: 13px;
+						color: #888;
+						letter-spacing: 2px;
+						margin-bottom: 8px;
+					}
+
+					.quote-name {
+						font-size: 22px;
+						font-weight: 700;
+						color: #0b2f2f;
+						letter-spacing: 1px;
+					}
+
+					.quote-role {
+						font-size: 14px;
+						color: #555;
+						margin-top: 6px;
+						letter-spacing: 1px;
+					}
+
+					/* DIVIDER */
+					.quote-divider {
+						width: 50px;
+						height: 3px;
+						background: #c6ff4d;
+						margin: 30px auto;
+						border-radius: 10px;
+					}
+
+					@media (max-width: 768px) {
+						.quote-text {
+							font-size: 18px;
+						}
+					}
+				</style>
+
+				<!-- SPARK ELEMENTS -->
+				<div class="spark"></div>
+				<div class="spark"></div>
+				<div class="spark"></div>
+				<div class="spark"></div>
+
+				<div class="quote-container">
+
+					<div class="quote-text">
+						Our vision is to build a future where innovation, sustainability, and people
+						come together to create meaningful impact for generations ahead.
+					</div>
+
+					<div class="quote-divider"></div>
+
+					<div class="quote-author">
+						<div class="quote-by">BY</div>
+						<div class="quote-name">Ms. M. Vijayalakshmi</div>
+						<div class="quote-role">Managing Director</div>
+					</div>
+
+				</div>
+
+			</div>
 
 
 
 
-				<!--
+			<!--
 		=====================================================
 			Footer One
 		=====================================================
@@ -953,7 +1986,7 @@
 						max-width: 1200px;
 						margin: 0 auto;
 						padding: 90px 40px 35px;
-						/* ?? pushes content downward */
+						/* Ã°Å¸â€Â¥ pushes content downward */
 						font-family: "Helvetica Neue", Arial, sans-serif;
 					}
 
@@ -969,15 +2002,15 @@
 					/* LOGO & BRAND POSITIONING */
 					.footer-brand {
 						margin-top: 65px;
-						/* ?? Move further down */
+						/* Ã°Å¸â€Â¥ Move further down */
 						margin-left: 35px;
-						/* ?? Move slightly back to the left */
+						/* Ã°Å¸â€Â¥ Move slightly back to the left */
 					}
 
 					.footer-logo-group {
 						display: flex;
 						flex-direction: row;
-						/* ?? Back to side-by-side */
+						/* Ã°Å¸â€Â¥ Back to side-by-side */
 						align-items: center;
 						padding-right: 20px;
 						gap: 12px;
@@ -1012,10 +2045,10 @@
 
 					.social-icons-mini {
 						display: inline-flex;
-						/* ?? Borders only span icon area */
+						/* Ã°Å¸â€Â¥ Borders only span icon area */
 						gap: 14px;
 						margin-top: -10px;
-						/* ?? Move closer to text */
+						/* Ã°Å¸â€Â¥ Move closer to text */
 						margin-left: 58px;
 						padding: 4px 0;
 						border-top: 1px solid #7030a0;
@@ -1079,7 +2112,7 @@
 					.footer-bottom {
 						border-top: 1px solid #e5e7ea;
 						margin-top: 50px;
-						/* ?? spacing like Adani */
+						/* Ã°Å¸â€Â¥ spacing like Adani */
 						padding-top: 20px;
 						display: flex;
 						justify-content: space-between;
@@ -1092,9 +2125,9 @@
 						display: flex;
 						gap: 25px;
 						margin-left: auto;
-						/* ?? pushes links to the right */
+						/* Ã°Å¸â€Â¥ pushes links to the right */
 						padding-left: 500px;
-						/* ?? adds small right offset */
+						/* Ã°Å¸â€Â¥ adds small right offset */
 					}
 
 					.footer-bottom-links a {
@@ -1149,7 +2182,7 @@
 							<h5>About Us</h5>
 							<ul>
 								<li><a href="#">About Company</a></li>
-								<li><a href="#">Chairman?s Office</a></li>
+								<li><a href="#">Chairmans Office</a></li>
 								<li><a href="#">Leadership</a></li>
 								<li><a href="#">Our Journey</a></li>
 								<li><a href="#">Awards</a></li>
@@ -1184,8 +2217,9 @@
 						<!-- BOTTOM -->
 						<div class="footer-bottom">
 							<div style="display: flex; align-items: center; gap: 8px;">
-								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="Mark" style="height: 20px; width: auto;">
-								<span>? 2025 Vijayalakshmi Group</span>
+								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="Mark"
+									style="height: 20px; width: auto;">
+								<span>@2026 Vijayalakshmi Group</span>
 							</div>
 
 
@@ -1199,178 +2233,43 @@
 
 					</div>
 				</div>
-			</div>
 
 
-		<!-- Modal -->
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
-                <div class="container">
-                    <div class="user-data-form modal-content">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						<div class="form-wrapper m-auto">
-							<ul class="nav nav-tabs border-0 w-100" role="tablist">
-								<li class="nav-item" role="presentation">
-									<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fc1" role="tab">Login</button>
-								</li>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link" data-bs-toggle="tab" data-bs-target="#fc2" role="tab">Signup</button>
-								</li>
-							</ul>
-							<div class="tab-content mt-30">
-								<div class="tab-pane show active" role="tabpanel" id="fc1">
-									<div class="text-center mb-20">
-										<h2>Hi, Welcome Back!</h2>
-										<p>Still don't have an account? <a href="#">Sign up</a></p>
-									</div>
-									<form action="#">
-										<div class="row">
-											<div class="col-12">
-												<div class="input-group-meta position-relative mb-25">
-													<label>Email*</label>
-													<input type="email" placeholder="Youremail@gmail.com">
-												</div>
-											</div>
-											<div class="col-12">
-												<div class="input-group-meta position-relative mb-20">
-													<label>Password*</label>
-													<input type="password" placeholder="Enter Password" class="pass_log_id">
-													<span class="placeholder_icon"><span class="passVicon"><img src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0" alt=""></span></span>
-												</div>
-											</div>
-											<div class="col-12">
-												<div class="agreement-checkbox d-flex justify-content-between align-items-center">
-													<div>
-														<input type="checkbox" id="remember">
-														<label for="remember">Keep me logged in</label>
-													</div>
-													<a href="#">Forget Password?</a>
-												</div> <!-- /.agreement-checkbox -->
-											</div>
-											<div class="col-12">
-												<button class="btn-four w-100 tran3s d-block mt-20">Login</button>
-											</div>
-										</div>
-									</form>
-								</div>
-								<!-- /.tab-pane -->
-								<div class="tab-pane" role="tabpanel" id="fc2">
-									<div class="text-center mb-20">
-										<h2>Register</h2>
-										<p>Already have an account? <a href="#">Login</a></p>
-									</div>
-									<form action="#">
-										<div class="row">
-											<div class="col-12">
-												<div class="input-group-meta position-relative mb-25">
-													<label>Name*</label>
-													<input type="text" placeholder="Zubayer Hasan">
-												</div>
-											</div>
-											<div class="col-12">
-												<div class="input-group-meta position-relative mb-25">
-													<label>Email*</label>
-													<input type="email" placeholder="zubayerhasan@gmail.com">
-												</div>
-											</div>
-											<div class="col-12">
-												<div class="input-group-meta position-relative mb-20">
-													<label>Password*</label>
-													<input type="password" placeholder="Enter Password" class="pass_log_id">
-													<span class="placeholder_icon"><span class="passVicon"><img src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0" alt=""></span></span>
-												</div>
-											</div>
-											<div class="col-12">
-												<div class="agreement-checkbox d-flex justify-content-between align-items-center">
-													<div>
-														<input type="checkbox" id="remember2">
-														<label for="remember2">By hitting the "Register" button, you agree to the <a href="#">Terms conditions</a> & <a href="#">Privacy Policy</a></label>
-													</div>
-												</div> <!-- /.agreement-checkbox -->
-											</div>
-											<div class="col-12">
-												<button class="btn-four w-100 tran3s d-block mt-20">Sign up</button>
-											</div>
-										</div>
-									</form>
-								</div>
-								<!-- /.tab-pane -->
-							</div>
-							
-							<div class="d-flex align-items-center mt-30 mb-10">
-								<div class="line"></div>
-								<span class="pe-3 ps-3 fs-6">OR</span>
-								<div class="line"></div>
-							</div>
-							<div class="row">
-								<div class="col-sm-6">
-									<a href="#" class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
-										<img src="{{ url_for('static', filename='images/icon/google.png') }}?v=1.0" alt="">
-										<span class="ps-3">Signup with Google</span>
-									</a>
-								</div>
-								<div class="col-sm-6">
-									<a href="#" class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
-										<img src="{{ url_for('static', filename='images/icon/facebook.png') }}?v=1.0" alt="">
-										<span class="ps-3">Signup with Facebook</span>
-									</a>
-								</div>
-							</div>
-						</div>
-						<!-- /.form-wrapper -->
-                    </div>
-                    <!-- /.user-data-form -->
-                </div>
-            </div>
-        </div>
+				<!-- Optional JavaScript _____________________________  -->
 
+				<!-- jQuery first, then Bootstrap JS -->
+				<!-- jQuery -->
+				<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
+				<!-- Bootstrap JS -->
+				<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
+				<!-- WOW js -->
+				<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
+				<!-- Slick Slider -->
+				<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
+				<!-- Fancybox -->
+				<script src="{{ url_for('static', filename='vendor/fancybox/dist/jquery.fancybox.min.js') }}?v=1.0"></script>
+				<!-- Lazy -->
+				<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}?v=1.0"></script>
+				<!-- js Counter -->
+				<script src="{{ url_for('static', filename='vendor/jquery.counterup.min.js') }}?v=1.0"></script>
+				<script src="{{ url_for('static', filename='vendor/jquery.waypoints.min.js') }}?v=1.0"></script>
 
-		<button class="scroll-top">
-			<i class="bi bi-arrow-up-short"></i>
-		</button>
+				<!-- validator js -->
+				<script src="{{ url_for('static', filename='vendor/validator.js') }}?v=1.0"></script>
 
-
-
-
-		<!-- Optional JavaScript _____________________________  -->
-
-		<!-- jQuery first, then Bootstrap JS -->
-		<!-- jQuery -->
-		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
-		<!-- Bootstrap JS -->
-		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
-		<!-- WOW js -->
-		<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
-		<!-- Slick Slider -->
-		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
-		<!-- Fancybox -->
-		<script src="{{ url_for('static', filename='vendor/fancybox/dist/jquery.fancybox.min.js') }}?v=1.0"></script>
-		<!-- Lazy -->
-		<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}?v=1.0"></script>
-		<!-- js Counter -->
-		<script src="{{ url_for('static', filename='vendor/jquery.counterup.min.js') }}?v=1.0"></script>
-		<script src="{{ url_for('static', filename='vendor/jquery.waypoints.min.js') }}?v=1.0"></script>
-		
-		<!-- validator js -->
-		<script src="{{ url_for('static', filename='vendor/validator.js') }}?v=1.0"></script>
-
-		<!-- Theme js -->
-		<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
+				<!-- Theme js -->
+				<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
 		<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
-		<!-- Navbar Hover Animation -->
-		<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
-	</div> <!-- /.main-page-wrapper -->
-	<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
-	<div id="google_translate_element" style="display:none;"></div>
-	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+				<!-- Navbar Hover Animation -->
+				<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
+			</div> <!-- /.main-page-wrapper -->
+			<!-- Vijayalakshmi Group Site Utils -->
+			<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
+			<!-- Google Translate Element -->
+			<div id="google_translate_element" style="display:none;"></div>
+			<script type="text/javascript"
+				src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
-
-
-
-
-
-
-
 
