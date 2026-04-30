@@ -108,6 +108,7 @@
             $heroSlider.on('init', function(event, slick) {
                 var firstVideo = $(slick.$slides[0]).find('video').get(0);
                 if (firstVideo) {
+                    firstVideo.preload = 'auto'; // ensure first video loads
                     firstVideo.play().catch(function(e) {
                         console.log("Autoplay blocked, waiting for interaction");
                     });
@@ -126,12 +127,20 @@
                 speed: 1000 // Smooth fade transition
             });
 
-            // Play video on slide change
+            // Play video on slide change + preload next video
             $heroSlider.on('afterChange', function(event, slick, currentSlide) {
                 var activeVideo = $(slick.$slides[currentSlide]).find('video').get(0);
                 if (activeVideo) {
+                    activeVideo.preload = 'auto'; // enable loading now
                     activeVideo.currentTime = 0;
                     activeVideo.play();
+                }
+                // Preload the next video in background
+                var nextSlide = (currentSlide + 1) % slick.slideCount;
+                var nextVideo = $(slick.$slides[nextSlide]).find('video').get(0);
+                if (nextVideo && nextVideo.preload !== 'auto') {
+                    nextVideo.preload = 'auto';
+                    nextVideo.load();
                 }
             });
 
@@ -140,6 +149,7 @@
                 $heroSlider.slick('slickNext');
             });
         }
+
 
 
         // ------------------------ Sustainability / Purpose Slider
@@ -442,9 +452,9 @@
 $(window).on ('load', function (){ // makes sure the whole site is loaded
 
 // -------------------- Site Preloader
-        $('#ctn-preloader').fadeOut(); // will first fade out the loading animation
-        $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-        $('body').delay(350).css({'overflow':'visible'});
+        $('#ctn-preloader').fadeOut(200); // fade out the loading animation quickly
+        $('#preloader').delay(100).fadeOut(400); // fade out the overlay fast
+        $('body').delay(100).css({'overflow':'visible'});
 
 
 
