@@ -1585,7 +1585,197 @@ a,
 .sdg-13 { background: linear-gradient(135deg, #3F7E44, #2A5D2F); } /* Climate Action */
 .sdg-17 { background: linear-gradient(135deg, #19486A, #0B2C45); } /* Partnerships */
 
+
 .sdg-badge span {
     display: block;
     line-height: 1.2;
 }
+
+/* ============================================================
+   NEW CARD LAYOUTS (Standardized Corporate Style)
+   ============================================================ */
+
+/* AT A GLANCE - Layout 1/2 (Corporate Style) */
+.glance-section-v2 {
+    padding: 80px 0;
+    background: #f9f9f9;
+}
+
+.glance-section-v2 .section-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.vjs-glance-card-v2 {
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.vjs-glance-card-v2 .img-box {
+    width: 100%;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.vjs-glance-card-v2 .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.vjs-glance-card-v2:hover .img-box img {
+    transform: scale(1.05);
+}
+
+.vjs-glance-card-v2 .caption {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    text-align: left;
+    font-weight: 500;
+}
+
+/* OUR BUSINESSES - Layout 2 (4 Columns) */
+.biz-section-v2 {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.biz-section-v2 .section-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.vjs-biz-card-v2 {
+    margin-bottom: 30px;
+    padding: 0;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.vjs-biz-card-v2 .img-box {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.vjs-biz-card-v2 .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.vjs-biz-card-v2:hover .img-box img {
+    transform: scale(1.05);
+}
+
+.vjs-biz-card-v2 .title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a1a;
+    text-align: left;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.vjs-biz-card-v2.highlight {
+    background: #f4f4f4;
+    padding: 20px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+/* AT A GLANCE - Layout 3 (User Requested Style) */
+.glance-section-v3 {
+    padding: 100px 0;
+    background: #f4faf4; /* Light mint green */
+}
+
+.glance-section-v3 .section-title {
+    font-family: serif; 
+    font-size: 64px;
+    font-weight: 500;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.vjs-glance-card-v3 {
+    background: #fff;
+    border-radius: 30px;
+    padding: 60px 40px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vjs-glance-card-v3 .img-wrap {
+    width: 100px;
+    height: 100px;
+    background: #f5f5f5;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.vjs-glance-card-v3 .img-wrap img {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+}
+
+.vjs-glance-card-v3 .card-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: 1.5px;
+}
+
+.vjs-glance-card-v3 .card-desc {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.vjs-glance-card-v3:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 991px) {
+    .glance-section-v3 .section-title { font-size: 48px; }
+    .vjs-glance-card-v3 { padding: 40px 25px; }
+}
+
+@media (max-width: 768px) {
+    .glance-section-v2 .section-title,
+    .biz-section-v2 .section-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+}
+

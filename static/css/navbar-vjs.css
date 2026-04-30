@@ -472,3 +472,72 @@ body {
 .vjs-lang-label {
 	font-family: inherit;
 }
+/* ============================================================
+   ARCHITECTURAL SYNC - Businesses & Compact Dropdowns
+   ============================================================ */
+
+.mega-menu-content.mega-3-col {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* Forces 3 equal columns */
+    gap: 28px !important;
+    padding: 30px 40px !important; /* Symmetric corporate padding */
+    width: 900px !important; /* Balanced full-width look */
+}
+
+.mega-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ensures all text is left-aligned */
+}
+
+.compact-dropdown {
+    width: 250px !important;
+    padding: 15px 0 !important;
+    border-radius: 12px !important;
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.compact-dropdown li a {
+    padding: 10px 24px !important;
+    display: block;
+    color: #08201b;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.compact-dropdown li a:hover {
+    background: rgba(158, 192, 8, 0.1);
+    padding-left: 28px !important; /* Subtle slide-in animation */
+    color: #008D96 !important;
+}
+
+/* THE HOVER BRIDGE */
+.dropdown-menu::before {
+    content: "";
+    position: absolute;
+    height: 40px;
+    top: -40px;
+    left: 0;
+    right: 0;
+    background: transparent;
+    z-index: -1;
+}
+
+/* SWITCHING LOGIC & FLICKER PREVENTION */
+.dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: visibility 0s linear, opacity 0.3s ease, transform 0.3s ease !important;
+    pointer-events: all !important;
+    clip-path: none !important; /* Removing clip-path to ensure bridge works */
+}
+
+.dropdown.show .dropdown-menu,
+.nav-item:hover > .dropdown-menu {
+    max-height: 2000px;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
