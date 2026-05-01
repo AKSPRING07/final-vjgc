@@ -1795,3 +1795,18 @@ a,
     }
 }
 
+/* --- PRELOADER VIDEO FIX --- */
+body #preloader #ctn-preloader .icon,
+body #preloader #ctn-preloader .icon video.site-loader-video,
+body #preloader #ctn-preloader .site-loader-video {
+    animation: none !important;
+    transform: none !important;
+    width: 80px !important;
+    height: 80px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 0 !important;
+}
+
