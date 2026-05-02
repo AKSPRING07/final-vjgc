@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -364,7 +364,7 @@
 			color: #ff5f5f;
 		}
 
-		/* Ã°Å¸â€Â¥ REMOVE DUPLICATE ARROWS */
+		/* ÃƒÂ°Ã…Â¸Ã¢â‚¬ÂÃ‚Â¥ REMOVE DUPLICATE ARROWS */
 		.vjs-nav-action .dropdown-toggle::after {
 			display: none !important;
 		}
@@ -509,9 +509,9 @@
 											aria-expanded="false">About Us
 										</a>
 										<ul class="dropdown-menu about-dropdown compact-dropdown">
-											<li><a href="{{ url_for('catch_all', filename='about-us-v2.html') }}">About Vijayalakshmi Group</a></li>
-											<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}">Mission & Vision</a></li>
-											<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}">Leadership and Awards</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Mission & Vision</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership and Awards</a></li>
 										</ul>
 									</li>
 									<li class="nav-item dropdown mega-dropdown">
@@ -525,41 +525,41 @@
 													<div class="mega-section">
 														<span class="mega-title">IT Infrastructure</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('catch_all', filename='it-consulting.html') }}">IT Consulting</a></li>
-															<li><a href="{{ url_for('catch_all', filename='data-centers-hosting.html') }}?v=1.0">Enterprise Data Centers & Hosting Services</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">IT Consulting</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise Data Centers & Hosting Services</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Education & Skills</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('catch_all', filename='it-training.html') }}">IT Training</a></li>
-															<li><a href="{{ url_for('catch_all', filename='yoga-wellness.html') }}?v=1.0">Yoga & Wellness</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='it-training') }}">IT Training</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga & Wellness</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Energy & Sustainability</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('catch_all', filename='green-energy.html') }}?v=1.0">Green Energy & Solar Manufacturing</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green Energy & Solar Manufacturing</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Agri & Trade</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('catch_all', filename='export-import.html') }}">Export & Import</a></li>
-															<li><a href="{{ url_for('catch_all', filename='plantations.html') }}">Plantations & Exotic Trees</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Export & Import</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='plantations') }}">Plantations & Exotic Trees</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Real Estate</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('catch_all', filename='property-services.html') }}">Property Services</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Property Services</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Logistics & Travel</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('catch_all', filename='logistics-services.html') }}">Logistics Services</a></li>
-															<li><a href="{{ url_for('catch_all', filename='travel-rentals.html') }}">Travel & Rentals</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics Services</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel & Rentals</a></li>
 														</ul>
 													</div>
 												</div>
@@ -578,11 +578,11 @@
 														<div class="mega-section">
 															<span class="mega-title">Core Services</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='digital-transformation-sustainability.html') }}?v=1.0">Digital Transformation & IT Consulting</a></li>
-																<li><a href="{{ url_for('catch_all', filename='cloud-infrastructure-sustainability.html') }}?v=1.0">Cloud, Hosting & Infrastructure</a></li>
-																<li><a href="{{ url_for('catch_all', filename='renewable-energy-solutions.html') }}?v=1.0">Renewable Energy Solutions</a></li>
-																<li><a href="{{ url_for('catch_all', filename='logistics-trade-sustainability.html') }}">Logistics & Trade Enablement</a></li>
-																<li><a href="{{ url_for('catch_all', filename='education-skill-sustainability.html') }}">Education & Skill Development</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital Transformation & IT Consulting</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud, Hosting & Infrastructure</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable Energy Solutions</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics & Trade Enablement</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education & Skill Development</a></li>
 															</ul>
 														</div>
 													</div>
@@ -590,10 +590,10 @@
 														<div class="mega-section">
 															<span class="mega-title">Environmental Initiatives</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='tree-plantation-sustainability.html') }}">Tree Plantation & Green Cover</a></li>
-																<li><a href="{{ url_for('catch_all', filename='eco-tech-solutions.html') }}">Eco-conscious Technology Solutions</a></li>
-																<li><a href="{{ url_for('catch_all', filename='renewable-energy-adoption.html') }}?v=1.0">Renewable Energy Adoption</a></li>
-																<li><a href="{{ url_for('catch_all', filename='sustainable-business-practices.html') }}">Sustainable Business Practices</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree Plantation & Green Cover</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious Technology Solutions</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable Energy Adoption</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable Business Practices</a></li>
 															</ul>
 														</div>
 													</div>
@@ -601,9 +601,9 @@
 														<div class="mega-section">
 															<span class="mega-title">Social Responsibility</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='educational-support-csr.html') }}">Educational Support</a></li>
-																<li><a href="{{ url_for('catch_all', filename='financial-material-aid.html') }}?v=1.0">Financial & Material Aid</a></li>
-																<li><a href="{{ url_for('catch_all', filename='skill-building-youth.html') }}">Skill-Building Programs</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational Support</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial & Material Aid</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building Programs</a></li>
 															</ul>
 														</div>
 													</div>
@@ -611,9 +611,9 @@
 														<div class="mega-section">
 															<span class="mega-title">Community Development</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='rural-semi-urban-engagement.html') }}?v=1.0">Rural & Semi-Urban Engagement</a></li>
-																<li><a href="{{ url_for('catch_all', filename='awareness-programs-community.html') }}">Awareness Programs</a></li>
-																<li><a href="{{ url_for('catch_all', filename='local-infrastructure-support.html') }}">Local Infrastructure Support</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural & Semi-Urban Engagement</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness Programs</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local Infrastructure Support</a></li>
 															</ul>
 														</div>
 													</div>
@@ -622,7 +622,7 @@
 										</ul>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="{{ url_for('catch_all', filename='blog-v1.html') }}?v=1.0" role="button">Vijayalakshmi
+										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0" role="button">Vijayalakshmi
 											Foundation</a>
 									</li>
 									<li class="nav-item dropdown">
@@ -631,8 +631,8 @@
 											aria-expanded="false">Newsroom
 										</a>
 										<ul class="dropdown-menu news-dropdown compact-dropdown">
-											<li><a href="{{ url_for('catch_all', filename='media-release.html') }}">Media Releases</a></li>
-											<li><a href="{{ url_for('catch_all', filename='media-kit.html') }}">Media Kit</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media Releases</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -715,7 +715,7 @@
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
 									Building Stronger Communities Together</h1>
 
-								<a href="{{ url_for('catch_all', filename='about-us-v1.html') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>Our Values</span>
 									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
 										class="lazy-img icon ms-2">
@@ -742,7 +742,7 @@
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
 									Modernizing Global Agriculture</h1>
 
-								<a href="{{ url_for('catch_all', filename='service-v1.html') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='service-v1') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>Agri Solutions</span>
 									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
 										class="lazy-img icon ms-2">
@@ -768,7 +768,7 @@
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
 									Seamless Logistics & Supply Chain</h1>
 
-								<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>Global Trade</span>
 									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
 										class="lazy-img icon ms-2">
@@ -795,7 +795,7 @@
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp text-start">
 									Strategic Corporate Excellence</h1>
 
-								<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>Consult Us</span>
 									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
 										class="lazy-img icon ms-2">
@@ -822,7 +822,7 @@
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp text-start">
 									Empowering Future Generations</h1>
 
-								<a href="{{ url_for('catch_all', filename='service-v1.html') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='service-v1') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>Explore Learning</span>
 									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
 										class="lazy-img icon ms-2">
@@ -849,7 +849,7 @@
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
 									Innovation Through Scientific R&D</h1>
 
-								<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>View R&D</span>
 									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
 										class="lazy-img icon ms-2">
@@ -873,7 +873,7 @@
 								<h1
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp text-start">
 									Holistic Wellness & Healthcare</h1>
-								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="btn-two icon-link wow fadeInUp"
+								<a href="{{ url_for('dynamic_route', path='service-details') }}" class="btn-two icon-link wow fadeInUp"
 									data-wow-delay="0.2s">
 									<span>Health Services</span>
 									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
@@ -885,7 +885,7 @@
 				</div>
 			</div>
 			<!-- /.hero-slider-one -->
-			<a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0"
+			<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0"
 				class="more-btn rounded-circle d-flex align-items-center justify-content-center tran3s wow fadeInLeft"
 				target="_blank"><i class="bi bi-arrow-up-right"></i></a>
 		</div>
@@ -905,7 +905,7 @@
 				<div class="col-md-6">
 					<div class="ps-xl-5 ps-md-4 pe-xxl-5 d-flex align-items-center justify-content-between">
 						<div>
-							<h3 class="fw-bold">We don't compete — we set the standard</h3>
+							<h3 class="fw-bold">We don't compete â€” we set the standard</h3>
 							<p class="text-md m0">Driven by pride. Defined by results.</p>
 						</div>
 						<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/assets/screen_01.png') }}?v=1.0" alt=""
@@ -998,7 +998,7 @@
 										<p>Managing Director of VJS Group</p>
 									</div>
 								</div>
-								<a href="{{ url_for('catch_all', filename='about-us-v1.html') }}" class="btn-sixteen mt-10">View Profile</a>
+								<a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="btn-sixteen mt-10">View Profile</a>
 							</div>
 						</div>
 					</div>
@@ -1018,7 +1018,7 @@
 							<p class="text-lg mb-20">Integrated solutions <br>designed for growth and <br>long-term
 								success.</p>
 							<div class="section-subheading">
-								<a href="{{ url_for('catch_all', filename='service-v1.html') }}" class="btn-three icon-link">
+								<a href="{{ url_for('dynamic_route', path='service-v1') }}" class="btn-three icon-link">
 									<span>See All Services</span>
 									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
 										class="lazy-img icon ms-1">
@@ -1035,7 +1035,7 @@
 								<h4 class="fw-bold mb-15" style="font-size: 18px;">IT Solutions</h4>
 								<p style="font-size: 14px; line-height: 1.6em;">Providing innovative software
 									development, web solutions, and digital transformation services.</p>
-								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
+								<a href="{{ url_for('dynamic_route', path='service-details') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
 										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
 										class="lazy-img"></a>
 							</div>
@@ -1049,7 +1049,7 @@
 								<h4 class="fw-bold mb-15" style="font-size: 18px;">Education & Training</h4>
 								<p style="font-size: 14px; line-height: 1.6em;">Offering quality education and skill
 									development programs to empower students.</p>
-								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
+								<a href="{{ url_for('dynamic_route', path='service-details') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
 										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
 										class="lazy-img"></a>
 							</div>
@@ -1063,7 +1063,7 @@
 								<h4 class="fw-bold mb-15" style="font-size: 18px;">Healthcare & Wellness</h4>
 								<p style="font-size: 14px; line-height: 1.6em;">Delivering holistic wellness solutions
 									through Ayurveda, yoga, and natural therapies.</p>
-								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
+								<a href="{{ url_for('dynamic_route', path='service-details') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
 										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
 										class="lazy-img"></a>
 							</div>
@@ -1077,7 +1077,7 @@
 								<h4 class="fw-bold mb-15" style="font-size: 18px;">Export & Trading</h4>
 								<p style="font-size: 14px; line-height: 1.6em;">Supplying high-quality agricultural
 									products like pepper and coconut to global markets.</p>
-								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
+								<a href="{{ url_for('dynamic_route', path='service-details') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
 										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
 										class="lazy-img"></a>
 							</div>
@@ -1091,7 +1091,7 @@
 								<h4 class="fw-bold mb-15" style="font-size: 18px;">Business Consulting</h4>
 								<p style="font-size: 14px; line-height: 1.6em;">Helping businesses grow with strategic
 									planning, expert guidance, and actionable solutions.</p>
-								<a href="{{ url_for('catch_all', filename='service-details.html') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
+								<a href="{{ url_for('dynamic_route', path='service-details') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
 										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
 										class="lazy-img"></a>
 							</div>
@@ -1135,7 +1135,7 @@
 								<p class="text-dark" style="margin: 0; line-height: 1.6;">To deliver innovative and
 									reliable solutions across diverse
 									industries by combining
-									technology, expertise, and customer-focused services—â€empowering businesses and
+									technology, expertise, and customer-focused servicesâ€”Ã¢â‚¬Âempowering businesses and
 									communities to achieve sustainable growth.
 								</p>
 							</div>
@@ -1421,7 +1421,7 @@
 							<div class="csr-card">
 								<h3>100 MILLION TREES PLEDGED</h3>
 								<p>Driving environmental impact through global reforestation initiatives.</p>
-								<a href="#" class="view-impact">View Impact →</a>
+								<a href="#" class="view-impact">View Impact â†’</a>
 							</div>
 						</div>
 					</div>
@@ -1438,7 +1438,7 @@
 							<div class="csr-card">
 								<h3>ENTERPRISE INNOVATION</h3>
 								<p>Empowering businesses with full-stack digital transformation.</p>
-								<a href="#" class="view-impact">Explore More →</a>
+								<a href="#" class="view-impact">Explore More â†’</a>
 							</div>
 						</div>
 					</div>
@@ -1455,7 +1455,7 @@
 							<div class="csr-card">
 								<h3>15,000+ STUDENTS</h3>
 								<p>Providing skills and education for a digital-first future.</p>
-								<a href="#" class="view-impact">See Impact →</a>
+								<a href="#" class="view-impact">See Impact â†’</a>
 							</div>
 						</div>
 					</div>
@@ -1472,7 +1472,7 @@
 							<div class="csr-card">
 								<h3>AYURVEDA & YOGA</h3>
 								<p>Fostering physical and mental balance through ancient wisdom.</p>
-								<a href="#" class="view-impact">Discover Wellness →</a>
+								<a href="#" class="view-impact">Discover Wellness â†’</a>
 							</div>
 						</div>
 					</div>
@@ -1730,7 +1730,7 @@
 										<div class="post-info"><span class="fw-500 text-dark">Rashed Ka -</span> 18 Jul
 											2023
 										</div>
-										<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0" class="mt-15">
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0" class="mt-15">
 											<h4 class="tran3s blog-title"> Connecting India: Unlocking Opportunities
 												Through Connectivity</h4>
 										</a>
@@ -1740,7 +1740,7 @@
 										<video loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
 											<source src="{{ url_for('static', filename='images/news video/transport-victoria-2025-12-17-05-37-19-utc.mp4') }}?v=1.0" type="video/mp4">
 										</video>
-										<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0"
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
 											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s" style="z-index: 1;"><i
 												class="bi bi-arrow-up-right"></i></a>
 									</figure>
@@ -1753,7 +1753,7 @@
 										<div class="post-info"><span class="fw-500 text-dark">Mark Joe -</span> 09 Feb
 											2023
 										</div>
-										<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0" class="mt-15">
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0" class="mt-15">
 											<h4 class="tran3s blog-title">Coding in the Modern Era: Powering Technology
 												and Transformation</h4>
 										</a>
@@ -1763,7 +1763,7 @@
 										<video loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
 											<source src="{{ url_for('static', filename='images/news video/Code.mp4') }}?v=1.0" type="video/mp4">
 										</video>
-										<a href="{{ url_for('catch_all', filename='blog-details.html') }}?v=1.0"
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
 											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s" style="z-index: 1;"><i
 												class="bi bi-arrow-up-right"></i></a>
 									</figure>
@@ -1773,7 +1773,7 @@
 						</div>
 
 						<div class="section-btn sm-mt-40">
-							<a href="{{ url_for('catch_all', filename='blog-v2.html') }}?v=1.0" class="btn-five icon-link">
+							<a href="{{ url_for('dynamic_route', path='blog-v2') }}?v=1.0" class="btn-five icon-link">
 								<span class="text">See all blogs</span>
 								<div
 									class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
@@ -1874,7 +1874,7 @@
 						opacity: 0.8;
 					}
 
-					/* Ã¢Å“Â¨ SPARKLES */
+					/* ÃƒÂ¢Ã…â€œÃ‚Â¨ SPARKLES */
 					.spark {
 						position: absolute;
 						width: 6px;
@@ -2021,7 +2021,7 @@
 						max-width: 1200px;
 						margin: 0 auto;
 						padding: 90px 40px 35px;
-						/* Ã°Å¸â€Â¥ pushes content downward */
+						/* ÃƒÂ°Ã…Â¸Ã¢â‚¬ÂÃ‚Â¥ pushes content downward */
 						font-family: "Helvetica Neue", Arial, sans-serif;
 					}
 
@@ -2037,15 +2037,15 @@
 					/* LOGO & BRAND POSITIONING */
 					.footer-brand {
 						margin-top: 65px;
-						/* Ã°Å¸â€Â¥ Move further down */
+						/* ÃƒÂ°Ã…Â¸Ã¢â‚¬ÂÃ‚Â¥ Move further down */
 						margin-left: 35px;
-						/* Ã°Å¸â€Â¥ Move slightly back to the left */
+						/* ÃƒÂ°Ã…Â¸Ã¢â‚¬ÂÃ‚Â¥ Move slightly back to the left */
 					}
 
 					.footer-logo-group {
 						display: flex;
 						flex-direction: row;
-						/* Ã°Å¸â€Â¥ Back to side-by-side */
+						/* ÃƒÂ°Ã…Â¸Ã¢â‚¬ÂÃ‚Â¥ Back to side-by-side */
 						align-items: center;
 						padding-right: 20px;
 						gap: 12px;
@@ -2080,10 +2080,10 @@
 
 					.social-icons-mini {
 						display: inline-flex;
-						/* Ã°Å¸â€Â¥ Borders only span icon area */
+						/* ÃƒÂ°Ã…Â¸Ã¢â‚¬ÂÃ‚Â¥ Borders only span icon area */
 						gap: 14px;
 						margin-top: -10px;
-						/* Ã°Å¸â€Â¥ Move closer to text */
+						/* ÃƒÂ°Ã…Â¸Ã¢â‚¬ÂÃ‚Â¥ Move closer to text */
 						margin-left: 58px;
 						padding: 4px 0;
 						border-top: 1px solid #7030a0;
@@ -2147,7 +2147,7 @@
 					.footer-bottom {
 						border-top: 1px solid #e5e7ea;
 						margin-top: 50px;
-						/* Ã°Å¸â€Â¥ spacing like Adani */
+						/* ÃƒÂ°Ã…Â¸Ã¢â‚¬ÂÃ‚Â¥ spacing like Adani */
 						padding-top: 20px;
 						display: flex;
 						justify-content: space-between;
@@ -2160,9 +2160,9 @@
 						display: flex;
 						gap: 25px;
 						margin-left: auto;
-						/* Ã°Å¸â€Â¥ pushes links to the right */
+						/* ÃƒÂ°Ã…Â¸Ã¢â‚¬ÂÃ‚Â¥ pushes links to the right */
 						padding-left: 500px;
-						/* Ã°Å¸â€Â¥ adds small right offset */
+						/* ÃƒÂ°Ã…Â¸Ã¢â‚¬ÂÃ‚Â¥ adds small right offset */
 					}
 
 					.footer-bottom-links a {
@@ -2309,4 +2309,5 @@
 </body>
 
 </html>
+
 

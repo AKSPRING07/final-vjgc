@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -81,9 +81,9 @@
 											aria-expanded="false">About Us
 										</a>
 										<ul class="dropdown-menu about-dropdown compact-dropdown">
-											<li><a href="{{ url_for('catch_all', filename='about-us-v2.html') }}">About Vijayalakshmi Group</a></li>
-											<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}">Mission & Vision</a></li>
-											<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}">Leadership and Awards</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Mission & Vision</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership and Awards</a></li>
 										</ul>
 									</li>
 									<li class="nav-item dropdown mega-dropdown">
@@ -97,41 +97,41 @@
 													<div class="mega-section">
 														<span class="mega-title">IT Infrastructure</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('catch_all', filename='it-consulting.html') }}">IT Consulting</a></li>
-															<li><a href="{{ url_for('catch_all', filename='data-centers-hosting.html') }}?v=1.0">Enterprise Data Centers & Hosting Services</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">IT Consulting</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise Data Centers & Hosting Services</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Education & Skills</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('catch_all', filename='it-training.html') }}">IT Training</a></li>
-															<li><a href="{{ url_for('catch_all', filename='yoga-wellness.html') }}?v=1.0">Yoga & Wellness</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='it-training') }}">IT Training</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga & Wellness</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Energy & Sustainability</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('catch_all', filename='green-energy.html') }}?v=1.0">Green Energy & Solar Manufacturing</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green Energy & Solar Manufacturing</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Agri & Trade</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('catch_all', filename='export-import.html') }}">Export & Import</a></li>
-															<li><a href="{{ url_for('catch_all', filename='plantations.html') }}">Plantations & Exotic Trees</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Export & Import</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='plantations') }}">Plantations & Exotic Trees</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Real Estate</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('catch_all', filename='property-services.html') }}">Property Services</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Property Services</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Logistics & Travel</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('catch_all', filename='logistics-services.html') }}">Logistics Services</a></li>
-															<li><a href="{{ url_for('catch_all', filename='travel-rentals.html') }}">Travel & Rentals</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics Services</a></li>
+															<li><a href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel & Rentals</a></li>
 														</ul>
 													</div>
 												</div>
@@ -150,11 +150,11 @@
 														<div class="mega-section">
 															<span class="mega-title">Core Services</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='digital-transformation-sustainability.html') }}?v=1.0">Digital Transformation & IT Consulting</a></li>
-																<li><a href="{{ url_for('catch_all', filename='cloud-infrastructure-sustainability.html') }}?v=1.0">Cloud, Hosting & Infrastructure</a></li>
-																<li><a href="{{ url_for('catch_all', filename='renewable-energy-solutions.html') }}?v=1.0">Renewable Energy Solutions</a></li>
-																<li><a href="{{ url_for('catch_all', filename='logistics-trade-sustainability.html') }}">Logistics & Trade Enablement</a></li>
-																<li><a href="{{ url_for('catch_all', filename='education-skill-sustainability.html') }}">Education & Skill Development</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital Transformation & IT Consulting</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud, Hosting & Infrastructure</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable Energy Solutions</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics & Trade Enablement</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education & Skill Development</a></li>
 															</ul>
 														</div>
 													</div>
@@ -162,10 +162,10 @@
 														<div class="mega-section">
 															<span class="mega-title">Environmental Initiatives</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='tree-plantation-sustainability.html') }}">Tree Plantation & Green Cover</a></li>
-																<li><a href="{{ url_for('catch_all', filename='eco-tech-solutions.html') }}">Eco-conscious Technology Solutions</a></li>
-																<li><a href="{{ url_for('catch_all', filename='renewable-energy-adoption.html') }}?v=1.0">Renewable Energy Adoption</a></li>
-																<li><a href="{{ url_for('catch_all', filename='sustainable-business-practices.html') }}">Sustainable Business Practices</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree Plantation & Green Cover</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious Technology Solutions</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable Energy Adoption</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable Business Practices</a></li>
 															</ul>
 														</div>
 													</div>
@@ -173,9 +173,9 @@
 														<div class="mega-section">
 															<span class="mega-title">Social Responsibility</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='educational-support-csr.html') }}">Educational Support</a></li>
-																<li><a href="{{ url_for('catch_all', filename='financial-material-aid.html') }}?v=1.0">Financial & Material Aid</a></li>
-																<li><a href="{{ url_for('catch_all', filename='skill-building-youth.html') }}">Skill-Building Programs</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational Support</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial & Material Aid</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building Programs</a></li>
 															</ul>
 														</div>
 													</div>
@@ -183,9 +183,9 @@
 														<div class="mega-section">
 															<span class="mega-title">Community Development</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='rural-semi-urban-engagement.html') }}?v=1.0">Rural & Semi-Urban Engagement</a></li>
-																<li><a href="{{ url_for('catch_all', filename='awareness-programs-community.html') }}">Awareness Programs</a></li>
-																<li><a href="{{ url_for('catch_all', filename='local-infrastructure-support.html') }}">Local Infrastructure Support</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural & Semi-Urban Engagement</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness Programs</a></li>
+																<li><a href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local Infrastructure Support</a></li>
 															</ul>
 														</div>
 													</div>
@@ -194,7 +194,7 @@
 										</ul>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="{{ url_for('catch_all', filename='blog-v1.html') }}?v=1.0" role="button">Vijayalakshmi
+										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0" role="button">Vijayalakshmi
 											Foundation</a>
 									</li>
 									<li class="nav-item dropdown">
@@ -203,8 +203,8 @@
 											aria-expanded="false">Newsroom
 										</a>
 										<ul class="dropdown-menu news-dropdown compact-dropdown">
-											<li><a href="{{ url_for('catch_all', filename='media-release.html') }}">Media Releases</a></li>
-											<li><a href="{{ url_for('catch_all', filename='media-kit.html') }}">Media Kit</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media Releases</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -271,7 +271,7 @@
 						<ul class="style-none d-inline-flex pager mt-40">
 							<li><a href="{{ url_for('home') }}" class="text-white opacity-50">Home</a></li>
 							<li><span class="text-white opacity-50 px-2">/</span></li>
-							<li><a href="{{ url_for('catch_all', filename='sustainability.html') }}" class="text-white opacity-50">Sustainability</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='sustainability') }}" class="text-white opacity-50">Sustainability</a></li>
 							<li><span class="text-white opacity-50 px-2">/</span></li>
 							<li class="text-white fw-bold">Renewable Energy Solutions</li>
 						</ul>
@@ -601,9 +601,9 @@
 					<div class="footer-col" style="flex: 1 1 150px;">
 						<h5 class="fw-bold mb-4">About Us</h5>
 						<ul class="list-unstyled opacity-75">
-							<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}" class="text-decoration-none text-dark">Company</a></li>
-							<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}" class="text-decoration-none text-dark">Leadership</a></li>
-							<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}" class="text-decoration-none text-dark">Awards</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="text-decoration-none text-dark">Company</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}" class="text-decoration-none text-dark">Leadership</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}" class="text-decoration-none text-dark">Awards</a></li>
 						</ul>
 					</div>
 					<div class="footer-col" style="flex: 1 1 150px;">
@@ -617,14 +617,14 @@
 					<div class="footer-col" style="flex: 1 1 150px;">
 						<h5 class="fw-bold mb-4">Support</h5>
 						<ul class="list-unstyled opacity-75">
-							<li><a href="{{ url_for('catch_all', filename='contact.html') }}?v=1.0" class="text-decoration-none text-dark">Contact Us</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0" class="text-decoration-none text-dark">Contact Us</a></li>
 							<li>Terms & Conditions</li>
 						</ul>
 					</div>
 				</div>
 				<hr class="my-5 opacity-10">
 				<div class="footer-bottom d-flex justify-content-between flex-wrap">
-					<p class="m-0">© 2025 Vijayalakshmi Group Of Companies</p>
+					<p class="m-0">Â© 2025 Vijayalakshmi Group Of Companies</p>
 					<div class="footer-links d-flex gap-4">
 						<a href="#" class="text-decoration-none text-dark opacity-50">Privacy Notice</a>
 						<a href="#" class="text-decoration-none text-dark opacity-50">Cookie Policy</a>
@@ -664,3 +664,4 @@
 	<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
 </body>
 </html>
+
