@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,7 +9,7 @@
 	<meta property="og:url" content="https://creativegigstf.com">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Vijayalakshmi Group Of Companies">
-	<meta name='og:image' content='{{ url_for('static', filename='images/assets/ogg.png') }}?v=1.2'>
+	<meta name='og:image' content='{{ url_for("static", filename="images/assets/ogg.png") }}?v=1.2'>
 	<!-- For IE -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- For Resposive Device -->
@@ -23,13 +23,17 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
 	<title>Vijayalakshmi Foundation | Vijayalakshmi Group</title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" sizes="56x56" href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
+	<link rel="icon" type="image/png" sizes="56x56"
+		href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0"
+		media="all">
 	<!-- Main style sheet -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0"
+		media="all">
 	<!-- responsive style sheet -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0"
+		media="all">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.0" media="all">
 
 	<!-- Fix Internet Explorer ______________________________________-->
@@ -39,57 +43,50 @@
 			<script src="{{ url_for('static', filename='vendor/respond.js') }}?v=1.0"></script>
 		<![endif]-->
 	<style>
-		
-
-			
-
-			
 		}
 
 		/* ================= GLASS EFFECT ================= */
 
-		
+
 
 		/* ?? HARD TOP COVER (FINAL LINE KILLER) */
-		
+
 
 		/* keep content above */
-		
+
 
 		/* LOGO */
-		
+
 
 		/* NAVBAR */
-		
 
-		
+
+
 
 		/* HOVER */
-		
+
 
 		/* HOVER INDICATOR */
-		
+
 
 		/* DROPDOWN */
-		
 
-		
+
+
 
 		/* ================= STICKY STATE ================= */
 
-		
 
-		
 
-		
+
+
+
 
 		/* LOGO SCALE */
-		
+
 
 		/* MOBILE */
-		@media (max-width: 991px) {
-			
-		}
+		@media (max-width: 991px) {}
 
 		/* BODY FIX */
 		html,
@@ -135,7 +132,7 @@
 
 		.hero-banner-one .hero-img::after {
 			content: ';
-			position: absolute;
+ position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
@@ -233,7 +230,8 @@
 			}
 		}
 	</style>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0"
+		media="all">
 </head>
 
 <body>
@@ -245,7 +243,8 @@
 			<div id="ctn-preloader" class="ctn-preloader">
 				<div class="icon"><video class="m-auto d-block site-loader-video" autoplay muted loop playsinline
 						webkit-playsinline preload="auto" disablepictureinpicture aria-label="Loading animation">
-						<source src="{{ url_for('static', filename='images/fav-icon/reload.ani.mp4') }}?v=1.0" type="video/mp4">
+						<source src="{{ url_for('static', filename='images/fav-icon/reload.ani.mp4') }}?v=1.0"
+							type="video/mp4">
 					</video></div>
 			</div>
 		</div>
@@ -264,8 +263,8 @@
 							<a href="{{ url_for('home') }}" class="d-flex align-items-center">
 								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
 									<span class="site-brand-lockup__mark-wrap"><img
-											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt=""
-											class="site-brand-lockup__mark"></span>
+											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+											alt="" class="site-brand-lockup__mark"></span>
 									<span class="site-brand-lockup__text">
 										<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;Groups</span>
 										<span class="site-brand-lockup__subtitle">Of Companies</span>
@@ -289,8 +288,8 @@
 												<span class="site-brand-lockup"
 													aria-label="Vijayalakshmi Group Of Companies">
 													<span class="site-brand-lockup__mark-wrap"><img
-															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt=""
-															class="site-brand-lockup__mark"></span>
+															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+															alt="" class="site-brand-lockup__mark"></span>
 													<span class="site-brand-lockup__text">
 														<span class="site-brand-lockup__title">Vijayalakshmi
 															Groups</span>
@@ -306,13 +305,16 @@
 											aria-expanded="false">About Us
 										</a>
 										<ul class="dropdown-menu about-dropdown compact-dropdown">
-											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Vijayalakshmi Group</a></li>
-											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Mission & Vision</a></li>
-											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership and Awards</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About
+													Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Mission &
+													Vision</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership
+													and Awards</a></li>
 										</ul>
 									</li>
 									<li class="nav-item dropdown mega-dropdown">
-																														<a class="nav-link dropdown-toggle" href="#" role="button"
+										<a class="nav-link dropdown-toggle" href="#" role="button"
 											data-bs-toggle="dropdown" data-bs-auto-close="outside"
 											aria-expanded="false">Businesses
 										</a>
@@ -322,41 +324,61 @@
 													<div class="mega-section">
 														<span class="mega-title">IT Infrastructure</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">IT Consulting</a></li>
-															<li><a href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise Data Centers & Hosting Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-consulting') }}">IT
+																	Consulting</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise
+																	Data Centers & Hosting Services</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Education & Skills</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='it-training') }}">IT Training</a></li>
-															<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga & Wellness</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-training') }}">IT
+																	Training</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga
+																	& Wellness</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Energy & Sustainability</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green Energy & Solar Manufacturing</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green
+																	Energy & Solar Manufacturing</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Agri & Trade</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Export & Import</a></li>
-															<li><a href="{{ url_for('dynamic_route', path='plantations') }}">Plantations & Exotic Trees</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='export-import') }}">Export
+																	& Import</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='plantations') }}">Plantations
+																	& Exotic Trees</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Real Estate</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Property Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='property-services') }}">Property
+																	Services</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Logistics & Travel</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics Services</a></li>
-															<li><a href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel & Rentals</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics
+																	Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel
+																	& Rentals</a></li>
 														</ul>
 													</div>
 												</div>
@@ -375,11 +397,21 @@
 														<div class="mega-section">
 															<span class="mega-title">Core Services</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital Transformation & IT Consulting</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud, Hosting & Infrastructure</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable Energy Solutions</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics & Trade Enablement</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education & Skill Development</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital
+																		Transformation & IT Consulting</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud,
+																		Hosting & Infrastructure</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable
+																		Energy Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics
+																		& Trade Enablement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education
+																		& Skill Development</a></li>
 															</ul>
 														</div>
 													</div>
@@ -387,10 +419,18 @@
 														<div class="mega-section">
 															<span class="mega-title">Environmental Initiatives</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree Plantation & Green Cover</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious Technology Solutions</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable Energy Adoption</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable Business Practices</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree
+																		Plantation & Green Cover</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious
+																		Technology Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable
+																		Energy Adoption</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable
+																		Business Practices</a></li>
 															</ul>
 														</div>
 													</div>
@@ -398,9 +438,15 @@
 														<div class="mega-section">
 															<span class="mega-title">Social Responsibility</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational Support</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial & Material Aid</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building Programs</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational
+																		Support</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial
+																		& Material Aid</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building
+																		Programs</a></li>
 															</ul>
 														</div>
 													</div>
@@ -408,9 +454,15 @@
 														<div class="mega-section">
 															<span class="mega-title">Community Development</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural & Semi-Urban Engagement</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness Programs</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local Infrastructure Support</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural
+																		& Semi-Urban Engagement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness
+																		Programs</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local
+																		Infrastructure Support</a></li>
 															</ul>
 														</div>
 													</div>
@@ -419,7 +471,8 @@
 										</ul>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0" role="button">Vijayalakshmi
+										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0"
+											role="button">Vijayalakshmi
 											Foundation</a>
 									</li>
 									<li class="nav-item dropdown">
@@ -428,8 +481,10 @@
 											aria-expanded="false">Newsroom
 										</a>
 										<ul class="dropdown-menu news-dropdown compact-dropdown">
-											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media Releases</a></li>
-											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media
+													Releases</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a>
+											</li>
 										</ul>
 									</li>
 								</ul>
@@ -497,7 +552,9 @@
 			<div class="vjs-hero-slider m0">
 				<!-- Slide 1: Empowerment -->
 				<div class="item m0">
-					<div class="hero-img" style="background-image: url('{{ url_for('static', filename='images/media/hero_empowerment_vjs.png') }}');"></div>
+					<div class="hero-img"
+						style="background-image: url('{{ url_for('static', filename='images/media/hero_empowerment_vjs.png') }}');">
+					</div>
 					<div class="container position-relative">
 						<div class="row">
 							<div class="col-xl-7 col-lg-8">
@@ -509,7 +566,9 @@
 				</div>
 				<!-- Slide 2: Healthcare -->
 				<div class="item m0">
-					<div class="hero-img" style="background-image: url('{{ url_for('static', filename='images/media/hero_healthcare_vjs.png') }}');"></div>
+					<div class="hero-img"
+						style="background-image: url('{{ url_for('static', filename='images/media/hero_healthcare_vjs.png') }}');">
+					</div>
 					<div class="container position-relative">
 						<div class="row">
 							<div class="col-xl-7 col-lg-8">
@@ -521,7 +580,9 @@
 				</div>
 				<!-- Slide 3: Environment -->
 				<div class="item m0">
-					<div class="hero-img" style="background-image: url('{{ url_for('static', filename='images/media/hero_environment_vjs.png') }}');"></div>
+					<div class="hero-img"
+						style="background-image: url('{{ url_for('static', filename='images/media/hero_environment_vjs.png') }}');">
+					</div>
 					<div class="container position-relative">
 						<div class="row">
 							<div class="col-xl-7 col-lg-8">
@@ -605,8 +666,8 @@
 						<div class="glance-card-premium"
 							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
 							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
-								<img src="{{ url_for('static', filename='images/media/glance_empowerment.png') }}?v=1.0" alt="Education Support"
-									class="w-100 h-100 tran4s" style="object-fit: cover;">
+								<img src="{{ url_for('static', filename='images/media/glance_empowerment.png') }}?v=1.0"
+									alt="Education Support" class="w-100 h-100 tran4s" style="object-fit: cover;">
 								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
 									class="accent-bar"></div>
 							</div>
@@ -626,8 +687,8 @@
 						<div class="glance-card-premium"
 							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
 							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
-								<img src="{{ url_for('static', filename='images/media/glance_healthcare.png') }}?v=1.0" alt="Social Service"
-									class="w-100 h-100 tran4s" style="object-fit: cover;">
+								<img src="{{ url_for('static', filename='images/media/glance_healthcare.png') }}?v=1.0"
+									alt="Social Service" class="w-100 h-100 tran4s" style="object-fit: cover;">
 								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
 									class="accent-bar"></div>
 							</div>
@@ -646,8 +707,8 @@
 						<div class="glance-card-premium"
 							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
 							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
-								<img src="{{ url_for('static', filename='images/media/glance_environment.png') }}?v=1.0" alt="Community Development"
-									class="w-100 h-100 tran4s" style="object-fit: cover;">
+								<img src="{{ url_for('static', filename='images/media/glance_environment.png') }}?v=1.0"
+									alt="Community Development" class="w-100 h-100 tran4s" style="object-fit: cover;">
 								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
 									class="accent-bar"></div>
 							</div>
@@ -803,7 +864,8 @@
 				<div class="footer-top d-flex flex-wrap justify-content-between">
 					<div class="footer-brand" style="flex: 1 1 300px;">
 						<div class="footer-logo d-flex align-items-center mb-4">
-							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="" style="width: 50px;">
+							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+								alt="" style="width: 50px;">
 							<div class="ms-3">
 								<div style="font-size: 16px; font-weight: 700; color: #081c17; line-height: 1.2;">
 									Vijayalakshmi Group</div>
@@ -822,9 +884,12 @@
 					<div class="footer-col" style="flex: 1 1 150px;">
 						<h5 class="fw-bold mb-4">About Us</h5>
 						<ul class="list-unstyled opacity-75">
-							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="text-decoration-none text-dark">Company</a></li>
-							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}" class="text-decoration-none text-dark">Leadership</a></li>
-							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}" class="text-decoration-none text-dark">Awards</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}"
+									class="text-decoration-none text-dark">Company</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}"
+									class="text-decoration-none text-dark">Leadership</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}"
+									class="text-decoration-none text-dark">Awards</a></li>
 						</ul>
 					</div>
 					<div class="footer-col" style="flex: 1 1 150px;">
@@ -838,7 +903,8 @@
 					<div class="footer-col" style="flex: 1 1 150px;">
 						<h5 class="fw-bold mb-4">Support</h5>
 						<ul class="list-unstyled opacity-75">
-							<li><a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0" class="text-decoration-none text-dark">Contact Us</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0"
+									class="text-decoration-none text-dark">Contact Us</a></li>
 							<li>Terms & Conditions</li>
 						</ul>
 					</div>
@@ -897,7 +963,8 @@
 													<input type="password" placeholder="Enter Password"
 														class="pass_log_id">
 													<span class="placeholder_icon"><span class="passVicon"><img
-																src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0" alt=""></span></span>
+																src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0"
+																alt=""></span></span>
 												</div>
 											</div>
 											<div class="col-12">
@@ -942,7 +1009,8 @@
 													<input type="password" placeholder="Enter Password"
 														class="pass_log_id">
 													<span class="placeholder_icon"><span class="passVicon"><img
-																src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0" alt=""></span></span>
+																src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0"
+																alt=""></span></span>
 												</div>
 											</div>
 											<div class="col-12">
@@ -974,14 +1042,16 @@
 								<div class="col-sm-6">
 									<a href="#"
 										class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
-										<img src="{{ url_for('static', filename='images/icon/google.png') }}?v=1.0" alt="">
+										<img src="{{ url_for('static', filename='images/icon/google.png') }}?v=1.0"
+											alt="">
 										<span class="ps-3">Signup with Google</span>
 									</a>
 								</div>
 								<div class="col-sm-6">
 									<a href="#"
 										class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
-										<img src="{{ url_for('static', filename='images/icon/facebook.png') }}?v=1.0" alt="">
+										<img src="{{ url_for('static', filename='images/icon/facebook.png') }}?v=1.0"
+											alt="">
 										<span class="ps-3">Signup with Facebook</span>
 									</a>
 								</div>
@@ -1049,4 +1119,3 @@
 </body>
 
 </html>
-
