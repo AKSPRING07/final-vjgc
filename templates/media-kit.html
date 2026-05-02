@@ -5,12 +5,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Media Kit | Vijayalakshmi Group</title>
-	<link rel="icon" type="image/png" sizes="56x56" href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0" media="all">
+	<link rel="icon" type="image/png" sizes="56x56"
+		href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0"
+		media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0"
+		media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0"
+		media="all">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.0" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0"
+		media="all">
 </head>
 
 <body>
@@ -24,8 +29,8 @@
 							<a href="{{ url_for('home') }}" class="d-flex align-items-center">
 								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
 									<span class="site-brand-lockup__mark-wrap"><img
-											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt=""
-											class="site-brand-lockup__mark"></span>
+											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+											alt="" class="site-brand-lockup__mark"></span>
 									<span class="site-brand-lockup__text">
 										<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;Groups</span>
 										<span class="site-brand-lockup__subtitle">Of Companies</span>
@@ -49,8 +54,8 @@
 												<span class="site-brand-lockup"
 													aria-label="Vijayalakshmi Group Of Companies">
 													<span class="site-brand-lockup__mark-wrap"><img
-															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt=""
-															class="site-brand-lockup__mark"></span>
+															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+															alt="" class="site-brand-lockup__mark"></span>
 													<span class="site-brand-lockup__text">
 														<span class="site-brand-lockup__title">Vijayalakshmi
 															Groups</span>
@@ -66,13 +71,16 @@
 											aria-expanded="false">About Us
 										</a>
 										<ul class="dropdown-menu about-dropdown compact-dropdown">
-											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Vijayalakshmi Group</a></li>
-											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Mission & Vision</a></li>
-											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership and Awards</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About
+													Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Mission &
+													Vision</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership
+													and Awards</a></li>
 										</ul>
 									</li>
 									<li class="nav-item dropdown mega-dropdown">
-																														<a class="nav-link dropdown-toggle" href="#" role="button"
+										<a class="nav-link dropdown-toggle" href="#" role="button"
 											data-bs-toggle="dropdown" data-bs-auto-close="outside"
 											aria-expanded="false">Businesses
 										</a>
@@ -82,41 +90,61 @@
 													<div class="mega-section">
 														<span class="mega-title">IT Infrastructure</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">IT Consulting</a></li>
-															<li><a href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise Data Centers & Hosting Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-consulting') }}">IT
+																	Consulting</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise
+																	Data Centers & Hosting Services</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Education & Skills</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='it-training') }}">IT Training</a></li>
-															<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga & Wellness</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-training') }}">IT
+																	Training</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga
+																	& Wellness</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Energy & Sustainability</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green Energy & Solar Manufacturing</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green
+																	Energy & Solar Manufacturing</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Agri & Trade</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Export & Import</a></li>
-															<li><a href="{{ url_for('dynamic_route', path='plantations') }}">Plantations & Exotic Trees</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='export-import') }}">Export
+																	& Import</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='plantations') }}">Plantations
+																	& Exotic Trees</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Real Estate</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Property Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='property-services') }}">Property
+																	Services</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Logistics & Travel</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics Services</a></li>
-															<li><a href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel & Rentals</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics
+																	Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel
+																	& Rentals</a></li>
 														</ul>
 													</div>
 												</div>
@@ -135,11 +163,21 @@
 														<div class="mega-section">
 															<span class="mega-title">Core Services</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital Transformation & IT Consulting</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud, Hosting & Infrastructure</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable Energy Solutions</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics & Trade Enablement</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education & Skill Development</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital
+																		Transformation & IT Consulting</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud,
+																		Hosting & Infrastructure</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable
+																		Energy Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics
+																		& Trade Enablement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education
+																		& Skill Development</a></li>
 															</ul>
 														</div>
 													</div>
@@ -147,10 +185,18 @@
 														<div class="mega-section">
 															<span class="mega-title">Environmental Initiatives</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree Plantation & Green Cover</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious Technology Solutions</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable Energy Adoption</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable Business Practices</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree
+																		Plantation & Green Cover</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious
+																		Technology Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable
+																		Energy Adoption</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable
+																		Business Practices</a></li>
 															</ul>
 														</div>
 													</div>
@@ -158,9 +204,15 @@
 														<div class="mega-section">
 															<span class="mega-title">Social Responsibility</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational Support</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial & Material Aid</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building Programs</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational
+																		Support</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial
+																		& Material Aid</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building
+																		Programs</a></li>
 															</ul>
 														</div>
 													</div>
@@ -168,9 +220,15 @@
 														<div class="mega-section">
 															<span class="mega-title">Community Development</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural & Semi-Urban Engagement</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness Programs</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local Infrastructure Support</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural
+																		& Semi-Urban Engagement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness
+																		Programs</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local
+																		Infrastructure Support</a></li>
 															</ul>
 														</div>
 													</div>
@@ -179,7 +237,8 @@
 										</ul>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0" role="button">Vijayalakshmi
+										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0"
+											role="button">Vijayalakshmi
 											Foundation</a>
 									</li>
 									<li class="nav-item dropdown">
@@ -188,8 +247,10 @@
 											aria-expanded="false">Newsroom
 										</a>
 										<ul class="dropdown-menu news-dropdown compact-dropdown">
-											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media Releases</a></li>
-											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media
+													Releases</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a>
+											</li>
 										</ul>
 									</li>
 								</ul>
@@ -379,11 +440,11 @@
 					<div class="col-lg-4 col-md-6">
 						<div class="vjs-asset-card">
 							<div class="vjs-asset-img-box" style="background: #0d1117; border-radius: 16px 16px 0 0;">
-								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-logo.svg') }}?v=1.0" alt="White on Black"
-									style="width: 190px; filter: brightness(0) invert(1);">
+								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-logo.svg') }}?v=1.0"
+									alt="White on Black" style="width: 190px; filter: brightness(0) invert(1);">
 							</div>
 							<div class="vjs-asset-body">
-								<div class="vjs-asset-label">Logo â€” White on Dark</div>
+								<div class="vjs-asset-label">Logo ” White on Dark</div>
 								<a href="#" class="vjs-download-link">Download</a>
 							</div>
 						</div>
@@ -393,10 +454,11 @@
 					<div class="col-lg-4 col-md-6">
 						<div class="vjs-asset-card">
 							<div class="vjs-asset-img-box" style="background: #f8fbf4; border-radius: 16px 16px 0 0;">
-								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-logo.svg') }}?v=1.0" alt="Main Logo" style="width: 190px;">
+								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-logo.svg') }}?v=1.0"
+									alt="Main Logo" style="width: 190px;">
 							</div>
 							<div class="vjs-asset-body">
-								<div class="vjs-asset-label">Logo â€” Corporate (Full Colour)</div>
+								<div class="vjs-asset-label">Logo ” Corporate (Full Colour)</div>
 								<a href="#" class="vjs-download-link">Download</a>
 							</div>
 						</div>
@@ -405,12 +467,18 @@
 					<!-- Card 3: Brand Unit -->
 					<div class="col-lg-4 col-md-6">
 						<div class="vjs-asset-card">
-							<div class="vjs-asset-img-box" style="background: #fff; border-radius: 16px 16px 0 0; border-bottom: 1px solid #f0f5ec;">
+							<div class="vjs-asset-img-box"
+								style="background: #fff; border-radius: 16px 16px 0 0; border-bottom: 1px solid #f0f5ec;">
 								<div class="d-flex align-items-center gap-3">
-									<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="" style="width: 54px; height: 54px; object-fit: contain;">
+									<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+										alt="" style="width: 54px; height: 54px; object-fit: contain;">
 									<div style="border-left: 2px solid #9ec008; padding-left: 14px;">
-										<div style="font-size: 15px; font-weight: 800; color: #081c17; line-height: 1.2; letter-spacing: -0.3px;">Vijayalakshmi Group</div>
-										<div style="font-size: 10px; color: #9ec008; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 3px;">Growth with Goodness</div>
+										<div
+											style="font-size: 15px; font-weight: 800; color: #081c17; line-height: 1.2; letter-spacing: -0.3px;">
+											Vijayalakshmi Group</div>
+										<div
+											style="font-size: 10px; color: #9ec008; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 3px;">
+											Growth with Goodness</div>
 									</div>
 								</div>
 							</div>
@@ -423,6 +491,7 @@
 				</div>
 			</div>
 		</div>
+
 
 		<!-- Footer -->
 		<div class="footer-mini">
@@ -547,7 +616,8 @@
 				<div class="footer-top">
 					<div class="footer-brand">
 						<div class="footer-logo-group">
-							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="Logo Mark">
+							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+								alt="Logo Mark">
 							<div class="footer-logo-text">
 								<span>Vijayalakshmi Group</span>
 								<span>OF COMPANIES</span>
@@ -582,202 +652,8 @@
 
 				<div class="footer-bottom">
 					<div style="display: flex; align-items: center; gap: 8px;">
-						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="Mark" style="height: 20px; width: auto;">
-						<span>Â© 2025 Vijayalakshmi Group</span>
-					</div>
-					<div class="footer-bottom-links">
-						<a href="#">Legal Disclaimer</a>
-						<a href="#">Privacy Notice</a>
-						<a href="#">Terms & Conditions</a>
-					</div>
-							<div class="vjs-asset-body">
-								<div class="vjs-asset-label">Logo â€” Corporate (Full Colour)</div>
-								<a href="#" class="vjs-download-link">Download</a>
-							</div>
-						</div>
-					</div>
-
-					<!-- Card 3: Brand Unit -->
-					<div class="col-lg-4 col-md-6">
-						<div class="vjs-asset-card">
-							<div class="vjs-asset-img-box" style="background: #fff; border-radius: 16px 16px 0 0; border-bottom: 1px solid #f0f5ec;">
-								<div class="d-flex align-items-center gap-3">
-									<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="" style="width: 54px; height: 54px; object-fit: contain;">
-									<div style="border-left: 2px solid #9ec008; padding-left: 14px;">
-										<div style="font-size: 15px; font-weight: 800; color: #081c17; line-height: 1.2; letter-spacing: -0.3px;">Vijayalakshmi Group</div>
-										<div style="font-size: 10px; color: #9ec008; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 3px;">Growth with Goodness</div>
-									</div>
-								</div>
-							</div>
-							<div class="vjs-asset-body">
-								<div class="vjs-asset-label">Logo â€” Brand Unit (Horizontal)</div>
-								<a href="#" class="vjs-download-link">Download</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Footer -->
-		<div class="footer-mini">
-			<style>
-				.footer-mini {
-					width: 100%;
-					background: #f5f7f8;
-					border-top: 1px solid #e5e7ea;
-				}
-
-				.footer-container {
-					max-width: 1200px;
-					margin: 0 auto;
-					padding: 90px 40px 35px;
-					font-family: "Helvetica Neue", Arial, sans-serif;
-				}
-
-				.footer-top {
-					display: flex;
-					justify-content: space-between;
-					align-items: flex-start;
-					gap: 60px;
-					margin-top: 10px;
-				}
-
-				.footer-brand {
-					margin-top: 65px;
-					margin-left: 35px;
-				}
-
-				.footer-logo-group {
-					display: flex;
-					align-items: center;
-					gap: 12px;
-					margin-bottom: 25px;
-				}
-
-				.footer-logo-group img {
-					height: 46px;
-					width: auto;
-				}
-
-				.footer-logo-text {
-					display: flex;
-					flex-direction: column;
-					line-height: 1.1;
-				}
-
-				.footer-logo-text span:first-child {
-					font-size: 16px;
-					font-weight: 700;
-					color: #000;
-					letter-spacing: 0.5px;
-					text-transform: uppercase;
-				}
-
-				.footer-logo-text span:last-child {
-					font-size: 10px;
-					font-weight: 600;
-					color: #666;
-					letter-spacing: 1.5px;
-				}
-
-				.social-icons-mini {
-					display: inline-flex;
-					gap: 14px;
-					margin-left: 58px;
-					padding: 4px 0;
-					border-top: 1px solid #7030a0;
-					border-bottom: 1px solid #7030a0;
-				}
-
-				.social-icons-mini a {
-					color: #000;
-					font-size: 14px;
-					transition: 0.3s;
-				}
-
-				.footer-col h5 {
-					font-size: 14px;
-					font-weight: 600;
-					margin-bottom: 16px;
-					color: #000;
-				}
-
-				.footer-col ul {
-					list-style: none;
-					padding: 0;
-					margin: 0;
-				}
-
-				.footer-col ul li a {
-					text-decoration: none;
-					font-size: 12px;
-					color: #666;
-					transition: 0.3s;
-				}
-
-				.footer-bottom {
-					border-top: 1px solid #e5e7ea;
-					margin-top: 50px;
-					padding-top: 20px;
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-					font-size: 12px;
-					color: #666;
-				}
-
-				.footer-bottom-links {
-					display: flex;
-					gap: 25px;
-				}
-
-				.footer-bottom-links a {
-					text-decoration: none;
-					color: #666;
-				}
-			</style>
-
-			<div class="footer-container">
-				<div class="footer-top">
-					<div class="footer-brand">
-						<div class="footer-logo-group">
-							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="Logo Mark">
-							<div class="footer-logo-text">
-								<span>Vijayalakshmi Group</span>
-								<span>OF COMPANIES</span>
-							</div>
-						</div>
-						<div class="social-icons-mini">
-							<a href="#"><i class="bi bi-facebook"></i></a>
-							<a href="#"><i class="bi bi-instagram"></i></a>
-							<a href="#"><i class="bi bi-youtube"></i></a>
-							<a href="#"><i class="bi bi-linkedin"></i></a>
-						</div>
-					</div>
-
-					<div class="footer-col">
-						<h5>About Us</h5>
-						<ul>
-							<li><a href="#">About Company</a></li>
-							<li><a href="#">Leadership</a></li>
-							<li><a href="#">Our Journey</a></li>
-						</ul>
-					</div>
-
-					<div class="footer-col">
-						<h5>Quick Links</h5>
-						<ul>
-							<li><a href="#">Sustainability</a></li>
-							<li><a href="#">Newsroom</a></li>
-							<li><a href="#">Contact Us</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="footer-bottom">
-					<div style="display: flex; align-items: center; gap: 8px;">
-						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="Mark" style="height: 20px; width: auto;">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="Mark" style="height: 20px; width: auto;">
 						<span>Â© 2025 Vijayalakshmi Group</span>
 					</div>
 					<div class="footer-bottom-links">
@@ -793,7 +669,7 @@
 	<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
 	<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
 	<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
-		<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
-		<!-- Navbar Hover Animation -->
-</html>
+	<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
+	<!-- Navbar Hover Animation -->
 
+</html>
