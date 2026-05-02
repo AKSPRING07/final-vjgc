@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -393,10 +393,6 @@
 				transform: translateX(2px);
 			}
 
-			.vjs-download-link::before {
-				content: '?';
-				font-size: 14px;
-			}
 
 			.vjs-category-tab {
 				color: #08201b;
@@ -431,60 +427,91 @@
 		<div class="media-kit-content-section pt-100 pb-150 lg-pt-80 lg-pb-100">
 			<div class="container">
 				<div class="d-flex justify-content-between align-items-center mb-60 border-bottom pb-20">
-					<h2 class="fw-bold m-0" style="color: #08201b; font-size: 32px; letter-spacing: 1px;">MEDIA KIT</h2>
-					<div class="vjs-category-tab">Brand Identity</div>
+					<h2 class="fw-bold m-0" style="color: #08201b; font-size: 32px; letter-spacing: 1px;">MEDIA GALLERY</h2>
+					<div class="vjs-category-tab">High-Res Images</div>
 				</div>
 
 				<div class="row">
-					<!-- Card 1: Logo White on Dark -->
-					<div class="col-lg-4 col-md-6">
-						<div class="vjs-asset-card">
-							<div class="vjs-asset-img-box" style="background: #0d1117; border-radius: 16px 16px 0 0;">
-								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-logo.svg') }}?v=1.0"
-									alt="White on Black" style="width: 190px; filter: brightness(0) invert(1);">
+					<!-- Card 1 -->
+					<div class="col-lg-4 col-md-6 mb-40">
+						<div class="vjs-asset-card h-100">
+							<div class="vjs-asset-img-box" style="background: #f8fbf4; border-radius: 16px 16px 0 0; padding: 0;">
+								<img src="{{ url_for('static', filename='images/media kit images/2.jpg') }}?v=1.0"
+									alt="Media Image 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 16px 16px 0 0;">
 							</div>
 							<div class="vjs-asset-body">
-								<div class="vjs-asset-label">Logo ” White on Dark</div>
-								<a href="#" class="vjs-download-link">Download</a>
+								<div class="vjs-asset-label">Corporate Image 1</div>
+								<a href="{{ url_for('static', filename='images/media kit images/2.jpg') }}" class="vjs-download-link" download>Download</a>
 							</div>
 						</div>
 					</div>
 
-					<!-- Card 2: Corporate Logo -->
-					<div class="col-lg-4 col-md-6">
-						<div class="vjs-asset-card">
-							<div class="vjs-asset-img-box" style="background: #f8fbf4; border-radius: 16px 16px 0 0;">
-								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-logo.svg') }}?v=1.0"
-									alt="Main Logo" style="width: 190px;">
+					<!-- Card 2 -->
+					<div class="col-lg-4 col-md-6 mb-40">
+						<div class="vjs-asset-card h-100">
+							<div class="vjs-asset-img-box" style="background: #f8fbf4; border-radius: 16px 16px 0 0; padding: 0;">
+								<img src="{{ url_for('static', filename='images/media kit images/3.jpg') }}?v=1.0"
+									alt="Media Image 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 16px 16px 0 0;">
 							</div>
 							<div class="vjs-asset-body">
-								<div class="vjs-asset-label">Logo ” Corporate (Full Colour)</div>
-								<a href="#" class="vjs-download-link">Download</a>
+								<div class="vjs-asset-label">Corporate Image 2</div>
+								<a href="{{ url_for('static', filename='images/media kit images/3.jpg') }}" class="vjs-download-link" download>Download</a>
 							</div>
 						</div>
 					</div>
 
-					<!-- Card 3: Brand Unit -->
-					<div class="col-lg-4 col-md-6">
-						<div class="vjs-asset-card">
-							<div class="vjs-asset-img-box"
-								style="background: #fff; border-radius: 16px 16px 0 0; border-bottom: 1px solid #f0f5ec;">
-								<div class="d-flex align-items-center gap-3">
-									<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
-										alt="" style="width: 54px; height: 54px; object-fit: contain;">
-									<div style="border-left: 2px solid #9ec008; padding-left: 14px;">
-										<div
-											style="font-size: 15px; font-weight: 800; color: #081c17; line-height: 1.2; letter-spacing: -0.3px;">
-											Vijayalakshmi Group</div>
-										<div
-											style="font-size: 10px; color: #9ec008; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 3px;">
-											Growth with Goodness</div>
-									</div>
-								</div>
+					<!-- Card 3 -->
+					<div class="col-lg-4 col-md-6 mb-40">
+						<div class="vjs-asset-card h-100">
+							<div class="vjs-asset-img-box" style="background: #f8fbf4; border-radius: 16px 16px 0 0; padding: 0;">
+								<img src="{{ url_for('static', filename='images/media kit images/4.jpg') }}?v=1.0"
+									alt="Media Image 4" style="width: 100%; height: 250px; object-fit: cover; border-radius: 16px 16px 0 0;">
 							</div>
 							<div class="vjs-asset-body">
-								<div class="vjs-asset-label">Logo â€” Brand Unit (Horizontal)</div>
-								<a href="#" class="vjs-download-link">Download</a>
+								<div class="vjs-asset-label">Corporate Image 3</div>
+								<a href="{{ url_for('static', filename='images/media kit images/4.jpg') }}" class="vjs-download-link" download>Download</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 4 -->
+					<div class="col-lg-4 col-md-6 mb-40">
+						<div class="vjs-asset-card h-100">
+							<div class="vjs-asset-img-box" style="background: #f8fbf4; border-radius: 16px 16px 0 0; padding: 0;">
+								<img src="{{ url_for('static', filename='images/media kit images/5.jpg') }}?v=1.0"
+									alt="Media Image 5" style="width: 100%; height: 250px; object-fit: cover; border-radius: 16px 16px 0 0;">
+							</div>
+							<div class="vjs-asset-body">
+								<div class="vjs-asset-label">Corporate Image 4</div>
+								<a href="{{ url_for('static', filename='images/media kit images/5.jpg') }}" class="vjs-download-link" download>Download</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 5 -->
+					<div class="col-lg-4 col-md-6 mb-40">
+						<div class="vjs-asset-card h-100">
+							<div class="vjs-asset-img-box" style="background: #f8fbf4; border-radius: 16px 16px 0 0; padding: 0;">
+								<img src="{{ url_for('static', filename='images/media kit images/6.jpg') }}?v=1.0"
+									alt="Media Image 6" style="width: 100%; height: 250px; object-fit: cover; border-radius: 16px 16px 0 0;">
+							</div>
+							<div class="vjs-asset-body">
+								<div class="vjs-asset-label">Corporate Image 5</div>
+								<a href="{{ url_for('static', filename='images/media kit images/6.jpg') }}" class="vjs-download-link" download>Download</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 6 -->
+					<div class="col-lg-4 col-md-6 mb-40">
+						<div class="vjs-asset-card h-100">
+							<div class="vjs-asset-img-box" style="background: #f8fbf4; border-radius: 16px 16px 0 0; padding: 0;">
+								<img src="{{ url_for('static', filename='images/media kit images/7.jpg') }}?v=1.0"
+									alt="Media Image 7" style="width: 100%; height: 250px; object-fit: cover; border-radius: 16px 16px 0 0;">
+							</div>
+							<div class="vjs-asset-body">
+								<div class="vjs-asset-label">Corporate Image 6</div>
+								<a href="{{ url_for('static', filename='images/media kit images/7.jpg') }}" class="vjs-download-link" download>Download</a>
 							</div>
 						</div>
 					</div>
