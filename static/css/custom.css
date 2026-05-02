@@ -521,7 +521,7 @@ a,
 }
 
 .vjs-quote-box::before {
-  content: "Ã¢â‚¬Å“";
+  content: "“";
   position: absolute;
   top: -40px;
   left: -60px;
@@ -940,7 +940,7 @@ a,
 }
 
 .sus-angle li::before {
-    content: "Ã¢â‚¬Â¢";
+    content: "—Â¢";
     position: absolute;
     left: 0;
     color: #008D96;

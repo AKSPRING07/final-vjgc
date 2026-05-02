@@ -3,13 +3,15 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="keywords" content="Plantations, Exotic Trees, Teak, Sandalwood, Sustainable Forestry, ESG, Green Wealth">
-	<meta name="description" content="Vijayalakshmi Plantations - Cultivating green wealth through sustainable exotic tree plantations.">
+	<meta name="keywords"
+		content="Plantations, Exotic Trees, Teak, Sandalwood, Sustainable Forestry, ESG, Green Wealth">
+	<meta name="description"
+		content="Vijayalakshmi Plantations - Cultivating green wealth through sustainable exotic tree plantations.">
 	<meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
 	<meta property="og:url" content="https://creativegigstf.com">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Plantations | Vijayalakshmi Group">
-	<meta name='og:image' content='images/assets/ogg.png'>
+	<meta name='og:image' content='{{ url_for('static', filename='images/assets/ogg.png') }}'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="theme-color" content="#1A4137">
@@ -33,7 +35,8 @@
 			<div id="ctn-preloader" class="ctn-preloader">
 				<div class="icon">
 					<video class="m-auto d-block site-loader-video" autoplay muted loop playsinline preload="auto">
-						<source src="{{ url_for('static', filename='images/fav-icon/reload.ani.mp4') }}?v=1.0" type="video/mp4">
+						<source src="{{ url_for('static', filename='images/fav-icon/reload.ani.mp4') }}?v=1.0"
+							type="video/mp4">
 					</video>
 				</div>
 			</div>
@@ -45,9 +48,12 @@
 				<div class="top-header">
 					<div class="d-flex align-items-center justify-content-between">
 						<div class="logo" style="flex: 1; display: flex; justify-content: flex-start;">
-							<a href="{{ url_for('catch_all', filename='index.html') }}" class="d-flex align-items-center">
+							<a href="{{ url_for('catch_all', filename='index.html') }}"
+								class="d-flex align-items-center">
 								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
-									<span class="site-brand-lockup__mark-wrap"><img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}" alt="" class="site-brand-lockup__mark"></span>
+									<span class="site-brand-lockup__mark-wrap"><img
+											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}"
+											alt="" class="site-brand-lockup__mark"></span>
 									<span class="site-brand-lockup__text">
 										<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;Groups</span>
 										<span class="site-brand-lockup__subtitle">Of Companies</span>
@@ -57,21 +63,30 @@
 						</div>
 
 						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
-							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
 								<span></span>
 							</button>
 							<div class="collapse navbar-collapse" id="navbarNav">
 								<ul class="navbar-nav align-items-lg-center">
 									<li class="nav-item dropdown">
-										<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">About Us</a>
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">About Us</a>
 										<ul class="dropdown-menu compact-dropdown">
-											<li><a href="{{ url_for('catch_all', filename='about-us-v2.html') }}">About Vijayalakshmi Group</a></li>
-											<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}">Our Mission and Vision</a></li>
-											<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}">Leadership and Awards</a></li>
+											<li><a href="{{ url_for('catch_all', filename='about-us-v2.html') }}">About
+													Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}">Our
+													Mission and Vision</a></li>
+											<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}">Leadership
+													and Awards</a></li>
 										</ul>
 									</li>
 									<li class="nav-item dropdown mega-dropdown">
-										<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Businesses</a>
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Businesses</a>
 										<ul class="dropdown-menu biz-dropdown">
 											<li>
 												<div class="mega-menu-content mega-3-col">
@@ -79,15 +94,23 @@
 														<div class="mega-section">
 															<span class="mega-title">IT Infrastructure</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='it-consulting.html') }}">IT Consulting</a></li>
-																<li><a href="{{ url_for('catch_all', filename='data-centers-hosting.html') }}">Enterprise Data Centers & Hosting Services</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='it-consulting.html') }}">IT
+																		Consulting</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='data-centers-hosting.html') }}">Enterprise
+																		Data Centers & Hosting Services</a></li>
 															</ul>
 														</div>
 														<div class="mega-section">
 															<span class="mega-title">Agri & Trade</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='export-import.html') }}">Export & Import</a></li>
-																<li><a href="{{ url_for('catch_all', filename='plantations.html') }}">Plantations & Exotic Trees</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='export-import.html') }}">Export
+																		& Import</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='plantations.html') }}">Plantations
+																		& Exotic Trees</a></li>
 															</ul>
 														</div>
 													</div>
@@ -95,14 +118,20 @@
 														<div class="mega-section">
 															<span class="mega-title">Education & Skills</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='it-training.html') }}">IT Training</a></li>
-																<li><a href="{{ url_for('catch_all', filename='yoga-wellness.html') }}">Yoga & Wellness</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='it-training.html') }}">IT
+																		Training</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='yoga-wellness.html') }}">Yoga
+																		& Wellness</a></li>
 															</ul>
 														</div>
 														<div class="mega-section">
 															<span class="mega-title">Real Estate</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='property-services.html') }}">Property Services</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='property-services.html') }}">Property
+																		Services</a></li>
 															</ul>
 														</div>
 													</div>
@@ -110,14 +139,20 @@
 														<div class="mega-section">
 															<span class="mega-title">Energy & Sustainability</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='green-energy.html') }}">Green Energy & Solar Manufacturing</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='green-energy.html') }}">Green
+																		Energy & Solar Manufacturing</a></li>
 															</ul>
 														</div>
 														<div class="mega-section">
 															<span class="mega-title">Logistics & Travel</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='logistics-services.html') }}">Logistics Services</a></li>
-																<li><a href="{{ url_for('catch_all', filename='travel-rentals.html') }}">Travel & Rentals</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='logistics-services.html') }}">Logistics
+																		Services</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='travel-rentals.html') }}">Travel
+																		& Rentals</a></li>
 															</ul>
 														</div>
 													</div>
@@ -126,7 +161,9 @@
 										</ul>
 									</li>
 									<li class="nav-item dropdown mega-dropdown">
-										<a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Sustainability</a>
+										<a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Sustainability</a>
 										<ul class="dropdown-menu sus-dropdown">
 											<li>
 												<div class="mega-menu-content mega-4-col">
@@ -134,11 +171,21 @@
 														<div class="mega-section">
 															<span class="mega-title">Core Services</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='digital-transformation-sustainability.html') }}">Digital Transformation & IT Consulting</a></li>
-																<li><a href="{{ url_for('catch_all', filename='cloud-infrastructure-sustainability.html') }}">Cloud, Hosting & Infrastructure</a></li>
-																<li><a href="{{ url_for('catch_all', filename='renewable-energy-solutions.html') }}">Renewable Energy Solutions</a></li>
-																<li><a href="{{ url_for('catch_all', filename='logistics-trade-sustainability.html') }}">Logistics & Trade Enablement</a></li>
-																<li><a href="{{ url_for('catch_all', filename='education-skill-sustainability.html') }}">Education & Skill Development</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='digital-transformation-sustainability.html') }}">Digital
+																		Transformation & IT Consulting</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='cloud-infrastructure-sustainability.html') }}">Cloud,
+																		Hosting & Infrastructure</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='renewable-energy-solutions.html') }}">Renewable
+																		Energy Solutions</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='logistics-trade-sustainability.html') }}">Logistics
+																		& Trade Enablement</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='education-skill-sustainability.html') }}">Education
+																		& Skill Development</a></li>
 															</ul>
 														</div>
 													</div>
@@ -146,10 +193,18 @@
 														<div class="mega-section">
 															<span class="mega-title">Environmental Initiatives</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='tree-plantation-sustainability.html') }}">Tree Plantation & Green Cover</a></li>
-																<li><a href="{{ url_for('catch_all', filename='eco-tech-solutions.html') }}">Eco-conscious Technology Solutions</a></li>
-																<li><a href="{{ url_for('catch_all', filename='renewable-energy-adoption.html') }}">Renewable Energy Adoption</a></li>
-																<li><a href="{{ url_for('catch_all', filename='sustainable-business-practices.html') }}">Sustainable Business Practices</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='tree-plantation-sustainability.html') }}">Tree
+																		Plantation & Green Cover</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='eco-tech-solutions.html') }}">Eco-conscious
+																		Technology Solutions</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='renewable-energy-adoption.html') }}">Renewable
+																		Energy Adoption</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='sustainable-business-practices.html') }}">Sustainable
+																		Business Practices</a></li>
 															</ul>
 														</div>
 													</div>
@@ -157,9 +212,15 @@
 														<div class="mega-section">
 															<span class="mega-title">Social Responsibility</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='educational-support-csr.html') }}">Educational Support</a></li>
-																<li><a href="{{ url_for('catch_all', filename='financial-material-aid.html') }}">Financial & Material Aid</a></li>
-																<li><a href="{{ url_for('catch_all', filename='skill-building-youth.html') }}">Skill-Building Programs</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='educational-support-csr.html') }}">Educational
+																		Support</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='financial-material-aid.html') }}">Financial
+																		& Material Aid</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='skill-building-youth.html') }}">Skill-Building
+																		Programs</a></li>
 															</ul>
 														</div>
 													</div>
@@ -167,9 +228,15 @@
 														<div class="mega-section">
 															<span class="mega-title">Community Development</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('catch_all', filename='rural-semi-urban-engagement.html') }}">Rural & Semi-Urban Engagement</a></li>
-																<li><a href="{{ url_for('catch_all', filename='awareness-programs-community.html') }}">Awareness Programs</a></li>
-																<li><a href="{{ url_for('catch_all', filename='local-infrastructure-support.html') }}">Local Infrastructure Support</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='rural-semi-urban-engagement.html') }}">Rural
+																		& Semi-Urban Engagement</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='awareness-programs-community.html') }}">Awareness
+																		Programs</a></li>
+																<li><a
+																		href="{{ url_for('catch_all', filename='local-infrastructure-support.html') }}">Local
+																		Infrastructure Support</a></li>
 															</ul>
 														</div>
 													</div>
@@ -177,12 +244,18 @@
 											</li>
 										</ul>
 									</li>
-									<li class="nav-item"><a class="nav-link" href="{{ url_for('catch_all', filename='blog-v1.html') }}">Vijayalakshmi Foundation</a></li>
+									<li class="nav-item"><a class="nav-link"
+											href="{{ url_for('catch_all', filename='blog-v1.html') }}">Vijayalakshmi
+											Foundation</a></li>
 									<li class="nav-item dropdown">
-										<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Newsroom</a>
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Newsroom</a>
 										<ul class="dropdown-menu compact-dropdown">
-											<li><a href="{{ url_for('catch_all', filename='media-release.html') }}">Media Release</a></li>
-											<li><a href="{{ url_for('catch_all', filename='media-kit.html') }}">Media Kit</a></li>
+											<li><a href="{{ url_for('catch_all', filename='media-release.html') }}">Media
+													Release</a></li>
+											<li><a href="{{ url_for('catch_all', filename='media-kit.html') }}">Media
+													Kit</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -191,9 +264,11 @@
 
 						<div class="right-widget d-none d-lg-flex align-items-center">
 							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
-								<button class="dropdown-toggle d-flex align-items-center style-none" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
 									<i class="bi bi-universal-access fs-5 text-white"></i>
-									<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
 								</button>
 								<div class="dropdown-menu dropdown-menu-end vjs-accessibility-panel">
 									<h5>Accessibility Adjustments</h5>
@@ -211,7 +286,8 @@
 									</div>
 									<div class="vjs-divider"></div>
 									<div class="text-center">
-										<button class="vjs-reset-btn" onclick="vjsResetSettings()">Reset Settings</button>
+										<button class="vjs-reset-btn" onclick="vjsResetSettings()">Reset
+											Settings</button>
 									</div>
 								</div>
 							</div>
@@ -223,24 +299,45 @@
 
 		<!-- Background Bubble Animation -->
 		<div class="vjs-bubble-container">
-			<div class="vjs-bubble"></div><div class="vjs-bubble"></div><div class="vjs-bubble"></div><div class="vjs-bubble"></div>
-			<div class="vjs-bubble"></div><div class="vjs-bubble"></div><div class="vjs-bubble"></div><div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
+			<div class="vjs-bubble"></div>
 		</div>
 
+		<style>
+			.hero-banner-five .bg-wrapper {
+				background-image: url("{{ url_for('static', filename='images/hero/beautiful-multicolored-hyacinths-holland-keukenh-2026-03-24-04-06-42-utc.jpg') }}");
+				background-size: cover;
+				background-position: center;
+				min-height: 80vh;
+				display: flex;
+				align-items: center;
+			}
+		</style>
 		<!-- Hero Banner -->
 		<div class="hero-banner-five">
-			<div class="bg-wrapper position-relative pt-150 pb-120 sm-pb-10" style="background-image: url('{{ url_for('static', filename='images/hero/beautiful-multicolored-hyacinths-holland-keukenh-2026-03-24-04-06-42-utc.jpg') }}'); background-size: cover; background-position: center; min-height: 80vh; display: flex; align-items: center;">
+			<div class="bg-wrapper position-relative pt-150 pb-120 sm-pb-10">
 				<div class="container position-relative" style="z-index: 2;">
 					<div class="row justify-content-between">
 						<div class="col-lg-8 col-md-10 wow fadeInLeft">
-							<h1 class="hero-heading font-magnita text-white">Cultivating Green Wealth<br>For Generations.</h1>
-							<p class="text-lg text-white pt-20 pb-20 ps-3 pe-3 mt-40 lg-mt-30" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); border-radius: 8px; display: inline-block;">
-								Spanning 10,000+ acres of exotic tree plantations, we are dedicated to sustainable forestry and ecological conservation.
+							<h1 class="hero-heading font-magnita text-white">Cultivating Green Wealth<br>For
+								Generations.</h1>
+							<p class="text-lg text-white pt-20 pb-20 ps-3 pe-3 mt-40 lg-mt-30"
+								style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); border-radius: 8px; display: inline-block;">
+								Spanning 10,000+ acres of exotic tree plantations, we are dedicated to sustainable
+								forestry and ecological conservation.
 							</p>
 						</div>
 					</div>
 				</div>
-				<div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+				<div class="hero-overlay"
+					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1;">
+				</div>
 			</div>
 		</div>
 
@@ -252,21 +349,27 @@
 					<div class="row justify-content-center g-4">
 						<div class="col-lg-4 col-md-6 wow fadeInUp">
 							<div class="vjs-glance-card-v3">
-								<div class="img-wrap"><img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800" alt="10,000+ Acres"></div>
+								<div class="img-wrap"><img
+										src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800"
+										alt="10,000+ Acres"></div>
 								<h4 class="card-title">10,000+ Acres</h4>
 								<p class="card-desc">Extensive plantation development across vast landscapes.</p>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
 							<div class="vjs-glance-card-v3">
-								<div class="img-wrap"><img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&q=80&w=800" alt="50+ Species"></div>
+								<div class="img-wrap"><img
+										src="{{ url_for('static', filename='images/media/vjs_plantation_new.png') }}"
+										alt="50+ Species"></div>
 								<h4 class="card-title">50+ Species</h4>
 								<p class="card-desc">Diversified cultivation of exotic and commercial tree species.</p>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
 							<div class="vjs-glance-card-v3">
-								<div class="img-wrap"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800" alt="ESG Focused"></div>
+								<div class="img-wrap"><img
+										src="{{ url_for('static', filename='images/media/vjs_plantation_glance_1.png') }}"
+										alt="ESG Focused"></div>
 								<h4 class="card-title">ESG Focused</h4>
 								<p class="card-desc">Committed to environmental and governance standards.</p>
 							</div>
@@ -282,7 +385,9 @@
 					<div class="row g-4">
 						<div class="col-lg-3 col-md-6 wow fadeInUp">
 							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800" alt="Large-Scale Plantations"></div>
+								<div class="img-wrap"><img
+										src="{{ url_for('static', filename='images/media/vjs_plantation_glance_2.png') }}"
+										alt="Large-Scale Plantations"></div>
 								<div class="content">
 									<h4 class="card-title">Large-Scale Plantations</h4>
 									<p class="card-desc">Developing green wealth across vast and fertile landscapes.</p>
@@ -291,25 +396,33 @@
 						</div>
 						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
 							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&q=80&w=800" alt="Exotic Tree Species"></div>
+								<div class="img-wrap"><img
+										src="{{ url_for('static', filename='images/media/vjs_plantation_glance_3.png') }}"
+										alt="Exotic Tree Species"></div>
 								<div class="content">
 									<h4 class="card-title">Exotic Tree Species</h4>
-									<p class="card-desc">Cultivating high-value species like Teak, Sandalwood, and Mahogany.</p>
+									<p class="card-desc">Cultivating high-value species like Teak, Sandalwood, and
+										Mahogany.</p>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
 							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=800" alt="Sustainable Forestry"></div>
+								<div class="img-wrap"><img
+										src="{{ url_for('static', filename='images/media/vjs_plantation_new.png') }}"
+										alt="Sustainable Forestry"></div>
 								<div class="content">
 									<h4 class="card-title">Sustainable Forestry</h4>
-									<p class="card-desc">Eco-friendly management ensuring long-term ecological balance.</p>
+									<p class="card-desc">Eco-friendly management ensuring long-term ecological balance.
+									</p>
 								</div>
 							</a>
 						</div>
 						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
 							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&q=80&w=800" alt="Eco Value Creation"></div>
+								<div class="img-wrap"><img
+										src="{{ url_for('static', filename='images/media/vjs_plantation_glance_1.png') }}"
+										alt="Eco Value Creation"></div>
 								<div class="content">
 									<h4 class="card-title">Eco Value Creation</h4>
 									<p class="card-desc">Building a greener and more sustainable future for all.</p>
@@ -334,35 +447,43 @@
 					<div class="footer-top">
 						<div class="footer-brand">
 							<div class="footer-logo">
-								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}" alt="Logo Mark">
+								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}"
+									alt="Logo Mark">
 								<div class="footer-logo-text">
 									<div class="text-main">VIJAYALAKSHMI GROUP</div>
 									<div class="text-sub">OF COMPANIES</div>
 								</div>
 							</div>
 							<div class="social-icons">
-								<a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a>
-								<a href="#"><i class="bi bi-youtube"></i></a><a href="#"><i class="bi bi-linkedin"></i></a>
+								<a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i
+										class="bi bi-instagram"></i></a>
+								<a href="#"><i class="bi bi-youtube"></i></a><a href="#"><i
+										class="bi bi-linkedin"></i></a>
 							</div>
 						</div>
 						<div class="footer-col">
 							<h5>About Us</h5>
 							<ul>
-								<li><a href="{{ url_for('catch_all', filename='about-us-v2.html') }}">About Company</a></li>
-								<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}">Chairman's Office</a></li>
+								<li><a href="{{ url_for('catch_all', filename='about-us-v2.html') }}">About Company</a>
+								</li>
+								<li><a href="{{ url_for('catch_all', filename='about-us-v1.html') }}">Chairman's
+										Office</a></li>
 							</ul>
 						</div>
 						<div class="footer-col">
 							<h5>Businesses</h5>
 							<ul>
-								<li><a href="{{ url_for('catch_all', filename='service-v2.html') }}">Infrastructure</a></li>
-								<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}">Energy & Utilities</a></li>
+								<li><a href="{{ url_for('catch_all', filename='service-v2.html') }}">Infrastructure</a>
+								</li>
+								<li><a href="{{ url_for('catch_all', filename='service-v1.html') }}">Energy &
+										Utilities</a></li>
 							</ul>
 						</div>
 						<div class="footer-col">
 							<h5>Quick Links</h5>
 							<ul>
-								<li><a href="{{ url_for('catch_all', filename='about-us-v2.html') }}">Sustainability</a></li>
+								<li><a href="{{ url_for('catch_all', filename='about-us-v2.html') }}">Sustainability</a>
+								</li>
 								<li><a href="{{ url_for('catch_all', filename='contact.html') }}">Contact Us</a></li>
 							</ul>
 						</div>

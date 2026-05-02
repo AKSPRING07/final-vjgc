@@ -9,7 +9,7 @@
 	<meta property="og:url" content="https://creativegigstf.com">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Vijayalakshmi Group Of Companies">
-	<meta name='og:image' content='images/assets/ogg.png'>
+	<meta name='og:image' content='{{ url_for('static', filename='images/assets/ogg.png') }}'>
 	<!-- For IE -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- For Resposive Device -->
@@ -484,14 +484,23 @@
 
 
 
+		<style>
+			.hero-banner-five .bg-wrapper {
+				background-image: url("{{ url_for('static', filename='images/') }}media/about_hero_cinematic.png");
+				background-size: cover;
+				background-position: center;
+				min-height: 80vh;
+				display: flex;
+				align-items: center;
+			}
+		</style>
 		<!-- 
 		=============================================
 			Hero Banner
 		============================================== 
 		-->
 		<div class="hero-banner-five">
-			<div class="bg-wrapper position-relative pt-150 sm-pt-50 pb-120 xl-pb-100 sm-pb-10"
-				style="background-image: url('{{ url_for('static', filename='images/') }}media/about_hero_cinematic.png'); background-size: cover; background-position: center; min-height: 80vh; display: flex; align-items: center;">
+			<div class="bg-wrapper position-relative pt-150 sm-pt-50 pb-120 xl-pb-100 sm-pb-10">
 				<div class="container position-relative" style="z-index: 2;">
 					<div class="row justify-content-between">
 						<div class="col-lg-8 col-md-10 wow fadeInLeft">
@@ -791,7 +800,7 @@
 						<div class="feedback-slider-three">
 							<div class="item">
 								<div class="feedback-block-five">
-									<blockquote>"Technology is at its finest when it becomes invisible Ã¹ quietly shaping
+									<blockquote>"Technology is at its finest when it becomes invisible — quietly shaping
 										progress with precision and purpose."</blockquote>
 
 
@@ -834,7 +843,8 @@
 			=====================================================
 			-->
 			<!-- CTA Section -->
-			<section class="vjs-cta-section" style="background-image: url('corporate_cta_bg_1777455273969.png');">
+			<section class="vjs-cta-section"
+				style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200');">
 				<div class="container text-center">
 					<h2 class="text-white">To Know More About Vijayalakshmi IT Consulting</h2>
 					<a href="#" class="btn-visit">Visit Website</a>
