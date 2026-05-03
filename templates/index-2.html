@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,15 +23,20 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
 	<title>Vijayalakshmi Group Of Companies</title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" sizes="56x56" href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
+	<link rel="icon" type="image/png" sizes="56x56"
+		href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0"
+		media="all">
 	<!-- Main style sheet -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0"
+		media="all">
 	<!-- responsive style sheet -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0"
+		media="all">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.0" media="all">
-	<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.1" media='all'>
+	<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.1"
+		media='all'>
 	<style>
 		.hero-banner-one .hero-heading.hero-heading-glass {
 			position: relative;
@@ -48,7 +53,7 @@
 			line-height: 1.15em;
 			letter-spacing: -0.01em;
 			font-size: min(48px, 8vw);
-			text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+			text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
 			background-image: none;
 			display: block !important;
 			width: 100%;
@@ -391,22 +396,43 @@
 			-webkit-backdrop-filter: none !important;
 			box-shadow: none !important;
 			color: #ffffff !important;
-			text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+			text-shadow: 0 4px 25px rgba(0, 0, 0, 0.85) !important;
+			/* Stronger shadow for visibility */
 			display: block !important;
 			margin-bottom: 24px !important;
 		}
 
-		/* Resize and Move Button */
+		/* Resize and Move Button: Enhanced Visibility & Aesthetics */
 		.hero-banner-one .btn-two.icon-link {
 			display: inline-flex !important;
-			font-size: 14px !important;
-			padding: 10px 22px !important;
+			font-size: 15px !important;
+			font-weight: 600 !important;
+			padding: 12px 30px !important;
 			margin-top: 0 !important;
 			clear: both;
+			background: #A2D732 !important;
+			/* High-visibility Brand Green */
+			color: #051411 !important;
+			/* Dark text for contrast */
+			border: 1px solid #A2D732 !important;
+			/* Small/thin border */
+			border-radius: 50px !important;
+			box-shadow: 0 10px 20px rgba(162, 215, 50, 0.2) !important;
+			transition: all 0.3s ease !important;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.hero-banner-one .btn-two.icon-link:hover {
+			background: #ffffff !important;
+			border-color: #ffffff !important;
+			color: #051411 !important;
+			transform: translateY(-3px) !important;
+			box-shadow: 0 15px 30px rgba(255, 255, 255, 0.25) !important;
 		}
 
 		/* Column layout: heading on top, button underneath */
-		.hero-slider-one .item .container .row > [class*="col-"] {
+		.hero-slider-one .item .container .row>[class*="col-"] {
 			display: flex !important;
 			flex-direction: column !important;
 			align-items: flex-start !important;
@@ -430,7 +456,49 @@
 			}
 		}
 
-		</style>
+		/* Service Cards: Visible & Attractive Refinement */
+		.card-style-two {
+			background: #ffffff !important;
+			border: 1px solid rgba(0, 0, 0, 0.06) !important;
+			border-radius: 24px !important;
+			padding: 30px !important;
+			transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04) !important;
+			overflow: hidden;
+		}
+
+		.card-style-two:hover {
+			background: #A2D732 !important;
+			/* High-visibility Brand Green on hover */
+			border-color: #A2D732 !important;
+			transform: translateY(-12px) !important;
+			box-shadow: 0 25px 50px rgba(162, 215, 50, 0.25) !important;
+		}
+
+		.card-style-two .icon {
+			transition: all 0.4s ease !important;
+		}
+
+		.card-style-two:hover .icon {
+			transform: scale(1.1) rotate(5deg) !important;
+			filter: brightness(0) saturate(100%) !important;
+			/* Keep icons dark on green */
+		}
+
+		.card-style-two .arrow-btn {
+			background: rgba(0, 0, 0, 0.03);
+			width: 45px;
+			height: 45px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.card-style-two:hover .arrow-btn {
+			background: rgba(255, 255, 255, 0.4);
+		}
+	</style>
 
 	<!-- Fix Internet Explorer ______________________________________-->
 	<!--[if lt IE 9]>
@@ -448,7 +516,8 @@
 			<div id="ctn-preloader" class="ctn-preloader">
 				<div class="icon"><video class="m-auto d-block site-loader-video" autoplay muted loop playsinline
 						webkit-playsinline preload="auto" disablepictureinpicture aria-label="Loading animation">
-						<source src="{{ url_for('static', filename='images/fav-icon/reload.ani.mp4') }}?v=1.0" type="video/mp4">
+						<source src="{{ url_for('static', filename='images/fav-icon/reload.ani.mp4') }}?v=1.0"
+							type="video/mp4">
 					</video></div>
 			</div>
 		</div>
@@ -467,8 +536,8 @@
 							<a href="{{ url_for('home') }}" class="d-flex align-items-center">
 								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
 									<span class="site-brand-lockup__mark-wrap"><img
-											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt=""
-											class="site-brand-lockup__mark"></span>
+											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+											alt="" class="site-brand-lockup__mark"></span>
 									<span class="site-brand-lockup__text">
 										<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;Groups</span>
 										<span class="site-brand-lockup__subtitle">Of Companies</span>
@@ -492,8 +561,8 @@
 												<span class="site-brand-lockup"
 													aria-label="Vijayalakshmi Group Of Companies">
 													<span class="site-brand-lockup__mark-wrap"><img
-															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt=""
-															class="site-brand-lockup__mark"></span>
+															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+															alt="" class="site-brand-lockup__mark"></span>
 													<span class="site-brand-lockup__text">
 														<span class="site-brand-lockup__title">Vijayalakshmi
 															Groups</span>
@@ -509,13 +578,16 @@
 											aria-expanded="false">About Us
 										</a>
 										<ul class="dropdown-menu about-dropdown compact-dropdown">
-											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Vijayalakshmi Group</a></li>
-											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Mission & Vision</a></li>
-											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership and Awards</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About
+													Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Mission &
+													Vision</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership
+													and Awards</a></li>
 										</ul>
 									</li>
 									<li class="nav-item dropdown mega-dropdown">
-																														<a class="nav-link dropdown-toggle" href="#" role="button"
+										<a class="nav-link dropdown-toggle" href="#" role="button"
 											data-bs-toggle="dropdown" data-bs-auto-close="outside"
 											aria-expanded="false">Businesses
 										</a>
@@ -525,41 +597,61 @@
 													<div class="mega-section">
 														<span class="mega-title">IT Infrastructure</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">IT Consulting</a></li>
-															<li><a href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise Data Centers & Hosting Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-consulting') }}">IT
+																	Consulting</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise
+																	Data Centers & Hosting Services</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Education & Skills</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='it-training') }}">IT Training</a></li>
-															<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga & Wellness</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-training') }}">IT
+																	Training</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga
+																	& Wellness</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Energy & Sustainability</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green Energy & Solar Manufacturing</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green
+																	Energy & Solar Manufacturing</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Agri & Trade</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Export & Import</a></li>
-															<li><a href="{{ url_for('dynamic_route', path='plantations') }}">Plantations & Exotic Trees</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='export-import') }}">Export
+																	& Import</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='plantations') }}">Plantations
+																	& Exotic Trees</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Real Estate</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Property Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='property-services') }}">Property
+																	Services</a></li>
 														</ul>
 													</div>
 													<div class="mega-section">
 														<span class="mega-title">Logistics & Travel</span>
 														<ul class="mega-list">
-															<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics Services</a></li>
-															<li><a href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel & Rentals</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics
+																	Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel
+																	& Rentals</a></li>
 														</ul>
 													</div>
 												</div>
@@ -578,11 +670,21 @@
 														<div class="mega-section">
 															<span class="mega-title">Core Services</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital Transformation & IT Consulting</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud, Hosting & Infrastructure</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable Energy Solutions</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics & Trade Enablement</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education & Skill Development</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital
+																		Transformation & IT Consulting</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud,
+																		Hosting & Infrastructure</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable
+																		Energy Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics
+																		& Trade Enablement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education
+																		& Skill Development</a></li>
 															</ul>
 														</div>
 													</div>
@@ -590,10 +692,18 @@
 														<div class="mega-section">
 															<span class="mega-title">Environmental Initiatives</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree Plantation & Green Cover</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious Technology Solutions</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable Energy Adoption</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable Business Practices</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree
+																		Plantation & Green Cover</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious
+																		Technology Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable
+																		Energy Adoption</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable
+																		Business Practices</a></li>
 															</ul>
 														</div>
 													</div>
@@ -601,9 +711,15 @@
 														<div class="mega-section">
 															<span class="mega-title">Social Responsibility</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational Support</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial & Material Aid</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building Programs</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational
+																		Support</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial
+																		& Material Aid</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building
+																		Programs</a></li>
 															</ul>
 														</div>
 													</div>
@@ -611,9 +727,15 @@
 														<div class="mega-section">
 															<span class="mega-title">Community Development</span>
 															<ul class="mega-list">
-																<li><a href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural & Semi-Urban Engagement</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness Programs</a></li>
-																<li><a href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local Infrastructure Support</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural
+																		& Semi-Urban Engagement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness
+																		Programs</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local
+																		Infrastructure Support</a></li>
 															</ul>
 														</div>
 													</div>
@@ -622,7 +744,8 @@
 										</ul>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0" role="button">Vijayalakshmi
+										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0"
+											role="button">Vijayalakshmi
 											Foundation</a>
 									</li>
 									<li class="nav-item dropdown">
@@ -631,8 +754,10 @@
 											aria-expanded="false">Newsroom
 										</a>
 										<ul class="dropdown-menu news-dropdown compact-dropdown">
-											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media Releases</a></li>
-											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media
+													Releases</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a>
+											</li>
 										</ul>
 									</li>
 								</ul>
@@ -715,10 +840,12 @@
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
 									Building Stronger Communities Together</h1>
 
-								<a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='about-us-v1') }}"
+									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>Our Values</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
-										class="lazy-img icon ms-2">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
+										alt="" class="lazy-img icon ms-2">
 								</a>
 							</div>
 						</div>
@@ -742,10 +869,12 @@
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
 									Modernizing Global Agriculture</h1>
 
-								<a href="{{ url_for('dynamic_route', path='service-v1') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='service-v1') }}"
+									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>Agri Solutions</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
-										class="lazy-img icon ms-2">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
+										alt="" class="lazy-img icon ms-2">
 								</a>
 							</div>
 						</div>
@@ -756,7 +885,8 @@
 				<div class="item m0">
 					<div class="hero-img">
 						<video class="hero-video-bg" muted playsinline preload="none">
-							<source src="{{ url_for('static', filename='images/hero video/freight-transport-2025-12-17-20-47-07-utc.mp4') }}?v=1.0"
+							<source
+								src="{{ url_for('static', filename='images/hero video/freight-transport-2025-12-17-20-47-07-utc.mp4') }}?v=1.0"
 								type="video/mp4">
 						</video>
 						<div class="hero-video-overlay"></div>
@@ -768,10 +898,12 @@
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
 									Seamless Logistics & Supply Chain</h1>
 
-								<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0"
+									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>Global Trade</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
-										class="lazy-img icon ms-2">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
+										alt="" class="lazy-img icon ms-2">
 								</a>
 							</div>
 						</div>
@@ -795,10 +927,12 @@
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp text-start">
 									Strategic Corporate Excellence</h1>
 
-								<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0"
+									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>Consult Us</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
-										class="lazy-img icon ms-2">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
+										alt="" class="lazy-img icon ms-2">
 								</a>
 							</div>
 						</div>
@@ -822,10 +956,12 @@
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp text-start">
 									Empowering Future Generations</h1>
 
-								<a href="{{ url_for('dynamic_route', path='service-v1') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='service-v1') }}"
+									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>Explore Learning</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
-										class="lazy-img icon ms-2">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
+										alt="" class="lazy-img icon ms-2">
 								</a>
 							</div>
 						</div>
@@ -849,10 +985,12 @@
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
 									Innovation Through Scientific R&D</h1>
 
-								<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0"
+									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>View R&D</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
-										class="lazy-img icon ms-2">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
+										alt="" class="lazy-img icon ms-2">
 								</a>
 							</div>
 						</div>
@@ -863,7 +1001,9 @@
 				<div class="item m0">
 					<div class="hero-img">
 						<video class="hero-video-bg" muted playsinline preload="none">
-							<source src="{{ url_for('static', filename='images/hero video/yoga-2026-01-21-05-24-27-utc.mp4') }}?v=1.0" type="video/mp4">
+							<source
+								src="{{ url_for('static', filename='images/hero video/yoga-2026-01-21-05-24-27-utc.mp4') }}?v=1.0"
+								type="video/mp4">
 						</video>
 						<div class="hero-video-overlay"></div>
 					</div>
@@ -873,11 +1013,12 @@
 								<h1
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp text-start">
 									Holistic Wellness & Healthcare</h1>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}" class="btn-two icon-link wow fadeInUp"
-									data-wow-delay="0.2s">
+								<a href="{{ url_for('dynamic_route', path='service-details') }}"
+									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>Health Services</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt=""
-										class="lazy-img icon ms-2">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
+										alt="" class="lazy-img icon ms-2">
 								</a>
 							</div>
 						</div>
@@ -928,8 +1069,9 @@
 							<div class="card-style-one d-flex w-100 mb-35">
 								<div
 									class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_03.svg') }}?v=1.0" alt=""
-										class="lazy-img">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_03.svg') }}?v=1.0"
+										alt="" class="lazy-img">
 								</div>
 								<div class="text ps-4">
 									<h4 class="fw-bold">Excellence in Every Delivery</h4>
@@ -944,8 +1086,9 @@
 							<div class="card-style-one d-flex w-100 mb-35">
 								<div
 									class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_04.svg') }}?v=1.0" alt=""
-										class="lazy-img">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_04.svg') }}?v=1.0"
+										alt="" class="lazy-img">
 								</div>
 								<div class="text ps-4">
 									<h4 class="fw-bold">Industry Expertise</h4>
@@ -959,8 +1102,9 @@
 							<div class="card-style-one d-flex w-100 mb-35">
 								<div
 									class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_05.svg') }}?v=1.0" alt=""
-										class="lazy-img">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_05.svg') }}?v=1.0"
+										alt="" class="lazy-img">
 								</div>
 								<div class="text ps-4">
 									<h4 class="fw-bold">Reliable Support</h4>
@@ -981,8 +1125,8 @@
 					<div class="row align-items-center">
 						<div class="col-lg-5 wow fadeInLeft">
 							<div class="leader-portrait-wrap">
-								<img src="{{ url_for('static', filename='images/media/chairman_portrait.png') }}?v=1.0" alt="Mr. Vijayalakshmi"
-									class="leader-portrait lazy-img">
+								<img src="{{ url_for('static', filename='images/media/chairman_portrait.png') }}?v=1.0"
+									alt="Mr. Vijayalakshmi" class="leader-portrait lazy-img">
 							</div>
 						</div>
 						<div class="col-lg-7 wow fadeInRight">
@@ -996,7 +1140,8 @@
 										<p>Managing Director of VJS Group</p>
 									</div>
 								</div>
-								<a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="btn-sixteen mt-10">View Profile</a>
+								<a href="{{ url_for('dynamic_route', path='about-us-v1') }}"
+									class="btn-sixteen mt-10">View Profile</a>
 							</div>
 						</div>
 					</div>
@@ -1004,7 +1149,7 @@
 			</div>
 			<!-- /.Leadership Statement Section -->
 
-			<div class="container pt-120 lg-pt-80">
+			<div class="container pt-120 lg-pt-80 pb-120 lg-pb-80">
 				<div class="position-relative">
 					<div class="row align-items-center">
 						<div class="col-md-6">
@@ -1018,80 +1163,91 @@
 							<div class="section-subheading">
 								<a href="{{ url_for('dynamic_route', path='service-v1') }}" class="btn-three icon-link">
 									<span>See All Services</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
-										class="lazy-img icon ms-1">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+										alt="" class="lazy-img icon ms-1">
 								</a>
 							</div>
 						</div>
 					</div>
 					<div class="row justify-content-center row-cols-1 row-cols-md-3 row-cols-lg-5">
 						<div class="col d-flex wow fadeInUp">
-							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
-								style="padding: 25px;">
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_06.svg') }}?v=1.0" alt=""
+							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+									data-src="{{ url_for('static', filename='images/icon/icon_06.svg') }}?v=1.0" alt=""
 									class="lazy-img icon me-auto mb-20" style="width: 35px;">
 								<h4 class="fw-bold mb-15" style="font-size: 18px;">IT Solutions</h4>
 								<p style="font-size: 14px; line-height: 1.6em;">Providing innovative software
 									development, web solutions, and digital transformation services.</p>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
-										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
-										class="lazy-img"></a>
+								<a href="{{ url_for('dynamic_route', path='service-details') }}"
+									class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+										alt="" class="lazy-img"></a>
 							</div>
 							<!-- /.card-style-two -->
 						</div>
 						<div class="col d-flex wow fadeInUp" data-wow-delay="0.1s">
-							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
-								style="padding: 25px;">
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_07.svg') }}?v=1.0" alt=""
+							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+									data-src="{{ url_for('static', filename='images/icon/icon_07.svg') }}?v=1.0" alt=""
 									class="lazy-img icon me-auto mb-20" style="width: 35px;">
 								<h4 class="fw-bold mb-15" style="font-size: 18px;">Education & Training</h4>
 								<p style="font-size: 14px; line-height: 1.6em;">Offering quality education and skill
 									development programs to empower students.</p>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
-										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
-										class="lazy-img"></a>
+								<a href="{{ url_for('dynamic_route', path='service-details') }}"
+									class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+										alt="" class="lazy-img"></a>
 							</div>
 							<!-- /.card-style-two -->
 						</div>
 						<div class="col d-flex wow fadeInUp" data-wow-delay="0.2s">
-							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
-								style="padding: 25px;">
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_08.svg') }}?v=1.0" alt=""
+							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+									data-src="{{ url_for('static', filename='images/icon/icon_08.svg') }}?v=1.0" alt=""
 									class="lazy-img icon me-auto mb-20" style="width: 35px;">
 								<h4 class="fw-bold mb-15" style="font-size: 18px;">Healthcare & Wellness</h4>
 								<p style="font-size: 14px; line-height: 1.6em;">Delivering holistic wellness solutions
 									through Ayurveda, yoga, and natural therapies.</p>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
-										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
-										class="lazy-img"></a>
+								<a href="{{ url_for('dynamic_route', path='service-details') }}"
+									class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+										alt="" class="lazy-img"></a>
 							</div>
 							<!-- /.card-style-two -->
 						</div>
 						<div class="col d-flex wow fadeInUp" data-wow-delay="0.3s">
-							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
-								style="padding: 25px;">
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_18_dual.svg') }}?v=1.0" alt=""
-									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+									data-src="{{ url_for('static', filename='images/icon/icon_18_dual.svg') }}?v=1.0"
+									alt="" class="lazy-img icon me-auto mb-20" style="width: 35px;">
 								<h4 class="fw-bold mb-15" style="font-size: 18px;">Export & Trading</h4>
 								<p style="font-size: 14px; line-height: 1.6em;">Supplying high-quality agricultural
 									products like pepper and coconut to global markets.</p>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
-										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
-										class="lazy-img"></a>
+								<a href="{{ url_for('dynamic_route', path='service-details') }}"
+									class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+										alt="" class="lazy-img"></a>
 							</div>
 							<!-- /.card-style-two -->
 						</div>
 						<div class="col d-flex wow fadeInUp" data-wow-delay="0.4s">
-							<div class="card-style-two vstack tran3s w-100 mt-30 shadow-none border-0"
-								style="padding: 25px;">
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_20_dual.svg') }}?v=1.0" alt=""
-									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+									data-src="{{ url_for('static', filename='images/icon/icon_20_dual.svg') }}?v=1.0"
+									alt="" class="lazy-img icon me-auto mb-20" style="width: 35px;">
 								<h4 class="fw-bold mb-15" style="font-size: 18px;">Business Consulting</h4>
 								<p style="font-size: 14px; line-height: 1.6em;">Helping businesses grow with strategic
 									planning, expert guidance, and actionable solutions.</p>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}" class="arrow-btn tran3s mt-auto stretched-link"><img
-										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0" alt=""
-										class="lazy-img"></a>
+								<a href="{{ url_for('dynamic_route', path='service-details') }}"
+									class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+										alt="" class="lazy-img"></a>
 							</div>
 							<!-- /.card-style-two -->
 						</div>
@@ -1125,7 +1281,8 @@
 						<div class="col-lg-4 col-md-6 wow fadeInUp d-flex">
 							<div class="card-style-three pb-35 sm-pb-30 w-100"
 								style="background-color: #A2D732; border-radius: 20px; padding: 30px; padding-top: 10px !important; display: flex; flex-direction: column;">
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_10.svg') }}?v=1.0" alt=""
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+									data-src="{{ url_for('static', filename='images/icon/icon_10.svg') }}?v=1.0" alt=""
 									class="lazy-img icon"
 									style="height: 40px; width: auto; margin: 0 0 25px 0; display: block;align-self: self-start;">
 								<h4 class="fw-bold text-dark" style="font-size: 24px; margin: 0 0 15px 0;">Our Mission
@@ -1133,7 +1290,7 @@
 								<p class="text-dark" style="margin: 0; line-height: 1.6;">To deliver innovative and
 									reliable solutions across diverse
 									industries by combining
-									technology, expertise, and customer-focused servicesâ€”Ã¢â‚¬Âempowering businesses and
+									technology, expertise, and customer-focused services”‚empowering businesses and
 									communities to achieve sustainable growth.
 								</p>
 							</div>
@@ -1143,7 +1300,8 @@
 							<div class="card-style-three pb-35 sm-pb-30 w-100"
 								style="background-color: #196164; border-radius: 20px; padding: 30px; padding-top: 10px !important; display: flex; flex-direction: column; justify-content: flex-start; height: 100%;">
 
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_11.svg') }}?v=1.0" alt=""
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+									data-src="{{ url_for('static', filename='images/icon/icon_11.svg') }}?v=1.0" alt=""
 									class="lazy-img icon"
 									style="height: 40px; width: auto; margin: 0 0 25px 0; display: block; align-self: flex-start;">
 
@@ -1172,7 +1330,8 @@
 									<!-- Inner Circle (Official Mark with Divine Glow) -->
 									<div class="inner-circle d-flex align-items-center justify-content-center rounded-circle shadow-lg tran3s"
 										style="width: 170px; height: 170px; background: radial-gradient(circle, rgba(255, 223, 112, 0.45) 0%, rgba(255, 255, 255, 1) 70%); position: relative; z-index: 1; overflow: hidden;">
-										<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="VJS Mark"
+										<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+											alt="VJS Mark"
 											style="width: 110px; height: auto; position: relative; z-index: 2; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.2));">
 										<!-- Subtle ray effect -->
 										<div class="divine-rays position-absolute"
@@ -1408,7 +1567,8 @@
 				<div class="purpose-container">
 
 					<!-- PANE 1: Sustainability -->
-					<div class="purpose-pane active" style="--bg: url('{{ url_for('static', filename='images/media/csr_sustainability.png') }}')">
+					<div class="purpose-pane active"
+						style="--bg: url('{{ url_for('static', filename='images/media/csr_sustainability.png') }}')">
 						<div class="pane-overlay"></div>
 						<div class="pane-content-left">
 							<div class="pane-number">01</div>
@@ -1419,13 +1579,14 @@
 							<div class="csr-card">
 								<h3>100 MILLION TREES PLEDGED</h3>
 								<p>Driving environmental impact through global reforestation initiatives.</p>
-								<a href="#" class="view-impact">View Impact â†’</a>
+								<a href="#" class="view-impact">View Impact ’</a>
 							</div>
 						</div>
 					</div>
 
 					<!-- PANE 2: Solutions -->
-					<div class="purpose-pane" style="--bg: url('{{ url_for('static', filename='images/media/csr_solutions.png') }}')">
+					<div class="purpose-pane"
+						style="--bg: url('{{ url_for('static', filename='images/media/csr_solutions.png') }}')">
 						<div class="pane-overlay"></div>
 						<div class="pane-content-left">
 							<div class="pane-number">02</div>
@@ -1436,13 +1597,14 @@
 							<div class="csr-card">
 								<h3>ENTERPRISE INNOVATION</h3>
 								<p>Empowering businesses with full-stack digital transformation.</p>
-								<a href="#" class="view-impact">Explore More â†’</a>
+								<a href="#" class="view-impact">Explore More ’</a>
 							</div>
 						</div>
 					</div>
 
 					<!-- PANE 3: Education -->
-					<div class="purpose-pane" style="--bg: url('{{ url_for('static', filename='images/media/csr_education.png') }}')">
+					<div class="purpose-pane"
+						style="--bg: url('{{ url_for('static', filename='images/media/csr_education.png') }}')">
 						<div class="pane-overlay"></div>
 						<div class="pane-content-left">
 							<div class="pane-number">03</div>
@@ -1453,13 +1615,14 @@
 							<div class="csr-card">
 								<h3>15,000+ STUDENTS</h3>
 								<p>Providing skills and education for a digital-first future.</p>
-								<a href="#" class="view-impact">See Impact â†’</a>
+								<a href="#" class="view-impact">See Impact ’</a>
 							</div>
 						</div>
 					</div>
 
 					<!-- PANE 4: Wellness -->
-					<div class="purpose-pane" style="--bg: url('{{ url_for('static', filename='images/media/csr_wellness.png') }}')">
+					<div class="purpose-pane"
+						style="--bg: url('{{ url_for('static', filename='images/media/csr_wellness.png') }}')">
 						<div class="pane-overlay"></div>
 						<div class="pane-content-left">
 							<div class="pane-number">04</div>
@@ -1470,7 +1633,7 @@
 							<div class="csr-card">
 								<h3>AYURVEDA & YOGA</h3>
 								<p>Fostering physical and mental balance through ancient wisdom.</p>
-								<a href="#" class="view-impact">Discover Wellness â†’</a>
+								<a href="#" class="view-impact">Discover Wellness ’</a>
 							</div>
 						</div>
 					</div>
@@ -1728,19 +1891,23 @@
 										<div class="post-info"><span class="fw-500 text-dark">Rashed Ka -</span> 18 Jul
 											2023
 										</div>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0" class="mt-15">
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+											class="mt-15">
 											<h4 class="tran3s blog-title"> Connecting India: Unlocking Opportunities
 												Through Connectivity</h4>
 										</a>
 									</div>
 									<figure
 										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
-										<video loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-											<source src="{{ url_for('static', filename='images/news video/transport-victoria-2025-12-17-05-37-19-utc.mp4') }}?v=1.0" type="video/mp4">
+										<video loop muted playsinline
+											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+											<source
+												src="{{ url_for('static', filename='images/news video/transport-victoria-2025-12-17-05-37-19-utc.mp4') }}?v=1.0"
+												type="video/mp4">
 										</video>
 										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s" style="z-index: 1;"><i
-												class="bi bi-arrow-up-right"></i></a>
+											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
+											style="z-index: 1;"><i class="bi bi-arrow-up-right"></i></a>
 									</figure>
 								</article>
 								<!-- /.blog-meta-one -->
@@ -1751,19 +1918,23 @@
 										<div class="post-info"><span class="fw-500 text-dark">Mark Joe -</span> 09 Feb
 											2023
 										</div>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0" class="mt-15">
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+											class="mt-15">
 											<h4 class="tran3s blog-title">Coding in the Modern Era: Powering Technology
 												and Transformation</h4>
 										</a>
 									</div>
 									<figure
 										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
-										<video loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-											<source src="{{ url_for('static', filename='images/news video/Code.mp4') }}?v=1.0" type="video/mp4">
+										<video loop muted playsinline
+											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+											<source
+												src="{{ url_for('static', filename='images/news video/Code.mp4') }}?v=1.0"
+												type="video/mp4">
 										</video>
 										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s" style="z-index: 1;"><i
-												class="bi bi-arrow-up-right"></i></a>
+											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
+											style="z-index: 1;"><i class="bi bi-arrow-up-right"></i></a>
 									</figure>
 								</article>
 								<!-- /.blog-meta-one -->
@@ -2195,7 +2366,8 @@
 						<!-- LOGO & BRAND -->
 						<div class="footer-brand">
 							<div class="footer-logo-group">
-								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="Logo Mark">
+								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+									alt="Logo Mark">
 								<div class="footer-logo-text">
 									<span>Vijayalakshmi Group</span>
 									<span>OF COMPANIES</span>
@@ -2215,10 +2387,9 @@
 							<h5>About Us</h5>
 							<ul>
 								<li><a href="#">About Company</a></li>
-								<li><a href="#">Chairmans Office</a></li>
-								<li><a href="#">Leadership</a></li>
 								<li><a href="#">Our Journey</a></li>
-								<li><a href="#">Awards</a></li>
+								<li><a href="#">Leadership</a></li>
+								<li><a href="#">Foundation</a></li>
 							</ul>
 						</div>
 
@@ -2231,6 +2402,7 @@
 								<li><a href="#">Transport & Logistics</a></li>
 								<li><a href="#">Consumer Products</a></li>
 								<li><a href="#">Real Estate</a></li>
+								<li><a href="#">Healthcare</a></li>
 							</ul>
 						</div>
 
@@ -2239,10 +2411,9 @@
 							<h5>Quick Links</h5>
 							<ul>
 								<li><a href="#">Sustainability</a></li>
-								<li><a href="#">Investors</a></li>
+								<li><a href="#">Blogs</a></li>
 								<li><a href="#">Newsroom</a></li>
-								<li><a href="#">Careers</a></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Media Kit</a></li>
 							</ul>
 						</div>
 
@@ -2250,8 +2421,8 @@
 						<!-- BOTTOM -->
 						<div class="footer-bottom">
 							<div style="display: flex; align-items: center; gap: 8px;">
-								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="Mark"
-									style="height: 20px; width: auto;">
+								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+									alt="Mark" style="height: 20px; width: auto;">
 								<span>@2026 Vijayalakshmi Group</span>
 							</div>
 
@@ -2274,13 +2445,15 @@
 				<!-- jQuery -->
 				<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
 				<!-- Bootstrap JS -->
-				<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
+				<script
+					src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
 				<!-- WOW js -->
 				<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
 				<!-- Slick Slider -->
 				<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
 				<!-- Fancybox -->
-				<script src="{{ url_for('static', filename='vendor/fancybox/dist/jquery.fancybox.min.js') }}?v=1.0"></script>
+				<script
+					src="{{ url_for('static', filename='vendor/fancybox/dist/jquery.fancybox.min.js') }}?v=1.0"></script>
 				<!-- Lazy -->
 				<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}?v=1.0"></script>
 				<!-- js Counter -->
@@ -2292,7 +2465,7 @@
 
 				<!-- Theme js -->
 				<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
-		<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
+				<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
 				<!-- Navbar Hover Animation -->
 				<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
 			</div> <!-- /.main-page-wrapper -->
@@ -2307,5 +2480,3 @@
 </body>
 
 </html>
-
-
