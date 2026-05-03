@@ -1,11 +1,13 @@
 /* GLOBAL FONT SYNCHRONIZATION */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 body,
 p,
 li,
-a {
-  font-family: 'Inter', "Helvetica Neue", Arial, sans-serif;
+a,
+h1, h2, h3, h4, h5, h6,
+.hero-heading-glass {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
 
 /* PREMIUM HERO HEADING STYLE (SITEEWIDE) */
