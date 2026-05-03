@@ -558,55 +558,81 @@
 		
 		<footer class="footer-modern">
 			<div class="footer-container">
-				<div class="footer-top d-flex flex-wrap justify-content-between">
-					<div class="footer-brand" style="flex: 1 1 300px;">
-						<div class="footer-logo d-flex align-items-center mb-4">
-							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="" style="width: 50px;">
-							<div class="ms-3">
-								<div style="font-size: 18px; font-weight: 800; color: #08201b; line-height: 1;">Vijayalakshmi Group</div>
-								<div style="font-size: 14px; font-weight: 700; color: #08201b; opacity: 0.6; letter-spacing: 2px;">OF COMPANIES</div>
+				<div class="footer-top">
+					<!-- LOGO & BRAND -->
+					<div class="footer-brand">
+						<div class="footer-logo-group">
+							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+								alt="Logo Mark">
+							<div class="footer-logo-text">
+								<span>Vijayalakshmi Group</span>
+								<span>OF COMPANIES</span>
 							</div>
 						</div>
-						<div class="social-icons d-flex gap-2">
-							<a href="#" class="rounded-circle bg-white shadow-sm p-2"><i class="bi bi-facebook"></i></a>
-							<a href="#" class="rounded-circle bg-white shadow-sm p-2"><i class="bi bi-instagram"></i></a>
-							<a href="#" class="rounded-circle bg-white shadow-sm p-2"><i class="bi bi-linkedin"></i></a>
+
+						<div class="social-icons-mini">
+							<a href="#"><i class="bi bi-facebook"></i></a>
+							<a href="#"><i class="bi bi-instagram"></i></a>
+							<a href="#"><i class="bi bi-youtube"></i></a>
+							<a href="#"><i class="bi bi-linkedin"></i></a>
 						</div>
 					</div>
-					<div class="footer-col" style="flex: 1 1 150px;">
-						<h5 class="fw-bold mb-4">About Us</h5>
-						<ul class="list-unstyled opacity-75">
-							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="text-decoration-none text-dark">Company</a></li>
-							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}" class="text-decoration-none text-dark">Leadership</a></li>
-							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}" class="text-decoration-none text-dark">Awards</a></li>
+
+					<!-- ABOUT -->
+					<div class="footer-col">
+						<h5>About Us</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Company</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Chairman’s Office</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Awards</a></li>
 						</ul>
 					</div>
-					<div class="footer-col" style="flex: 1 1 150px;">
-						<h5 class="fw-bold mb-4">Businesses</h5>
-						<ul class="list-unstyled opacity-75">
-							<li>Infrastructure</li>
-							<li>Energy</li>
-							<li>Logistics</li>
+
+					<!-- BUSINESS -->
+					<div class="footer-col">
+						<h5>Businesses</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">Infrastructure</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='green-energy') }}">Energy & Utilities</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Transport & Logistics</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Consumer Products</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Real Estate</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}">Healthcare</a></li>
 						</ul>
 					</div>
-					<div class="footer-col" style="flex: 1 1 150px;">
-						<h5 class="fw-bold mb-4">Support</h5>
-						<ul class="list-unstyled opacity-75">
-							<li><a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0" class="text-decoration-none text-dark">Contact Us</a></li>
-							<li>Terms & Conditions</li>
+
+					<!-- QUICK LINKS -->
+					<div class="footer-col">
+						<h5>Quick Links</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}">Sustainability</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='pricing') }}">Investors</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Newsroom</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Careers</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='contact') }}">Contact Us</a></li>
 						</ul>
 					</div>
 				</div>
-				<hr class="my-5 opacity-10">
-				<div class="footer-bottom d-flex justify-content-between flex-wrap">
-					<p class="m-0">? 2025 Vijayalakshmi Group Of Companies</p>
-					<div class="footer-links d-flex gap-4">
-						<a href="#" class="text-decoration-none text-dark opacity-50">Privacy Notice</a>
-						<a href="#" class="text-decoration-none text-dark opacity-50">Cookie Policy</a>
+
+				<!-- BOTTOM -->
+				<div class="footer-bottom">
+					<div style="display: flex; align-items: center; gap: 8px;">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="Mark" style="height: 20px; width: auto;">
+						<span>@2026 Vijayalakshmi Group</span>
+					</div>
+
+					<div class="footer-bottom-links">
+						<a href="#">Legal Disclaimer</a>
+						<a href="#">Privacy Notice</a>
+						<a href="#">Terms & Conditions</a>
+						<a href="#">Cookie Policy</a>
 					</div>
 				</div>
 			</div>
-		</footer>
+		</footer> <!-- /.footer-modern -->
 
 
         <!-- Modal -->

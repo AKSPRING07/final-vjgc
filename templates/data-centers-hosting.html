@@ -1222,17 +1222,17 @@
 
 					<!-- BOTTOM -->
 					<div class="footer-bottom">
-						<div class="footer-copyright">
+						<div style="display: flex; align-items: center; gap: 8px;">
 							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
-								alt="Logo">
-							@2026 Vijayalakshmi Group
+								alt="Mark" style="height: 20px; width: auto;">
+							<span>@2026 Vijayalakshmi Group</span>
 						</div>
 
 						<div class="footer-bottom-links">
-							<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0">Legal Disclaimer</a>
-							<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0">Privacy Notice</a>
-							<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0">Terms & Conditions</a>
-							<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0">Cookie Policy</a>
+							<a href="{{ url_for('dynamic_route', path='contact') }}">Legal Disclaimer</a>
+							<a href="{{ url_for('dynamic_route', path='contact') }}">Privacy Notice</a>
+							<a href="{{ url_for('dynamic_route', path='contact') }}">Terms & Conditions</a>
+							<a href="{{ url_for('dynamic_route', path='contact') }}">Cookie Policy</a>
 						</div>
 					</div>
 				</div>
