@@ -467,22 +467,24 @@ a {
 /* CTA Section Styles */
 .vjs-cta-section {
     position: relative;
-    padding: 50px 0;
+    padding: 100px 0;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     color: #fff;
+    background-color: #0b2f2f; /* Deep corporate teal fallback */
 }
 
 .vjs-cta-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.45) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%);
     z-index: 1;
 }
 
@@ -492,12 +494,12 @@ a {
 }
 
 .vjs-cta-section h2 {
-    font-family: "ClashDisplay", "Helvetica Neue", sans-serif;
-    font-size: clamp(22px, 3.5vw, 30px);
+    font-family: 'Satoshi', sans-serif;
+    font-size: clamp(28px, 4vw, 42px);
     font-weight: 700;
-    margin-bottom: 30px;
-    letter-spacing: -0.01em;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .vjs-cta-section .btn-visit {
