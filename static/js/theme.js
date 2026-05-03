@@ -311,7 +311,7 @@
               autoplay: true,
               autoplaySpeed: 5000, // 5 seconds as requested
               slidesToShow: 2,
-              slidesToScroll: 1,
+              slidesToScroll: 2,
               responsive: [
                 {
                   breakpoint: 992,

@@ -532,6 +532,69 @@
 		.card-style-two:hover .arrow-btn {
 			background: rgba(255, 255, 255, 0.4);
 		}
+
+		/* NEWS SLIDER UNIFORM SIZING */
+		.news-slider .slick-track {
+			display: flex !important;
+			align-items: stretch !important;
+		}
+
+		.news-slider .slick-slide {
+			height: auto !important;
+			display: flex !important;
+		}
+
+		.news-slider .item {
+			height: auto !important;
+			display: flex !important;
+			padding-bottom: 30px;
+		}
+
+		.news-slider .blog-meta-one {
+			display: flex !important;
+			flex-direction: column !important;
+			width: 100% !important;
+			background: #ffffff !important;
+			border-radius: 30px !important;
+			padding: 0 !important;
+			overflow: hidden !important;
+			box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05) !important;
+			transition: all 0.4s ease !important;
+		}
+
+		.news-slider .blog-meta-one .post-data {
+			padding: 30px 30px 10px !important;
+			flex: 1 0 auto !important;
+			display: flex !important;
+			flex-direction: column !important;
+			min-height: 160px !important;
+			/* Minimum height to accommodate longest titles */
+		}
+
+		.news-slider .blog-meta-one .post-img {
+			height: 280px !important;
+			margin-top: auto !important;
+			/* Pushes image to bottom of card */
+		}
+
+		.news-slider .blog-title {
+			font-size: 24px !important;
+			line-height: 1.35 !important;
+			font-weight: 700 !important;
+			color: #1A4137 !important;
+			margin-bottom: 15px !important;
+		}
+
+		.news-slider .post-info {
+			font-size: 14px !important;
+			color: #666 !important;
+			margin-bottom: 10px !important;
+		}
+
+		.news-slider .blog-meta-one:hover {
+			transform: translateY(-10px) !important;
+			box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1) !important;
+		}
 	</style>
 
 	<!-- Fix Internet Explorer ______________________________________-->
