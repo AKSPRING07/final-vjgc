@@ -109,6 +109,63 @@
 			content: none !important;
 		}
 
+		/* Blog Slider Spacing */
+		.blog-slider-one .item {
+			padding: 0 20px;
+		}
+
+		/* Hero Banner Controls */
+		.hero-controls-wrapper {
+			position: absolute;
+			bottom: 60px;
+			right: 60px;
+			z-index: 99;
+		}
+
+		.hero-controls button {
+			width: 65px;
+			height: 65px;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(15px);
+			-webkit-backdrop-filter: blur(15px);
+			border: 1.5px solid rgba(255, 255, 255, 0.25);
+			color: #fff;
+			font-size: 24px;
+			margin-left: 15px;
+			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+		}
+
+		.hero-controls button:hover {
+			background: #A2D732;
+			border-color: #A2D732;
+			color: #000;
+			transform: translateY(-5px) scale(1.05);
+			box-shadow: 0 15px 40px rgba(162, 215, 50, 0.4);
+		}
+
+		.hero-controls button:active {
+			transform: scale(0.95);
+		}
+
+		@media (max-width: 768px) {
+			.hero-controls-wrapper {
+				bottom: 30px;
+				right: 30px;
+			}
+
+			.hero-controls button {
+				width: 50px;
+				height: 50px;
+				font-size: 18px;
+			}
+		}
+
 		@media (max-width: 991px) {
 			.hero-slider-one .item {
 				min-height: 700px;
@@ -855,7 +912,7 @@
 				<!-- Slide 2: Agriculture -->
 				<div class="item m0">
 					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="none">
+						<video class="hero-video-bg" muted playsinline preload="auto">
 							<source
 								src="{{ url_for('static', filename='images/hero video/farm-agricultural-field-leveling-tractor-farm-work-2026-01-22-22-50-45-utc.mp4') }}?v=1.0"
 								type="video/mp4">
@@ -884,7 +941,7 @@
 				<!-- Slide 3: Logistics -->
 				<div class="item m0">
 					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="none">
+						<video class="hero-video-bg" muted playsinline preload="metadata">
 							<source
 								src="{{ url_for('static', filename='images/hero video/freight-transport-2025-12-17-20-47-07-utc.mp4') }}?v=1.0"
 								type="video/mp4">
@@ -913,7 +970,7 @@
 				<!-- Slide 4: Corporate Strategy -->
 				<div class="item m0">
 					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="none">
+						<video class="hero-video-bg" muted playsinline preload="metadata">
 							<source
 								src="{{ url_for('static', filename='images/hero video/people-meeting-and-documents-in-office-for-busine-2026-01-22-06-04-12-utc.mp4') }}?v=1.0"
 								type="video/mp4">
@@ -942,7 +999,7 @@
 				<!-- Slide 5: Education -->
 				<div class="item m0">
 					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="none">
+						<video class="hero-video-bg" muted playsinline preload="metadata">
 							<source
 								src="{{ url_for('static', filename='images/hero video/professor-classroom-and-student-with-question-for-2025-12-17-23-05-05-utc.mp4') }}?v=1.0"
 								type="video/mp4">
@@ -971,7 +1028,7 @@
 				<!-- Slide 6: Innovation -->
 				<div class="item m0">
 					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="none">
+						<video class="hero-video-bg" muted playsinline preload="metadata">
 							<source
 								src="{{ url_for('static', filename='images/hero video/scientist-pours-chemicals-from-a-test-tube-into-a-2025-12-17-07-28-37-utc.mp4') }}?v=1.0"
 								type="video/mp4">
@@ -1000,7 +1057,7 @@
 				<!-- Slide 7: Wellness -->
 				<div class="item m0">
 					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="none">
+						<video class="hero-video-bg" muted playsinline preload="metadata">
 							<source
 								src="{{ url_for('static', filename='images/hero video/yoga-2026-01-21-05-24-27-utc.mp4') }}?v=1.0"
 								type="video/mp4">
@@ -1026,6 +1083,15 @@
 				</div>
 			</div>
 			<!-- /.hero-slider-one -->
+
+			<!-- Hero Navigation Controls -->
+			<div class="hero-controls-wrapper wow fadeInRight" data-wow-delay="0.5s">
+				<div class="hero-controls d-flex">
+					<button class="prev-hero" aria-label="Previous Slide"><i class="bi bi-chevron-left"></i></button>
+					<button class="next-hero" aria-label="Next Slide"><i class="bi bi-chevron-right"></i></button>
+				</div>
+			</div>
+
 			<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0"
 				class="more-btn rounded-circle d-flex align-items-center justify-content-center tran3s wow fadeInLeft"
 				target="_blank"><i class="bi bi-arrow-up-right"></i></a>
@@ -1884,7 +1950,7 @@
 						<!-- /.title-one -->
 						<p class="text-lg mb-40 lg-mb-10">Get the latest update, trips & tricks from our expert.</p>
 
-						<div class="row gx-xxl-5">
+						<div class="news-slider row gx-xxl-5">
 							<div class="col-md-6">
 								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp">
 									<div class="post-data">
@@ -1939,6 +2005,58 @@
 								</article>
 								<!-- /.blog-meta-one -->
 							</div>
+							<div class="col-md-6">
+								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="0.2s">
+									<div class="post-data">
+										<div class="post-info"><span class="fw-500 text-dark">AgriTech Team -</span> 12 Oct
+											2023
+										</div>
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+											class="mt-15">
+											<h4 class="tran3s blog-title">Sustainable Agriculture: Integrating Technology with Tradition</h4>
+										</a>
+									</div>
+									<figure
+										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
+										<video loop muted playsinline
+											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+											<source
+												src="{{ url_for('static', filename='images/hero video/farm-agricultural-field-leveling-tractor-farm-work-2026-01-22-22-50-45-utc.mp4') }}?v=1.0"
+												type="video/mp4">
+										</video>
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
+											style="z-index: 1;"><i class="bi bi-arrow-up-right"></i></a>
+									</figure>
+								</article>
+								<!-- /.blog-meta-one -->
+							</div>
+							<div class="col-md-6">
+								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="0.3s">
+									<div class="post-data">
+										<div class="post-info"><span class="fw-500 text-dark">R&D Hub -</span> 25 Nov
+											2023
+										</div>
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+											class="mt-15">
+											<h4 class="tran3s blog-title">Scientific Breakthroughs in Eco-Friendly Industrial Solutions</h4>
+										</a>
+									</div>
+									<figure
+										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
+										<video loop muted playsinline
+											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+											<source
+												src="{{ url_for('static', filename='images/hero video/scientist-pours-chemicals-from-a-test-tube-into-a-2025-12-17-07-28-37-utc.mp4') }}?v=1.0"
+												type="video/mp4">
+										</video>
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
+											style="z-index: 1;"><i class="bi bi-arrow-up-right"></i></a>
+									</figure>
+								</article>
+								<!-- /.blog-meta-one -->
+							</div>
 						</div>
 
 						<div class="section-btn sm-mt-40">
@@ -1954,6 +2072,31 @@
 				</div>
 			</div>
 			<!-- /.blog-section-one -->
+			<script>
+				$(document).ready(function () {
+					if ($('.news-slider').length) {
+						$('.news-slider').slick({
+							dots: true,
+							arrows: false,
+							infinite: true,
+							speed: 800,
+							slidesToShow: 2,
+							slidesToScroll: 2,
+							autoplay: true,
+							autoplaySpeed: 5000,
+							responsive: [
+								{
+									breakpoint: 992,
+									settings: {
+										slidesToShow: 1,
+										slidesToScroll: 1
+									}
+								}
+							]
+						});
+					}
+				});
+			</script>
 
 
 			<!--

@@ -43,8 +43,6 @@
 			<script src="{{ url_for('static', filename='vendor/respond.js') }}?v=1.0"></script>
 		<![endif]-->
 	<style>
-		}
-
 		/* ================= GLASS EFFECT ================= */
 
 
@@ -131,7 +129,7 @@
 		}
 
 		.hero-banner-one .hero-img::after {
-			content: ';
+			content: '';
  position: absolute;
 			top: 0;
 			left: 0;
@@ -553,7 +551,7 @@
 				<!-- Slide 1: Empowerment -->
 				<div class="item m0">
 					<div class="hero-img"
-						style="background-image: url('{{ url_for('static', filename='images/media/hero_empowerment_vjs.png') }}');">
+						style="background-image: url('{{ url_for("static", filename="images/media/hero_empowerment_vjs.png") }}');">
 					</div>
 					<div class="container position-relative">
 						<div class="row">
@@ -567,7 +565,7 @@
 				<!-- Slide 2: Healthcare -->
 				<div class="item m0">
 					<div class="hero-img"
-						style="background-image: url('{{ url_for('static', filename='images/media/hero_healthcare_vjs.png') }}');">
+						style="background-image: url('{{ url_for("static", filename="images/media/hero_healthcare_vjs.png") }}');">
 					</div>
 					<div class="container position-relative">
 						<div class="row">
@@ -581,7 +579,7 @@
 				<!-- Slide 3: Environment -->
 				<div class="item m0">
 					<div class="hero-img"
-						style="background-image: url('{{ url_for('static', filename='images/media/hero_environment_vjs.png') }}');">
+						style="background-image: url('{{ url_for("static", filename="images/media/hero_environment_vjs.png") }}');">
 					</div>
 					<div class="container position-relative">
 						<div class="row">
@@ -795,7 +793,7 @@
 			style="background: #fdfdfb; position: relative; overflow: hidden;">
 			<!-- Background Decorative Shape -->
 			<div
-				style="position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: rgba(158, 192, 8, 0.05); border-radius: 50%; blur: 80px;">
+				style="position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: rgba(158, 192, 8, 0.05); border-radius: 50%; filter: blur(80px);">
 			</div>
 
 			<div class="container">
@@ -957,7 +955,7 @@
 		<div class="foundation-visit-section pb-100 lg-pb-50">
 			<div class="container">
 				<div class="fancy-banner-three position-relative wow fadeInUp"
-					style="background: url('{{ url_for('static', filename='images/media/foundation_visit_bg.png') }}') no-repeat center center; background-size: cover; padding: 100px 0; border-radius: 30px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.15);">
+					style="background: url('{{ url_for("static", filename="images/media/foundation_visit_bg.png") }}') no-repeat center center; background-size: cover; padding: 100px 0; border-radius: 30px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.15);">
 					<!-- Dark Bottom-Heavy Gradient Overlay -->
 					<div
 						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);">

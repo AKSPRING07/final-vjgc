@@ -117,8 +117,10 @@
 
             $heroSlider.slick({
                 dots: false,
-                arrows: false,
-                lazyLoad: 'ondemand',
+                arrows: true,
+                prevArrow: $('.prev-hero'),
+                nextArrow: $('.next-hero'),
+                lazyLoad: false, // Disable lazyLoad for immediate video availability
                 centerPadding: '0px',
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -129,18 +131,24 @@
 
             // Play video on slide change + preload next video
             $heroSlider.on('afterChange', function(event, slick, currentSlide) {
+                // Stop all other videos first to prevent audio/lag overlap
+                $heroSlider.find('video').each(function() {
+                    this.pause();
+                });
+
                 var activeVideo = $(slick.$slides[currentSlide]).find('video').get(0);
                 if (activeVideo) {
-                    activeVideo.preload = 'auto'; // enable loading now
+                    activeVideo.preload = 'auto';
                     activeVideo.currentTime = 0;
-                    activeVideo.play();
+                    activeVideo.play().catch(function(e) {
+                         console.log("Playback interrupted or blocked");
+                    });
                 }
                 // Preload the next video in background
                 var nextSlide = (currentSlide + 1) % slick.slideCount;
                 var nextVideo = $(slick.$slides[nextSlide]).find('video').get(0);
-                if (nextVideo && nextVideo.preload !== 'auto') {
+                if (nextVideo) {
                     nextVideo.preload = 'auto';
-                    nextVideo.load();
                 }
             });
 
