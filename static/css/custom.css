@@ -1704,133 +1704,76 @@ a {
     letter-spacing: 1px;
 }
 
-.vjs-biz-card-v2 {
+/* --- BUSINESS & GLANCE CARDS (Adani-Style Modernization) --- */
+.vjs-biz-card-v2, .vjs-glance-card-v3 {
     background: #ffffff;
-    border-radius: 30px;
-    padding: 30px;
+    border-radius: 8px;
+    padding: 15px;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     height: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(0,0,0,0.04);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
     text-decoration: none !important;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: left;
 }
 
-.vjs-biz-card-v2 .img-wrap {
+.vjs-biz-card-v2:hover, .vjs-glance-card-v3:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.vjs-biz-card-v2 .img-wrap, .vjs-glance-card-v3 .img-wrap {
     width: 100%;
-    height: 200px;
-    border-radius: 20px;
+    height: 240px;
+    border-radius: 4px;
     overflow: hidden;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    background: #f5f5f5;
 }
 
-.vjs-biz-card-v2 .img-wrap img {
+.vjs-biz-card-v2 .img-wrap img, .vjs-glance-card-v3 .img-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
 }
 
-.vjs-biz-card-v2:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 40px 80px rgba(0,0,0,0.08);
-    border-color: rgba(223, 255, 124, 0.4);
+.vjs-biz-card-v2:hover .img-wrap img, .vjs-glance-card-v3:hover .img-wrap img {
+    transform: scale(1.05);
 }
 
-.vjs-biz-card-v2:hover .img-wrap img {
-    transform: scale(1.1);
+.vjs-biz-card-v2 .card-title, .vjs-glance-card-v3 .card-title {
+    display: none; /* Hide titles as per screenshot */
 }
 
-.vjs-biz-card-v2 .card-title {
-    font-size: 24px;
-    font-weight: 800;
-    color: #1A4137;
-    margin-bottom: 15px;
-    transition: color 0.3s ease;
-}
-
-.vjs-biz-card-v2:hover .card-title {
-    color: #000;
-}
-
-.vjs-biz-card-v2 .card-desc {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
+.vjs-biz-card-v2 .card-desc, .vjs-glance-card-v3 .card-desc {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
     margin: 0;
+    font-weight: 500;
 }
 
-/* AT A GLANCE - Layout 3 (User Requested Style) */
+/* SECTION HEADERS */
 .glance-section-v3 {
     padding: 100px 0;
-    background: #f4faf4; /* Light mint green */
+    background: #f8f8f8; /* Light grey section background */
 }
 
 .glance-section-v3 .section-title {
-    font-family: serif; 
-    font-size: 64px;
-    font-weight: 500;
+    font-family: 'Satoshi', sans-serif; 
+    font-size: 48px;
+    font-weight: 700;
     color: #1a1a1a;
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.vjs-glance-card-v3 {
-    background: #fff;
-    border-radius: 30px;
-    padding: 60px 40px;
-    text-align: center;
-    transition: all 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.vjs-glance-card-v3 .img-wrap {
-    width: 100%;
-    height: 180px;
-    background: #f5f5f5;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 40px;
-    overflow: hidden;
-}
-
-.vjs-glance-card-v3 .img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.vjs-glance-card-v3 .card-title {
-    font-size: 22px;
-    font-weight: 800;
-    color: #000;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-    letter-spacing: 1.5px;
-}
-
-.vjs-glance-card-v3 .card-desc {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.7;
-    margin: 0;
-}
-
-.vjs-glance-card-v3:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    text-align: left;
+    margin-bottom: 50px;
 }
 
 @media (max-width: 991px) {
-    .glance-section-v3 .section-title { font-size: 48px; }
-    .vjs-glance-card-v3 { padding: 40px 25px; }
+    .glance-section-v3 .section-title { font-size: 38px; }
+    .vjs-biz-card-v2 .img-wrap, .vjs-glance-card-v3 .img-wrap { height: 200px; }
 }
 
 @media (max-width: 768px) {

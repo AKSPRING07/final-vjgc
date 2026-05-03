@@ -664,9 +664,8 @@
 					<div class="row gx-xl-5 justify-content-center">
 						<!-- Card 1: Digital Infrastructure & Cloud -->
 						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
-							<div class="vjs-glance-card">
-								<div class="vjs-card-image-wrap"
-									style="width: 100%; height: 180px; border-radius: 16px; overflow: hidden; margin-bottom: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+							<div class="vjs-glance-card-v3">
+								<div class="img-wrap">
 									<img src="{{ url_for('static', filename='images/media/vjs_enterprise_datacenter.png') }}"
 										alt="Enterprise Data Centres"
 										style="width: 100%; height: 100%; object-fit: cover;">
@@ -676,15 +675,13 @@
 									<p class="card-desc">Secure datacenters, managed hosting, and scalable cloud
 										solutions that power reliable digital ecosystems.</p>
 								</div>
-								<div class="card-glow"></div>
 							</div>
 						</div>
 
 						<!-- Card 2: Learning & Skill Development -->
 						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
-							<div class="vjs-glance-card">
-								<div class="vjs-card-image-wrap"
-									style="width: 100%; height: 180px; border-radius: 16px; overflow: hidden; margin-bottom: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+							<div class="vjs-glance-card-v3">
+								<div class="img-wrap">
 									<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200"
 										alt="Learning & Skill Development"
 										style="width: 100%; height: 100%; object-fit: cover;">
@@ -694,15 +691,13 @@
 									<p class="card-desc">Education-driven initiatives focused on practical training,
 										mentorship, and career-oriented growth.</p>
 								</div>
-								<div class="card-glow"></div>
 							</div>
 						</div>
 
 						<!-- Card 3: Sustainable Energy & Innovation -->
 						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
-							<div class="vjs-glance-card">
-								<div class="vjs-card-image-wrap"
-									style="width: 100%; height: 180px; border-radius: 16px; overflow: hidden; margin-bottom: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+							<div class="vjs-glance-card-v3">
+								<div class="img-wrap">
 									<img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1200"
 										alt="Sustainable Energy" style="width: 100%; height: 100%; object-fit: cover;">
 								</div>
@@ -711,142 +706,11 @@
 									<p class="card-desc">Renewable energy solutions and solar manufacturing focused on
 										building a sustainable future.</p>
 								</div>
-								<div class="card-glow"></div>
 							</div>
 						</div>
 					</div>
 
-					<style>
-						.vjs-glance-card {
-							background: #ffffff;
-							border-radius: 24px;
-							padding: 40px 30px;
-							text-align: center;
-							position: relative;
-							overflow: hidden;
-							transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-							box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-							border: 1px solid rgba(0, 0, 0, 0.03);
-							width: 100%;
-							margin-top: 30px;
-							display: flex;
-							flex-direction: column;
-							align-items: center;
-							z-index: 1;
-						}
 
-						.vjs-glance-card:hover {
-							transform: translateY(-10px);
-							box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-							border-color: #dfff7c;
-						}
-
-						.icon-box {
-							width: 80px;
-							height: 80px;
-							background: #f8f9fa;
-							border-radius: 20px;
-							display: flex;
-							align-items: center;
-							justify-content: center;
-							margin-bottom: 25px;
-							transition: all 0.4s ease;
-						}
-
-						.vjs-glance-card:hover .icon-box {
-							background: #dfff7c;
-							transform: scale(1.1);
-						}
-
-						.emoji-icon {
-							font-size: 40px;
-							display: inline-block;
-						}
-
-						.card-title {
-							font-size: 22px;
-							font-weight: 700;
-							color: #000;
-							margin-bottom: 15px;
-							text-transform: uppercase;
-							letter-spacing: 1px;
-						}
-
-						.card-desc {
-							font-size: 16px;
-							color: #666;
-							line-height: 1.6;
-							margin: 0;
-						}
-
-						/* Animations */
-						.rocket {
-							animation: float 3s ease-in-out infinite;
-						}
-
-						.trophy {
-							animation: rotate 4s ease-in-out infinite;
-						}
-
-						.lightning {
-							animation: pulse 2s ease-in-out infinite;
-						}
-
-						@keyframes float {
-
-							0%,
-							100% {
-								transform: translateY(0);
-							}
-
-							50% {
-								transform: translateY(-10px);
-							}
-						}
-
-						@keyframes rotate {
-
-							0%,
-							100% {
-								transform: rotate(0deg);
-							}
-
-							50% {
-								transform: rotate(10deg);
-							}
-						}
-
-						@keyframes pulse {
-
-							0%,
-							100% {
-								transform: scale(1);
-								opacity: 1;
-							}
-
-							50% {
-								transform: scale(1.2);
-								opacity: 0.8;
-							}
-						}
-
-						.card-glow {
-							position: absolute;
-							top: 0;
-							left: 0;
-							width: 100%;
-							height: 100%;
-							background: radial-gradient(circle at 50% 50%, rgba(223, 255, 124, 0.1) 0%, transparent 70%);
-							opacity: 0;
-							transition: opacity 0.4s ease;
-							pointer-events: none;
-							z-index: -1;
-						}
-
-						.vjs-glance-card:hover .card-glow {
-							opacity: 1;
-						}
-					</style>
 
 					<h3 class="heading font-magnita text-white mt-110 lg-mt-80">Datacenters, Managed Hosting, Domains &
 						more. <br> Our infrastructure, our strength. <a href="#"><img
@@ -936,40 +800,42 @@
 				.vjs-biz-card {
 					flex: 0 0 calc(25% - 18px);
 					min-width: calc(25% - 18px);
-					border-radius: 16px;
+					border-radius: 12px;
 					overflow: hidden;
 					background: #fff;
-					box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-					transition: transform 0.35s ease, box-shadow 0.35s ease;
+					border: 1px solid #e2e2e2;
+					box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+					transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 					cursor: pointer;
-					text-decoration: none;
+					text-decoration: none !important;
 					display: block;
 					color: inherit;
+					text-align: left;
 				}
 
 				.vjs-biz-card:hover {
 					transform: translateY(-8px);
-					box-shadow: 0 16px 48px rgba(0, 0, 0, 0.13);
-					color: inherit;
-					text-decoration: none;
+					box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+					border-color: #008D96;
 				}
 
 				.vjs-biz-img-wrap {
-					position: relative;
+					width: 100%;
+					height: 220px;
+					border-radius: 4px;
 					overflow: hidden;
-					aspect-ratio: 4/3;
+					background: #f5f5f5;
 				}
 
 				.vjs-biz-img-wrap img {
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
-					transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-					display: block;
+					transition: transform 0.6s ease;
 				}
 
 				.vjs-biz-card:hover .vjs-biz-img-wrap img {
-					transform: scale(1.08);
+					transform: scale(1.05);
 				}
 
 				/* Icon-only card variant */
@@ -985,26 +851,35 @@
 				}
 
 				.vjs-biz-card-body {
-					padding: 18px 20px 20px;
+					padding: 15px;
 				}
 
 				.vjs-biz-card-body h5 {
-					font-size: 16px;
+					font-size: 20px;
 					font-weight: 700;
 					color: #1a1a1a;
-					margin: 0 0 6px;
+					margin: 0 0 10px;
 					transition: color 0.3s;
 				}
 
 				.vjs-biz-card:hover .vjs-biz-card-body h5 {
-					color: #1A4137;
+					color: #008D96;
 				}
 
 				.vjs-biz-card-body p {
-					font-size: 13px;
-					color: #888;
+					font-size: 14px;
+					color: #444;
 					margin: 0;
-					line-height: 1.5;
+					line-height: 1.6;
+					font-weight: 500;
+				}
+
+				.vjs-biz-card-body small {
+					display: block;
+					margin-top: 10px;
+					color: #888;
+					font-size: 12px;
+					font-weight: 400;
 				}
 
 				/* Dots */
