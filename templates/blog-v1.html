@@ -138,62 +138,7 @@
 			background: linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.2));
 		}
 
-		/* THE WOW FACTOR - Premium Prism Glass Heading */
-		.hero-heading-glass {
-			position: relative;
-			padding: 40px 60px;
-			border-radius: 35px 35px 35px 10px;
-			background: linear-gradient(135deg,
-					rgba(255, 255, 255, 0.18) 0%,
-					rgba(255, 255, 255, 0.05) 100%);
-			backdrop-filter: blur(25px) saturate(180%);
-			-webkit-backdrop-filter: blur(25px) saturate(180%);
-			border: 1.5px solid rgba(255, 255, 255, 0.25);
-			border-top: 2px solid rgba(255, 255, 255, 0.4);
-			border-left: 2px solid rgba(255, 255, 255, 0.4);
 
-			color: #fff;
-			font-size: min(64px, 11vw);
-			line-height: 1.1;
-			font-weight: 800;
-			display: inline-block;
-			width: fit-content;
-			max-width: 950px !important;
-			letter-spacing: -1px;
-
-			text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-			box-shadow:
-				0 25px 50px -12px rgba(0, 0, 0, 0.5),
-				inset 0 0 20px rgba(255, 255, 255, 0.1);
-
-			animation: premiumReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1);
-		}
-
-		.hero-heading-glass::before {
-			content: "";
-			position: absolute;
-			left: 20px;
-			top: 25%;
-			height: 50%;
-			width: 6px;
-			background: #9ec008;
-			border-radius: 99px;
-			box-shadow: 0 0 15px rgba(158, 192, 8, 0.6);
-		}
-
-		@keyframes premiumReveal {
-			0% {
-				opacity: 0;
-				transform: translateY(40px) scale(0.95) rotate(-1deg);
-				filter: blur(10px);
-			}
-
-			100% {
-				opacity: 1;
-				transform: translateY(0) scale(1) rotate(0);
-				filter: blur(0);
-			}
-		}
 
 		@media (max-width: 991px) {
 			.hero-banner-one .item {

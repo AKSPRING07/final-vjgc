@@ -38,27 +38,7 @@
 	<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.1"
 		media='all'>
 	<style>
-		.hero-banner-one .hero-heading.hero-heading-glass {
-			position: relative;
-			overflow: visible;
-			max-width: 600px;
-			padding: 0;
-			border-radius: 0;
-			border: none;
-			background: transparent !important;
-			-webkit-backdrop-filter: none !important;
-			backdrop-filter: none !important;
-			box-shadow: none !important;
-			color: #ffffff !important;
-			line-height: 1.15em;
-			letter-spacing: -0.01em;
-			font-size: min(48px, 8vw);
-			text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
-			background-image: none;
-			display: block !important;
-			width: 100%;
-			margin-bottom: 24px !important;
-		}
+
 
 		.hero-banner-one .hero-slider-one {
 			position: relative !important;
@@ -104,10 +84,7 @@
 			width: 100%;
 		}
 
-		.hero-banner-one .hero-heading.hero-heading-glass::before,
-		.hero-banner-one .hero-heading.hero-heading-glass::after {
-			content: none !important;
-		}
+
 
 		/* Blog Slider Spacing */
 		.blog-slider-one .item {
@@ -1950,8 +1927,8 @@
 						<!-- /.title-one -->
 						<p class="text-lg mb-40 lg-mb-10">Get the latest update, trips & tricks from our expert.</p>
 
-						<div class="news-slider row gx-xxl-5">
-							<div class="col-md-6">
+						<div class="news-slider">
+							<div class="item">
 								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp">
 									<div class="post-data">
 										<div class="post-info"><span class="fw-500 text-dark">Rashed Ka -</span> 18 Jul
@@ -1978,7 +1955,7 @@
 								</article>
 								<!-- /.blog-meta-one -->
 							</div>
-							<div class="col-md-6">
+							<div class="item">
 								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="0.1s">
 									<div class="post-data">
 										<div class="post-info"><span class="fw-500 text-dark">Mark Joe -</span> 09 Feb
@@ -2005,7 +1982,7 @@
 								</article>
 								<!-- /.blog-meta-one -->
 							</div>
-							<div class="col-md-6">
+							<div class="item">
 								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="0.2s">
 									<div class="post-data">
 										<div class="post-info"><span class="fw-500 text-dark">AgriTech Team -</span> 12 Oct
@@ -2031,7 +2008,7 @@
 								</article>
 								<!-- /.blog-meta-one -->
 							</div>
-							<div class="col-md-6">
+							<div class="item">
 								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="0.3s">
 									<div class="post-data">
 										<div class="post-info"><span class="fw-500 text-dark">R&D Hub -</span> 25 Nov

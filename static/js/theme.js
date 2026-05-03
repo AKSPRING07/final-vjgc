@@ -302,6 +302,27 @@
             });
         }
 
+        // ------------------------ News Slider (Index-2)
+        if($(".news-slider").length) {
+          $('.news-slider').slick({
+              dots: true,
+              arrows: false,
+              infinite: true,
+              autoplay: true,
+              autoplaySpeed: 5000, // 5 seconds as requested
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              responsive: [
+                {
+                  breakpoint: 992,
+                  settings: {
+                    slidesToShow: 1
+                  }
+                }
+              ]
+            });
+        }
+
 
         // ------------------------ Service Slider One
         if($(".service-slider-one").length) {
