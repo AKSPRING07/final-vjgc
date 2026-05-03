@@ -47,35 +47,33 @@
 
     function resolveCurrentItem() {
         var items = getTopLevelItems();
+        var path = window.location.pathname;
+        var fileName = path.split('/').pop();
 
         items.forEach(function (item) {
             item.classList.remove("nav-current");
         });
 
-        var path = window.location.pathname;
-
-        // Detection logic
+        // 1. Try to find item based on links within its dropdown or itself
         currentItem = items.find(function (item) {
-            // Check if any dropdown item is active
-            var activeDropdownItem = item.querySelector(".dropdown-item.active");
-            if (activeDropdownItem) {
-                // User Request: index-2.html is NOT a services page for highlighting
-                if (path.indexOf("index-2.html") !== -1 && item.textContent.trim().indexOf("Services") !== -1) {
-                    return false;
+            var links = item.querySelectorAll("a");
+            for (var i = 0; i < links.length; i++) {
+                var href = links[i].getAttribute("href");
+                if (href && fileName && href.indexOf(fileName) !== -1 && fileName !== "") {
+                    return true;
                 }
-                return true;
             }
             return false;
-        }) || items.find(function (item) {
-            var link = getTopLevelLink(item);
-            return link && link.classList.contains("active");
-        }) || null;
+        });
 
-        // Fallback: Default to "About Us" if no match found (or if we are on index-2.html)
-        if (!currentItem || path.indexOf("index-2.html") !== -1) {
-            currentItem = items.find(function (item) {
-                return item.textContent.trim().indexOf("About Us") !== -1;
-            }) || items[0];
+        // 2. Fallback for specific pages or when no match found
+        if (!currentItem) {
+            if (fileName === "index-2.html" || fileName === "") {
+                // Default to first item (About Us) on Home Page if no other match
+                currentItem = items.find(function (item) {
+                    return item.textContent.trim().indexOf("About Us") !== -1;
+                }) || items[0];
+            }
         }
 
         if (currentItem) {
