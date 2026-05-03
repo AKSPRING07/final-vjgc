@@ -20,12 +20,12 @@ a {
   border-top: 2px solid rgba(255, 255, 255, 0.4);
   border-left: 2px solid rgba(255, 255, 255, 0.4);
   color: #fff !important;
-  font-size: clamp(36px, 7vw, 68px) !important;
+  font-size: min(46px, 6vw) !important;
   line-height: 1.1;
   font-weight: 800;
   display: inline-block;
   width: fit-content;
-  max-width: 950px !important;
+  max-width: 1000px !important;
   letter-spacing: -1.5px;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.1);

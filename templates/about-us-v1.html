@@ -40,6 +40,18 @@
 		<![endif]-->
 	
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0" media="all">
+	<style>
+		.inner-banner-one {
+			position: relative;
+			height: 75vh;
+			min-height: 700px;
+			max-height: 850px;
+			display: flex;
+			align-items: flex-end;
+			padding-bottom: 120px !important;
+			overflow: hidden;
+		}
+	</style>
 </head>
 
 <body>
@@ -303,11 +315,8 @@
 			style="background-image: url('{{ url_for('static', filename='images/media/vision-hero-bg.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 			<div class="container position-relative">
 				<div class="row align-items-center">
-					<div class="col-lg-8 col-xl-7">
-						<h1 class="hero-heading-glass">
-							A Trusted Name Across
-							<br>Multiple Industries
-						</h1>
+					<div class="col-lg-10">
+						<h1 class="hero-heading-glass">A Trusted Name Across Multiple Industries</h1>
 					</div>
 					<div class="col-xl-4 col-lg-5 ms-auto d-flex align-self-end justify-content-lg-end">
 						<ul class="style-none d-inline-flex pager m-0">
