@@ -1,21 +1,28 @@
-from pydantic import BaseModel
-from typing import Optional
+from pydantic import BaseModel, Field, ConfigDict
+from typing import Optional, Annotated
+from pydantic.functional_validators import BeforeValidator
+
+PyObjectId = Annotated[str, BeforeValidator(str)]
 
 class ServiceBase(BaseModel):
-    name: str
-    icon: Optional[str] = None
-    summary: Optional[str] = None
+    name: str = Field(..., max_length=100)
+    icon: Optional[str] = Field(None, max_length=50)
+    summary: str = Field(..., max_length=300)
     content: Optional[str] = None
-    is_active: Optional[bool] = True
+    is_active: bool = True
 
 class ServiceCreate(ServiceBase):
     pass
 
 class ServiceUpdate(ServiceBase):
     name: Optional[str] = None
+    summary: Optional[str] = None
 
 class Service(ServiceBase):
-    id: int
+    id: Optional[PyObjectId] = Field(alias="_id", default=None)
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(
+        populate_by_name=True,
+        arbitrary_types_allowed=True,
+        from_attributes=True
+    )

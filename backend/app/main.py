@@ -24,7 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# MongoDB Events
+# MongoDB Lifecycle
 @app.on_event("startup")
 async def startup_event():
     await connect_to_mongo()
@@ -35,20 +35,8 @@ async def shutdown_event():
 
 # Include Routers
 app.include_router(public.router, prefix="/api", tags=["Public"])
-app.include_router(auth.router, prefix="/api/admin", tags=["Auth"]) # login is /api/admin/login
+app.include_router(auth.router, prefix="/api/admin", tags=["Auth"])
 app.include_router(admin.router, prefix="/api/admin", tags=["Admin"])
-
-from app.db.mongodb import get_database
-from fastapi import Depends
-
-@app.get("/api/debug/achievements")
-async def debug_achievements(db = Depends(get_database)):
-    achievements = []
-    cursor = db["achievements"].find().limit(10)
-    async for doc in cursor:
-        doc["_id"] = str(doc["_id"])
-        achievements.append(doc)
-    return achievements
 
 @app.get("/")
 async def root():

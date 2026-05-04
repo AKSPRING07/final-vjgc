@@ -2,6 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File
 from app.db.mongodb import get_database
 from app.api.deps import get_current_admin
 from app.schemas.achievement import Achievement, AchievementCreate
+from app.schemas.about import About, AboutUpdate
+from app.schemas.service import Service, ServiceCreate
+from app.schemas.blog import Blog, BlogCreate
 from typing import List
 from datetime import datetime
 import uuid
@@ -12,78 +15,69 @@ router = APIRouter()
 
 UPLOAD_DIR = "uploads"
 ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png"}
-MAX_FILE_SIZE = 5 * 1024 * 1024 # 5MB
 
+# --- Media Management ---
 @router.post("/media/upload")
-async def upload_image(
-    file: UploadFile = File(...),
-    admin: str = Depends(get_current_admin)
-):
-    """
-    Upload an image for the CMS. Protected by JWT.
-    """
-    # 1. Validate Extension
+async def upload_image(file: UploadFile = File(...), admin: str = Depends(get_current_admin)):
     file_ext = file.filename.split(".")[-1].lower()
     if file_ext not in ALLOWED_EXTENSIONS:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Invalid file type. Only JPG, JPEG, and PNG are allowed."
-        )
-
-    # 2. Generate Unique Filename
+        raise HTTPException(status_code=400, detail="Invalid file type.")
     unique_filename = f"{uuid.uuid4()}.{file_ext}"
     file_path = os.path.join(UPLOAD_DIR, unique_filename)
+    with open(file_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+    return {"url": f"/uploads/{unique_filename}", "filename": unique_filename}
 
-    # 3. Save File
-    try:
-        with open(file_path, "wb") as buffer:
-            shutil.copyfileobj(file.file, buffer)
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Could not save file: {str(e)}"
-        )
+# --- About Us ---
+@router.put("/about", response_model=About)
+async def update_about(about: AboutUpdate, db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    update_data = {k: v for k, v in about.model_dump().items() if v is not None}
+    update_data["updated_at"] = datetime.utcnow()
+    await db["about"].update_one({}, {"$set": update_data}, upsert=True)
+    updated_about = await db["about"].find_one()
+    updated_about["_id"] = str(updated_about["_id"])
+    return updated_about
 
-    return {
-        "url": f"/uploads/{unique_filename}",
-        "filename": unique_filename
-    }
-
-@router.get("/media/list")
-async def list_media(admin: str = Depends(get_current_admin)):
-    """List all uploaded media files."""
-    files = os.listdir(UPLOAD_DIR)
-    return {"images": files}
-
+# --- Achievements ---
 @router.post("/achievements", response_model=Achievement)
-async def create_achievement(
-    achievement: AchievementCreate, 
-    db = Depends(get_database),
-    admin = Depends(get_current_admin)
-):
-    """Admin API to create an achievement. Protected by JWT."""
-    # Convert Pydantic model to dict
-    new_achievement = achievement.model_dump()
-    
-    # Add timestamp
-    new_achievement["created_at"] = datetime.utcnow()
-    
-    # Insert into MongoDB
-    result = await db["achievements"].insert_one(new_achievement)
-    
-    # Add the generated ID back to the dict as a string
-    new_achievement["_id"] = str(result.inserted_id)
-    
-    return new_achievement
+async def create_achievement(item: AchievementCreate, db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    doc = item.model_dump()
+    doc["created_at"] = datetime.utcnow()
+    result = await db["achievements"].insert_one(doc)
+    doc["_id"] = str(result.inserted_id)
+    return doc
 
 @router.delete("/achievements/{id}")
-async def delete_achievement(
-    id: str, 
-    db = Depends(get_database),
-    admin = Depends(get_current_admin)
-):
-    """Admin API to delete an achievement."""
-    result = await db["achievements"].delete_one({"_id": id})
-    if result.deleted_count == 0:
-        raise HTTPException(status_code=404, detail="Achievement not found")
-    return {"message": "Deleted successfully"}
+async def delete_achievement(id: str, db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    from bson import ObjectId
+    await db["achievements"].delete_one({"_id": ObjectId(id)})
+    return {"message": "Deleted"}
+
+# --- Services ---
+@router.post("/services", response_model=Service)
+async def create_service(item: ServiceCreate, db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    doc = item.model_dump()
+    result = await db["services"].insert_one(doc)
+    doc["_id"] = str(result.inserted_id)
+    return doc
+
+@router.delete("/services/{id}")
+async def delete_service(id: str, db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    from bson import ObjectId
+    await db["services"].delete_one({"_id": ObjectId(id)})
+    return {"message": "Deleted"}
+
+# --- Blogs ---
+@router.post("/news", response_model=Blog)
+async def create_blog(item: BlogCreate, db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    doc = item.model_dump()
+    doc["created_at"] = datetime.utcnow()
+    result = await db["news"].insert_one(doc)
+    doc["_id"] = str(result.inserted_id)
+    return doc
+
+@router.delete("/news/{id}")
+async def delete_blog(id: str, db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    from bson import ObjectId
+    await db["news"].delete_one({"_id": ObjectId(id)})
+    return {"message": "Deleted"}
