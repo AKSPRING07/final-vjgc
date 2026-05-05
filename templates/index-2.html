@@ -1274,6 +1274,24 @@
 						</div>
 					</div>
 					<div class="row justify-content-center row-cols-1 row-cols-md-3 row-cols-lg-5">
+						{% for service in services %}
+						<div class="col d-flex wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
+								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+									data-src="{{ service.image_url or url_for('static', filename='images/icon/icon_06.svg') }}" alt=""
+									class="lazy-img icon me-auto mb-20" style="width: 35px;">
+								<h4 class="fw-bold mb-15" style="font-size: 18px;">{{ service.title }}</h4>
+								<p style="font-size: 14px; line-height: 1.6em;">{{ service.description }}</p>
+								<a href="{{ url_for('dynamic_route', path='service-details') }}"
+									class="arrow-btn tran3s mt-auto stretched-link"><img
+										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+										alt="" class="lazy-img"></a>
+							</div>
+							<!-- /.card-style-two -->
+						</div>
+						{% else %}
+						<!-- Fallback to hardcoded if no services in DB -->
 						<div class="col d-flex wow fadeInUp">
 							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
 								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
@@ -1288,7 +1306,6 @@
 										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
 										alt="" class="lazy-img"></a>
 							</div>
-							<!-- /.card-style-two -->
 						</div>
 						<div class="col d-flex wow fadeInUp" data-wow-delay="0.1s">
 							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
@@ -1304,56 +1321,8 @@
 										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
 										alt="" class="lazy-img"></a>
 							</div>
-							<!-- /.card-style-two -->
 						</div>
-						<div class="col d-flex wow fadeInUp" data-wow-delay="0.2s">
-							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-									data-src="{{ url_for('static', filename='images/icon/icon_08.svg') }}?v=1.0" alt=""
-									class="lazy-img icon me-auto mb-20" style="width: 35px;">
-								<h4 class="fw-bold mb-15" style="font-size: 18px;">Healthcare & Wellness</h4>
-								<p style="font-size: 14px; line-height: 1.6em;">Delivering holistic wellness solutions
-									through Ayurveda, yoga, and natural therapies.</p>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}"
-									class="arrow-btn tran3s mt-auto stretched-link"><img
-										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
-										alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-two -->
-						</div>
-						<div class="col d-flex wow fadeInUp" data-wow-delay="0.3s">
-							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-									data-src="{{ url_for('static', filename='images/icon/icon_18_dual.svg') }}?v=1.0"
-									alt="" class="lazy-img icon me-auto mb-20" style="width: 35px;">
-								<h4 class="fw-bold mb-15" style="font-size: 18px;">Export & Trading</h4>
-								<p style="font-size: 14px; line-height: 1.6em;">Supplying high-quality agricultural
-									products like pepper and coconut to global markets.</p>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}"
-									class="arrow-btn tran3s mt-auto stretched-link"><img
-										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
-										alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-two -->
-						</div>
-						<div class="col d-flex wow fadeInUp" data-wow-delay="0.4s">
-							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-									data-src="{{ url_for('static', filename='images/icon/icon_20_dual.svg') }}?v=1.0"
-									alt="" class="lazy-img icon me-auto mb-20" style="width: 35px;">
-								<h4 class="fw-bold mb-15" style="font-size: 18px;">Business Consulting</h4>
-								<p style="font-size: 14px; line-height: 1.6em;">Helping businesses grow with strategic
-									planning, expert guidance, and actionable solutions.</p>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}"
-									class="arrow-btn tran3s mt-auto stretched-link"><img
-										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
-										alt="" class="lazy-img"></a>
-							</div>
-							<!-- /.card-style-two -->
-						</div>
+						{% endfor %}
 					</div>
 
 				</div>
@@ -1988,16 +1957,44 @@
 						<p class="text-lg mb-40 lg-mb-10">Get the latest update, trips & tricks from our expert.</p>
 
 						<div class="news-slider">
+							{% for item in news %}
 							<div class="item">
-								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp">
+								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
 									<div class="post-data">
-										<div class="post-info"><span class="fw-500 text-dark">Rashed Ka -</span> 18 Jul
-											2023
+										<div class="post-info"><span class="fw-500 text-dark">{{ item.author or 'Admin' }} -</span> {{ item.created_at.strftime('%d %b %Y') if item.created_at else 'Recent' }}
 										</div>
 										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
 											class="mt-15">
-											<h4 class="tran3s blog-title"> Connecting India: Unlocking Opportunities
-												Through Connectivity</h4>
+											<h4 class="tran3s blog-title">{{ item.title }}</h4>
+										</a>
+									</div>
+									<figure
+										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
+										{% if item.image_url and item.image_url.endswith('.mp4') %}
+										<video loop muted playsinline
+											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+											<source src="{{ item.image_url }}" type="video/mp4">
+										</video>
+										{% else %}
+										<img src="{{ item.image_url or url_for('static', filename='images/media/blog_01.jpg') }}" alt="" class="lazy-img w-100 h-100" style="object-fit: cover;">
+										{% endif %}
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
+											style="z-index: 1;"><i class="bi bi-arrow-up-right"></i></a>
+									</figure>
+								</article>
+								<!-- /.blog-meta-one -->
+							</div>
+							{% else %}
+							<!-- Fallback if no news -->
+							<div class="item">
+								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp">
+									<div class="post-data">
+										<div class="post-info"><span class="fw-500 text-dark">VJS News -</span> Recent
+										</div>
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+											class="mt-15">
+											<h4 class="tran3s blog-title">Empowering Communities Through Connectivity</h4>
 										</a>
 									</div>
 									<figure
@@ -2013,87 +2010,8 @@
 											style="z-index: 1;"><i class="bi bi-arrow-up-right"></i></a>
 									</figure>
 								</article>
-								<!-- /.blog-meta-one -->
 							</div>
-							<div class="item">
-								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="0.1s">
-									<div class="post-data">
-										<div class="post-info"><span class="fw-500 text-dark">Mark Joe -</span> 09 Feb
-											2023
-										</div>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="mt-15">
-											<h4 class="tran3s blog-title">Coding in the Modern Era: Powering Technology
-												and Transformation</h4>
-										</a>
-									</div>
-									<figure
-										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
-										<video loop muted playsinline
-											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-											<source
-												src="{{ url_for('static', filename='images/news video/Code.mp4') }}?v=1.0"
-												type="video/mp4">
-										</video>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
-											style="z-index: 1;"><i class="bi bi-arrow-up-right"></i></a>
-									</figure>
-								</article>
-								<!-- /.blog-meta-one -->
-							</div>
-							<div class="item">
-								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="0.2s">
-									<div class="post-data">
-										<div class="post-info"><span class="fw-500 text-dark">AgriTech Team -</span> 12 Oct
-											2023
-										</div>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="mt-15">
-											<h4 class="tran3s blog-title">Sustainable Agriculture: Integrating Technology with Tradition</h4>
-										</a>
-									</div>
-									<figure
-										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
-										<video loop muted playsinline
-											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-											<source
-												src="{{ url_for('static', filename='images/hero video/farm-agricultural-field-leveling-tractor-farm-work-2026-01-22-22-50-45-utc.mp4') }}?v=1.0"
-												type="video/mp4">
-										</video>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
-											style="z-index: 1;"><i class="bi bi-arrow-up-right"></i></a>
-									</figure>
-								</article>
-								<!-- /.blog-meta-one -->
-							</div>
-							<div class="item">
-								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="0.3s">
-									<div class="post-data">
-										<div class="post-info"><span class="fw-500 text-dark">R&D Hub -</span> 25 Nov
-											2023
-										</div>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="mt-15">
-											<h4 class="tran3s blog-title">Scientific Breakthroughs in Eco-Friendly Industrial Solutions</h4>
-										</a>
-									</div>
-									<figure
-										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
-										<video loop muted playsinline
-											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-											<source
-												src="{{ url_for('static', filename='images/hero video/scientist-pours-chemicals-from-a-test-tube-into-a-2025-12-17-07-28-37-utc.mp4') }}?v=1.0"
-												type="video/mp4">
-										</video>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
-											style="z-index: 1;"><i class="bi bi-arrow-up-right"></i></a>
-									</figure>
-								</article>
-								<!-- /.blog-meta-one -->
-							</div>
+							{% endfor %}
 						</div>
 
 						<div class="section-btn sm-mt-40">

@@ -4,7 +4,7 @@ from app.schemas.achievement import Achievement
 from app.schemas.about import About
 from app.schemas.service import Service
 from app.schemas.blog import Blog
-from typing import List
+from typing import List, Optional
 
 router = APIRouter()
 
@@ -45,3 +45,11 @@ async def list_news(db = Depends(get_database)):
         doc["_id"] = str(doc["_id"])
         blogs.append(doc)
     return blogs
+
+@router.get("/cms/content", response_model=Optional[dict])
+async def get_published_content(page: str, section: str, db = Depends(get_database)):
+    """Fetch published CMS content for a specific page and section."""
+    doc = await db["content"].find_one({"page": page, "section": section, "status": "published"})
+    if doc:
+        doc["_id"] = str(doc["_id"])
+    return doc

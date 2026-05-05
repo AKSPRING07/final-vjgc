@@ -7,10 +7,12 @@ PyObjectId = Annotated[str, BeforeValidator(str)]
 
 class BlogBase(BaseModel):
     title: str = Field(..., max_length=200)
-    slug: str = Field(..., max_length=200)
+    slug: Optional[str] = None
+    summary: Optional[str] = None
     content: str = Field(...)
     author: Optional[str] = "Admin"
-    thumbnail_url: Optional[str] = None
+    image_url: Optional[str] = None
+    status: Optional[str] = "Draft"
 
 class BlogCreate(BlogBase):
     pass

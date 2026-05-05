@@ -5,10 +5,11 @@ from pydantic.functional_validators import BeforeValidator
 PyObjectId = Annotated[str, BeforeValidator(str)]
 
 class ServiceBase(BaseModel):
-    name: str = Field(..., max_length=100)
+    title: str = Field(..., max_length=100)
     icon: Optional[str] = Field(None, max_length=50)
-    summary: str = Field(..., max_length=300)
-    content: Optional[str] = None
+    description: Optional[str] = None
+    image_url: Optional[str] = None
+    status: Optional[str] = "Published"
     is_active: bool = True
 
 class ServiceCreate(ServiceBase):
