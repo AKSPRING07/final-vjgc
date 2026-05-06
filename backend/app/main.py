@@ -149,23 +149,32 @@ async def get_page_context(path: str):
     
     print(f"DEBUG: Fetching Website CMS Content for {path} -> {query}")
     
-    # Initialize cms_content with a defaultdict-like behavior to prevent Jinja2 errors
-    # The templates expect cms['Section Name'].content to be a list or dict
-    cms_content = {}
+    class SafeDict(dict):
+        def __getattr__(self, name):
+            val = self.get(name)
+            return val if val is not None else SafeDict()
+        def __getitem__(self, name):
+            val = super().get(name)
+            return val if val is not None else SafeDict()
+        def __bool__(self):
+            return bool(len(self))
+
+    cms_content = SafeDict()
     
     cursor = db["universal_content"].find(query).sort("order", 1)
     async for doc in cursor:
         cat = doc["category"]
         if cat not in cms_content:
-            cms_content[cat] = {"content": []}
+            cms_content[cat] = SafeDict({"content": []})
         
         # Format the card for the template (ensuring image_url is present)
-        card = {
+        card = SafeDict({
             "title": doc.get("title", ""),
             "description": doc.get("description", ""),
             "image_url": doc.get("image", ""),
+            "video_url": doc.get("video_url", ""),
             "order": doc.get("order", 0)
-        }
+        })
         cms_content[cat]["content"].append(card)
         
     context["cms"] = cms_content

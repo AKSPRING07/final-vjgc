@@ -172,9 +172,9 @@ async def get_content(
 # ---------------------------------------------------------------------------
 @router.put("/content")
 async def upsert_content(data: Dict[str, Any], db = Depends(get_database), admin: str = Depends(get_current_admin)):
-    mainPage  = data.get("mainPage")
-    subSection = data.get("subSection")
-    category  = data.get("category")
+    mainPage   = resolve(data.get("mainPage"))
+    subSection = resolve(data.get("subSection"))
+    category   = resolve(data.get("category"))
 
     if not all([mainPage, subSection, category]):
         raise HTTPException(status_code=400, detail="mainPage, subSection and category are required")
@@ -215,6 +215,12 @@ async def create_content(data: Dict[str, Any], db = Depends(get_database), admin
 async def update_content_by_id(id: str, data: Dict[str, Any], db = Depends(get_database), admin: str = Depends(get_current_admin)):
     data.pop("_id", None)
     data["updatedAt"] = datetime.utcnow()
+    
+    # Ensure any slugs sent by the frontend are resolved back to DB friendly names
+    if "mainPage" in data:   data["mainPage"]   = resolve(data["mainPage"])
+    if "subSection" in data: data["subSection"] = resolve(data["subSection"])
+    if "category" in data:   data["category"]   = resolve(data["category"])
+        
     result = await db["universal_content"].update_one({"_id": ObjectId(id)}, {"$set": data})
     if result.matched_count == 0:
         raise HTTPException(status_code=404, detail="Content not found")
