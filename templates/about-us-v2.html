@@ -1429,24 +1429,24 @@
 					<!-- /.title-one -->
 
 					<div class="vjs-blog-slider">
-						{% set active_news = cms['Insights News'].content or news %}
+						{% set active_news = cms['Insights News'].content %}
 						{% if active_news %}
 							{% for item in active_news %}
 							<div class="item">
 								<article class="blog-meta-two wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
 									<figure class="post-img position-relative d-flex align-items-end m0"
 										style="height: 280px; overflow: hidden; border-radius: 20px;">
-										{% if item.image_url and item.image_url.endswith('.mp4') %}
+										{% if (item.image or item.image_url) and (item.image or item.image_url).endswith('.mp4') %}
 										<video loop muted playsinline autoplay
 											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-											<source src="{{ item.image_url }}" type="video/mp4">
+											<source src="{{ item.image or item.image_url }}" type="video/mp4">
 										</video>
 										{% else %}
-										<img src="{{ item.image_url or url_for('static', filename='images/image/news/springreen break.jpg') }}"
+										<img src="{{ item.image or item.image_url or url_for('static', filename='images/media/blog_01.jpg') }}"
 											alt="{{ item.title }}" class="lazy-img w-100 h-100" style="object-fit: cover;">
 										{% endif %}
 										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="stretched-link date tran3s">{{ item.created_at.strftime('%d %b') if item.created_at else 'Recent' }}</a>
+											class="stretched-link date tran3s">{{ item.updatedAt.strftime('%d %b') if item.updatedAt else (item.created_at.strftime('%d %b') if item.created_at else 'Recent') }}</a>
 									</figure>
 									<div class="post-data">
 										<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
@@ -1458,14 +1458,42 @@
 												class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
 													class="bi bi-arrow-up-right"></i></a>
 										</div>
-										<div class="post-info">{{ item.author or 'Admin' }} . {{ item.read_time or '5 min' }} read . {{ item.category or 'General' }}</div>
+										<div class="post-info">{{ item.author or 'Admin' }} . {{ item.read_time or '5 min' }} read . {{ item.category_name or 'General' }}</div>
 									</div>
 								</article>
 							</div>
 							{% endfor %}
 						{% else %}
+							<!-- Fallback to original news items if DB is empty -->
 							<div class="item">
-								<p>No news available.</p>
+								<article class="blog-meta-two wow fadeInUp">
+									<figure class="post-img position-relative d-flex align-items-end m0" style="height: 280px; overflow: hidden; border-radius: 20px;">
+										<img src="{{ url_for('static', filename='images/media/blog_01.jpg') }}" alt="" class="lazy-img w-100 h-100" style="object-fit: cover;">
+										<a href="#" class="stretched-link date tran3s">15 Feb</a>
+									</figure>
+									<div class="post-data">
+										<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
+											<a href="#" class="blog-title"><h4>Expanding Global Operations: New Tech Hubs in Singapore.</h4></a>
+											<a href="#" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+										</div>
+										<div class="post-info">Admin . 8 min read . Tech</div>
+									</div>
+								</article>
+							</div>
+							<div class="item">
+								<article class="blog-meta-two wow fadeInUp" data-wow-delay="0.1s">
+									<figure class="post-img position-relative d-flex align-items-end m0" style="height: 280px; overflow: hidden; border-radius: 20px;">
+										<img src="{{ url_for('static', filename='images/media/blog_02.jpg') }}" alt="" class="lazy-img w-100 h-100" style="object-fit: cover;">
+										<a href="#" class="stretched-link date tran3s">20 Feb</a>
+									</figure>
+									<div class="post-data">
+										<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
+											<a href="#" class="blog-title"><h4>Sustainable Growth: Reaching Our 10M Trees Milestone.</h4></a>
+											<a href="#" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+										</div>
+										<div class="post-info">Admin . 6 min read . Impact</div>
+									</div>
+								</article>
 							</div>
 						{% endif %}
 					</div>

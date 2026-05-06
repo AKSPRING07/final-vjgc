@@ -58,12 +58,12 @@ PAGES_CONFIG = {
     "home": [
         {"name": "Hero Section",    "label": "Hero Section",    "type": "hero"},
         {"name": "Services",        "label": "Services",        "type": "cards"},
-        {"name": "Insights / News", "label": "Insights / News", "type": "news"},
+        {"name": "Insights News", "label": "Insights News", "type": "news"},
     ],
     "about": {
         "about-group": [
             {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
-            {"name": "News Section", "label": "News Section", "type": "news"}
+            {"name": "Insights News", "label": "Insights News", "type": "news"}
         ],
         "leadership": [
             {"name": "Advisors", "label": "Advisors", "type": "cards"}
@@ -201,16 +201,17 @@ async def upsert_content(data: Dict[str, Any], db = Depends(get_database), admin
         "mainPage":   mainPage,
         "subSection": subSection,
         "category":   category,
-        "title":      data.get("title", "Section Content"),
-        "description": data.get("description", ""),
-        "image":      data.get("image", ""),
         "updatedAt":  datetime.utcnow(),
-        "isActive":   True,
-        "order":      data.get("order", 0)
+        "isActive":   True
     }
+    
+    # Dynamically add all other fields (title, description, image, author, date, etc.)
+    for k, v in data.items():
+        if k not in ["_id", "mainPage", "subSection", "category", "updatedAt", "isActive"]:
+            doc[k] = v
 
     await db["universal_content"].update_one(
-        {"mainPage": mainPage, "subSection": subSection, "category": category, "title": doc["title"]},
+        {"mainPage": mainPage, "subSection": subSection, "category": category, "title": data.get("title", "")},
         {"$set": doc, "$setOnInsert": {"createdAt": datetime.utcnow()}},
         upsert=True
     )

@@ -87,38 +87,16 @@ async def get_page_context(path: str):
     context = {}
     
     if path == "index-2" or path == "":
-        # Fetch latest services and news for home page
-        services = []
-        async for doc in db["services"].find().limit(6):
-            doc["_id"] = str(doc["_id"])
-            services.append(doc)
-        context["services"] = services
-        
-        news = []
-        async for doc in db["news"].find().sort("created_at", -1).limit(4):
-            doc["_id"] = str(doc["_id"])
-            news.append(doc)
-        context["news"] = news
+        pass
         
     elif "about" in path:
-        about = await db["about"].find_one()
-        if about:
-            about["_id"] = str(about["_id"])
-            context["about"] = about
+        pass
             
     elif "service" in path:
-        services = []
-        async for doc in db["services"].find():
-            doc["_id"] = str(doc["_id"])
-            services.append(doc)
-        context["services"] = services
+        pass
         
     elif "news" in path or "blog" in path:
-        news = []
-        async for doc in db["news"].find().sort("created_at", -1):
-            doc["_id"] = str(doc["_id"])
-            news.append(doc)
-        context["news"] = news
+        pass
         
     # Fetch all published CMS content for this page/subpage
     # Map specific template paths to our CMS Main Page / Sub-Section structure

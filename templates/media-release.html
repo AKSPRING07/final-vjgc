@@ -277,7 +277,7 @@
 				</div>
 
 				<div class="row gx-xl-5" id="media-grid">
-					{% set active_news = cms['Insights News'].content or news %}
+					{% set active_news = cms['News'].content or news %}
 					{% if active_news %}
 						{% for item in active_news %}
 						<div class="col-lg-4 col-md-6 mb-50 media-card-item wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
@@ -299,7 +299,7 @@
 								</div>
 								<div class="content">
 									<div class="date mb-10" style="color: #888; font-size: 14px; font-weight: 500;">
-										{{ item.created_at.strftime('%d %B %Y') if item.created_at else 'Recent' }}
+										{{ item.date if item.date else (item.created_at.strftime('%d %B %Y') if item.created_at else 'Recent') }}
 									</div>
 									<h5 class="title"><a href="#" class="tran3s"
 											style="color: #081c17; font-size: 20px; line-height: 1.4; font-weight: 700;">{{ item.title }}</a></h5>

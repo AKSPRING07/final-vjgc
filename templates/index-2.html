@@ -1127,8 +1127,8 @@
 						</div>
 					</div>
 					<div class="row justify-content-center row-cols-1 row-cols-md-3 row-cols-lg-5">
-						{% if cms['Our Business'].content %}
-							{% for service in cms['Our Business'].content %}
+						{% if cms.Services.content %}
+							{% for service in cms.Services.content %}
 							<div class="col d-flex wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
 								<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
 									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
@@ -1136,7 +1136,7 @@
 										class="lazy-img icon me-auto mb-20" style="width: 35px;">
 									<h4 class="fw-bold mb-15" style="font-size: 18px;">{{ service.title }}</h4>
 									<p style="font-size: 14px; line-height: 1.6em;">{{ service.description }}</p>
-									<a href="{{ url_for('dynamic_route', path='service-details') }}"
+									<a href="{{ url_for('dynamic_route', path='it-consulting') }}"
 										class="arrow-btn tran3s mt-auto stretched-link"><img
 											src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
 											data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
@@ -1154,14 +1154,73 @@
 									<h4 class="fw-bold mb-15" style="font-size: 18px;">IT Solutions</h4>
 									<p style="font-size: 14px; line-height: 1.6em;">Providing innovative software
 										development, web solutions, and digital transformation services.</p>
-									<a href="{{ url_for('dynamic_route', path='service-details') }}"
+									<a href="{{ url_for('dynamic_route', path='it-consulting') }}"
 										class="arrow-btn tran3s mt-auto stretched-link"><img
 											src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
 											data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
 											alt="" class="lazy-img"></a>
 								</div>
 							</div>
-							<!-- More fallbacks... -->
+							<div class="col d-flex wow fadeInUp" data-wow-delay="0.1s">
+								<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_07.svg') }}?v=1.0" alt=""
+										class="lazy-img icon me-auto mb-20" style="width: 35px;">
+									<h4 class="fw-bold mb-15" style="font-size: 18px;">Education</h4>
+									<p style="font-size: 14px; line-height: 1.6em;">Empowering minds through quality
+										learning and skill development initiatives.</p>
+									<a href="{{ url_for('dynamic_route', path='it-training') }}"
+										class="arrow-btn tran3s mt-auto stretched-link"><img
+											src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+											data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+											alt="" class="lazy-img"></a>
+								</div>
+							</div>
+							<div class="col d-flex wow fadeInUp" data-wow-delay="0.2s">
+								<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_08.svg') }}?v=1.0" alt=""
+										class="lazy-img icon me-auto mb-20" style="width: 35px;">
+									<h4 class="fw-bold mb-15" style="font-size: 18px;">Wellness</h4>
+									<p style="font-size: 14px; line-height: 1.6em;">Promoting holistic health with
+										ancient wisdom and modern wellness practices.</p>
+									<a href="{{ url_for('dynamic_route', path='yoga-wellness') }}"
+										class="arrow-btn tran3s mt-auto stretched-link"><img
+											src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+											data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+											alt="" class="lazy-img"></a>
+								</div>
+							</div>
+							<div class="col d-flex wow fadeInUp" data-wow-delay="0.3s">
+								<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_06.svg') }}?v=1.0" alt=""
+										class="lazy-img icon me-auto mb-20" style="width: 35px;">
+									<h4 class="fw-bold mb-15" style="font-size: 18px;">Global Trade</h4>
+									<p style="font-size: 14px; line-height: 1.6em;">Connecting markets with high-quality
+										agricultural exports and trading excellence.</p>
+									<a href="{{ url_for('dynamic_route', path='export-import') }}"
+										class="arrow-btn tran3s mt-auto stretched-link"><img
+											src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+											data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+											alt="" class="lazy-img"></a>
+								</div>
+							</div>
+							<div class="col d-flex wow fadeInUp" data-wow-delay="0.4s">
+								<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_07.svg') }}?v=1.0" alt=""
+										class="lazy-img icon me-auto mb-20" style="width: 35px;">
+									<h4 class="fw-bold mb-15" style="font-size: 18px;">Real Estate</h4>
+									<p style="font-size: 14px; line-height: 1.6em;">Building value through expert
+										property services and strategic asset management.</p>
+									<a href="{{ url_for('dynamic_route', path='property-services') }}"
+										class="arrow-btn tran3s mt-auto stretched-link"><img
+											src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+											data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+											alt="" class="lazy-img"></a>
+								</div>
+							</div>
 						{% endif %}
 					</div>
 
@@ -1803,7 +1862,8 @@
 								<div class="item">
 									<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
 										<div class="post-data">
-											<div class="post-info"><span class="fw-500 text-dark">{{ item.author or 'Admin' }} -</span> {{ item.created_at.strftime('%d %b %Y') if item.created_at else 'Recent' }}
+											<div class="post-info">
+												{{ item.date if item.date else (item.updatedAt.strftime('%d %B %Y') if item.updatedAt else (item.created_at.strftime('%d %B %Y') if item.created_at else 'Recent')) }}
 											</div>
 											<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
 												class="mt-15">
@@ -1812,13 +1872,13 @@
 										</div>
 										<figure
 											class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
-											{% if item.image_url and item.image_url.endswith('.mp4') %}
+											{% if (item.image or item.image_url) and (item.image or item.image_url).endswith('.mp4') %}
 											<video loop muted playsinline autoplay
 												style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-												<source src="{{ item.image_url }}" type="video/mp4">
+												<source src="{{ item.image or item.image_url }}" type="video/mp4">
 											</video>
 											{% else %}
-											<img src="{{ item.image_url or url_for('static', filename='images/media/blog_01.jpg') }}" alt="" class="lazy-img w-100 h-100" style="object-fit: cover;">
+											<img src="{{ item.image or item.image_url or url_for('static', filename='images/media/blog_01.jpg') }}" alt="" class="lazy-img w-100 h-100" style="object-fit: cover;">
 											{% endif %}
 											<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
 												class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
