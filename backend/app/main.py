@@ -123,7 +123,14 @@ async def get_page_context(path: str):
         "plantations-exotic-trees": ("Business Verticals", "Plantations & Exotic Trees")
     }
     
-    page_name, sub_name = path_map.get(path, (path, ""))
+    # Normalize path
+    clean_path = path
+    if clean_path.endswith(".html"):
+        clean_path = clean_path[:-5]
+    if clean_path == "index":
+        clean_path = ""
+        
+    page_name, sub_name = path_map.get(clean_path, (clean_path, ""))
     
     # Ensure sub_name is a string
     sub_name = sub_name or ""
@@ -135,37 +142,36 @@ async def get_page_context(path: str):
         # For pages without a subSection, only fetch those with empty subSection
         query["subSection"] = ""
     
-    print(f"DEBUG: Fetching Website CMS Content for {path} -> {query}")
+    print(f"DEBUG: path='{path}' clean='{clean_path}' page='{page_name}' sub='{sub_name}'")
+    print(f"DEBUG: query={query}")
+    
+    results = []
+    async for doc in db["universal_content"].find(query).sort("order", 1):
+        doc["_id"] = str(doc.pop("_id"))
+        results.append(doc)
+    
+    print(f"DEBUG: Found {len(results)} results")
     
     class SafeDict(dict):
-        def __getattr__(self, name):
-            val = self.get(name)
-            return val if val is not None else SafeDict()
-        def __getitem__(self, name):
-            val = super().get(name)
-            return val if val is not None else SafeDict()
-        def __bool__(self):
-            return bool(len(self))
+        def __getitem__(self, key):
+            val = super().get(key, {"content": []})
+            return val
 
+    # Group by category
     cms_content = SafeDict()
-    
-    cursor = db["universal_content"].find(query).sort("order", 1)
-    async for doc in cursor:
-        cat = doc["category"]
+    for doc in results:
+        cat = doc.get("category", "General")
         if cat not in cms_content:
-            cms_content[cat] = SafeDict({"content": []})
+            cms_content[cat] = {"content": []}
         
-        # Format the card for the template (ensuring image_url is present)
-        card = SafeDict({
-            "title": doc.get("title", ""),
-            "description": doc.get("description", ""),
-            "image_url": doc.get("image", ""),
-            "video_url": doc.get("video_url", ""),
-            "order": doc.get("order", 0)
-        })
-        cms_content[cat]["content"].append(card)
+        # Ensure template-friendly aliases
+        doc["image_url"] = doc.get("image", "")
+        doc["video_url"] = doc.get("video_url", doc.get("image", "")) if doc.get("image", "").endswith(".mp4") else ""
+        
+        cms_content[cat]["content"].append(doc)
         
     context["cms"] = cms_content
+
     
     return context
 
