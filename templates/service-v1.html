@@ -420,11 +420,22 @@
 		</header>
 
 		<!-- SECTION 1: HERO -->
-		<section class="vjs-hero-section" style="background-image: url('{{ url_for('static', filename='images/hero/cheerful-businesspeople-standing-on-top-of-stairca-2026-01-11-08-46-59-utc.jpg') }}?v=1.0');">
+		<section class="vjs-hero-section" style="background-image: url('{% if cms.hero.content.image_url %}{{ cms.hero.content.image_url }}{% else %}{{ url_for('static', filename='images/hero/cheerful-businesspeople-standing-on-top-of-stairca-2026-01-11-08-46-59-utc.jpg') }}{% endif %}?v=1.0');">
 			<div class="container">
 				<div class="vjs-hero-content wow fadeInRight">
-					<h1 class="hero-heading-glass">Leadership & Excellence</h1>
-					<p>Empowering industries through visionary leadership <br> and a commitment to global excellence.
+					<h1 class="hero-heading-glass">
+						{% if cms.hero.content.title %}
+							{{ cms.hero.content.title | safe }}
+						{% else %}
+							Leadership & Excellence
+						{% endif %}
+					</h1>
+					<p>
+						{% if cms.hero.content.subtitle %}
+							{{ cms.hero.content.subtitle }}
+						{% else %}
+							Empowering industries through visionary leadership <br> and a commitment to global excellence.
+						{% endif %}
 					</p>
 				</div>
 			</div>

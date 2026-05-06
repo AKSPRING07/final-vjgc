@@ -381,7 +381,7 @@
 				align-items: flex-end;
 				padding-bottom: 120px;
 				background-image: linear-gradient(135deg, rgba(8, 32, 27, 0.98) 0%, rgba(8, 32, 27, 0.7) 40%, rgba(8, 32, 27, 0.2) 100%),
-				url('{{ url_for(' static', filename=' images/media/about_hero_cinematic.png') }}');
+				url('{% if cms.hero.content.image_url %}{{ cms.hero.content.image_url }}{% else %}{{ url_for('static', filename='images/media/about_hero_cinematic.png') }}{% endif %}');
 				background-size: cover;
 				background-position: center;
 				background-repeat: no-repeat;
@@ -1255,7 +1255,20 @@
 
 
 						<!-- Headline -->
-						<h1 class="hero-heading-glass">Driving Growth & Building <em>Lasting Trust</em> For Decades</h1>
+						<h1 class="hero-heading-glass">
+							{% if cms.hero.content.title %}
+								{{ cms.hero.content.title | safe }}
+							{% else %}
+								Driving Growth & Building <em>Lasting Trust</em> For Decades
+							{% endif %}
+						</h1>
+						<p class="vjs-about-lead animate-up delay-1">
+							{% if cms.hero.content.subtitle %}
+								{{ cms.hero.content.subtitle }}
+							{% else %}
+								A diversified conglomerate with an unwavering commitment to excellence, sustainable innovation, and community development across the globe.
+							{% endif %}
+						</p>
 
 
 

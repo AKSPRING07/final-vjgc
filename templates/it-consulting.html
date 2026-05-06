@@ -675,39 +675,48 @@
 				<div class="container">
 					<h2 class="section-title">At a Glance.</h2>
 					<div class="row justify-content-center g-4">
-						<!-- Card 1 -->
-						<div class="col-lg-4 col-md-6 wow fadeInUp">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap">
-									<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
-										alt="Solution">
+						{% if cms['at-a-glance'] and cms['at-a-glance'].content %}
+							{% for card in cms['at-a-glance'].content %}
+							<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap">
+										<img src="{{ card.image_url }}" alt="{{ card.title }}">
+									</div>
+									<h4 class="card-title">{{ card.title }}</h4>
+									<p class="card-desc">{{ card.description }}</p>
 								</div>
-								<h4 class="card-title">Solution</h4>
-								<p class="card-desc">End-to-end digital solutions from cloud to AI to cybersecurity.</p>
 							</div>
-						</div>
-						<!-- Card 2 -->
-						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap">
-									<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800"
-										alt="Reputated">
+							{% endfor %}
+						{% else %}
+							<!-- Fallback to hardcoded if no CMS data -->
+							<div class="col-lg-4 col-md-6 wow fadeInUp">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap">
+										<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" alt="Solution">
+									</div>
+									<h4 class="card-title">Solution</h4>
+									<p class="card-desc">End-to-end digital solutions from cloud to AI to cybersecurity.</p>
 								</div>
-								<h4 class="card-title">Reputated</h4>
-								<p class="card-desc">13+ years of trusted client relationships across industries.</p>
 							</div>
-						</div>
-						<!-- Card 3 -->
-						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap">
-									<img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800"
-										alt="Support">
+							<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap">
+										<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800" alt="Reputated">
+									</div>
+									<h4 class="card-title">Reputated</h4>
+									<p class="card-desc">13+ years of trusted client relationships across industries.</p>
 								</div>
-								<h4 class="card-title">Support</h4>
-								<p class="card-desc">Fast, reliable support when you need it most.</p>
 							</div>
-						</div>
+							<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap">
+										<img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800" alt="Support">
+									</div>
+									<h4 class="card-title">Support</h4>
+									<p class="card-desc">Fast, reliable support when you need it most.</p>
+								</div>
+							</div>
+						{% endif %}
 					</div>
 				</div>
 			</section>
@@ -725,59 +734,67 @@
 				<div class="container">
 					<h2 class="section-title">Our Businesses</h2>
 					<div class="row g-4">
-						<!-- Card 1 -->
-						<div class="col-lg-3 col-md-6 wow fadeInUp">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap">
-									<img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800"
-										alt="Cloud">
-								</div>
-								<div class="content">
-									<h4 class="card-title">Cloud</h4>
-									<p class="card-desc">Scalable cloud infrastructure and management services.</p>
-								</div>
-							</a>
-						</div>
-						<!-- Card 2 -->
-						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap">
-									<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
-										alt="Cybersecurity">
-								</div>
-								<div class="content">
-									<h4 class="card-title">Cybersecurity</h4>
-									<p class="card-desc">Advanced threat protection and compliance solutions.</p>
-								</div>
-							</a>
-						</div>
-						<!-- Card 3 -->
-						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap">
-									<img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800"
-										alt="Data & AI">
-								</div>
-								<div class="content">
-									<h4 class="card-title">Data & AI</h4>
-									<p class="card-desc">Unlock insights with machine learning and big data analytics.
-									</p>
-								</div>
-							</a>
-						</div>
-						<!-- Card 4 -->
-						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap">
-									<img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800"
-										alt="Engineering">
-								</div>
-								<div class="content">
-									<h4 class="card-title">Digital Engineering</h4>
-									<p class="card-desc">Innovative product design and manufacturing solutions.</p>
-								</div>
-							</a>
-						</div>
+						{% if cms['our-business'] and cms['our-business'].content %}
+							{% for card in cms['our-business'].content %}
+							<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
+								<a href="#" class="vjs-biz-card-v2">
+									<div class="img-wrap">
+										<img src="{{ card.image_url }}" alt="{{ card.title }}">
+									</div>
+									<div class="content">
+										<h4 class="card-title">{{ card.title }}</h4>
+										<p class="card-desc">{{ card.description }}</p>
+									</div>
+								</a>
+							</div>
+							{% endfor %}
+						{% else %}
+							<!-- Fallback to hardcoded -->
+							<div class="col-lg-3 col-md-6 wow fadeInUp">
+								<a href="#" class="vjs-biz-card-v2">
+									<div class="img-wrap">
+										<img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800" alt="Cloud">
+									</div>
+									<div class="content">
+										<h4 class="card-title">Cloud</h4>
+										<p class="card-desc">Scalable cloud infrastructure and management services.</p>
+									</div>
+								</a>
+							</div>
+							<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+								<a href="#" class="vjs-biz-card-v2">
+									<div class="img-wrap">
+										<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="Cybersecurity">
+									</div>
+									<div class="content">
+										<h4 class="card-title">Cybersecurity</h4>
+										<p class="card-desc">Advanced threat protection and compliance solutions.</p>
+									</div>
+								</a>
+							</div>
+							<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+								<a href="#" class="vjs-biz-card-v2">
+									<div class="img-wrap">
+										<img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800" alt="Data & AI">
+									</div>
+									<div class="content">
+										<h4 class="card-title">Data & AI</h4>
+										<p class="card-desc">Unlock insights with machine learning and big data analytics.</p>
+									</div>
+								</a>
+							</div>
+							<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+								<a href="#" class="vjs-biz-card-v2">
+									<div class="img-wrap">
+										<img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" alt="Engineering">
+									</div>
+									<div class="content">
+										<h4 class="card-title">Digital Engineering</h4>
+										<p class="card-desc">Innovative product design and manufacturing solutions.</p>
+									</div>
+								</a>
+							</div>
+						{% endif %}
 					</div>
 
 

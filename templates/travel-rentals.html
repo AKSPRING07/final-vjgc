@@ -344,36 +344,42 @@
 				<div class="container">
 					<h2 class="section-title">At a Glance.</h2>
 					<div class="row justify-content-center g-4">
-						<div class="col-lg-4 col-md-6 wow fadeInUp">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=1000"
-										alt="Lakshmi Travels"></div>
-								<h4 class="card-title">Lakshmi Travels</h4>
-								<p class="card-desc">Tourism & Rentals: Providing premium and reliable travel
-									experiences.</p>
+						{% if cms['at-a-glance'] and cms['at-a-glance'].content %}
+							{% for card in cms['at-a-glance'].content %}
+							<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap">
+										<img src="{{ card.image_url }}" alt="{{ card.title }}">
+									</div>
+									<h4 class="card-title">{{ card.title }}</h4>
+									<p class="card-desc">{{ card.description }}</p>
+								</div>
 							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=1000"
-										alt="Strategic Positioning"></div>
-								<h4 class="card-title">Strategic Positioning</h4>
-								<p class="card-desc">Leading the market through optimized routes and customer-centric
-									travel hubs.</p>
+							{% endfor %}
+						{% else %}
+							<!-- Fallback to hardcoded if no CMS data -->
+							<div class="col-lg-4 col-md-6 wow fadeInUp">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=1000" alt="Lakshmi Travels"></div>
+									<h4 class="card-title">Lakshmi Travels</h4>
+									<p class="card-desc">Tourism & Rentals: Providing premium and reliable travel experiences.</p>
+								</div>
 							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000"
-										alt="Vertical Integration"></div>
-								<h4 class="card-title">Vertical Integration</h4>
-								<p class="card-desc">Enables seamless flow across trade, tourism, and supply chain
-									networks.</p>
+							<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap"><img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=1000" alt="Strategic Positioning"></div>
+									<h4 class="card-title">Strategic Positioning</h4>
+									<p class="card-desc">Leading the market through optimized routes and customer-centric travel hubs.</p>
+								</div>
 							</div>
-						</div>
+							<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" alt="Vertical Integration"></div>
+									<h4 class="card-title">Vertical Integration</h4>
+									<p class="card-desc">Enables seamless flow across trade, tourism, and supply chain networks.</p>
+								</div>
+							</div>
+						{% endif %}
 					</div>
 				</div>
 			</section>
@@ -382,56 +388,64 @@
 			<section class="biz-section-v2">
 				<div class="container">
 					<h2 class="section-title">Our Travel Businesses</h2>
-					<div class="row g-4">
-						<div class="col-lg-3 col-md-6 wow fadeInUp">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&q=80&w=1000"
-										alt="Tour Packages"></div>
-								<div class="content">
-									<h4 class="card-title">Tour Packages</h4>
-									<p class="card-desc">Customized travel experiences for leisure and group tourism.
-									</p>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1000"
-										alt="Vehicle Rentals"></div>
-								<div class="content">
-									<h4 class="card-title">Vehicle Rentals</h4>
-									<p class="card-desc">Flexible rental services for cars, vans, and utility vehicles.
-									</p>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&q=80&w=800"
-										alt="Corporate Travel"></div>
-								<div class="content">
-									<h4 class="card-title">Corporate Travel</h4>
-									<p class="card-desc">End-to-end travel management for business and enterprise
-										clients.</p>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800"
-										alt="Mobility Solutions"></div>
-								<div class="content">
-									<h4 class="card-title">Mobility Solutions</h4>
-									<p class="card-desc">Integrated services supporting all operational movement needs.
-									</p>
-								</div>
-							</a>
+					<div class="row g-4" id="travel-cards-container">
+						<!-- Dynamic cards will be loaded here via API -->
+						<div class="col-12 text-center py-5" id="travel-loading">
+							<div class="spinner-border text-primary" role="status">
+								<span class="visually-hidden">Loading...</span>
+							</div>
 						</div>
 					</div>
+				</div>
+			</section>
+
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					const container = document.getElementById('travel-cards-container');
+					const loading = document.getElementById('travel-loading');
+
+					// Fetch dynamic content from CMS using universal endpoint
+					fetch('/api/content?mainPage=Business Verticals&subSection=Travel&category=Our Business')
+						.then(response => response.json())
+						.then(data => {
+							loading.style.display = 'none';
+							
+							// Check if data is a list (from list_content) or a single object
+							const items = Array.isArray(data) ? (data.length > 0 ? data[0].content : []) : (data && data.content ? data.content : []);
+
+							if (items && items.length > 0) {
+								items.forEach((card, index) => {
+									const col = document.createElement('div');
+									col.className = 'col-lg-3 col-md-6 wow fadeInUp';
+									col.setAttribute('data-wow-delay', (index * 0.1) + 's');
+									
+									col.innerHTML = `
+										<a href="#" class="vjs-biz-card-v2">
+											<div class="img-wrap">
+												<img src="${card.image_url || card.image || 'https://via.placeholder.com/400x300'}" alt="${card.title}">
+											</div>
+											<div class="content">
+												<h4 class="card-title">${card.title}</h4>
+												<p class="card-desc">${card.description}</p>
+											</div>
+										</a>
+									`;
+									container.appendChild(col);
+								});
+								if (typeof WOW !== 'undefined') {
+									new WOW().init();
+								}
+							} else {
+								container.innerHTML = '<div class="col-12 text-center"><p>No travel items currently stored in this category.</p></div>';
+							}
+						})
+						.catch(error => {
+							console.error('Error fetching travel cards:', error);
+							loading.style.display = 'none';
+							container.innerHTML = '<div class="col-12 text-center"><p class="text-danger">Failed to load content. Please try again later.</p></div>';
+						});
+				});
+			</script>
 				</div>
 			</section>
 

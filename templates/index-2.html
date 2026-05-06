@@ -917,12 +917,12 @@
 		-->
 		<div class="hero-banner-one position-relative scroll-effect-one">
 			<div class="hero-slider-one m0">
-				<!-- Slide 1: Community -->
+				<!-- Slide 1: Community (Now Dynamic) -->
 				<div class="item m0">
 					<div class="hero-img">
 						<video class="hero-video-bg" muted playsinline preload="auto">
 							<source
-								src="{{ url_for('static', filename='images/hero video/african-american-mother-playing-with-her-daughters-2026-01-20-18-10-31-utc.mp4') }}?v=1.0"
+								src="{% if cms.hero.content.video_url %}{{ cms.hero.content.video_url }}{% else %}{{ url_for('static', filename='images/hero video/african-american-mother-playing-with-her-daughters-2026-01-20-18-10-31-utc.mp4') }}{% endif %}"
 								type="video/mp4">
 						</video>
 						<div class="hero-video-overlay"></div>
@@ -932,11 +932,16 @@
 							<div class="col-xl-6 col-lg-7 ms-auto">
 								<h1
 									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
-									Building Stronger Communities Together</h1>
+									{% if cms.hero.content.title %}
+										{{ cms.hero.content.title | safe }}
+									{% else %}
+										Building Stronger Communities Together
+									{% endif %}
+								</h1>
 
 								<a href="{{ url_for('dynamic_route', path='about-us-v1') }}"
 									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
-									<span>Our Values</span>
+									<span>{% if cms.hero.content.cta_text %}{{ cms.hero.content.cta_text }}{% else %}Our Values{% endif %}</span>
 									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
 										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
 										alt="" class="lazy-img icon ms-2">

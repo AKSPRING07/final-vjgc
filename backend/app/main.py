@@ -60,7 +60,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# MongoDB Lifecycle
+# Static Files
+if not os.path.exists("uploads"):
+    os.makedirs("uploads")
+app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
+app.mount("/static", StaticFiles(directory="../static"), name="static")
 @app.on_event("startup")
 async def startup_event():
     await connect_to_mongo()
@@ -116,10 +120,44 @@ async def get_page_context(path: str):
             news.append(doc)
         context["news"] = news
         
-    # Fetch all published CMS content for this page
-    page_key = "home" if path == "index-2" or path == "" else path.replace("-us-v1", "").replace("-us-v2", "").replace("-v1", "").replace("-v2", "")
-    cms_content = {}
-    async for doc in db["content"].find({"page": page_key, "status": "published"}):
+    # Fetch all published CMS content for this page/subpage
+    # Mapping specific template paths to our CMS Page/Subpage structure
+    path_map = {
+        "index-2": ("home", None),
+        "": ("home", None),
+        "about-us-v2": ("about", "about-group"),
+        "about-us-v1": ("about", "journey"),
+        "service-v1": ("about", "leadership"),
+        "media-release": ("newsroom", "media-release"),
+        "data-centers-hosting": ("business", "data-centers"),
+        "it-consulting": ("business", "it-consulting"),
+        "green-energy": ("business", "green-energy"),
+        "logistics-services": ("business", "logistics"),
+        "export-import": ("business", "export-import"),
+        "property-services": ("business", "property-services"),
+        "it-training": ("business", "it-training"),
+        "yoga-wellness": ("business", "yoga-wellness"),
+        "travel-rentals": ("business", "travel-rentals"),
+        "plantations": ("business", "plantations")
+    }
+    
+    page_key, subpage_key = path_map.get(path, (path.split('-')[0], None))
+    
+    query = {"page": page_key, "status": "published"}
+    if subpage_key:
+        query["subpage"] = subpage_key
+    else:
+        query["$or"] = [{"subpage": None}, {"subpage": {"$exists": False}}, {"subpage": ""}]
+
+    # Initialize cms_content with empty defaults to prevent Jinja2 'Undefined' errors
+    cms_content = {
+        "hero": {"content": {}},
+        "cards": {"content": []},
+        "text": {"content": {}},
+        "news": {"content": []}
+    }
+    
+    async for doc in db["content"].find(query):
         cms_content[doc["section"]] = doc
     context["cms"] = cms_content
     

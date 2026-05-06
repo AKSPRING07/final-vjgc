@@ -14,7 +14,7 @@ import os
 router = APIRouter()
 
 UPLOAD_DIR = os.path.join(os.getcwd(), "uploads")
-ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png", "webp", "gif"}
+ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png", "webp", "gif", "mp4", "mov"}
 
 # --- Media Management ---
 @router.post("/media/upload")
@@ -33,12 +33,24 @@ async def upload_image(file: UploadFile = File(...), admin: str = Depends(get_cu
         with open(file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
             
-        return {"url": f"/uploads/{unique_filename}", "filename": unique_filename}
+        # Return full URL including the domain/port to ensure frontend can load it
+        full_url = f"http://localhost:5000/uploads/{unique_filename}"
+        return {"url": full_url, "filename": unique_filename}
     except Exception as e:
         print(f"Upload Error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 # --- About Us ---
+@router.post("/about", response_model=About)
+async def create_about(about: AboutUpdate, db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    update_data = {k: v for k, v in about.model_dump().items() if v is not None}
+    update_data["updated_at"] = datetime.utcnow()
+    await db["about"].update_one({}, {"$set": update_data}, upsert=True)
+    updated_about = await db["about"].find_one()
+    if updated_about:
+        updated_about["_id"] = str(updated_about["_id"])
+    return updated_about
+
 @router.put("/about", response_model=About)
 async def update_about(about: AboutUpdate, db = Depends(get_database), admin: str = Depends(get_current_admin)):
     update_data = {k: v for k, v in about.model_dump().items() if v is not None}
