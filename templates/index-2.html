@@ -921,12 +921,12 @@
 					{% for slide in cms['Hero Section'].content %}
 					<div class="item m0">
 						<div class="hero-img">
-							{% if slide.video_url %}
-							<video class="hero-video-bg" muted playsinline preload="auto" autoplay loop>
-								<source src="{{ slide.video_url }}" type="video/mp4">
+							{% if slide.video_url or (slide.image and slide.image.endswith('.mp4')) %}
+							<video class="hero-video-bg" muted playsinline preload="auto" autoplay>
+								<source src="{{ slide.video_url or slide.image }}" type="video/mp4">
 							</video>
 							{% else %}
-							<div class="hero-video-bg" style="background-image: url('{{ slide.image_url }}'); background-size: cover; background-position: center;"></div>
+							<div class="hero-video-bg" style="background-image: url('{{ slide.image_url or slide.image }}'); background-size: cover; background-position: center;"></div>
 							{% endif %}
 							<div class="hero-video-overlay"></div>
 						</div>
@@ -950,7 +950,7 @@
 					<!-- Slide 1: Community -->
 					<div class="item m0">
 						<div class="hero-img">
-							<video class="hero-video-bg" muted playsinline preload="auto" autoplay loop>
+							<video class="hero-video-bg" muted playsinline preload="auto" autoplay>
 								<source src="{{ url_for('static', filename='images/hero video/african-american-mother-playing-with-her-daughters-2026-01-20-18-10-31-utc.mp4') }}" type="video/mp4">
 							</video>
 							<div class="hero-video-overlay"></div>

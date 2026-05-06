@@ -135,12 +135,13 @@ async def get_page_context(path: str):
     # Ensure sub_name is a string
     sub_name = sub_name or ""
     
-    query = {"mainPage": page_name, "isActive": True}
+    query = {"mainPage": {"$regex": f"^{page_name}$", "$options": "i"}, "isActive": True}
     if sub_name:
         query["subSection"] = sub_name
     else:
-        # For pages without a subSection, only fetch those with empty subSection
-        query["subSection"] = ""
+        # For pages without a specific subSection, match empty string or None
+        query["subSection"] = {"$in": ["", None]}
+
     
     print(f"DEBUG: path='{path}' clean='{clean_path}' page='{page_name}' sub='{sub_name}'")
     print(f"DEBUG: query={query}")
@@ -165,8 +166,9 @@ async def get_page_context(path: str):
             cms_content[cat] = {"content": []}
         
         # Ensure template-friendly aliases
-        doc["image_url"] = doc.get("image", "")
-        doc["video_url"] = doc.get("video_url", doc.get("image", "")) if doc.get("image", "").endswith(".mp4") else ""
+        img_path = doc.get("image") or ""
+        doc["image_url"] = img_path
+        doc["video_url"] = doc.get("video_url", img_path) if img_path.lower().endswith(".mp4") else ""
         
         cms_content[cat]["content"].append(doc)
         
