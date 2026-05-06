@@ -917,212 +917,60 @@
 		-->
 		<div class="hero-banner-one position-relative scroll-effect-one">
 			<div class="hero-slider-one m0">
-				<!-- Slide 1: Community (Now Dynamic) -->
-				<div class="item m0">
-					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="auto">
-							<source
-								src="{% if cms.hero.content.video_url %}{{ cms.hero.content.video_url }}{% else %}{{ url_for('static', filename='images/hero video/african-american-mother-playing-with-her-daughters-2026-01-20-18-10-31-utc.mp4') }}{% endif %}"
-								type="video/mp4">
-						</video>
-						<div class="hero-video-overlay"></div>
+				{% if cms['Hero Section'].content %}
+					{% for slide in cms['Hero Section'].content %}
+					<div class="item m0">
+						<div class="hero-img">
+							{% if slide.video_url %}
+							<video class="hero-video-bg" muted playsinline preload="auto" autoplay loop>
+								<source src="{{ slide.video_url }}" type="video/mp4">
+							</video>
+							{% else %}
+							<div class="hero-video-bg" style="background-image: url('{{ slide.image_url }}'); background-size: cover; background-position: center;"></div>
+							{% endif %}
+							<div class="hero-video-overlay"></div>
+						</div>
+						<div class="container position-relative">
+							<div class="row">
+								<div class="col-xl-6 col-lg-7 {{ 'ms-auto' if loop.index is odd else 'me-auto' }}">
+									<h1 class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
+										{{ slide.title | safe }}
+									</h1>
+									<a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+										<span>{{ slide.cta_text or 'Explore More' }}</span>
+										<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt="" class="lazy-img icon ms-2">
+									</a>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="container position-relative">
-						<div class="row">
-							<div class="col-xl-6 col-lg-7 ms-auto">
-								<h1
-									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
-									{% if cms.hero.content.title %}
-										{{ cms.hero.content.title | safe }}
-									{% else %}
+					{% endfor %}
+				{% else %}
+					<!-- Fallback Slides -->
+					<!-- Slide 1: Community -->
+					<div class="item m0">
+						<div class="hero-img">
+							<video class="hero-video-bg" muted playsinline preload="auto" autoplay loop>
+								<source src="{{ url_for('static', filename='images/hero video/african-american-mother-playing-with-her-daughters-2026-01-20-18-10-31-utc.mp4') }}" type="video/mp4">
+							</video>
+							<div class="hero-video-overlay"></div>
+						</div>
+						<div class="container position-relative">
+							<div class="row">
+								<div class="col-xl-6 col-lg-7 ms-auto">
+									<h1 class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
 										Building Stronger Communities Together
-									{% endif %}
-								</h1>
-
-								<a href="{{ url_for('dynamic_route', path='about-us-v1') }}"
-									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
-									<span>{% if cms.hero.content.cta_text %}{{ cms.hero.content.cta_text }}{% else %}Our Values{% endif %}</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
-										alt="" class="lazy-img icon ms-2">
-								</a>
+									</h1>
+									<a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
+										<span>Our Values</span>
+										<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0" data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0" alt="" class="lazy-img icon ms-2">
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<!-- Slide 2: Agriculture -->
-				<div class="item m0">
-					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="auto">
-							<source
-								src="{{ url_for('static', filename='images/hero video/farm-agricultural-field-leveling-tractor-farm-work-2026-01-22-22-50-45-utc.mp4') }}?v=1.0"
-								type="video/mp4">
-						</video>
-						<div class="hero-video-overlay"></div>
-					</div>
-					<div class="container position-relative">
-						<div class="row">
-							<div class="col-xl-6 col-lg-7 ms-auto">
-								<h1
-									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
-									Modernizing Global Agriculture</h1>
-
-								<a href="{{ url_for('dynamic_route', path='service-v1') }}"
-									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
-									<span>Agri Solutions</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
-										alt="" class="lazy-img icon ms-2">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slide 3: Logistics -->
-				<div class="item m0">
-					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="metadata">
-							<source
-								src="{{ url_for('static', filename='images/hero video/freight-transport-2025-12-17-20-47-07-utc.mp4') }}?v=1.0"
-								type="video/mp4">
-						</video>
-						<div class="hero-video-overlay"></div>
-					</div>
-					<div class="container position-relative">
-						<div class="row">
-							<div class="col-xl-6 col-lg-7 ms-auto">
-								<h1
-									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
-									Seamless Logistics & Supply Chain</h1>
-
-								<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0"
-									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
-									<span>Global Trade</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
-										alt="" class="lazy-img icon ms-2">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slide 4: Corporate Strategy -->
-				<div class="item m0">
-					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="metadata">
-							<source
-								src="{{ url_for('static', filename='images/hero video/people-meeting-and-documents-in-office-for-busine-2026-01-22-06-04-12-utc.mp4') }}?v=1.0"
-								type="video/mp4">
-						</video>
-						<div class="hero-video-overlay"></div>
-					</div>
-					<div class="container position-relative">
-						<div class="row">
-							<div class="col-xl-6 col-lg-7 me-auto">
-								<h1
-									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp text-start">
-									Strategic Corporate Excellence</h1>
-
-								<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0"
-									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
-									<span>Consult Us</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
-										alt="" class="lazy-img icon ms-2">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slide 5: Education -->
-				<div class="item m0">
-					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="metadata">
-							<source
-								src="{{ url_for('static', filename='images/hero video/professor-classroom-and-student-with-question-for-2025-12-17-23-05-05-utc.mp4') }}?v=1.0"
-								type="video/mp4">
-						</video>
-						<div class="hero-video-overlay"></div>
-					</div>
-					<div class="container position-relative">
-						<div class="row">
-							<div class="col-xl-6 col-lg-7 me-auto">
-								<h1
-									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp text-start">
-									Empowering Future Generations</h1>
-
-								<a href="{{ url_for('dynamic_route', path='service-v1') }}"
-									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
-									<span>Explore Learning</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
-										alt="" class="lazy-img icon ms-2">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slide 6: Innovation -->
-				<div class="item m0">
-					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="metadata">
-							<source
-								src="{{ url_for('static', filename='images/hero video/scientist-pours-chemicals-from-a-test-tube-into-a-2025-12-17-07-28-37-utc.mp4') }}?v=1.0"
-								type="video/mp4">
-						</video>
-						<div class="hero-video-overlay"></div>
-					</div>
-					<div class="container position-relative">
-						<div class="row">
-							<div class="col-xl-6 col-lg-7 ms-auto">
-								<h1
-									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp">
-									Innovation Through Scientific R&D</h1>
-
-								<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0"
-									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
-									<span>View R&D</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
-										alt="" class="lazy-img icon ms-2">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slide 7: Wellness -->
-				<div class="item m0">
-					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="metadata">
-							<source
-								src="{{ url_for('static', filename='images/hero video/yoga-2026-01-21-05-24-27-utc.mp4') }}?v=1.0"
-								type="video/mp4">
-						</video>
-						<div class="hero-video-overlay"></div>
-					</div>
-					<div class="container position-relative">
-						<div class="row">
-							<div class="col-xl-6 col-lg-7 me-auto">
-								<h1
-									class="hero-heading hero-heading-glass d-inline-block position-relative wow fadeInUp text-start">
-									Holistic Wellness & Healthcare</h1>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}"
-									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
-									<span>Health Services</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
-										alt="" class="lazy-img icon ms-2">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+					<!-- Add more fallback slides if needed -->
+				{% endif %}
 			</div>
 			<!-- /.hero-slider-one -->
 
@@ -1279,55 +1127,42 @@
 						</div>
 					</div>
 					<div class="row justify-content-center row-cols-1 row-cols-md-3 row-cols-lg-5">
-						{% for service in services %}
-						<div class="col d-flex wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
-							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-									data-src="{{ service.image_url or url_for('static', filename='images/icon/icon_06.svg') }}" alt=""
-									class="lazy-img icon me-auto mb-20" style="width: 35px;">
-								<h4 class="fw-bold mb-15" style="font-size: 18px;">{{ service.title }}</h4>
-								<p style="font-size: 14px; line-height: 1.6em;">{{ service.description }}</p>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}"
-									class="arrow-btn tran3s mt-auto stretched-link"><img
-										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
-										alt="" class="lazy-img"></a>
+						{% if cms['Our Business'].content %}
+							{% for service in cms['Our Business'].content %}
+							<div class="col d-flex wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+								<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ service.image_url or url_for('static', filename='images/icon/icon_06.svg') }}" alt=""
+										class="lazy-img icon me-auto mb-20" style="width: 35px;">
+									<h4 class="fw-bold mb-15" style="font-size: 18px;">{{ service.title }}</h4>
+									<p style="font-size: 14px; line-height: 1.6em;">{{ service.description }}</p>
+									<a href="{{ url_for('dynamic_route', path='service-details') }}"
+										class="arrow-btn tran3s mt-auto stretched-link"><img
+											src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+											data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+											alt="" class="lazy-img"></a>
+								</div>
 							</div>
-							<!-- /.card-style-two -->
-						</div>
+							{% endfor %}
 						{% else %}
-						<!-- Fallback to hardcoded if no services in DB -->
-						<div class="col d-flex wow fadeInUp">
-							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-									data-src="{{ url_for('static', filename='images/icon/icon_06.svg') }}?v=1.0" alt=""
-									class="lazy-img icon me-auto mb-20" style="width: 35px;">
-								<h4 class="fw-bold mb-15" style="font-size: 18px;">IT Solutions</h4>
-								<p style="font-size: 14px; line-height: 1.6em;">Providing innovative software
-									development, web solutions, and digital transformation services.</p>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}"
-									class="arrow-btn tran3s mt-auto stretched-link"><img
-										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
-										alt="" class="lazy-img"></a>
+							<!-- Fallback to hardcoded if no services in DB -->
+							<div class="col d-flex wow fadeInUp">
+								<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
+									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+										data-src="{{ url_for('static', filename='images/icon/icon_06.svg') }}?v=1.0" alt=""
+										class="lazy-img icon me-auto mb-20" style="width: 35px;">
+									<h4 class="fw-bold mb-15" style="font-size: 18px;">IT Solutions</h4>
+									<p style="font-size: 14px; line-height: 1.6em;">Providing innovative software
+										development, web solutions, and digital transformation services.</p>
+									<a href="{{ url_for('dynamic_route', path='service-details') }}"
+										class="arrow-btn tran3s mt-auto stretched-link"><img
+											src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+											data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
+											alt="" class="lazy-img"></a>
+								</div>
 							</div>
-						</div>
-						<div class="col d-flex wow fadeInUp" data-wow-delay="0.1s">
-							<div class="card-style-two vstack tran3s w-100 mt-30" style="padding: 25px;">
-								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-									data-src="{{ url_for('static', filename='images/icon/icon_07.svg') }}?v=1.0" alt=""
-									class="lazy-img icon me-auto mb-20" style="width: 35px;">
-								<h4 class="fw-bold mb-15" style="font-size: 18px;">Education & Training</h4>
-								<p style="font-size: 14px; line-height: 1.6em;">Offering quality education and skill
-									development programs to empower students.</p>
-								<a href="{{ url_for('dynamic_route', path='service-details') }}"
-									class="arrow-btn tran3s mt-auto stretched-link"><img
-										src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_09.svg') }}?v=1.0"
-										alt="" class="lazy-img"></a>
-							</div>
-						</div>
-						{% endfor %}
+							<!-- More fallbacks... -->
+						{% endif %}
 					</div>
 
 				</div>
@@ -1962,61 +1797,41 @@
 						<p class="text-lg mb-40 lg-mb-10">Get the latest update, trips & tricks from our expert.</p>
 
 						<div class="news-slider">
-							{% for item in news %}
-							<div class="item">
-								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
-									<div class="post-data">
-										<div class="post-info"><span class="fw-500 text-dark">{{ item.author or 'Admin' }} -</span> {{ item.created_at.strftime('%d %b %Y') if item.created_at else 'Recent' }}
+							{% set active_news = cms['Insights News'].content or news %}
+							{% if active_news %}
+								{% for item in active_news %}
+								<div class="item">
+									<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+										<div class="post-data">
+											<div class="post-info"><span class="fw-500 text-dark">{{ item.author or 'Admin' }} -</span> {{ item.created_at.strftime('%d %b %Y') if item.created_at else 'Recent' }}
+											</div>
+											<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+												class="mt-15">
+												<h4 class="tran3s blog-title">{{ item.title }}</h4>
+											</a>
 										</div>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="mt-15">
-											<h4 class="tran3s blog-title">{{ item.title }}</h4>
-										</a>
-									</div>
-									<figure
-										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
-										{% if item.image_url and item.image_url.endswith('.mp4') %}
-										<video loop muted playsinline
-											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-											<source src="{{ item.image_url }}" type="video/mp4">
-										</video>
-										{% else %}
-										<img src="{{ item.image_url or url_for('static', filename='images/media/blog_01.jpg') }}" alt="" class="lazy-img w-100 h-100" style="object-fit: cover;">
-										{% endif %}
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
-											style="z-index: 1;"><i class="bi bi-arrow-up-right"></i></a>
-									</figure>
-								</article>
-								<!-- /.blog-meta-one -->
-							</div>
+										<figure
+											class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
+											{% if item.image_url and item.image_url.endswith('.mp4') %}
+											<video loop muted playsinline autoplay
+												style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+												<source src="{{ item.image_url }}" type="video/mp4">
+											</video>
+											{% else %}
+											<img src="{{ item.image_url or url_for('static', filename='images/media/blog_01.jpg') }}" alt="" class="lazy-img w-100 h-100" style="object-fit: cover;">
+											{% endif %}
+											<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+												class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
+												style="z-index: 1;"><i class="bi bi-arrow-up-right"></i></a>
+										</figure>
+									</article>
+								</div>
+								{% endfor %}
 							{% else %}
-							<!-- Fallback if no news -->
-							<div class="item">
-								<article class="blog-meta-one mt-35 sm-mt-30 wow fadeInUp">
-									<div class="post-data">
-										<div class="post-info"><span class="fw-500 text-dark">VJS News -</span> Recent
-										</div>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="mt-15">
-											<h4 class="tran3s blog-title">Empowering Communities Through Connectivity</h4>
-										</a>
-									</div>
-									<figure
-										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
-										<video loop muted playsinline
-											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-											<source
-												src="{{ url_for('static', filename='images/news video/transport-victoria-2025-12-17-05-37-19-utc.mp4') }}?v=1.0"
-												type="video/mp4">
-										</video>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="round-btn stretched-link rounded-circle d-flex align-items-center justify-content-center tran3s"
-											style="z-index: 1;"><i class="bi bi-arrow-up-right"></i></a>
-									</figure>
-								</article>
-							</div>
-							{% endfor %}
+								<div class="item">
+									<p>No news available.</p>
+								</div>
+							{% endif %}
 						</div>
 
 						<div class="section-btn sm-mt-40">

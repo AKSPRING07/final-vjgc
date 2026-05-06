@@ -277,194 +277,41 @@
 				</div>
 
 				<div class="row gx-xl-5" id="media-grid">
-					<!-- Card 1 -->
-					<div class="col-lg-4 col-md-6 mb-50 media-card-item wow fadeInUp">
-						<div class="media-card-wrap">
-							<div class="img-box position-relative overflow-hidden mb-25"
-								style="aspect-ratio: 16/10; border-top-right-radius: 4px; border-top-left-radius: 4px;">
-								<img src="{{ url_for('static', filename='images/media/vjs_energy_glance_1.png') }}?v=1.0" alt="" class="w-100 h-100 tran4s"
-									style="object-fit: cover;">
-								<div class="tag"
-									style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 12px; font-size: 12px; font-weight: 600;">
-									Renewables</div>
-							</div>
-							<div class="content">
-								<div class="date mb-10" style="color: #888; font-size: 14px; font-weight: 500;">14 April
-									2026</div>
-								<h5 class="title"><a href="#" class="tran3s"
-										style="color: #081c17; font-size: 20px; line-height: 1.4; font-weight: 700;">Vijayalakshmi
-										Group commissions new clean energy cluster in South India</a></h5>
-							</div>
-						</div>
-					</div>
-
-					<!-- Card 2 -->
-					<div class="col-lg-4 col-md-6 mb-50 media-card-item wow fadeInUp" data-wow-delay="0.1s">
-						<div class="media-card-wrap">
-							<div class="img-box position-relative overflow-hidden mb-25"
-								style="aspect-ratio: 16/10; border-top-right-radius: 4px; border-top-left-radius: 4px;">
-								<img src="{{ url_for('static', filename='images/media/vjs_logistics_new.png') }}?v=1.0" alt="" class="w-100 h-100 tran4s"
-									style="object-fit: cover;">
-								<div class="tag"
-									style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 12px; font-size: 12px; font-weight: 600;">
-									Logistics</div>
-							</div>
-							<div class="content">
-								<div class="date mb-10" style="color: #888; font-size: 14px; font-weight: 500;">10 April
-									2026</div>
-								<h5 class="title"><a href="#" class="tran3s"
-										style="color: #081c17; font-size: 20px; line-height: 1.4; font-weight: 700;">VJS
-										Logistics expands deep-water port operations with advanced AI systems</a></h5>
+					{% set active_news = cms['Insights News'].content or news %}
+					{% if active_news %}
+						{% for item in active_news %}
+						<div class="col-lg-4 col-md-6 mb-50 media-card-item wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+							<div class="media-card-wrap">
+								<div class="img-box position-relative overflow-hidden mb-25"
+									style="aspect-ratio: 16/10; border-top-right-radius: 4px; border-top-left-radius: 4px;">
+									{% if item.image_url and item.image_url.endswith('.mp4') %}
+									<video loop muted playsinline autoplay
+										style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+										<source src="{{ item.image_url }}" type="video/mp4">
+									</video>
+									{% else %}
+									<img src="{{ item.image_url or url_for('static', filename='images/media/vjs_energy_glance_1.png') }}" alt="" class="w-100 h-100 tran4s"
+										style="object-fit: cover;">
+									{% endif %}
+									<div class="tag"
+										style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 12px; font-size: 12px; font-weight: 600;">
+										{{ item.category or 'News' }}</div>
+								</div>
+								<div class="content">
+									<div class="date mb-10" style="color: #888; font-size: 14px; font-weight: 500;">
+										{{ item.created_at.strftime('%d %B %Y') if item.created_at else 'Recent' }}
+									</div>
+									<h5 class="title"><a href="#" class="tran3s"
+											style="color: #081c17; font-size: 20px; line-height: 1.4; font-weight: 700;">{{ item.title }}</a></h5>
+								</div>
 							</div>
 						</div>
-					</div>
-
-					<!-- Card 3 -->
-					<div class="col-lg-4 col-md-6 mb-50 media-card-item wow fadeInUp" data-wow-delay="0.2s">
-						<div class="media-card-wrap">
-							<div class="img-box position-relative overflow-hidden mb-25"
-								style="aspect-ratio: 16/10; border-top-right-radius: 4px; border-top-left-radius: 4px;">
-								<img src="{{ url_for('static', filename='images/media/glance_education.png') }}?v=1.0" alt="" class="w-100 h-100 tran4s"
-									style="object-fit: cover;">
-								<div class="tag"
-									style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 12px; font-size: 12px; font-weight: 600;">
-									Foundation</div>
-							</div>
-							<div class="content">
-								<div class="date mb-10" style="color: #888; font-size: 14px; font-weight: 500;">05 April
-									2026</div>
-								<h5 class="title"><a href="#" class="tran3s"
-										style="color: #081c17; font-size: 20px; line-height: 1.4; font-weight: 700;">Foundation
-										provides digital learning kits to over 200+ rural schools</a></h5>
-							</div>
+						{% endfor %}
+					{% else %}
+						<div class="col-12">
+							<p>No media releases found.</p>
 						</div>
-					</div>
-
-					<!-- Card 4 -->
-					<div class="col-lg-4 col-md-6 mb-50 media-card-item wow fadeInUp">
-						<div class="media-card-wrap">
-							<div class="img-box position-relative overflow-hidden mb-25"
-								style="aspect-ratio: 16/10; border-top-right-radius: 4px; border-top-left-radius: 4px;">
-								<img src="{{ url_for('static', filename='images/media/glance_healthcare.png') }}?v=1.0" alt="" class="w-100 h-100 tran4s"
-									style="object-fit: cover;">
-								<div class="tag"
-									style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 12px; font-size: 12px; font-weight: 600;">
-									Healthcare</div>
-							</div>
-							<div class="content">
-								<div class="date mb-10" style="color: #888; font-size: 14px; font-weight: 500;">01 April
-									2026</div>
-								<h5 class="title"><a href="#" class="tran3s"
-										style="color: #081c17; font-size: 20px; line-height: 1.4; font-weight: 700;">New
-										fleet of mobile healthcare units launched to serve remote communities</a></h5>
-							</div>
-						</div>
-					</div>
-
-					<!-- Card 5 -->
-					<div class="col-lg-4 col-md-6 mb-50 media-card-item wow fadeInUp" data-wow-delay="0.1s">
-						<div class="media-card-wrap">
-							<div class="img-box position-relative overflow-hidden mb-25"
-								style="aspect-ratio: 16/10; border-top-right-radius: 4px; border-top-left-radius: 4px;">
-								<img src="{{ url_for('static', filename='images/media/glance_environment.png') }}?v=1.0" alt="" class="w-100 h-100 tran4s"
-									style="object-fit: cover;">
-								<div class="tag"
-									style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 12px; font-size: 12px; font-weight: 600;">
-									Sustainability</div>
-							</div>
-							<div class="content">
-								<div class="date mb-10" style="color: #888; font-size: 14px; font-weight: 500;">28 March
-									2026</div>
-								<h5 class="title"><a href="#" class="tran3s"
-										style="color: #081c17; font-size: 20px; line-height: 1.4; font-weight: 700;">VJS
-										Group achieves milestone of planting 1 million trees nationwide</a></h5>
-							</div>
-						</div>
-					</div>
-
-					<!-- Card 6 -->
-					<div class="col-lg-4 col-md-6 mb-50 media-card-item wow fadeInUp" data-wow-delay="0.2s">
-						<div class="media-card-wrap">
-							<div class="img-box position-relative overflow-hidden mb-25"
-								style="aspect-ratio: 16/10; border-top-right-radius: 4px; border-top-left-radius: 4px;">
-								<img src="{{ url_for('static', filename='images/media/glance_skilling.png') }}?v=1.0" alt="" class="w-100 h-100 tran4s"
-									style="object-fit: cover;">
-								<div class="tag"
-									style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 12px; font-size: 12px; font-weight: 600;">
-									Skilling</div>
-							</div>
-							<div class="content">
-								<div class="date mb-10" style="color: #888; font-size: 14px; font-weight: 500;">22 March
-									2026</div>
-								<h5 class="title"><a href="#" class="tran3s"
-										style="color: #081c17; font-size: 20px; line-height: 1.4; font-weight: 700;">Saksham
-										Initiative: 50,000th student graduates from vocational training center</a></h5>
-							</div>
-						</div>
-					</div>
-
-					<!-- Card 7 (Hidden initially) -->
-					<div class="col-lg-4 col-md-6 mb-50 d-none media-card-item extra-card">
-						<div class="media-card-wrap">
-							<div class="img-box position-relative overflow-hidden mb-25"
-								style="aspect-ratio: 16/10; border-top-right-radius: 4px; border-top-left-radius: 4px;">
-								<img src="{{ url_for('static', filename='images/media/glance_sports.png') }}?v=1.0" alt="" class="w-100 h-100 tran4s"
-									style="object-fit: cover;">
-								<div class="tag"
-									style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 12px; font-size: 12px; font-weight: 600;">
-									Sports</div>
-							</div>
-							<div class="content">
-								<div class="date mb-10" style="color: #888; font-size: 14px; font-weight: 500;">15 March
-									2026</div>
-								<h5 class="title"><a href="#" class="tran3s"
-										style="color: #081c17; font-size: 20px; line-height: 1.4; font-weight: 700;">Athletes
-										from VJS Sports Academy sweep top honors at National Games</a></h5>
-							</div>
-						</div>
-					</div>
-
-					<!-- Card 8 (Hidden initially) -->
-					<div class="col-lg-4 col-md-6 mb-50 d-none media-card-item extra-card">
-						<div class="media-card-wrap">
-							<div class="img-box position-relative overflow-hidden mb-25"
-								style="aspect-ratio: 16/10; border-top-right-radius: 4px; border-top-left-radius: 4px;">
-								<img src="{{ url_for('static', filename='images/media/hero_foundation_2.png') }}?v=1.0" alt="" class="w-100 h-100 tran4s"
-									style="object-fit: cover;">
-								<div class="tag"
-									style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 12px; font-size: 12px; font-weight: 600;">
-									Philanthropy</div>
-							</div>
-							<div class="content">
-								<div class="date mb-10" style="color: #888; font-size: 14px; font-weight: 500;">10 March
-									2026</div>
-								<h5 class="title"><a href="#" class="tran3s"
-										style="color: #081c17; font-size: 20px; line-height: 1.4; font-weight: 700;">Vijayalakshmi
-										Trust announces expansion of nutrition support programs</a></h5>
-							</div>
-						</div>
-					</div>
-
-					<!-- Card 9 (Hidden initially) -->
-					<div class="col-lg-4 col-md-6 mb-50 d-none media-card-item extra-card">
-						<div class="media-card-wrap">
-							<div class="img-box position-relative overflow-hidden mb-25"
-								style="aspect-ratio: 16/10; border-top-right-radius: 4px; border-top-left-radius: 4px;">
-								<img src="{{ url_for('static', filename='images/media/vision_landscape.png') }}?v=1.0" alt="" class="w-100 h-100 tran4s"
-									style="object-fit: cover;">
-								<div class="tag"
-									style="position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 12px; font-size: 12px; font-weight: 600;">
-									Strategy</div>
-							</div>
-							<div class="content">
-								<div class="date mb-10" style="color: #888; font-size: 14px; font-weight: 500;">01 March
-									2026</div>
-								<h5 class="title"><a href="#" class="tran3s"
-										style="color: #081c17; font-size: 20px; line-height: 1.4; font-weight: 700;">Building
-										a Sustainable Future: VJS Group unveils Vision 2030 roadmap</a></h5>
-							</div>
-						</div>
-					</div>
+					{% endif %}
 				</div>
 
 				<div class="text-center mt-60 lg-mt-20">

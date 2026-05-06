@@ -12,7 +12,18 @@ router = APIRouter()
 # Mapping: slug sent by admin panel → friendly name stored in MongoDB
 SLUG_TO_NAME = {
     # Main pages
+    "home":     "Home",
+    "about":    "About",
     "business": "Business Verticals",
+    "newsroom": "Newsroom",
+    "blog":     "Blog",
+    # Sub-sections (about)
+    "about-group":  "About Group",
+    "leadership":   "Leadership",
+    "awards":       "Awards",
+    "journey":      "Our Journey",
+    # Sub-sections (newsroom)
+    "media-release": "Media Release",
     # Sub-sections (business verticals)
     "it-consulting":      "IT Consulting",
     "data-centers":       "Enterprise Data Centers & Hosting Services",
@@ -25,8 +36,14 @@ SLUG_TO_NAME = {
     "logistics":          "Logistics Services",
     "travel-rentals":     "Travel & Rentals",
     # Categories
-    "at-a-glance":   "At a Glance",
-    "our-business":  "Our Business",
+    "at-a-glance":    "At a Glance",
+    "our-business":   "Our Business",
+    "Hero Section":   "Hero Section",
+    "Services":       "Services",
+    "Insights / News": "Insights / News",
+    "Advisors":       "Advisors",
+    "Awards":         "Awards",
+    "News":           "News",
 }
 
 def resolve(slug: Optional[str]) -> Optional[str]:
@@ -35,71 +52,62 @@ def resolve(slug: Optional[str]) -> Optional[str]:
         return None
     return SLUG_TO_NAME.get(slug, slug)
 
-# --- Static config for the ABOUT / HOME fallback (business is now fully dynamic) ---
+# --- Static Structure Configuration ---
+# This defines the UI dropdowns in the Admin Panel.
 PAGES_CONFIG = {
     "home": [
-        {"name": "hero",     "type": "hero",  "label": "Main Hero Section"},
-        {"name": "features", "type": "cards", "label": "Core Features"},
+        {"name": "Hero Section",    "label": "Hero Section",    "type": "hero"},
+        {"name": "Services",        "label": "Services",        "type": "cards"},
+        {"name": "Insights / News", "label": "Insights / News", "type": "news"},
     ],
     "about": {
         "about-group": [
-            {"name": "hero",    "type": "hero", "label": "About Hero"},
-            {"name": "content", "type": "text", "label": "About Content"}
-        ],
-        "journey": [
-            {"name": "hero",     "type": "hero",  "label": "Journey Hero"},
-            {"name": "timeline", "type": "cards", "label": "Journey Timeline"}
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "News Section", "label": "News Section", "type": "news"}
         ],
         "leadership": [
-            {"name": "hero", "type": "hero",  "label": "Leadership Hero"},
-            {"name": "team", "type": "cards", "label": "Leadership Team"}
+            {"name": "Advisors", "label": "Advisors", "type": "cards"}
         ],
         "awards": [
-            {"name": "hero",       "type": "hero",  "label": "Awards Hero"},
-            {"name": "award_list", "type": "cards", "label": "Award List"}
+            {"name": "Awards", "label": "Awards", "type": "cards"}
         ]
-    }
+    },
+    "business": [
+        {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+        {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"},
+        {"name": "Our Business", "label": "Our Business", "type": "cards"}
+    ],
+    "newsroom": {
+        "media-release": [
+            {"name": "News", "label": "News", "type": "news"}
+        ]
+    },
+    "blog": [
+        {"name": "News", "label": "News", "type": "news"}
+    ]
 }
 
 
 # ---------------------------------------------------------------------------
 # GET /sections
 # Called by Admin Panel when a page + sub-section is chosen.
-# Returns the categories available for that sub-section.
+# Returns the structural categories available to be edited.
 # ---------------------------------------------------------------------------
 @router.get("/sections")
-async def get_sections(page: str = "home", subpage: Optional[str] = None, db = Depends(get_database)):
-    """Dynamically return categories by querying existing DB content."""
-
-    # Translate slugs → DB names
-    db_page    = resolve(page)    # "business" → "Business Verticals"
-    db_subpage = resolve(subpage) # "travel-rentals" → "Travel & Rentals"
-
-    print(f"DEBUG /sections: page={page}→{db_page}, subpage={subpage}→{db_subpage}")
-
-    query: Dict[str, Any] = {"mainPage": db_page}
-    if db_subpage:
-        query["subSection"] = db_subpage
-
-    pipeline = [{"$match": query}, {"$group": {"_id": "$category"}}]
-    existing = []
-    async for doc in db["universal_content"].aggregate(pipeline):
-        cat = doc["_id"]
-        if cat:
-            existing.append({"name": cat, "label": cat, "type": "cards"})
-
-    print(f"DEBUG /sections result: {existing}")
-
-    if existing:
-        return existing
-
-    # Fallback to static config (used for home/about which aren't in universal_content)
+async def get_sections(page: str = "home", subpage: Optional[str] = None):
+    """Return the predefined categories for the selected page and subpage."""
     pk = page.lower()
     config = PAGES_CONFIG.get(pk)
+    
     if config is None:
         return []
+        
+    # If the config for this page is a dictionary, it has subpages
     if isinstance(config, dict):
+        # We must have a subpage to know what sections to return
         return config.get(subpage or "", [])
+        
+    # If it's a list, the page itself has the sections (no subpages, or all subpages share the same structure like 'business')
     return config
 
 
@@ -160,9 +168,19 @@ async def get_content(
 
     print(f"DEBUG /content found {len(results)} items")
 
+    # Infer section type from the category name so the admin renders correct fields
+    hero_categories = {"Hero Section"}
+    news_categories = {"Insights / News", "News Section", "News"}
+    if c in hero_categories:
+        section_type = "hero"
+    elif c in news_categories:
+        section_type = "news"
+    else:
+        section_type = "cards"
+
     return {
         "content": results,
-        "type":    "cards",
+        "type":    section_type,
         "id":      f"{m}-{s}-{c}"
     }
 
@@ -173,11 +191,11 @@ async def get_content(
 @router.put("/content")
 async def upsert_content(data: Dict[str, Any], db = Depends(get_database), admin: str = Depends(get_current_admin)):
     mainPage   = resolve(data.get("mainPage"))
-    subSection = resolve(data.get("subSection"))
+    subSection = resolve(data.get("subSection")) or ""   # Optional for Home/Blog
     category   = resolve(data.get("category"))
 
-    if not all([mainPage, subSection, category]):
-        raise HTTPException(status_code=400, detail="mainPage, subSection and category are required")
+    if not all([mainPage, category]):
+        raise HTTPException(status_code=400, detail="mainPage and category are required")
 
     doc = {
         "mainPage":   mainPage,

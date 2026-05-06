@@ -420,19 +420,20 @@
 		</header>
 
 		<!-- SECTION 1: HERO -->
-		<section class="vjs-hero-section" style="background-image: url('{% if cms.hero.content.image_url %}{{ cms.hero.content.image_url }}{% else %}{{ url_for('static', filename='images/hero/cheerful-businesspeople-standing-on-top-of-stairca-2026-01-11-08-46-59-utc.jpg') }}{% endif %}?v=1.0');">
+		{% set hero = cms['Hero Section'].content[0] if cms['Hero Section'].content else None %}
+		<section class="vjs-hero-section" style="background-image: url('{% if hero.image_url %}{{ hero.image_url }}{% else %}{{ url_for('static', filename='images/hero/cheerful-businesspeople-standing-on-top-of-stairca-2026-01-11-08-46-59-utc.jpg') }}{% endif %}?v=1.0');">
 			<div class="container">
 				<div class="vjs-hero-content wow fadeInRight">
 					<h1 class="hero-heading-glass">
-						{% if cms.hero.content.title %}
-							{{ cms.hero.content.title | safe }}
+						{% if hero.title %}
+							{{ hero.title | safe }}
 						{% else %}
 							Leadership & Excellence
 						{% endif %}
 					</h1>
 					<p>
-						{% if cms.hero.content.subtitle %}
-							{{ cms.hero.content.subtitle }}
+						{% if hero.subtitle %}
+							{{ hero.subtitle }}
 						{% else %}
 							Empowering industries through visionary leadership <br> and a commitment to global excellence.
 						{% endif %}
@@ -450,70 +451,51 @@
 						verticals.</p>
 				</div>
 				<div class="row">
-					<!-- Card 1 -->
-					<div class="col-lg-3 col-sm-6 wow fadeInUp">
-						<div class="vjs-advisor-card">
-							<img src="{{ url_for('static', filename='images/media/img_27.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
-							<h4>Zubayer Hasan</h4>
-							<span>Strategy Lead</span>
+					{% if cms.Advisors.content %}
+						{% for item in cms.Advisors.content %}
+						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+							<div class="vjs-advisor-card">
+								<img src="{{ item.image_url or url_for('static', filename='images/media/img_27.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
+								<h4>{{ item.title }}</h4>
+								<span>{{ item.description }}</span>
+							</div>
 						</div>
-					</div>
-					<!-- Card 2 -->
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-						<div class="vjs-advisor-card">
-							<img src="{{ url_for('static', filename='images/media/img_28.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
-							<h4>Maria Escolova</h4>
-							<span>Operations Head</span>
+						{% endfor %}
+					{% else %}
+						<!-- Fallback to static cards if no data in DB -->
+						<!-- Card 1 -->
+						<div class="col-lg-3 col-sm-6 wow fadeInUp">
+							<div class="vjs-advisor-card">
+								<img src="{{ url_for('static', filename='images/media/img_27.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
+								<h4>Zubayer Hasan</h4>
+								<span>Strategy Lead</span>
+							</div>
 						</div>
-					</div>
-					<!-- Card 3 -->
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
-						<div class="vjs-advisor-card">
-							<img src="{{ url_for('static', filename='images/media/img_29.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
-							<h4>Rashedul Kabir</h4>
-							<span>Finance Director</span>
+						<!-- Card 2 -->
+						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+							<div class="vjs-advisor-card">
+								<img src="{{ url_for('static', filename='images/media/img_28.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
+								<h4>Maria Escolova</h4>
+								<span>Operations Head</span>
+							</div>
 						</div>
-					</div>
-					<!-- Card 4 -->
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-						<div class="vjs-advisor-card">
-							<img src="{{ url_for('static', filename='images/media/img_30.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
-							<h4>Cristiano Messi</h4>
-							<span>Supply Chain</span>
+						<!-- Card 3 -->
+						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+							<div class="vjs-advisor-card">
+								<img src="{{ url_for('static', filename='images/media/img_29.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
+								<h4>Rashedul Kabir</h4>
+								<span>Finance Director</span>
+							</div>
 						</div>
-					</div>
-					<!-- Card 5 -->
-					<div class="col-lg-3 col-sm-6 wow fadeInUp">
-						<div class="vjs-advisor-card">
-							<img src="{{ url_for('static', filename='images/media/img_13.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
-							<h4>John Doe</h4>
-							<span>Technology VP</span>
+						<!-- Card 4 -->
+						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+							<div class="vjs-advisor-card">
+								<img src="{{ url_for('static', filename='images/media/img_30.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
+								<h4>Cristiano Messi</h4>
+								<span>Supply Chain</span>
+							</div>
 						</div>
-					</div>
-					<!-- Card 6 -->
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-						<div class="vjs-advisor-card">
-							<img src="{{ url_for('static', filename='images/media/img_14.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
-							<h4>Jane Smith</h4>
-							<span>Legal Advisor</span>
-						</div>
-					</div>
-					<!-- Card 7 -->
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
-						<div class="vjs-advisor-card">
-							<img src="{{ url_for('static', filename='images/media/img_15.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
-							<h4>Robert Brown</h4>
-							<span>HR Director</span>
-						</div>
-					</div>
-					<!-- Card 8 -->
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-						<div class="vjs-advisor-card">
-							<img src="{{ url_for('static', filename='images/media/img_16.jpg') }}?v=1.0" alt="" class="vjs-advisor-img">
-							<h4>Sarah Wilson</h4>
-							<span>Marketing Lead</span>
-						</div>
-					</div>
+					{% endif %}
 				</div>
 			</div>
 		</section>
@@ -552,30 +534,41 @@
 
 				<!-- Award Cards Below -->
 				<div class="row">
-					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp">
-						<div class="vjs-award-card">
-							<h5>Excellence 2024</h5>
-							<p>Highest industry safety and quality standards recognition.</p>
+					{% if cms.Awards.content %}
+						{% for item in cms.Awards.content %}
+						<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+							<div class="vjs-award-card">
+								<h5>{{ item.title }}</h5>
+								<p>{{ item.description }}</p>
+							</div>
 						</div>
-					</div>
-					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="0.1s">
-						<div class="vjs-award-card">
-							<h5>Innovation Award</h5>
-							<p>Breakthrough solutions in green energy and utilities.</p>
+						{% endfor %}
+					{% else %}
+						<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp">
+							<div class="vjs-award-card">
+								<h5>Excellence 2024</h5>
+								<p>Highest industry safety and quality standards recognition.</p>
+							</div>
 						</div>
-					</div>
-					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="0.2s">
-						<div class="vjs-award-card">
-							<h5>Sustainability Lead</h5>
-							<p>Commemorated for sustainable supply chain practices.</p>
+						<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="0.1s">
+							<div class="vjs-award-card">
+								<h5>Innovation Award</h5>
+								<p>Breakthrough solutions in green energy and utilities.</p>
+							</div>
 						</div>
-					</div>
-					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="0.3s">
-						<div class="vjs-award-card">
-							<h5>Leadership Gold</h5>
-							<p>Recognized for outstanding corporate governance.</p>
+						<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="0.2s">
+							<div class="vjs-award-card">
+								<h5>Sustainability Lead</h5>
+								<p>Commemorated for sustainable supply chain practices.</p>
+							</div>
 						</div>
-					</div>
+						<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="0.3s">
+							<div class="vjs-award-card">
+								<h5>Leadership Gold</h5>
+								<p>Recognized for outstanding corporate governance.</p>
+							</div>
+						</div>
+					{% endif %}
 				</div>
 			</div>
 		</section>

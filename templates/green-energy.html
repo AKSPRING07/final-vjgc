@@ -320,15 +320,27 @@
 		</style>
 		<!-- Hero Banner -->
 		<div class="hero-banner-five">
-			<div class="bg-wrapper position-relative pt-150 pb-120 sm-pb-10">
+			{% set hero = cms['Hero Section'].content[0] if cms['Hero Section'].content else None %}
+			<div class="bg-wrapper position-relative pt-150 pb-120 sm-pb-10"
+				style="background-image: url('{% if hero.image_url %}{{ hero.image_url }}{% else %}{{ url_for('static', filename='images/hero/high-voltage-electric-pole-and-transmission-lines-2026-03-18-04-35-02-utc.JPG') }}{% endif %}'); background-size: cover; background-position: center; min-height: 80vh; display: flex; align-items: center;">
 				<div class="container position-relative" style="z-index: 2;">
 					<div class="row justify-content-between">
 						<div class="col-lg-8 col-md-10 wow fadeInLeft">
-							<h1 class="hero-heading-glass">Powering the Future<br>With Clean Energy.</h1>
+							<h1 class="hero-heading-glass">
+								{% if hero.title %}
+									{{ hero.title | safe }}
+								{% else %}
+									Powering the Future<br>With Clean Energy.
+								{% endif %}
+							</h1>
 							<p class="text-lg text-white pt-20 pb-20 ps-3 pe-3 mt-40 lg-mt-30"
 								style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); border-radius: 8px; display: inline-block;">
-								Driving sustainable progress through high-efficiency solar manufacturing and innovative
-								renewable energy systems.
+								{% if hero.subtitle %}
+									{{ hero.subtitle }}
+								{% else %}
+									Driving sustainable progress through high-efficiency solar manufacturing and innovative
+									renewable energy systems.
+								{% endif %}
 							</p>
 						</div>
 					</div>
@@ -357,6 +369,20 @@
 								</div>
 							</div>
 							{% endfor %}
+						{% else %}
+							<!-- Fallback Content -->
+							<div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1200" alt="Solar" style="width:100%;height:100%;object-fit:cover;"></div>
+									<div class="content"><h4 class="card-title">Solar Innovation</h4><p class="card-desc">Leading-edge solar panel manufacturing for global energy needs.</p></div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap"><img src="https://images.unsplash.com/photo-1466611653911-95281773ad90?auto=format&fit=crop&q=80&w=1200" alt="Wind" style="width:100%;height:100%;object-fit:cover;"></div>
+									<div class="content"><h4 class="card-title">Renewable Systems</h4><p class="card-desc">Integrated energy solutions for sustainable urban development.</p></div>
+								</div>
+							</div>
 						{% endif %}
 					</div>
 				</div>
@@ -379,6 +405,14 @@
 								</a>
 							</div>
 							{% endfor %}
+						{% else %}
+							<!-- Fallback Content -->
+							<div class="col-lg-3 col-md-6 d-flex wow fadeInUp">
+								<a href="#" class="vjs-biz-card-v2">
+									<div class="img-wrap"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200" alt=""></div>
+									<div class="content"><h4 class="card-title">Solar Parks</h4><p class="card-desc">Large scale solar power plants.</p></div>
+								</a>
+							</div>
 						{% endif %}
 					</div>
 				</div>

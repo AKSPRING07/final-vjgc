@@ -123,12 +123,15 @@ async def get_page_context(path: str):
     # Fetch all published CMS content for this page/subpage
     # Map specific template paths to our CMS Main Page / Sub-Section structure
     path_map = {
-        "index-2": ("home", None),
-        "": ("home", None),
-        "about-us-v2": ("about", "about-group"),
-        "about-us-v1": ("about", "journey"),
-        "service-v1": ("about", "leadership"),
-        "media-release": ("newsroom", "media-release"),
+        "": ("Home", ""),
+        "index-2": ("Home", ""),
+        "about-us-v2": ("About", "About Group"),
+        "about-us-v1": ("About", "Our Journey"),
+        "service-v1": ("About", "Leadership"),
+        "media-release": ("Newsroom", "Media Release"),
+        "media-kit": ("Newsroom", "Media Kit"),
+        "blog-v1": ("Foundation", ""),
+        # Business Verticals
         "data-centers-hosting": ("Business Verticals", "Enterprise Data Centers & Hosting Services"),
         "it-consulting": ("Business Verticals", "IT Consulting"),
         "green-energy": ("Business Verticals", "Green Energy & Solar Manufacturing"),
@@ -138,14 +141,21 @@ async def get_page_context(path: str):
         "it-training": ("Business Verticals", "IT Training"),
         "yoga-wellness": ("Business Verticals", "Yoga & Wellness"),
         "travel-rentals": ("Business Verticals", "Travel & Rentals"),
-        "plantations": ("Business Verticals", "Plantations & Exotic Trees")
+        "plantations": ("Business Verticals", "Plantations & Exotic Trees"),
+        "plantations-exotic-trees": ("Business Verticals", "Plantations & Exotic Trees")
     }
     
-    page_name, sub_name = path_map.get(path, (path, None))
+    page_name, sub_name = path_map.get(path, (path, ""))
+    
+    # Ensure sub_name is a string
+    sub_name = sub_name or ""
     
     query = {"mainPage": page_name, "isActive": True}
     if sub_name:
         query["subSection"] = sub_name
+    else:
+        # For pages without a subSection, only fetch those with empty subSection
+        query["subSection"] = ""
     
     print(f"DEBUG: Fetching Website CMS Content for {path} -> {query}")
     

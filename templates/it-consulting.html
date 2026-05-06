@@ -499,16 +499,29 @@
 		============================================== 
 		-->
 		<div class="hero-banner-five">
-			<div class="bg-wrapper position-relative pt-150 sm-pt-50 pb-120 xl-pb-100 sm-pb-10">
+			{% set hero = cms['Hero Section'].content[0] if cms['Hero Section'].content else None %}
+			<div class="bg-wrapper position-relative pt-150 sm-pt-50 pb-120 xl-pb-100 sm-pb-10"
+				style="background-image: url('{% if hero.image_url %}{{ hero.image_url }}{% else %}{{ url_for('static', filename='images/hero/server-hub-teamworking-coworkers-doing-disaster-re-2026-03-19-02-05-54-utc.jpg') }}{% endif %}?v=1.0'); background-size: cover; background-position: center; min-height: 80vh; display: flex; align-items: center;">
 				<div class="container position-relative" style="z-index: 2;">
 					<div class="row justify-content-between">
 						<div class="col-lg-8 col-md-10 wow fadeInLeft">
-							<h1 class="hero-heading-glass">Beyond Digital Across Every Industry.</h1>
+							<h1 class="hero-heading-glass">
+								{% if hero.title %}
+									{{ hero.title | safe }}
+								{% else %}
+									Beyond Digital Across Every Industry.
+								{% endif %}
+							</h1>
 							<p class="text-lg text-white pt-20 pb-20 ps-3 pe-3 mt-40 lg-mt-30"
 								style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); border-radius: 8px; display: inline-block;">
-								Beyond digital, we deliver cloud, AI, cybersecurity, engineering, finance, and
-								infrastructure solutions.<br>Serving industries like aerospace, energy, healthcare,
-								banking, retail, and public services.</p>
+								{% if hero.subtitle %}
+									{{ hero.subtitle }}
+								{% else %}
+									Beyond digital, we deliver cloud, AI, cybersecurity, engineering, finance, and
+									infrastructure solutions.<br>Serving industries like aerospace, energy, healthcare,
+									banking, retail, and public services.
+								{% endif %}
+							</p>
 						</div>
 					</div>
 				</div>
@@ -687,6 +700,35 @@
 								</div>
 							</div>
 							{% endfor %}
+						{% else %}
+							<!-- Fallback Content -->
+							<div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap"><img src="{{ url_for('static', filename='images/media/vjs_it_glance_1.png') }}" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+									<div class="content">
+										<h4 class="card-title">Cloud Transformation</h4>
+										<p class="card-desc">Accelerating business agility through secure and scalable cloud infrastructure solutions.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap"><img src="{{ url_for('static', filename='images/media/vjs_it_glance_2.png') }}" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+									<div class="content">
+										<h4 class="card-title">Cybersecurity</h4>
+										<p class="card-desc">Comprehensive threat protection and data security for enterprise-level operations.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap"><img src="{{ url_for('static', filename='images/media/vjs_it_glance_3.png') }}" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+									<div class="content">
+										<h4 class="card-title">Data & AI</h4>
+										<p class="card-desc">Unlocking actionable insights through advanced analytics and artificial intelligence.</p>
+									</div>
+								</div>
+							</div>
 						{% endif %}
 					</div>
 				</div>
@@ -717,6 +759,44 @@
 								</a>
 							</div>
 							{% endfor %}
+						{% else %}
+							<!-- Fallback Content -->
+							<div class="col-lg-3 col-md-6 d-flex wow fadeInUp">
+								<a href="#" class="vjs-biz-card-v2">
+									<div class="img-wrap"><img src="{{ url_for('static', filename='images/media/vjs_biz_it_1.png') }}" alt=""></div>
+									<div class="content">
+										<h4 class="card-title">Managed IT</h4>
+										<p class="card-desc">End-to-end infrastructure management.</p>
+									</div>
+								</a>
+							</div>
+							<div class="col-lg-3 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
+								<a href="#" class="vjs-biz-card-v2">
+									<div class="img-wrap"><img src="{{ url_for('static', filename='images/media/vjs_biz_it_2.png') }}" alt=""></div>
+									<div class="content">
+										<h4 class="card-title">Custom Software</h4>
+										<p class="card-desc">Tailored digital solutions for growth.</p>
+									</div>
+								</a>
+							</div>
+							<div class="col-lg-3 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
+								<a href="#" class="vjs-biz-card-v2">
+									<div class="img-wrap"><img src="{{ url_for('static', filename='images/media/vjs_biz_it_3.png') }}" alt=""></div>
+									<div class="content">
+										<h4 class="card-title">Digital Strategy</h4>
+										<p class="card-desc">Navigating complex transformations.</p>
+									</div>
+								</a>
+							</div>
+							<div class="col-lg-3 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.3s">
+								<a href="#" class="vjs-biz-card-v2">
+									<div class="img-wrap"><img src="{{ url_for('static', filename='images/media/vjs_biz_it_4.png') }}" alt=""></div>
+									<div class="content">
+										<h4 class="card-title">Enterprise Security</h4>
+										<p class="card-desc">Protecting your digital assets.</p>
+									</div>
+								</a>
+							</div>
 						{% endif %}
 					</div>
 

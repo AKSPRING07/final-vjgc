@@ -485,17 +485,29 @@
 		============================================== 
 		-->
 		<div class="hero-banner-five">
+			{% set hero = cms['Hero Section'].content[0] if cms['Hero Section'].content else None %}
 			<div class="bg-wrapper position-relative pt-150 sm-pt-50 pb-120 xl-pb-100 sm-pb-10"
-				style="background-image: url('{{ url_for('static', filename='images/hero/handsome-focused-data-center-specialist-in-turtlen-2026-01-09-12-29-14-utc.jpg') }}'); background-size: cover; background-position: center; min-height: 80vh; display: flex; align-items: center;">
+				style="background-image: url('{% if hero.image_url %}{{ hero.image_url }}{% else %}{{ url_for('static', filename='images/hero/handsome-focused-data-center-specialist-in-turtlen-2026-01-09-12-29-14-utc.jpg') }}{% endif %}'); background-size: cover; background-position: center; min-height: 80vh; display: flex; align-items: center;">
 				<div class="container position-relative" style="z-index: 2;">
 					<div class="row justify-content-between">
 						<div class="col-lg-8 col-md-10 wow fadeInLeft">
-							<h1 class="hero-heading-glass"> Beyond Datacenters.<br> Across Every Enterprise.</h1>
+							<h1 class="hero-heading-glass">
+								{% if hero.title %}
+									{{ hero.title | safe }}
+								{% else %}
+									Beyond Datacenters.<br> Across Every Enterprise.
+								{% endif %}
+							</h1>
 							<p class="text-lg text-white pt-20 pb-20 ps-3 pe-3 mt-40 lg-mt-30"
 								style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); border-radius: 8px; display: inline-block;">
-								We deliver secure, scalable datacenter, managed hosting, <br>and domain solutions to
-								ensure high performance, <br> reliability, and seamless digital operations for every
-								business.</p>
+								{% if hero.subtitle %}
+									{{ hero.subtitle }}
+								{% else %}
+									We deliver secure, scalable datacenter, managed hosting, <br>and domain solutions to
+									ensure high performance, <br> reliability, and seamless digital operations for every
+									business.
+								{% endif %}
+							</p>
 						</div>
 					</div>
 				</div>

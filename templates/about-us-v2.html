@@ -381,7 +381,7 @@
 				align-items: flex-end;
 				padding-bottom: 120px;
 				background-image: linear-gradient(135deg, rgba(8, 32, 27, 0.98) 0%, rgba(8, 32, 27, 0.7) 40%, rgba(8, 32, 27, 0.2) 100%),
-				url('{% if cms.hero.content.image_url %}{{ cms.hero.content.image_url }}{% else %}{{ url_for('static', filename='images/media/about_hero_cinematic.png') }}{% endif %}');
+				url('{% if cms["Hero Section"].content[0].image_url %}{{ cms["Hero Section"].content[0].image_url }}{% else %}{{ url_for("static", filename="images/media/about_hero_cinematic.png") }}{% endif %}');
 				background-size: cover;
 				background-position: center;
 				background-repeat: no-repeat;
@@ -1255,16 +1255,17 @@
 
 
 						<!-- Headline -->
+						{% set hero = cms['Hero Section'].content[0] if cms['Hero Section'].content else None %}
 						<h1 class="hero-heading-glass">
-							{% if cms.hero.content.title %}
-								{{ cms.hero.content.title | safe }}
+							{% if hero.title %}
+								{{ hero.title | safe }}
 							{% else %}
 								Driving Growth & Building <em>Lasting Trust</em> For Decades
 							{% endif %}
 						</h1>
 						<p class="vjs-about-lead animate-up delay-1">
-							{% if cms.hero.content.subtitle %}
-								{{ cms.hero.content.subtitle }}
+							{% if hero.subtitle %}
+								{{ hero.subtitle }}
 							{% else %}
 								A diversified conglomerate with an unwavering commitment to excellence, sustainable innovation, and community development across the globe.
 							{% endif %}
@@ -1428,105 +1429,45 @@
 					<!-- /.title-one -->
 
 					<div class="vjs-blog-slider">
-						<!-- Slide 1 -->
-						<div class="item">
-							<article class="blog-meta-two wow fadeInUp">
-								<figure class="post-img position-relative d-flex align-items-end m0"
-									style="height: 280px; overflow: hidden; border-radius: 20px;">
-									<img src="{{ url_for('static', filename='images/image/news/springreen break.jpg') }}?v=1.0"
-										alt="Springreen Growth" class="lazy-img w-100 h-100" style="object-fit: cover;">
-									<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-										class="stretched-link date tran3s">15 APR</a>
-								</figure>
-								<div class="post-data">
-									<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
+						{% set active_news = cms['Insights News'].content or news %}
+						{% if active_news %}
+							{% for item in active_news %}
+							<div class="item">
+								<article class="blog-meta-two wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+									<figure class="post-img position-relative d-flex align-items-end m0"
+										style="height: 280px; overflow: hidden; border-radius: 20px;">
+										{% if item.image_url and item.image_url.endswith('.mp4') %}
+										<video loop muted playsinline autoplay
+											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+											<source src="{{ item.image_url }}" type="video/mp4">
+										</video>
+										{% else %}
+										<img src="{{ item.image_url or url_for('static', filename='images/image/news/springreen break.jpg') }}"
+											alt="{{ item.title }}" class="lazy-img w-100 h-100" style="object-fit: cover;">
+										{% endif %}
 										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="blog-title">
-											<h4>Springreen: Empowering CXOs & Founders for Breakthrough Growth</h4>
-										</a>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
-												class="bi bi-arrow-up-right"></i></a>
+											class="stretched-link date tran3s">{{ item.created_at.strftime('%d %b') if item.created_at else 'Recent' }}</a>
+									</figure>
+									<div class="post-data">
+										<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
+											<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+												class="blog-title">
+												<h4>{{ item.title }}</h4>
+											</a>
+											<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+												class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+													class="bi bi-arrow-up-right"></i></a>
+										</div>
+										<div class="post-info">{{ item.author or 'Admin' }} . {{ item.read_time or '5 min' }} read . {{ item.category or 'General' }}</div>
 									</div>
-									<div class="post-info">Admin . 6 min read . Leadership & Strategy</div>
-								</div>
-							</article>
-						</div>
-
-						<!-- Slide 2 -->
-						<div class="item">
-							<article class="blog-meta-two wow fadeInUp" data-wow-delay="0.1s">
-								<figure class="post-img position-relative d-flex align-items-end m0"
-									style="height: 280px; overflow: hidden; border-radius: 20px;">
-									<img src="{{ url_for('static', filename='images/image/news/springreen1.jpg') }}?v=1.0"
-										alt="AI Innovation" class="lazy-img w-100 h-100" style="object-fit: cover;">
-									<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-										class="stretched-link date tran3s">08 APR</a>
-								</figure>
-								<div class="post-data">
-									<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="blog-title">
-											<h4>AI at Springreen: Where Innovation Meets Transformation</h4>
-										</a>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
-												class="bi bi-arrow-up-right"></i></a>
-									</div>
-									<div class="post-info">VJS Team . 5 min read . Artificial Intelligence</div>
-								</div>
-							</article>
-						</div>
-
-						<!-- Slide 3 -->
-						<div class="item">
-							<article class="blog-meta-two wow fadeInUp" data-wow-delay="0.2s">
-								<figure class="post-img position-relative d-flex align-items-end m0"
-									style="height: 280px; overflow: hidden; border-radius: 20px;">
-									<img src="{{ url_for('static', filename='images/image/news/aditya institute1.jpg') }}?v=1.0"
-										alt="Aditya Institute" class="lazy-img w-100 h-100" style="object-fit: cover;">
-									<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-										class="stretched-link date tran3s">22 MAR</a>
-								</figure>
-								<div class="post-data">
-									<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="blog-title">
-											<h4>Aditya Institute: Redefining the Future of Education</h4>
-										</a>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
-												class="bi bi-arrow-up-right"></i></a>
-									</div>
-									<div class="post-info">Aditya . 4 min read . Education Innovation</div>
-								</div>
-							</article>
-						</div>
-
-						<!-- Slide 4 -->
-						<div class="item">
-							<article class="blog-meta-two wow fadeInUp" data-wow-delay="0.3s">
-								<figure class="post-img position-relative d-flex align-items-end m0"
-									style="height: 280px; overflow: hidden; border-radius: 20px;">
-									<img src="{{ url_for('static', filename='images/image/news/agham grham 1.jpg') }}?v=1.0"
-										alt="Aham Graham" class="lazy-img w-100 h-100" style="object-fit: cover;">
-									<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-										class="stretched-link date tran3s">10 MAR</a>
-								</figure>
-								<div class="post-data">
-									<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="blog-title">
-											<h4>Aham Graham: Elevating Well-Being & Conscious Living</h4>
-										</a>
-										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
-											class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
-												class="bi bi-arrow-up-right"></i></a>
-									</div>
-									<div class="post-info">Aham . 3 min read . Well-Being & Lifestyle</div>
-								</div>
-							</article>
-						</div>
+								</article>
+							</div>
+							{% endfor %}
+						{% else %}
+							<div class="item">
+								<p>No news available.</p>
+							</div>
+						{% endif %}
 					</div>
 
 					<div class="section-btn sm-mt-60">
