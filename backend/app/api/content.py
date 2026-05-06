@@ -83,15 +83,33 @@ async def get_all_grouped(db = Depends(get_database)):
 
 @router.post("/", response_model=UniversalContent)
 async def create_universal_content(data: UniversalContentCreate, db = Depends(get_database)):
-    print(f"--- CREATING UNIVERSAL CONTENT ---")
+    print(f"--- UPSERTING UNIVERSAL CONTENT ---")
     print(f"Data: {data}")
     
     doc = data.model_dump()
-    doc["createdAt"] = datetime.utcnow()
     
-    result = await db["universal_content"].insert_one(doc)
-    doc["_id"] = str(result.inserted_id)
-    return doc
+    # Define unique filter
+    query = {
+        "mainPage": data.mainPage,
+        "subSection": data.subSection,
+        "category": data.category,
+        "title": data.title
+    }
+    
+    # Add timestamps if inserting
+    update_doc = {
+        "$set": doc,
+        "$setOnInsert": {"createdAt": datetime.utcnow()}
+    }
+    
+    result = await db["universal_content"].find_one_and_update(
+        query,
+        update_doc,
+        upsert=True,
+        return_document=True
+    )
+    
+    return serialize_doc(result)
 
 @router.put("/{id}", response_model=UniversalContent)
 async def update_universal_content(id: str, data: UniversalContentUpdate, db = Depends(get_database)):

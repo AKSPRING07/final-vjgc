@@ -121,7 +121,7 @@ async def get_page_context(path: str):
         context["news"] = news
         
     # Fetch all published CMS content for this page/subpage
-    # Mapping specific template paths to our CMS Page/Subpage structure
+    # Map specific template paths to our CMS Main Page / Sub-Section structure
     path_map = {
         "index-2": ("home", None),
         "": ("home", None),
@@ -129,36 +129,45 @@ async def get_page_context(path: str):
         "about-us-v1": ("about", "journey"),
         "service-v1": ("about", "leadership"),
         "media-release": ("newsroom", "media-release"),
-        "data-centers-hosting": ("business", "data-centers"),
-        "it-consulting": ("business", "it-consulting"),
-        "green-energy": ("business", "green-energy"),
-        "logistics-services": ("business", "logistics"),
-        "export-import": ("business", "export-import"),
-        "property-services": ("business", "property-services"),
-        "it-training": ("business", "it-training"),
-        "yoga-wellness": ("business", "yoga-wellness"),
-        "travel-rentals": ("business", "travel-rentals"),
-        "plantations": ("business", "plantations")
+        "data-centers-hosting": ("Business Verticals", "Enterprise Data Centers & Hosting Services"),
+        "it-consulting": ("Business Verticals", "IT Consulting"),
+        "green-energy": ("Business Verticals", "Green Energy & Solar Manufacturing"),
+        "logistics-services": ("Business Verticals", "Logistics Services"),
+        "export-import": ("Business Verticals", "Export & Import"),
+        "property-services": ("Business Verticals", "Property Services"),
+        "it-training": ("Business Verticals", "IT Training"),
+        "yoga-wellness": ("Business Verticals", "Yoga & Wellness"),
+        "travel-rentals": ("Business Verticals", "Travel & Rentals"),
+        "plantations": ("Business Verticals", "Plantations & Exotic Trees")
     }
     
-    page_key, subpage_key = path_map.get(path, (path.split('-')[0], None))
+    page_name, sub_name = path_map.get(path, (path, None))
     
-    query = {"page": page_key, "status": "published"}
-    if subpage_key:
-        query["subpage"] = subpage_key
-    else:
-        query["$or"] = [{"subpage": None}, {"subpage": {"$exists": False}}, {"subpage": ""}]
-
-    # Initialize cms_content with empty defaults to prevent Jinja2 'Undefined' errors
-    cms_content = {
-        "hero": {"content": {}},
-        "cards": {"content": []},
-        "text": {"content": {}},
-        "news": {"content": []}
-    }
+    query = {"mainPage": page_name, "isActive": True}
+    if sub_name:
+        query["subSection"] = sub_name
     
-    async for doc in db["content"].find(query):
-        cms_content[doc["section"]] = doc
+    print(f"DEBUG: Fetching Website CMS Content for {path} -> {query}")
+    
+    # Initialize cms_content with a defaultdict-like behavior to prevent Jinja2 errors
+    # The templates expect cms['Section Name'].content to be a list or dict
+    cms_content = {}
+    
+    cursor = db["universal_content"].find(query).sort("order", 1)
+    async for doc in cursor:
+        cat = doc["category"]
+        if cat not in cms_content:
+            cms_content[cat] = {"content": []}
+        
+        # Format the card for the template (ensuring image_url is present)
+        card = {
+            "title": doc.get("title", ""),
+            "description": doc.get("description", ""),
+            "image_url": doc.get("image", ""),
+            "order": doc.get("order", 0)
+        }
+        cms_content[cat]["content"].append(card)
+        
     context["cms"] = cms_content
     
     return context

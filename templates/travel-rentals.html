@@ -11,7 +11,7 @@
 	<meta property="og:url" content="https://creativegigstf.com">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Travel & Rentals | Vijayalakshmi Group">
-	<meta name='og:image' content='{{ url_for('static', filename='images/assets/ogg.png') }}'>
+	<meta name='og:image' content='{{ url_for(' static', filename='images/assets/ogg.png' ) }}'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="theme-color" content="#1A4137">
@@ -76,7 +76,8 @@
 										<ul class="dropdown-menu compact-dropdown">
 											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About
 													Vijayalakshmi Group</a></li>
-											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our
+													Journey</a></li>
 											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership
 													and Awards</a></li>
 										</ul>
@@ -344,41 +345,18 @@
 				<div class="container">
 					<h2 class="section-title">At a Glance.</h2>
 					<div class="row justify-content-center g-4">
-						{% if cms['at-a-glance'] and cms['at-a-glance'].content %}
-							{% for card in cms['at-a-glance'].content %}
-							<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
+						{% if cms['At a Glance'] and cms['At a Glance'].content %}
+							{% for card in cms['At a Glance'].content %}
+							<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
 								<div class="vjs-glance-card-v3">
-									<div class="img-wrap">
-										<img src="{{ card.image_url }}" alt="{{ card.title }}">
+									<div class="img-wrap"><img src="{{ card.image_url }}" alt="{{ card.title }}" style="width:100%;height:100%;object-fit:cover;"></div>
+									<div class="content">
+										<h4 class="card-title">{{ card.title }}</h4>
+										<p class="card-desc">{{ card.description }}</p>
 									</div>
-									<h4 class="card-title">{{ card.title }}</h4>
-									<p class="card-desc">{{ card.description }}</p>
 								</div>
 							</div>
 							{% endfor %}
-						{% else %}
-							<!-- Fallback to hardcoded if no CMS data -->
-							<div class="col-lg-4 col-md-6 wow fadeInUp">
-								<div class="vjs-glance-card-v3">
-									<div class="img-wrap"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=1000" alt="Lakshmi Travels"></div>
-									<h4 class="card-title">Lakshmi Travels</h4>
-									<p class="card-desc">Tourism & Rentals: Providing premium and reliable travel experiences.</p>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-								<div class="vjs-glance-card-v3">
-									<div class="img-wrap"><img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=1000" alt="Strategic Positioning"></div>
-									<h4 class="card-title">Strategic Positioning</h4>
-									<p class="card-desc">Leading the market through optimized routes and customer-centric travel hubs.</p>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-								<div class="vjs-glance-card-v3">
-									<div class="img-wrap"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" alt="Vertical Integration"></div>
-									<h4 class="card-title">Vertical Integration</h4>
-									<p class="card-desc">Enables seamless flow across trade, tourism, and supply chain networks.</p>
-								</div>
-							</div>
 						{% endif %}
 					</div>
 				</div>
@@ -388,168 +366,138 @@
 			<section class="biz-section-v2">
 				<div class="container">
 					<h2 class="section-title">Our Travel Businesses</h2>
-					<div class="row g-4" id="travel-cards-container">
-						<!-- Dynamic cards will be loaded here via API -->
-						<div class="col-12 text-center py-5" id="travel-loading">
-							<div class="spinner-border text-primary" role="status">
-								<span class="visually-hidden">Loading...</span>
+					<div class="row g-4">
+						{% if cms['Our Business'] and cms['Our Business'].content %}
+							{% for card in cms['Our Business'].content %}
+							<div class="col-lg-3 col-md-6 d-flex wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
+								<a href="#" class="vjs-biz-card-v2">
+									<div class="img-wrap"><img src="{{ card.image_url }}" alt="{{ card.title }}"></div>
+									<div class="content">
+										<h4 class="card-title">{{ card.title }}</h4>
+										<p class="card-desc">{{ card.description }}</p>
+									</div>
+								</a>
 							</div>
-						</div>
+							{% endfor %}
+						{% endif %}
 					</div>
 				</div>
 			</section>
-
-			<script>
-				document.addEventListener('DOMContentLoaded', function() {
-					const container = document.getElementById('travel-cards-container');
-					const loading = document.getElementById('travel-loading');
-
-					// Fetch dynamic content from CMS using universal endpoint
-					fetch('/api/content?mainPage=Business Verticals&subSection=Travel&category=Our Business')
-						.then(response => response.json())
-						.then(data => {
-							loading.style.display = 'none';
-							
-							// Check if data is a list (from list_content) or a single object
-							const items = Array.isArray(data) ? (data.length > 0 ? data[0].content : []) : (data && data.content ? data.content : []);
-
-							if (items && items.length > 0) {
-								items.forEach((card, index) => {
-									const col = document.createElement('div');
-									col.className = 'col-lg-3 col-md-6 wow fadeInUp';
-									col.setAttribute('data-wow-delay', (index * 0.1) + 's');
-									
-									col.innerHTML = `
-										<a href="#" class="vjs-biz-card-v2">
-											<div class="img-wrap">
-												<img src="${card.image_url || card.image || 'https://via.placeholder.com/400x300'}" alt="${card.title}">
-											</div>
-											<div class="content">
-												<h4 class="card-title">${card.title}</h4>
-												<p class="card-desc">${card.description}</p>
-											</div>
-										</a>
-									`;
-									container.appendChild(col);
-								});
-								if (typeof WOW !== 'undefined') {
-									new WOW().init();
-								}
-							} else {
-								container.innerHTML = '<div class="col-12 text-center"><p>No travel items currently stored in this category.</p></div>';
-							}
-						})
-						.catch(error => {
-							console.error('Error fetching travel cards:', error);
-							loading.style.display = 'none';
-							container.innerHTML = '<div class="col-12 text-center"><p class="text-danger">Failed to load content. Please try again later.</p></div>';
-						});
-				});
-			</script>
-				</div>
-			</section>
-
-			<!-- CTA Section -->
-			<section class="vjs-cta-section" style="background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1200');">
-				<div class="container text-center">
-					<h2 class="text-white">Plan Your Next Journey With Us</h2>
-					<a href="#" class="btn-visit">Visit Travel Portal</a>
-				</div>
-			</section>
-
-			<!-- Footer -->
-			<div class="footer-modern">
-				<div class="footer-container">
-					<div class="footer-top">
-						<!-- LOGO & BRAND -->
-						<div class="footer-brand">
-							<div class="footer-logo-group">
-								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
-									alt="Logo Mark">
-								<div class="footer-logo-text">
-									<span>Vijayalakshmi Group</span>
-									<span>OF COMPANIES</span>
-								</div>
-							</div>
-
-							<div class="social-icons-mini">
-								<a href="#"><i class="bi bi-facebook"></i></a>
-								<a href="#"><i class="bi bi-instagram"></i></a>
-								<a href="#"><i class="bi bi-youtube"></i></a>
-								<a href="#"><i class="bi bi-linkedin"></i></a>
-							</div>
-						</div>
-
-						<!-- ABOUT -->
-						<div class="footer-col">
-							<h5>About Us</h5>
-							<ul>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Company</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Chairman’s Office</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Awards</a></li>
-							</ul>
-						</div>
-
-						<!-- BUSINESS -->
-						<div class="footer-col">
-							<h5>Businesses</h5>
-							<ul>
-								<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">Infrastructure</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='green-energy') }}">Energy & Utilities</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Transport & Logistics</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Consumer Products</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Real Estate</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}">Healthcare</a></li>
-							</ul>
-						</div>
-
-						<!-- QUICK LINKS -->
-						<div class="footer-col">
-							<h5>Quick Links</h5>
-							<ul>
-								<li><a href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}">Sustainability</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='pricing') }}">Investors</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Newsroom</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Careers</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='contact') }}">Contact Us</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- BOTTOM -->
-					<div class="footer-bottom">
-						<div style="display: flex; align-items: center; gap: 8px;">
-							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
-								alt="Mark" style="height: 20px; width: auto;">
-							<span>@2026 Vijayalakshmi Group</span>
-						</div>
-
-						<div class="footer-bottom-links">
-							<a href="#">Legal Disclaimer</a>
-							<a href="#">Privacy Notice</a>
-							<a href="#">Terms & Conditions</a>
-							<a href="#">Cookie Policy</a>
-						</div>
-					</div>
-				</div>
-			</div> <!-- /.footer-modern -->
 		</div>
 
-		<button class="scroll-top"><i class="bi bi-arrow-up-short"></i></button>
+		<!-- CTA Section -->
+		<section class="vjs-cta-section"
+			style="background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1200');">
+			<div class="container text-center">
+				<h2 class="text-white">Plan Your Next Journey With Us</h2>
+				<a href="#" class="btn-visit">Visit Travel Portal</a>
+			</div>
+		</section>
 
-		<!-- Optional JavaScript -->
-		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/navbar-hover.js') }}"></script>
+		<!-- Footer -->
+		<div class="footer-modern">
+			<div class="footer-container">
+				<div class="footer-top">
+					<!-- LOGO & BRAND -->
+					<div class="footer-brand">
+						<div class="footer-logo-group">
+							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+								alt="Logo Mark">
+							<div class="footer-logo-text">
+								<span>Vijayalakshmi Group</span>
+								<span>OF COMPANIES</span>
+							</div>
+						</div>
+
+						<div class="social-icons-mini">
+							<a href="#"><i class="bi bi-facebook"></i></a>
+							<a href="#"><i class="bi bi-instagram"></i></a>
+							<a href="#"><i class="bi bi-youtube"></i></a>
+							<a href="#"><i class="bi bi-linkedin"></i></a>
+						</div>
+					</div>
+
+					<!-- ABOUT -->
+					<div class="footer-col">
+						<h5>About Us</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Company</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Chairman’s Office</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Awards</a></li>
+						</ul>
+					</div>
+
+					<!-- BUSINESS -->
+					<div class="footer-col">
+						<h5>Businesses</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">Infrastructure</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='green-energy') }}">Energy & Utilities</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Transport &
+									Logistics</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Consumer Products</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Real Estate</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}">Healthcare</a></li>
+						</ul>
+					</div>
+
+					<!-- QUICK LINKS -->
+					<div class="footer-col">
+						<h5>Quick Links</h5>
+						<ul>
+							<li><a
+									href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}">Sustainability</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='pricing') }}">Investors</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Newsroom</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Careers</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='contact') }}">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- BOTTOM -->
+				<div class="footer-bottom">
+					<div style="display: flex; align-items: center; gap: 8px;">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="Mark" style="height: 20px; width: auto;">
+						<span>@2026 Vijayalakshmi Group</span>
+					</div>
+
+					<div class="footer-bottom-links">
+						<a href="#">Legal Disclaimer</a>
+						<a href="#">Privacy Notice</a>
+						<a href="#">Terms & Conditions</a>
+						<a href="#">Cookie Policy</a>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.footer-modern -->
+	</div>
+
+	<button class="scroll-top"><i class="bi bi-arrow-up-short"></i></button>
+
+	<!-- Optional JavaScript -->
+	<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/navbar-hover.js') }}"></script>
 	</div>
 </body>
 
 </html>
 
+<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}"></script>
+<script src="{{ url_for('static', filename='js/navbar-hover.js') }}"></script>
+</div>
+</body>
+
+</html>

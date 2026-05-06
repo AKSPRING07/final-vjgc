@@ -10,7 +10,7 @@
 	<meta property="og:url" content="https://creativegigstf.com">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Export & Import | Vijayalakshmi Group">
-	<meta name='og:image' content='{{ url_for('static', filename='images/assets/ogg.png') }}'>
+	<meta name='og:image' content='{{ url_for(' static', filename='images/assets/ogg.png' ) }}'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="theme-color" content="#1A4137">
@@ -47,8 +47,7 @@
 				<div class="top-header">
 					<div class="d-flex align-items-center justify-content-between">
 						<div class="logo" style="flex: 1; display: flex; justify-content: flex-start;">
-							<a href="{{ url_for('dynamic_route', path='index') }}"
-								class="d-flex align-items-center">
+							<a href="{{ url_for('dynamic_route', path='index') }}" class="d-flex align-items-center">
 								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
 									<span class="site-brand-lockup__mark-wrap"><img
 											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}"
@@ -76,7 +75,8 @@
 										<ul class="dropdown-menu compact-dropdown">
 											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About
 													Vijayalakshmi Group</a></li>
-											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our
+													Journey</a></li>
 											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership
 													and Awards</a></li>
 										</ul>
@@ -344,33 +344,19 @@
 				<div class="container">
 					<h2 class="section-title">At a Glance.</h2>
 					<div class="row justify-content-center g-4">
-						<div class="col-lg-4 col-md-6 wow fadeInUp">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800"
-										alt="Global Reach"></div>
-								<h4 class="card-title">Global Reach</h4>
-								<p class="card-desc">Seamless trade across continents with a reliable network.</p>
+						{% if cms['At a Glance'] and cms['At a Glance'].content %}
+							{% for card in cms['At a Glance'].content %}
+							<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap"><img src="{{ card.image_url }}" alt="{{ card.title }}" style="width:100%;height:100%;object-fit:cover;"></div>
+									<div class="content">
+										<h4 class="card-title">{{ card.title }}</h4>
+										<p class="card-desc">{{ card.description }}</p>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
-										alt="Efficient Logistics"></div>
-								<h4 class="card-title">Efficient Logistics</h4>
-								<p class="card-desc">Optimized supply chain for faster and safer delivery.</p>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap"><img
-										src="{{ url_for('static', filename='images/media/vjs_secure_trade.png') }}"
-										alt="Secure Trade"></div>
-								<h4 class="card-title">Secure Trade</h4>
-								<p class="card-desc">End-to-end transparency and safety in every transaction.</p>
-							</div>
-						</div>
+							{% endfor %}
+						{% endif %}
 					</div>
 				</div>
 			</section>
@@ -380,59 +366,26 @@
 				<div class="container">
 					<h2 class="section-title">Our Trade Businesses</h2>
 					<div class="row g-4">
-						<div class="col-lg-3 col-md-6 wow fadeInUp">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&q=80&w=800"
-										alt="Global Supply Chain"></div>
-								<div class="content">
-									<h4 class="card-title">Global Supply Chain</h4>
-									<p class="card-desc">Expert management of international procurement and delivery.
-									</p>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800"
-										alt="Export-Import Management"></div>
-								<div class="content">
-									<h4 class="card-title">Export-Import Management</h4>
-									<p class="card-desc">Navigating complex trade regulations with ease and precision.
-									</p>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=800"
-										alt="D2C Delivery"></div>
-								<div class="content">
-									<h4 class="card-title">D2C Delivery</h4>
-									<p class="card-desc">Direct delivery of fresh produce to end-customers globally.</p>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img
-										src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&q=80&w=800"
-										alt="Cold Chain Logistics"></div>
-								<div class="content">
-									<h4 class="card-title">Cold Chain Logistics</h4>
-									<p class="card-desc">Maintaining freshness through advanced temperature-controlled
-										systems.</p>
-								</div>
-							</a>
-						</div>
+						{% if cms['Our Business'] and cms['Our Business'].content %}
+							{% for card in cms['Our Business'].content %}
+							<div class="col-lg-3 col-md-6 d-flex wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
+								<a href="#" class="vjs-biz-card-v2">
+									<div class="img-wrap"><img src="{{ card.image_url }}" alt="{{ card.title }}"></div>
+									<div class="content">
+										<h4 class="card-title">{{ card.title }}</h4>
+										<p class="card-desc">{{ card.description }}</p>
+									</div>
+								</a>
+							</div>
+							{% endfor %}
+						{% endif %}
 					</div>
 				</div>
 			</section>
 
 			<!-- CTA Section -->
-			<section class="vjs-cta-section" style="background-image: url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&q=80&w=1200');">
+			<section class="vjs-cta-section"
+				style="background-image: url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&q=80&w=1200');">
 				<div class="container text-center">
 					<h2 class="text-white">Expand Your Business Horizon</h2>
 					<a href="#" class="btn-visit">Visit Trade Portal</a>
@@ -467,7 +420,8 @@
 							<h5>About Us</h5>
 							<ul>
 								<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Company</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Chairman’s Office</a></li>
+								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Chairman’s Office</a>
+								</li>
 								<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership</a></li>
 								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
 								<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Awards</a></li>
@@ -478,11 +432,16 @@
 						<div class="footer-col">
 							<h5>Businesses</h5>
 							<ul>
-								<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">Infrastructure</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='green-energy') }}">Energy & Utilities</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Transport & Logistics</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Consumer Products</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Real Estate</a></li>
+								<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">Infrastructure</a>
+								</li>
+								<li><a href="{{ url_for('dynamic_route', path='green-energy') }}">Energy & Utilities</a>
+								</li>
+								<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Transport &
+										Logistics</a></li>
+								<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Consumer Products</a>
+								</li>
+								<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Real Estate</a>
+								</li>
 								<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}">Healthcare</a></li>
 							</ul>
 						</div>
@@ -491,7 +450,9 @@
 						<div class="footer-col">
 							<h5>Quick Links</h5>
 							<ul>
-								<li><a href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}">Sustainability</a></li>
+								<li><a
+										href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}">Sustainability</a>
+								</li>
 								<li><a href="{{ url_for('dynamic_route', path='pricing') }}">Investors</a></li>
 								<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Newsroom</a></li>
 								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Careers</a></li>

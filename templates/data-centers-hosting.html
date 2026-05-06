@@ -9,7 +9,7 @@
 	<meta property="og:url" content="https://creativegigstf.com">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Vijayalakshmi Group Of Companies">
-	<meta name='og:image' content='{{ url_for('static', filename='images/assets/ogg.png') }}?v=1.2'>
+	<meta name='og:image' content='{{ url_for(' static', filename='images/assets/ogg.png' ) }}?v=1.2'>
 	<!-- For IE -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- For Resposive Device -->
@@ -126,7 +126,8 @@
 										<ul class="dropdown-menu about-dropdown compact-dropdown">
 											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About
 													Vijayalakshmi Group</a></li>
-											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our
+													Journey</a></li>
 											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership
 													and Awards</a></li>
 										</ul>
@@ -289,8 +290,7 @@
 										</ul>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link"
-											href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0"
+										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0"
 											role="button">Vijayalakshmi
 											Foundation</a>
 									</li>
@@ -661,52 +661,40 @@
 					<!-- /.title-four -->
 
 					<div class="row gx-xl-5 justify-content-center">
-						<!-- Card 1: Digital Infrastructure & Cloud -->
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap">
-									<img src="{{ url_for('static', filename='images/media/vjs_enterprise_datacenter.png') }}"
-										alt="Enterprise Data Centres"
-										style="width: 100%; height: 100%; object-fit: cover;">
-								</div>
-								<div class="content">
-									<h4 class="card-title">Digital Infrastructure &amp; Cloud</h4>
-									<p class="card-desc">Secure datacenters, managed hosting, and scalable cloud
-										solutions that power reliable digital ecosystems.</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Card 2: Learning & Skill Development -->
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap">
-									<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200"
-										alt="Learning & Skill Development"
-										style="width: 100%; height: 100%; object-fit: cover;">
-								</div>
-								<div class="content">
-									<h4 class="card-title">Learning &amp; Skill Development</h4>
-									<p class="card-desc">Education-driven initiatives focused on practical training,
-										mentorship, and career-oriented growth.</p>
+						{% if cms['At a Glance'] and cms['At a Glance'].content %}
+							{% for card in cms['At a Glance'].content %}
+							<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap">
+										<img src="{{ card.image_url }}" alt="{{ card.title }}" style="width: 100%; height: 100%; object-fit: cover;">
+									</div>
+									<div class="content">
+										<h4 class="card-title">{{ card.title }}</h4>
+										<p class="card-desc">{{ card.description }}</p>
+									</div>
 								</div>
 							</div>
-						</div>
-
-						<!-- Card 3: Sustainable Energy & Innovation -->
-						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap">
-									<img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1200"
-										alt="Sustainable Energy" style="width: 100%; height: 100%; object-fit: cover;">
-								</div>
-								<div class="content">
-									<h4 class="card-title">Sustainable Energy &amp; Innovation</h4>
-									<p class="card-desc">Renewable energy solutions and solar manufacturing focused on
-										building a sustainable future.</p>
+							{% endfor %}
+						{% else %}
+							<div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap"><img src="{{ url_for('static', filename='images/media/vjs_enterprise_datacenter.png') }}" alt="Digital Infrastructure" style="width:100%;height:100%;object-fit:cover;"></div>
+									<div class="content"><h4 class="card-title">Digital Infrastructure &amp; Cloud</h4><p class="card-desc">Secure datacenters, managed hosting, and scalable cloud solutions.</p></div>
 								</div>
 							</div>
-						</div>
+							<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200" alt="Learning" style="width:100%;height:100%;object-fit:cover;"></div>
+									<div class="content"><h4 class="card-title">Learning &amp; Skill Development</h4><p class="card-desc">Education-driven initiatives focused on practical training.</p></div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
+								<div class="vjs-glance-card-v3">
+									<div class="img-wrap"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1200" alt="Sustainable Energy" style="width:100%;height:100%;object-fit:cover;"></div>
+									<div class="content"><h4 class="card-title">Sustainable Energy &amp; Innovation</h4><p class="card-desc">Renewable energy and solar manufacturing.</p></div>
+								</div>
+							</div>
+						{% endif %}
 					</div>
 
 
@@ -803,7 +791,7 @@
 					overflow: hidden;
 					background: #fff;
 					border: 1px solid #e2e2e2;
-					box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 					transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 					cursor: pointer;
 					text-decoration: none !important;
@@ -814,7 +802,7 @@
 
 				.vjs-biz-card:hover {
 					transform: translateY(-8px);
-					box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+					box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 					border-color: #008D96;
 				}
 
@@ -933,78 +921,28 @@
 
 					<div class="vjs-biz-viewport" id="vjsBizViewport">
 						<div class="vjs-biz-track" id="vjsBizTrack">
-
-							<!-- Card 1: Secure Datacenters -->
-							<a href="#" class="vjs-biz-card">
-								<div class="vjs-biz-img-wrap">
-									<img src="{{ url_for('static', filename='images/media/vjs_datacenter_new.png') }}"
-										alt="Secure Datacenters">
-								</div>
-								<div class="vjs-biz-card-body">
-									<h5>Secure Datacenters</h5>
-									<p>Enterprise-grade infrastructure designed for reliability, performance, and
-										continuous operations.<br><small>High Uptime â€¢ Redundant Systems â€¢ Secure
-											Facilities</small></p>
-								</div>
-							</a>
-
-							<!-- Card 2: Managed Hosting -->
-							<a href="#" class="vjs-biz-card">
-								<div class="vjs-biz-img-wrap">
-									<img src="{{ url_for('static', filename='images/media/vjs_cloud_tech.png') }}"
-										alt="Managed Hosting">
-								</div>
-								<div class="vjs-biz-card-body">
-									<h5>Managed Hosting</h5>
-									<p>Fully managed hosting environments ensuring seamless performance and operational
-										efficiency.<br><small>Server Management â€¢ Performance Optimization â€¢ 24/7
-											Support</small></p>
-								</div>
-							</a>
-
-							<!-- Card 3: Cloud Infrastructure -->
-							<a href="#" class="vjs-biz-card">
-								<div class="vjs-biz-img-wrap">
-									<img src="{{ url_for('static', filename='images/media/vjs_data_ai_tech.png') }}"
-										alt="Cloud Infrastructure">
-								</div>
-								<div class="vjs-biz-card-body">
-									<h5>Cloud Infrastructure</h5>
-									<p>Scalable cloud solutions built to adapt and grow with evolving digital
-										demands.<br><small>Flexible Scaling â€¢ Cloud Deployment â€¢ Resource
-											Optimization</small></p>
-								</div>
-							</a>
-
-							<!-- Card 4: Domain Services -->
-							<a href="#" class="vjs-biz-card">
-								<div class="vjs-biz-img-wrap">
-									<img src="{{ url_for('static', filename='images/media/vjs_cybersecurity_tech.png') }}"
-										alt="Domain Services">
-								</div>
-								<div class="vjs-biz-card-body">
-									<h5>Domain Services</h5>
-									<p>Streamlined domain registration and reseller solutions for a strong online
-										presence.<br><small>Domain Registration â€¢ DNS Management â€¢ Reseller
-											Support</small></p>
-								</div>
-							</a>
-
-							<!-- Card 5: Data Security -->
-							<a href="#" class="vjs-biz-card">
-								<div class="vjs-biz-img-wrap">
-									<img src="{{ url_for('static', filename='images/media/vjs_engineering_tech.png') }}"
-										alt="Data Security">
-								</div>
-								<div class="vjs-biz-card-body">
-									<h5>Data Security</h5>
-									<p>Advanced protection systems safeguarding data, applications, and digital
-										assets.<br><small>Data Protection â€¢ Backup Systems â€¢ Threat Monitoring</small>
-									</p>
-								</div>
-							</a>
-
-						</div><!-- /.vjs-biz-track -->
+							{% if cms['Our Business'] and cms['Our Business'].content %}
+								{% for card in cms['Our Business'].content %}
+								<a href="#" class="vjs-biz-card">
+									<div class="vjs-biz-img-wrap">
+										<img src="{{ card.image_url }}" alt="{{ card.title }}">
+									</div>
+									<div class="vjs-biz-card-body">
+										<h5>{{ card.title }}</h5>
+										<p>{{ card.description }}</p>
+									</div>
+								</a>
+								{% endfor %}
+							{% else %}
+								<!-- Fallback -->
+								<a href="#" class="vjs-biz-card">
+									<div class="vjs-biz-img-wrap"><img src="/static/images/media/vjs_datacenter_new.png" alt="Secure Datacenters"></div>
+									<div class="vjs-biz-card-body"><h5>Secure Datacenters</h5><p>Enterprise-grade infrastructure.</p></div>
+								</a>
+							{% endif %}
+						</div>
+					</div>
+iv><!-- /.vjs-biz-track -->
 					</div><!-- /.vjs-biz-viewport -->
 
 					<!-- Dots -->
@@ -1141,7 +1079,8 @@
 			=====================================================
 			-->
 			<!-- CTA Section -->
-			<section class="vjs-cta-section" style="background-image: url('{{ url_for('static', filename='images/media/vjs_datacenter_new.png') }}');">
+			<section class="vjs-cta-section"
+				style="background-image: url('{{ url_for('static', filename='images/media/vjs_datacenter_new.png') }}');">
 				<div class="container text-center">
 					<h2 class="text-white">To Know More About Vijayalakshmi Data Centers & Hosting</h2>
 					<a href="#" class="btn-visit">Visit Website</a>
